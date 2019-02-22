@@ -1,9 +1,7 @@
 # MuKit
 
 ![Swift](https://img.shields.io/badge/swift-4.2-green.svg)
-![Cocoapods](https://img.shields.io/cocoapods/v/HubKit.svg)
-![Cocoapods](https://img.shields.io/cocoapods/l/HubKit.svg)
-![Cocoapods platforms](https://img.shields.io/cocoapods/p/HubKit.svg)
+![Gitlab](https://app.bitrise.io/app/abc7835ff73f5f07.svg?token=d610-D37aKR0-LU9V2Lulw)
 
 MuKit is a user interface components library written in Swift.
 
