@@ -18,6 +18,7 @@
 		6D566127221EE91100014498 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D566126221EE91100014498 /* Button.storyboard */; };
 		6D566142221EECAF00014498 /* MUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566141221EECAF00014498 /* MUColor.swift */; };
 		6D566144221EF98000014498 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566143221EF98000014498 /* ThemeManager.swift */; };
+		F3F3BA382220366900B01B42 /* MUComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA372220366900B01B42 /* MUComponent.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		6D566126221EE91100014498 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
 		6D566141221EECAF00014498 /* MUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUColor.swift; sourceTree = "<group>"; };
 		6D566143221EF98000014498 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		F3F3BA372220366900B01B42 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F3BA392220366900B01B42 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F3BA382220366900B01B42 /* MUComponent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,7 @@
 				6D566108221EC6B500014498 /* MUSampleTests */,
 				6D566113221EC6B500014498 /* MUSampleUITests */,
 				6D5660F2221EC6B200014498 /* Products */,
+				F3F3BA362220366900B01B42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +169,15 @@
 				6D566126221EE91100014498 /* Button.storyboard */,
 			);
 			path = MUButton;
+			sourceTree = "<group>";
+		};
+		F3F3BA362220366900B01B42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F3BA372220366900B01B42 /* MUComponent.framework */,
+				F3F3BA392220366900B01B42 /* MUCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
