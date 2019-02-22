@@ -16,8 +16,6 @@
 		6D566115221EC6B500014498 /* MUSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566114221EC6B500014498 /* MUSampleUITests.swift */; };
 		6D566125221EE8AD00014498 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566124221EE8AD00014498 /* ButtonVC.swift */; };
 		6D566127221EE91100014498 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D566126221EE91100014498 /* Button.storyboard */; };
-		6D566133221EEBC200014498 /* MUComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566130221EEBB600014498 /* MUComponent.framework */; };
-		6D566134221EEBC200014498 /* MUComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566130221EEBB600014498 /* MUComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6D566142221EECAF00014498 /* MUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566141221EECAF00014498 /* MUColor.swift */; };
 		6D566144221EF98000014498 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566143221EF98000014498 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
@@ -37,41 +35,6 @@
 			remoteGlobalIDString = 6D5660F0221EC6B200014498;
 			remoteInfo = MUSample;
 		};
-		6D56612F221EEBB600014498 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D56612A221EEBB600014498 /* MUComponent.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6D5660C5221EB12E00014498;
-			remoteInfo = MUComponent;
-		};
-		6D566131221EEBB600014498 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D56612A221EEBB600014498 /* MUComponent.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6D5660CE221EB12E00014498;
-			remoteInfo = MUComponentTests;
-		};
-		6D566135221EEBC200014498 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D56612A221EEBB600014498 /* MUComponent.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D5660C4221EB12E00014498;
-			remoteInfo = MUComponent;
-		};
-		6D56613D221EEBE800014498 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D566138221EEBE800014498 /* MUCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6D56609C221EA77100014498;
-			remoteInfo = MUCore;
-		};
-		6D56613F221EEBE800014498 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D566138221EEBE800014498 /* MUCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6D5660A5221EA77100014498;
-			remoteInfo = MUCoreTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,7 +44,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6D566134221EEBC200014498 /* MUComponent.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,8 +66,6 @@
 		6D566116221EC6B500014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D566124221EE8AD00014498 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
 		6D566126221EE91100014498 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
-		6D56612A221EEBB600014498 /* MUComponent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUComponent.xcodeproj; path = ../../MUComponent/MUComponent.xcodeproj; sourceTree = "<group>"; };
-		6D566138221EEBE800014498 /* MUCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MUCore.xcodeproj; path = ../../MUCore/MUCore.xcodeproj; sourceTree = "<group>"; };
 		6D566141221EECAF00014498 /* MUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUColor.swift; sourceTree = "<group>"; };
 		6D566143221EF98000014498 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D566133221EEBC200014498 /* MUComponent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +98,6 @@
 		6D5660E8221EC6B200014498 = {
 			isa = PBXGroup;
 			children = (
-				6D566138221EEBE800014498 /* MUCore.xcodeproj */,
-				6D56612A221EEBB600014498 /* MUComponent.xcodeproj */,
 				6D5660F3221EC6B200014498 /* MUSample */,
 				6D566108221EC6B500014498 /* MUSampleTests */,
 				6D566113221EC6B500014498 /* MUSampleUITests */,
@@ -209,24 +166,6 @@
 			path = MUButton;
 			sourceTree = "<group>";
 		};
-		6D56612B221EEBB600014498 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6D566130221EEBB600014498 /* MUComponent.framework */,
-				6D566132221EEBB600014498 /* MUComponentTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		6D566139221EEBE800014498 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6D56613E221EEBE800014498 /* MUCore.framework */,
-				6D566140221EEBE800014498 /* MUCoreTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,7 +181,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				6D566136221EEBC200014498 /* PBXTargetDependency */,
 			);
 			name = MUSample;
 			productName = MUSample;
@@ -319,16 +257,6 @@
 			mainGroup = 6D5660E8221EC6B200014498;
 			productRefGroup = 6D5660F2221EC6B200014498 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6D56612B221EEBB600014498 /* Products */;
-					ProjectRef = 6D56612A221EEBB600014498 /* MUComponent.xcodeproj */;
-				},
-				{
-					ProductGroup = 6D566139221EEBE800014498 /* Products */;
-					ProjectRef = 6D566138221EEBE800014498 /* MUCore.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6D5660F0221EC6B200014498 /* MUSample */,
@@ -337,37 +265,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		6D566130221EEBB600014498 /* MUComponent.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MUComponent.framework;
-			remoteRef = 6D56612F221EEBB600014498 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6D566132221EEBB600014498 /* MUComponentTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MUComponentTests.xctest;
-			remoteRef = 6D566131221EEBB600014498 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6D56613E221EEBE800014498 /* MUCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MUCore.framework;
-			remoteRef = 6D56613D221EEBE800014498 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		6D566140221EEBE800014498 /* MUCoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MUCoreTests.xctest;
-			remoteRef = 6D56613F221EEBE800014498 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6D5660EF221EC6B200014498 /* Resources */ = {
@@ -438,11 +335,6 @@
 			isa = PBXTargetDependency;
 			target = 6D5660F0221EC6B200014498 /* MUSample */;
 			targetProxy = 6D566111221EC6B500014498 /* PBXContainerItemProxy */;
-		};
-		6D566136221EEBC200014498 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MUComponent;
-			targetProxy = 6D566135221EEBC200014498 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
