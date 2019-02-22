@@ -1,0 +1,236 @@
+---
+format_version: '4'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: ios
+trigger_map:
+- push_branch: develop
+  workflow: MUKit
+- pull_request_source_branch: "*"
+  workflow: MUComponent
+- tag: "*"
+  workflow: Release
+workflows:
+  MUKit:
+    steps:
+    - build-router-start@0.11.2:
+        inputs:
+        - workflows: |-
+            MUCore
+            MUComponent
+        - access_token: "$ACCESS_TOKEN"
+    - build-router-wait@0.9.1:
+        inputs:
+        - access_token: "$ACCESS_TOKEN"
+    - slack@3.1.2:
+        inputs:
+        - webhook_url: "$SLACK_URL"
+        - text: ''
+    envs:
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: MUKit
+  MUCore:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4.0.14: {}
+    - cache-pull@2.0.1: {}
+    - certificate-and-profile-installer@1.10.1: {}
+    - xcode-test@2.1.1:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
+        - scheme: "$BITRISE_SCHEME"
+    - cache-push@2.0.5: {}
+    envs:
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: MUCore
+  MUComponent:
+    steps:
+    - activate-ssh-key@4.0.3:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4.0.14: {}
+    - cache-pull@2.0.1: {}
+    - certificate-and-profile-installer@1.10.1: {}
+    - xcode-test@2.1.1:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
+        - scheme: "$BITRISE_SCHEME"
+    - cache-push@2.0.5: {}
+    envs:
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: MUComponent
+  Release:
+    steps:
+    - build-router-start@0.11.2:
+        inputs:
+        - workflows: |-
+            MUCore
+            MUComponent
+        - access_token: "$ACCESS_TOKEN"
+    - build-router-wait@0.9.1:
+        inputs:
+        - access_token: "$ACCESS_TOKEN"
+    - generate-text-file@0.0.3:
+        inputs:
+        - file_name: MUCore.podspec
+        - file_content: |-
+            Pod::Spec.new do |s|
+              s.name = 'MUCore'
+              s.version = '$BITRISE_GIT_TAG'
+              s.license = 'MIT'
+              s.summary = 'MUCore is a framework that expose reusable core component part of MUKit.'
+              spec.description  = <<-DESC
+                As we always use the same or a really close object, we made severals components that we want to share with you.
+                               DESC
+              s.homepage = 'https://gitlab.com/surfin/mu-kit-framework-ios.git'
+              s.authors = { "Damien NOËL DUBUISSON" => "damien@slide-r.com", "Loïc GRIFFIÉ" => "loic@slide-r.com" }
+              s.source = { :git => 'git@gitlab.com:surfin/mu-kit-framework-ios.git', :tag => '$BITRISE_GIT_TAG' }
+              s.swift_version   = '4.2'
+
+              s.ios.deployment_target = '11.0'
+
+              s.source_files = 'Source/**/*.{xib,swift}'
+            end
+        title: MUCore podspec
+    - generate-text-file@0.0.3:
+        inputs:
+        - file_name: MUComponent.podspec
+        - file_content: |-
+            Pod::Spec.new do |s|
+              s.name = 'MUComponent'
+              s.version = '$BITRISE_GIT_TAG'
+              s.license = 'MIT'
+              s.summary = 'MUComponent is a UI framework that expose reusable core component part of MUKit.'
+              spec.description  = <<-DESC
+                As we always use the same or a really close object, with a one time definition
+                with UIAppearence, we made severals components that we want to share with you.
+                               DESC
+              s.homepage = 'https://gitlab.com/surfin/mu-kit-framework-ios.git'
+              s.authors = { "Damien NOËL DUBUISSON" => "damien@slide-r.com", "Loïc GRIFFIÉ" => "loic@slide-r.com" }
+              s.source = { :git => 'git@gitlab.com:surfin/mu-kit-framework-ios.git', :tag => '$BITRISE_GIT_TAG' }
+              s.swift_version   = '4.2'
+
+              s.ios.deployment_target = '11.0'
+
+              s.source_files = 'Source/**/*.{xib,swift}'
+
+              s.dependency 'MUCore'
+            end
+        title: MUComponent podspec
+    - generate-text-file@0.0.3:
+        inputs:
+        - file_name: MUCore.podspec
+        - file_content: |-
+            Pod::Spec.new do |s|
+              s.name = '$PROJECT_NAME'
+              s.version = '$BITRISE_GIT_TAG'
+              s.license = 'MIT'
+              s.summary = '$PROJECT_NAME is a framework that expose reusable component.'
+              spec.description  = <<-DESC
+                As we always use the same or a really close object, we made severals components that we want to share with you.
+                               DESC
+              s.homepage = 'https://gitlab.com/surfin/mu-kit-framework-ios.git'
+              s.authors = { "Damien NOËL DUBUISSON" => "damien@slide-r.com", "Loïc GRIFFIÉ" => "loic@slide-r.com" }
+              s.source = { :git => 'git@gitlab.com:surfin/mu-kit-framework-ios.git', :tag => '$BITRISE_GIT_TAG' }
+              s.swift_version   = '4.2'
+
+              s.ios.deployment_target = '11.0'
+
+              s.source_files = 'Source/**/*.{xib,swift}'
+
+              s.dependency 'MUCore'
+              s.dependency 'MUComponent'
+            end
+        title: MUKit podspec
+    - script@1.1.5:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
+            #pod trunk register contact@hubkit.io --description='Bitrise CI'
+            pod trunk push MUCore.podspec --allow-warnings
+
+            # or run a script from your repository, like:
+            # bash ./path/to/script.sh
+            # not just bash, e.g.:
+            # ruby ./path/to/script.rb
+        title: Publish MUCore
+    - slack@3.1.2:
+        inputs:
+        - webhook_url: "$SLACK_COCOAPODS"
+        - text: "--------------------------------------------------------------------------------\n:\U0001F918:
+            \ Congrats\n\n:\U0001F984:  MUCore ($BITRISE_GIT_TAG) successfully published\n:\U0001F680:
+            \ \\$ pod update MUCore\n:☎️:  Tell your friends!\n--------------------------------------------------------------------------------"
+        is_always_run: false
+    - script@1.1.5:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
+            #pod trunk register contact@hubkit.io --description='Bitrise CI'
+            pod trunk push MUComponent.podspec --allow-warnings
+
+            # or run a script from your repository, like:
+            # bash ./path/to/script.sh
+            # not just bash, e.g.:
+            # ruby ./path/to/script.rb
+        title: Publish MUComponent
+    - slack@3.1.2:
+        inputs:
+        - webhook_url: "$SLACK_COCOAPODS"
+        - text: "--------------------------------------------------------------------------------\n:\U0001F918:
+            \ Congrats\n\n:\U0001F984:  MUComponent ($BITRISE_GIT_TAG) successfully
+            published\n:\U0001F680:  \\$ pod update MUComponent\n:☎️:  Tell your friends!\n--------------------------------------------------------------------------------"
+        is_always_run: false
+    - script@1.1.5:
+        inputs:
+        - content: |-
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
+            #pod trunk register contact@hubkit.io --description='Bitrise CI'
+            pod trunk push MUKit.podspec --allow-warnings
+
+            # or run a script from your repository, like:
+            # bash ./path/to/script.sh
+            # not just bash, e.g.:
+            # ruby ./path/to/script.rb
+        title: Publish MUKit
+    - slack@3.1.2:
+        inputs:
+        - webhook_url: "$SLACK_COCOAPODS"
+        - text: "--------------------------------------------------------------------------------\n:\U0001F918:
+            \ Congrats\n\n:\U0001F984:  MUKit ($BITRISE_GIT_TAG) successfully published\n:\U0001F680:
+            \ \\$ pod update MUKit\n:☎️:  Tell your friends!\n--------------------------------------------------------------------------------"
+        is_always_run: false
+    envs:
+    - opts:
+        is_expand: false
+      BITRISE_SCHEME: MUKit
+    - opts:
+        is_expand: false
+      COCOAPODS_TRUNK_TOKEN: b9b5d6e4515f5e9456501e6d89108e6f
+app:
+  envs:
+  - opts:
+      is_expand: false
+    BITRISE_PROJECT_PATH: MUKit.xcworkspace
+  - opts:
+      is_expand: false
+    BITRISE_EXPORT_METHOD: app-store
+  - opts:
+      is_expand: false
+    PROJECT_NAME: MUKit
