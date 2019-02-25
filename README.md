@@ -2,7 +2,7 @@
 
 ![MUKit: User Interface Library in Swift](https://raw.githubusercontent.com/MoveUpwards/MUKit/master/banner.png)
 
-[![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](http://moveupwards.dev/MUKitDocs/)
+[![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](https://github.com/MoveUpwards/MUKit/master/MUComponent/docs/)
 [![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift%204-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 8+](https://img.shields.io/badge/platform-iOS-blue.svg?style=flat)
 [![CocoaPods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/MUKit)
