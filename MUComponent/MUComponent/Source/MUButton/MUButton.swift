@@ -78,7 +78,7 @@ open class MUButton: MUNibView {
     }
 
     /// The button’s border color.
-    @IBInspectable open dynamic var borderColor: UIColor = .white {
+    @IBInspectable open dynamic var borderColor: UIColor = .clear {
         didSet {
             borderColor.getRed(nil, green: nil, blue: nil, alpha: &borderColorAlpha)
             setNeedsLayout()
@@ -114,7 +114,7 @@ open class MUButton: MUNibView {
     }
 
     /// The button’s border width.
-    @IBInspectable open dynamic var borderWidth: CGFloat = 2.0 {
+    @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
             setNeedsLayout()
         }

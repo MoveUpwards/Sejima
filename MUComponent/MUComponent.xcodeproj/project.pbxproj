@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D5660CF221EB12E00014498 /* MUComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5660C5221EB12E00014498 /* MUComponent.framework */; };
-		6D5660D4221EB12E00014498 /* MUComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5660D3221EB12E00014498 /* MUComponentTests.swift */; };
+		6D5660D4221EB12E00014498 /* MUButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5660D3221EB12E00014498 /* MUButtonTests.swift */; };
 		6D5660D6221EB12E00014498 /* MUComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D5660C8221EB12E00014498 /* MUComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D5660E3221EB19A00014498 /* MUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5660E1221EB19900014498 /* MUButton.swift */; };
 		6D5660E4221EB19A00014498 /* MUButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660E2221EB19A00014498 /* MUButton.xib */; };
@@ -30,7 +30,7 @@
 		6D5660C8221EB12E00014498 /* MUComponent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUComponent.h; sourceTree = "<group>"; };
 		6D5660C9221EB12E00014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D5660CE221EB12E00014498 /* MUComponentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUComponentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D5660D3221EB12E00014498 /* MUComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUComponentTests.swift; sourceTree = "<group>"; };
+		6D5660D3221EB12E00014498 /* MUButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUButtonTests.swift; sourceTree = "<group>"; };
 		6D5660D5221EB12E00014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D5660E1221EB19900014498 /* MUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButton.swift; sourceTree = "<group>"; };
 		6D5660E2221EB19A00014498 /* MUButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUButton.xib; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		6D5660D2221EB12E00014498 /* MUComponentTests */ = {
 			isa = PBXGroup;
 			children = (
-				6D5660D3221EB12E00014498 /* MUComponentTests.swift */,
+				6D5660D3221EB12E00014498 /* MUButtonTests.swift */,
 				6D5660D5221EB12E00014498 /* Info.plist */,
 			);
 			path = MUComponentTests;
@@ -238,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5660D4221EB12E00014498 /* MUComponentTests.swift in Sources */,
+				6D5660D4221EB12E00014498 /* MUButtonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

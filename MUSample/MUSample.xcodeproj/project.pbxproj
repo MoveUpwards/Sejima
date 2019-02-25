@@ -17,6 +17,8 @@
 		6D566127221EE91100014498 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D566126221EE91100014498 /* Button.storyboard */; };
 		6D566142221EECAF00014498 /* MUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566141221EECAF00014498 /* MUColor.swift */; };
 		6D566144221EF98000014498 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566143221EF98000014498 /* ThemeManager.swift */; };
+		6D56614B2223E03700014498 /* MUButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5661492223E03700014498 /* MUButton.storyboard */; };
+		6D56614C2223E03700014498 /* MUButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56614A2223E03700014498 /* MUButtonVC.swift */; };
 		F3F3BA4222204ACE00B01B42 /* MUSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */; };
 		F3F3BA4D22204B5900B01B42 /* MUComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA4B22204B5900B01B42 /* MUComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3F3BA4F22204B7C00B01B42 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA4E22204B7C00B01B42 /* MUCore.framework */; };
@@ -72,6 +74,8 @@
 		6D566126221EE91100014498 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
 		6D566141221EECAF00014498 /* MUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUColor.swift; sourceTree = "<group>"; };
 		6D566143221EF98000014498 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		6D5661492223E03700014498 /* MUButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MUButton.storyboard; sourceTree = "<group>"; };
+		6D56614A2223E03700014498 /* MUButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButtonVC.swift; sourceTree = "<group>"; };
 		F3F3BA372220366900B01B42 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA392220366900B01B42 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +181,8 @@
 		6D566123221EE84800014498 /* MUButton */ = {
 			isa = PBXGroup;
 			children = (
+				6D56614A2223E03700014498 /* MUButtonVC.swift */,
+				6D5661492223E03700014498 /* MUButton.storyboard */,
 				6D566124221EE8AD00014498 /* ButtonVC.swift */,
 				6D566126221EE91100014498 /* Button.storyboard */,
 			);
@@ -311,6 +317,7 @@
 				6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */,
 				6D5660FC221EC6B400014498 /* Assets.xcassets in Resources */,
 				6D5660FA221EC6B200014498 /* Main.storyboard in Resources */,
+				6D56614B2223E03700014498 /* MUButton.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +344,7 @@
 			files = (
 				6D566125221EE8AD00014498 /* ButtonVC.swift in Sources */,
 				6D566142221EECAF00014498 /* MUColor.swift in Sources */,
+				6D56614C2223E03700014498 /* MUButtonVC.swift in Sources */,
 				6D566144221EF98000014498 /* ThemeManager.swift in Sources */,
 				6D5660F7221EC6B200014498 /* MainVC.swift in Sources */,
 				6D5660F5221EC6B200014498 /* AppDelegate.swift in Sources */,
