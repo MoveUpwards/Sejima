@@ -56,7 +56,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBj-5z-DQQ" customClass="MUButton" customModule="MUComponent">
-                                        <rect key="frame" x="69" y="27" width="70" height="25"/>
+                                        <rect key="frame" x="69" y="27" width="66" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Round"/>
@@ -78,7 +78,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gm-La-DFu" customClass="MUButton" customModule="MUComponent">
-                                        <rect key="frame" x="144" y="27" width="22" height="25"/>
+                                        <rect key="frame" x="140" y="27" width="22" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="X"/>
@@ -103,7 +103,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9W-mV-l2V" customClass="MUButton" customModule="MUComponent">
-                                        <rect key="frame" x="171" y="27" width="70" height="25"/>
+                                        <rect key="frame" x="167" y="27" width="70" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Fill me"/>
@@ -122,10 +122,13 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="649-rh-lM3" customClass="MUButton" customModule="MUComponent">
-                                        <rect key="frame" x="246" y="27" width="80" height="29"/>
+                                        <rect key="frame" x="242" y="27" width="80" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="Gxg-tN-7f5"/>

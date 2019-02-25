@@ -141,7 +141,7 @@ open class MUButton: MUNibView {
         }
     }
 
-    /// The button’s horizontal padding.
+    /// Show or hide the progress indicator.
     @IBInspectable open dynamic var isLoading: Bool = false {
         didSet {
             isUserInteractionEnabled = !isLoading
