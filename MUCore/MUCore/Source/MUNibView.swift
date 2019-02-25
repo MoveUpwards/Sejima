@@ -27,7 +27,7 @@ open class MUNibView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
 
-    ///
+    /// Default setup to load the view from a xib file.
     open func xibSetup() {
         let view = loadNib()
         view.backgroundColor = .clear

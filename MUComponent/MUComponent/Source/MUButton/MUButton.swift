@@ -9,11 +9,13 @@
 import UIKit
 import MUCore
 
+/// Delegate protocol for MUButton.
 public protocol MUButtonDelegate: class {
     /// Will trigger each time button is tapped.
     func didTap(button: MUButton)
 }
 
+/// Class that act like UIButton with more customizable options.
 @IBDesignable
 open class MUButton: MUNibView {
     @IBOutlet private weak var button: UIButton!
@@ -167,12 +169,13 @@ open class MUButton: MUNibView {
         state = .normal
     }
 
-    @IBAction func touchDragInside(_ sender: Any) {
+    @IBAction private func touchDragInside(_ sender: Any) {
         state = .highlighted
     }
 
     // MARK: - Life cycle functions
 
+    /// Default setup to load the view from a xib file.
     override open func xibSetup() {
         super.xibSetup()
 
@@ -180,6 +183,7 @@ open class MUButton: MUNibView {
         button.layer.masksToBounds = true
     }
 
+    /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()
 
