@@ -19,6 +19,7 @@ public protocol MUTextFieldDelegate: class {
     func editingChanged(_ textField: MUTextField)
 }
 
+/// Class that act like UITextField with more customizable options.
 @IBDesignable
 open class MUTextField: MUNibView {
     @IBOutlet private weak var label: UILabel!
@@ -27,164 +28,184 @@ open class MUTextField: MUNibView {
 
     @IBOutlet private var underlineHeightConstraint: NSLayoutConstraint!
 
-    override open func xibSetup() {
-        super.xibSetup()
-
-        textField.delegate = self
-    }
-
+    /// The object that acts as the delegate of the textfield.
     open weak var delegate: MUTextFieldDelegate?
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    // MARK: - Public IBInspectable variables ONLY
+
+    /// The current title that is shown on top of the textfield.
     @IBInspectable open var title: String = "" {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var titleColor: UIColor = .white {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    // MARK: - Public UIAppearence variables ONLY
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: UIFont.systemFontSize, weight: .medium) {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open var text: String = "" {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open var placeholder: String = "" {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var placeholderColor: UIColor = .lightGray {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
+    /// The title and textfield text horizontal alignment.
     @objc open dynamic var textAlignment: NSTextAlignment = .left {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var textAlignmentInt: Int = 0 {
-        didSet {
-            textAlignment = NSTextAlignment(rawValue: textAlignmentInt) ?? .left
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var textFieldColor: UIColor = .white {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The textfield’s font.
     @objc open dynamic var textFieldFont: UIFont = .systemFont(ofSize: UIFont.systemFontSize, weight: .medium) {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The keyboard style associated with the text object.
     @objc open dynamic var keyboardType: UIKeyboardType = .default {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var keyboardTypeInt: Int = 0 {
-        didSet {
-            keyboardType = UIKeyboardType(rawValue: keyboardTypeInt) ?? .default
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The appearance style of the keyboard that is associated with the text object.
     @objc open dynamic var keyboardAppearance: UIKeyboardAppearance = .default {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var keyboardAppearanceInt: Int = 0 {
-        didSet {
-            keyboardAppearance = UIKeyboardAppearance(rawValue: keyboardAppearanceInt) ?? .default
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The visible title of the Return key.
     @objc open dynamic var keyboardReturnKeyType: UIReturnKeyType = .default {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// A Boolean value indicating whether the Return key is automatically enabled when the user is entering text.
     @objc open dynamic var keyboardEnablesReturnKeyAutomatically: Bool = false {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The autocorrection style for the text object.
     @objc open dynamic var keyboardAutocorrectionType: UITextAutocorrectionType = .default {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    // MARK: - Public IBInspectable and UIAppearence variables
+
+    /// The title’s color.
+    @IBInspectable open dynamic var titleColor: UIColor = .white {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The text displayed by the text field.
+    @IBInspectable open var text: String = "" {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The string that is displayed when there is no other text in the text field.
+    @IBInspectable open var placeholder: String = "" {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The placehodler's color.
+    @IBInspectable open dynamic var placeholderColor: UIColor = .lightGray {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Optional: The IBInspectable version of the title and textfield text horizontal alignment.
+    @IBInspectable open dynamic var textAlignmentInt: Int = 0 {
+        didSet {
+            textAlignment = NSTextAlignment(rawValue: textAlignmentInt) ?? .left
+        }
+    }
+
+    /// The color of the text.
+    @IBInspectable open dynamic var textColor: UIColor = .white {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Optional: The IBInspectable version of the return key's visible title.
+    @IBInspectable open dynamic var keyboardTypeInt: Int = 0 {
+        didSet {
+            keyboardType = UIKeyboardType(rawValue: keyboardTypeInt) ?? .default
+        }
+    }
+
+    /// Optional: The IBInspectable version of the keyboard's appearance style.
+    @IBInspectable open dynamic var keyboardAppearanceInt: Int = 0 {
+        didSet {
+            keyboardAppearance = UIKeyboardAppearance(rawValue: keyboardAppearanceInt) ?? .default
+        }
+    }
+
+    /// Identifies whether the text object should disable text copying and in some cases hide the text being entered.
     @IBInspectable open dynamic var isSecure: Bool = false {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// Identifies whether the text field should respond to user edit.
     @IBInspectable open dynamic var isEditable: Bool = true {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var underlineHeight: CGFloat = 2.0 {
+    /// The underline’s height.
+    @IBInspectable open dynamic var underlineHeight: CGFloat = 0.0 {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var underlineColor: UIColor = .white {
+    /// The underline’s color.
+    @IBInspectable open dynamic var underlineColor: UIColor = .clear {
         didSet {
             setNeedsLayout()
         }
     }
 
-    open func activeKeyboard(_ isActive: Bool) {
-        _ = isActive ? textField.becomeFirstResponder() : textField.resignFirstResponder()
+    /// Activate or deactivate the focus on the textfield. Returns true if succeed.
+    @discardableResult
+    open func activeKeyboard(_ isActive: Bool) -> Bool {
+        return isActive ? textField.becomeFirstResponder() : textField.resignFirstResponder()
     }
 
+    // MARK: - Private IBAction functions
+
+    @IBAction private func selectTextField() {
+        textField.becomeFirstResponder()
+    }
+
+    // MARK: - Life cycle functions
+
+    /// Default setup to load the view from a xib file.
+    override open func xibSetup() {
+        super.xibSetup()
+
+        textField.delegate = self
+    }
+
+    /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()
 
@@ -210,23 +231,22 @@ open class MUTextField: MUNibView {
         underlineHeightConstraint.constant = underlineHeight
         underlineView.backgroundColor = underlineColor
     }
-
-    @IBAction func selectTextField() {
-        textField.becomeFirstResponder()
-    }
 }
 
 extension MUTextField: UITextFieldDelegate {
+    /// Asks the delegate if editing should begin in the specified text field.
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         delegate?.didSelect(self)
         return isEditable
     }
 
+    /// Asks the delegate if the text field should process the pressing of the return button.
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.didReturn(self)
         return true
     }
 
+    /// Asks the delegate if the text field change the text of the text field.
     @IBAction func editingChanged(_ textField: UITextField) {
         text = textField.text ?? ""
         delegate?.editingChanged(self)
