@@ -1,0 +1,12 @@
+os: osx
+osx_image: xcode10.1
+branches:
+  only:
+    - develop
+cache: bundler
+env:
+  global:
+  - LC_CTYPE=en_US.UTF-8
+  - LANG=en_US.UTF-8
+  - WORKSPACE=MUKit.xcworkspace
+  - IOS_FRAMEWORK_SCHEME="MUKit"
