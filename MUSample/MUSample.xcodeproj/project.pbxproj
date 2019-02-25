@@ -21,6 +21,8 @@
 		6D56614C2223E03700014498 /* MUButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56614A2223E03700014498 /* MUButtonVC.swift */; };
 		6D56616222244A4F00014498 /* FirstNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56616122244A4F00014498 /* FirstNameVC.swift */; };
 		6D56616422244A5B00014498 /* FirstName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D56616322244A5B00014498 /* FirstName.storyboard */; };
+		6D566167222459FC00014498 /* MUComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566165222459F300014498 /* MUComponent.framework */; };
+		6D566168222459FC00014498 /* MUComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566165222459F300014498 /* MUComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3F3BA4222204ACE00B01B42 /* MUSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				6D566168222459FC00014498 /* MUComponent.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +78,7 @@
 		6D56614A2223E03700014498 /* MUButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButtonVC.swift; sourceTree = "<group>"; };
 		6D56616122244A4F00014498 /* FirstNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameVC.swift; sourceTree = "<group>"; };
 		6D56616322244A5B00014498 /* FirstName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstName.storyboard; sourceTree = "<group>"; };
+		6D566165222459F300014498 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUSampleUITests.swift; sourceTree = "<group>"; };
 		F3F3BA4322204ACE00B01B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D566167222459FC00014498 /* MUComponent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +198,7 @@
 		F3F3BA362220366900B01B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6D566165222459F300014498 /* MUComponent.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

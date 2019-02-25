@@ -220,7 +220,7 @@ open class MUTextField: MUNibView {
         textField.attributedPlaceholder =
             NSAttributedString(string: placeholder, attributes: [.foregroundColor: placeholderColor])
         textField.textAlignment = textAlignment
-        textField.textColor = textFieldColor
+        textField.textColor = textColor
         textField.font = textFieldFont
         textField.keyboardType = keyboardType
         textField.keyboardAppearance = keyboardAppearance
