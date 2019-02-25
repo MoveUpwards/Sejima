@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUHeader" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="detailLabel" destination="WTr-Sj-wfA" id="sGm-aa-662"/>
+                <outlet property="labelsSpacing" destination="UuK-aa-0eV" id="QxA-g2-2Ng"/>
+                <outlet property="titleLabel" destination="wbN-jY-mSm" id="nDN-Mr-TMJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Forgot password?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-jY-mSm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Enter your email below to receive your password Enter your email below to receive your password" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTr-Sj-wfA">
+                    <rect key="frame" x="0.0" y="47" width="375" height="34"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="wbN-jY-mSm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="61N-Gu-zVC"/>
+                <constraint firstAttribute="bottom" secondItem="WTr-Sj-wfA" secondAttribute="bottom" id="8an-gz-YgU"/>
+                <constraint firstItem="wbN-jY-mSm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="HWW-Zk-F95"/>
+                <constraint firstItem="WTr-Sj-wfA" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="L3n-wL-a84"/>
+                <constraint firstItem="wbN-jY-mSm" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="T6A-UQ-mhB"/>
+                <constraint firstItem="WTr-Sj-wfA" firstAttribute="top" secondItem="wbN-jY-mSm" secondAttribute="bottom" constant="8" id="UuK-aa-0eV"/>
+                <constraint firstItem="WTr-Sj-wfA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jrB-RB-MGP"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.40000000000001" y="-94.902548725637189"/>
+        </view>
+    </objects>
+</document>
