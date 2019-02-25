@@ -12,3 +12,23 @@
 [![CocoaPods](https://img.shields.io/cocoapods/at/MUKit.svg)]()
 [![GitHub tag](https://img.shields.io/github/release/MoveUpwards/MUKit.svg)]()
 [![GitHub contributors](https://img.shields.io/github/contributors/MoveUpwards/MUKit.svg)](https://github.com/MoveUpwards/MUKit/graphs/contributors)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/MoveUpwards)
+
+## Requirements
+
+- iOS 11.0+
+- Xcode 9.0+
+
+## Installation
+
+use [CocoaPods](https://cocoapods.org) with Podfile:
+```
+pod 'MUKit'
+```
+
+## License
+
+Folding cell is released under the MIT license.
+See [LICENSE](./LICENSE) for details.
+
+If you use the open-source library in your project, please make sure to credit and backlink to www.moveupwards.dev
