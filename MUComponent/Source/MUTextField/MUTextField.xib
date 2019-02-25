@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTextField" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="d7t-yc-k3i" id="FTu-t9-gdd"/>
+                <outlet property="textField" destination="CmB-r6-WIo" id="9ao-wx-11i"/>
+                <outlet property="underlineHeightConstraint" destination="qkh-Cv-9IF" id="H9k-GF-Hd3"/>
+                <outlet property="underlineView" destination="asb-n7-Qb8" id="Hka-C2-WAM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="314" height="53"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7t-yc-k3i">
+                    <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CmB-r6-WIo">
+                    <rect key="frame" x="0.0" y="7" width="314" height="39"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="ipc-yI-Pmm"/>
+                    </connections>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="asb-n7-Qb8">
+                    <rect key="frame" x="0.0" y="51" width="314" height="2"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="qkh-Cv-9IF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="asb-n7-Qb8" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="25z-IW-0jg"/>
+                <constraint firstItem="CmB-r6-WIo" firstAttribute="top" secondItem="d7t-yc-k3i" secondAttribute="bottom" constant="7" id="5AG-kO-roP"/>
+                <constraint firstItem="asb-n7-Qb8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GWl-4R-mJb"/>
+                <constraint firstItem="CmB-r6-WIo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Qxo-4D-Pf4"/>
+                <constraint firstItem="d7t-yc-k3i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ai6-RQ-mP8"/>
+                <constraint firstItem="d7t-yc-k3i" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="d6z-8x-zfm"/>
+                <constraint firstItem="asb-n7-Qb8" firstAttribute="top" secondItem="CmB-r6-WIo" secondAttribute="bottom" constant="5" id="dx7-Sd-ma4"/>
+                <constraint firstAttribute="bottom" secondItem="asb-n7-Qb8" secondAttribute="bottom" id="eaB-2g-Aus"/>
+                <constraint firstItem="CmB-r6-WIo" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="igp-WD-Dh3"/>
+                <constraint firstItem="d7t-yc-k3i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="m0T-bt-RJI"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="7d5-4X-dcu" appends="YES" id="Je8-Gk-jfg"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="7d5-4X-dcu">
+            <connections>
+                <action selector="selectTextField" destination="-1" id="ceb-Og-VRP"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

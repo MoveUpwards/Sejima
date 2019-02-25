@@ -16,6 +16,8 @@
 		6D56615622243F8600014498 /* MUHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D56615522243F8600014498 /* MUHeader.xib */; };
 		6D5661582224425B00014498 /* MUHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5661572224425B00014498 /* MUHeaderTests.swift */; };
 		6D56615A222446F400014498 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566159222446F400014498 /* MUCore.framework */; };
+		6D56615E222448A500014498 /* MUTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D56615C222448A500014498 /* MUTextField.xib */; };
+		6D56615F222448A500014498 /* MUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56615D222448A500014498 /* MUTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		6D56615522243F8600014498 /* MUHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MUHeader.xib; sourceTree = "<group>"; };
 		6D5661572224425B00014498 /* MUHeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUHeaderTests.swift; sourceTree = "<group>"; };
 		6D566159222446F400014498 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D56615C222448A500014498 /* MUTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUTextField.xib; sourceTree = "<group>"; };
+		6D56615D222448A500014498 /* MUTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			children = (
 				6D5660E0221EB15500014498 /* MUButton */,
 				6D56615222243F2600014498 /* MUHeader */,
+				6D56615B2224487E00014498 /* MUTextField */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -129,6 +134,15 @@
 				6D56615522243F8600014498 /* MUHeader.xib */,
 			);
 			path = MUHeader;
+			sourceTree = "<group>";
+		};
+		6D56615B2224487E00014498 /* MUTextField */ = {
+			isa = PBXGroup;
+			children = (
+				6D56615D222448A500014498 /* MUTextField.swift */,
+				6D56615C222448A500014498 /* MUTextField.xib */,
+			);
+			path = MUTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D56615E222448A500014498 /* MUTextField.xib in Resources */,
 				6D56615622243F8600014498 /* MUHeader.xib in Resources */,
 				6D5660E4221EB19A00014498 /* MUButton.xib in Resources */,
 			);
@@ -284,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D56615422243F7A00014498 /* MUHeader.swift in Sources */,
+				6D56615F222448A500014498 /* MUTextField.swift in Sources */,
 				6D5660E3221EB19A00014498 /* MUButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

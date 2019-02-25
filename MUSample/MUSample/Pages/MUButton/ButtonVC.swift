@@ -89,7 +89,7 @@ class Button: UIViewController {
 }
 
 extension Button: MUButtonDelegate {
-    func didTap(button: MUButton) {
+    func didTap(_ button: MUButton) {
         switch button {
         case leftActivateButton:
             leftActivateButton.title = "OFF"
