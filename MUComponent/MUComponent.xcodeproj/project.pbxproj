@@ -58,7 +58,9 @@
 		6D5660BB221EB12E00014498 = {
 			isa = PBXGroup;
 			children = (
-				6D5660C7221EB12E00014498 /* MUComponent */,
+				6D5660C8221EB12E00014498 /* MUComponent.h */,
+				6D5660C9221EB12E00014498 /* Info.plist */,
+				6D5660DF221EB14D00014498 /* Source */,
 				6D5660D2221EB12E00014498 /* MUComponentTests */,
 				6D5660C6221EB12E00014498 /* Products */,
 				6D5660E5221EB48F00014498 /* Frameworks */,
@@ -72,16 +74,6 @@
 				6D5660CE221EB12E00014498 /* MUComponentTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6D5660C7221EB12E00014498 /* MUComponent */ = {
-			isa = PBXGroup;
-			children = (
-				6D5660DF221EB14D00014498 /* Source */,
-				6D5660C8221EB12E00014498 /* MUComponent.h */,
-				6D5660C9221EB12E00014498 /* Info.plist */,
-			);
-			path = MUComponent;
 			sourceTree = "<group>";
 		};
 		6D5660D2221EB12E00014498 /* MUComponentTests */ = {
@@ -425,7 +417,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MUComponent/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,7 +445,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MUComponent/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

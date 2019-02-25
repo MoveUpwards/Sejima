@@ -20,9 +20,6 @@
 		6D56614B2223E03700014498 /* MUButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5661492223E03700014498 /* MUButton.storyboard */; };
 		6D56614C2223E03700014498 /* MUButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56614A2223E03700014498 /* MUButtonVC.swift */; };
 		F3F3BA4222204ACE00B01B42 /* MUSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */; };
-		F3F3BA4D22204B5900B01B42 /* MUComponent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA4B22204B5900B01B42 /* MUComponent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F3F3BA4F22204B7C00B01B42 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA4E22204B7C00B01B42 /* MUCore.framework */; };
-		F3F3BA5022204B7C00B01B42 /* MUCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3F3BA4E22204B7C00B01B42 /* MUCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +46,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F3F3BA4D22204B5900B01B42 /* MUComponent.framework in Embed Frameworks */,
-				F3F3BA5022204B7C00B01B42 /* MUCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,14 +71,9 @@
 		6D566143221EF98000014498 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		6D5661492223E03700014498 /* MUButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MUButton.storyboard; sourceTree = "<group>"; };
 		6D56614A2223E03700014498 /* MUButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButtonVC.swift; sourceTree = "<group>"; };
-		F3F3BA372220366900B01B42 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F3BA392220366900B01B42 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUSampleUITests.swift; sourceTree = "<group>"; };
 		F3F3BA4322204ACE00B01B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3F3BA4922204B0A00B01B42 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F3BA4B22204B5900B01B42 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F3BA4E22204B7C00B01B42 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F3BA4F22204B7C00B01B42 /* MUCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,8 +104,6 @@
 		6D5660E8221EC6B200014498 = {
 			isa = PBXGroup;
 			children = (
-				F3F3BA4E22204B7C00B01B42 /* MUCore.framework */,
-				F3F3BA4B22204B5900B01B42 /* MUComponent.framework */,
 				6D5660F3221EC6B200014498 /* MUSample */,
 				6D566108221EC6B500014498 /* MUSampleTests */,
 				6D566113221EC6B500014498 /* MUSampleUITests */,
@@ -192,9 +179,6 @@
 		F3F3BA362220366900B01B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F3F3BA4922204B0A00B01B42 /* MUComponent.framework */,
-				F3F3BA372220366900B01B42 /* MUComponent.framework */,
-				F3F3BA392220366900B01B42 /* MUCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
