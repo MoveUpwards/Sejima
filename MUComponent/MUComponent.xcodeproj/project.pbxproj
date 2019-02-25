@@ -12,7 +12,6 @@
 		6D5660D6221EB12E00014498 /* MUComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D5660C8221EB12E00014498 /* MUComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6D5660E3221EB19A00014498 /* MUButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5660E1221EB19900014498 /* MUButton.swift */; };
 		6D5660E4221EB19A00014498 /* MUButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660E2221EB19A00014498 /* MUButton.xib */; };
-		6D5660E7221EB48F00014498 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D5660E6221EB48F00014498 /* MUCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D5660E7221EB48F00014498 /* MUCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
