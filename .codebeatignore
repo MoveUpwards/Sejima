@@ -1,10 +1,2 @@
 docs/**
 Sample/**
-
-{
-  "SWIFT": {
-    "TOO_MANY_FUNCTIONS": [30, 50, 74, 100],
-    "TOO_MANY_IVARS": [30, 50, 74, 100],
-    "LOC": [400, 500, 700, 1000]
-  }
-}
