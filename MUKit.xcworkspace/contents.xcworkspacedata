@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Sejima/Sejima.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MUCore/MUCore.xcodeproj">
    </FileRef>
    <FileRef

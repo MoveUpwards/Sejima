@@ -15,9 +15,9 @@
 		6D56615422243F7A00014498 /* MUHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56615322243F7A00014498 /* MUHeader.swift */; };
 		6D56615622243F8600014498 /* MUHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D56615522243F8600014498 /* MUHeader.xib */; };
 		6D5661582224425B00014498 /* MUHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5661572224425B00014498 /* MUHeaderTests.swift */; };
-		6D56615A222446F400014498 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D566159222446F400014498 /* MUCore.framework */; };
 		6D56615E222448A500014498 /* MUTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D56615C222448A500014498 /* MUTextField.xib */; };
 		6D56615F222448A500014498 /* MUTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56615D222448A500014498 /* MUTextField.swift */; };
+		F3B811D722253C040004B830 /* MUCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B811D622253C040004B830 /* MUCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +39,12 @@
 		6D5660D5221EB12E00014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D5660E1221EB19900014498 /* MUButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButton.swift; sourceTree = "<group>"; };
 		6D5660E2221EB19A00014498 /* MUButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUButton.xib; sourceTree = "<group>"; };
-		6D5660E6221EB48F00014498 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D56615322243F7A00014498 /* MUHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUHeader.swift; sourceTree = "<group>"; };
 		6D56615522243F8600014498 /* MUHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MUHeader.xib; sourceTree = "<group>"; };
 		6D5661572224425B00014498 /* MUHeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUHeaderTests.swift; sourceTree = "<group>"; };
-		6D566159222446F400014498 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D56615C222448A500014498 /* MUTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUTextField.xib; sourceTree = "<group>"; };
 		6D56615D222448A500014498 /* MUTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTextField.swift; sourceTree = "<group>"; };
+		F3B811D622253C040004B830 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D56615A222446F400014498 /* MUCore.framework in Frameworks */,
+				F3B811D722253C040004B830 /* MUCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +120,7 @@
 		6D5660E5221EB48F00014498 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D566159222446F400014498 /* MUCore.framework */,
-				6D5660E6221EB48F00014498 /* MUCore.framework */,
+				F3B811D622253C040004B830 /* MUCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
