@@ -1,14 +1,14 @@
 //
-//  MUSampleUITests.swift
-//  MUSampleUITests
+//  SampleUITests.swift
+//  SampleUITests
 //
-//  Created by Loïc GRIFFIE on 22/02/2019.
+//  Created by Loïc GRIFFIE on 26/02/2019.
 //  Copyright © 2019 Damien Noël Dubuisson. All rights reserved.
 //
 
 import XCTest
 
-class MUSampleUITests: XCTestCase {
+class SampleUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

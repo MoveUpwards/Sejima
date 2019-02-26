@@ -12,7 +12,6 @@
 		6D5660FA221EC6B200014498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660F8221EC6B200014498 /* Main.storyboard */; };
 		6D5660FC221EC6B400014498 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660FB221EC6B400014498 /* Assets.xcassets */; };
 		6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660FD221EC6B400014498 /* LaunchScreen.storyboard */; };
-		6D56610A221EC6B500014498 /* MUSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566109221EC6B500014498 /* MUSampleTests.swift */; };
 		6D566125221EE8AD00014498 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566124221EE8AD00014498 /* ButtonVC.swift */; };
 		6D566127221EE91100014498 /* Button.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D566126221EE91100014498 /* Button.storyboard */; };
 		6D566142221EECAF00014498 /* MUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566141221EECAF00014498 /* MUColor.swift */; };
@@ -21,36 +20,29 @@
 		6D56614C2223E03700014498 /* MUButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56614A2223E03700014498 /* MUButtonVC.swift */; };
 		6D56616222244A4F00014498 /* FirstNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D56616122244A4F00014498 /* FirstNameVC.swift */; };
 		6D56616422244A5B00014498 /* FirstName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D56616322244A5B00014498 /* FirstName.storyboard */; };
-		F303189622254DF900171E00 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F303189522254DF900171E00 /* Sejima.framework */; };
-		F303189922254E4700171E00 /* Sejima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F303189722254E4700171E00 /* Sejima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F3F3BA4222204ACE00B01B42 /* MUSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */; };
+		F30318D12225535B00171E00 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; };
+		F30318D22225535B00171E00 /* Sejima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F30318DA2225542F00171E00 /* SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318D92225542F00171E00 /* SampleUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6D566106221EC6B400014498 /* PBXContainerItemProxy */ = {
+		F30318DC2225542F00171E00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6D5660E9221EC6B200014498 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6D5660F0221EC6B200014498;
-			remoteInfo = MUSample;
-		};
-		F3F3BA4422204ACE00B01B42 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D5660E9221EC6B200014498 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D5660F0221EC6B200014498;
-			remoteInfo = MUSample;
+			remoteInfo = Sample;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F303189A22254E4700171E00 /* Embed Frameworks */ = {
+		F30318CC2225533B00171E00 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F303189922254E4700171E00 /* Sejima.framework in Embed Frameworks */,
+				F30318D22225535B00171E00 /* Sejima.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,18 +50,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6D5660F1221EC6B200014498 /* MUSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MUSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D5660F1221EC6B200014498 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D5660F4221EC6B200014498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6D5660F6221EC6B200014498 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		6D5660F9221EC6B200014498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D5660FB221EC6B400014498 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6D5660FE221EC6B400014498 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D566100221EC6B400014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D566105221EC6B400014498 /* MUSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D566109221EC6B500014498 /* MUSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUSampleTests.swift; sourceTree = "<group>"; };
-		6D56610B221EC6B500014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D566114221EC6B500014498 /* MUSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUSampleUITests.swift; sourceTree = "<group>"; };
-		6D566116221EC6B500014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D566124221EE8AD00014498 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
 		6D566126221EE91100014498 /* Button.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Button.storyboard; sourceTree = "<group>"; };
 		6D566141221EECAF00014498 /* MUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUColor.swift; sourceTree = "<group>"; };
@@ -78,13 +65,10 @@
 		6D56614A2223E03700014498 /* MUButtonVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUButtonVC.swift; sourceTree = "<group>"; };
 		6D56616122244A4F00014498 /* FirstNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameVC.swift; sourceTree = "<group>"; };
 		6D56616322244A5B00014498 /* FirstName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstName.storyboard; sourceTree = "<group>"; };
-		6D566165222459F300014498 /* MUComponent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUComponent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F303189522254DF900171E00 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F303189722254E4700171E00 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3B811D1222539120004B830 /* MUCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MUCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MUSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUSampleUITests.swift; sourceTree = "<group>"; };
-		F3F3BA4322204ACE00B01B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30318D02225535B00171E00 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30318D72225542F00171E00 /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30318D92225542F00171E00 /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
+		F30318DB2225542F00171E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,18 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F303189622254DF900171E00 /* Sejima.framework in Frameworks */,
+				F30318D12225535B00171E00 /* Sejima.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D566102221EC6B400014498 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3F3BA3C22204ACE00B01B42 /* Frameworks */ = {
+		F30318D42225542F00171E00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -116,11 +93,8 @@
 		6D5660E8221EC6B200014498 = {
 			isa = PBXGroup;
 			children = (
-				F303189722254E4700171E00 /* Sejima.framework */,
-				6D5660F3221EC6B200014498 /* MUSample */,
-				6D566108221EC6B500014498 /* MUSampleTests */,
-				6D566113221EC6B500014498 /* MUSampleUITests */,
-				F3F3BA4022204ACE00B01B42 /* MUSampleUITests */,
+				6D5660F3221EC6B200014498 /* Sample */,
+				F30318D82225542F00171E00 /* SampleUITests */,
 				6D5660F2221EC6B200014498 /* Products */,
 				F3F3BA362220366900B01B42 /* Frameworks */,
 			);
@@ -129,14 +103,13 @@
 		6D5660F2221EC6B200014498 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D5660F1221EC6B200014498 /* MUSample.app */,
-				6D566105221EC6B400014498 /* MUSampleTests.xctest */,
-				F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */,
+				6D5660F1221EC6B200014498 /* Sample.app */,
+				F30318D72225542F00171E00 /* SampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D5660F3221EC6B200014498 /* MUSample */ = {
+		6D5660F3221EC6B200014498 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				6D5660F4221EC6B200014498 /* AppDelegate.swift */,
@@ -149,25 +122,7 @@
 				6D5660FD221EC6B400014498 /* LaunchScreen.storyboard */,
 				6D566100221EC6B400014498 /* Info.plist */,
 			);
-			path = MUSample;
-			sourceTree = "<group>";
-		};
-		6D566108221EC6B500014498 /* MUSampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				6D566109221EC6B500014498 /* MUSampleTests.swift */,
-				6D56610B221EC6B500014498 /* Info.plist */,
-			);
-			path = MUSampleTests;
-			sourceTree = "<group>";
-		};
-		6D566113221EC6B500014498 /* MUSampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D566114221EC6B500014498 /* MUSampleUITests.swift */,
-				6D566116221EC6B500014498 /* Info.plist */,
-			);
-			path = MUSampleUITests;
+			path = Sample;
 			sourceTree = "<group>";
 		};
 		6D566122221EE83900014498 /* Pages */ = {
@@ -199,80 +154,60 @@
 			path = FirstName;
 			sourceTree = "<group>";
 		};
+		F30318D82225542F00171E00 /* SampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F30318D92225542F00171E00 /* SampleUITests.swift */,
+				F30318DB2225542F00171E00 /* Info.plist */,
+			);
+			path = SampleUITests;
+			sourceTree = "<group>";
+		};
 		F3F3BA362220366900B01B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F303189522254DF900171E00 /* Sejima.framework */,
-				F3B811D1222539120004B830 /* MUCore.framework */,
-				6D566165222459F300014498 /* MUComponent.framework */,
+				F30318D02225535B00171E00 /* Sejima.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F3F3BA4022204ACE00B01B42 /* MUSampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F3F3BA4122204ACE00B01B42 /* MUSampleUITests.swift */,
-				F3F3BA4322204ACE00B01B42 /* Info.plist */,
-			);
-			path = MUSampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D5660F0221EC6B200014498 /* MUSample */ = {
+		6D5660F0221EC6B200014498 /* Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D566119221EC6B500014498 /* Build configuration list for PBXNativeTarget "MUSample" */;
+			buildConfigurationList = 6D566119221EC6B500014498 /* Build configuration list for PBXNativeTarget "Sample" */;
 			buildPhases = (
 				6D5660ED221EC6B200014498 /* Sources */,
 				6D5660EE221EC6B200014498 /* Frameworks */,
 				6D5660EF221EC6B200014498 /* Resources */,
-				F303189A22254E4700171E00 /* Embed Frameworks */,
+				F30318CC2225533B00171E00 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MUSample;
+			name = Sample;
 			productName = MUSample;
-			productReference = 6D5660F1221EC6B200014498 /* MUSample.app */;
+			productReference = 6D5660F1221EC6B200014498 /* Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6D566104221EC6B400014498 /* MUSampleTests */ = {
+		F30318D62225542F00171E00 /* SampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D56611C221EC6B500014498 /* Build configuration list for PBXNativeTarget "MUSampleTests" */;
+			buildConfigurationList = F30318DE2225542F00171E00 /* Build configuration list for PBXNativeTarget "SampleUITests" */;
 			buildPhases = (
-				6D566101221EC6B400014498 /* Sources */,
-				6D566102221EC6B400014498 /* Frameworks */,
-				6D566103221EC6B400014498 /* Resources */,
+				F30318D32225542F00171E00 /* Sources */,
+				F30318D42225542F00171E00 /* Frameworks */,
+				F30318D52225542F00171E00 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6D566107221EC6B400014498 /* PBXTargetDependency */,
+				F30318DD2225542F00171E00 /* PBXTargetDependency */,
 			);
-			name = MUSampleTests;
-			productName = MUSampleTests;
-			productReference = 6D566105221EC6B400014498 /* MUSampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F3F3BA3E22204ACE00B01B42 /* MUSampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3F3BA4622204ACE00B01B42 /* Build configuration list for PBXNativeTarget "MUSampleUITests" */;
-			buildPhases = (
-				F3F3BA3B22204ACE00B01B42 /* Sources */,
-				F3F3BA3C22204ACE00B01B42 /* Frameworks */,
-				F3F3BA3D22204ACE00B01B42 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F3F3BA4522204ACE00B01B42 /* PBXTargetDependency */,
-			);
-			name = MUSampleUITests;
-			productName = MUSampleUITests;
-			productReference = F3F3BA3F22204ACE00B01B42 /* MUSampleUITests.xctest */;
+			name = SampleUITests;
+			productName = SampleUITests;
+			productReference = F30318D72225542F00171E00 /* SampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -288,17 +223,13 @@
 					6D5660F0221EC6B200014498 = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					6D566104221EC6B400014498 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 6D5660F0221EC6B200014498;
-					};
-					F3F3BA3E22204ACE00B01B42 = {
+					F30318D62225542F00171E00 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 6D5660F0221EC6B200014498;
 					};
 				};
 			};
-			buildConfigurationList = 6D5660EC221EC6B200014498 /* Build configuration list for PBXProject "MUSample" */;
+			buildConfigurationList = 6D5660EC221EC6B200014498 /* Build configuration list for PBXProject "Sample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -311,9 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D5660F0221EC6B200014498 /* MUSample */,
-				6D566104221EC6B400014498 /* MUSampleTests */,
-				F3F3BA3E22204ACE00B01B42 /* MUSampleUITests */,
+				6D5660F0221EC6B200014498 /* Sample */,
+				F30318D62225542F00171E00 /* SampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,14 +262,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D566103221EC6B400014498 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3F3BA3D22204ACE00B01B42 /* Resources */ = {
+		F30318D52225542F00171E00 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,34 +286,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D566101221EC6B400014498 /* Sources */ = {
+		F30318D32225542F00171E00 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D56610A221EC6B500014498 /* MUSampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F3F3BA3B22204ACE00B01B42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3F3BA4222204ACE00B01B42 /* MUSampleUITests.swift in Sources */,
+				F30318DA2225542F00171E00 /* SampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6D566107221EC6B400014498 /* PBXTargetDependency */ = {
+		F30318DD2225542F00171E00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6D5660F0221EC6B200014498 /* MUSample */;
-			targetProxy = 6D566106221EC6B400014498 /* PBXContainerItemProxy */;
-		};
-		F3F3BA4522204ACE00B01B42 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D5660F0221EC6B200014498 /* MUSample */;
-			targetProxy = F3F3BA4422204ACE00B01B42 /* PBXContainerItemProxy */;
+			target = 6D5660F0221EC6B200014498 /* Sample */;
+			targetProxy = F30318DC2225542F00171E00 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -536,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSample/Info.plist;
+				INFOPLIST_FILE = Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -555,7 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSample/Info.plist;
+				INFOPLIST_FILE = Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -568,90 +478,48 @@
 			};
 			name = Release;
 		};
-		6D56611D221EC6B500014498 /* Debug */ = {
+		F30318DF2225542F00171E00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSampleTests/Info.plist;
+				INFOPLIST_FILE = SampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.MUSampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.SampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MUSample.app/MUSample";
+				TEST_TARGET_NAME = Sample;
 			};
 			name = Debug;
 		};
-		6D56611E221EC6B500014498 /* Release */ = {
+		F30318E02225542F00171E00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSampleTests/Info.plist;
+				INFOPLIST_FILE = SampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.MUSampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.SampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MUSample.app/MUSample";
-			};
-			name = Release;
-		};
-		F3F3BA4722204ACE00B01B42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.MUSampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MUSample;
-			};
-			name = Debug;
-		};
-		F3F3BA4822204ACE00B01B42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = MUSampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.MUSampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MUSample;
+				TEST_TARGET_NAME = Sample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D5660EC221EC6B200014498 /* Build configuration list for PBXProject "MUSample" */ = {
+		6D5660EC221EC6B200014498 /* Build configuration list for PBXProject "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D566117221EC6B500014498 /* Debug */,
@@ -660,7 +528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D566119221EC6B500014498 /* Build configuration list for PBXNativeTarget "MUSample" */ = {
+		6D566119221EC6B500014498 /* Build configuration list for PBXNativeTarget "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6D56611A221EC6B500014498 /* Debug */,
@@ -669,20 +537,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D56611C221EC6B500014498 /* Build configuration list for PBXNativeTarget "MUSampleTests" */ = {
+		F30318DE2225542F00171E00 /* Build configuration list for PBXNativeTarget "SampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D56611D221EC6B500014498 /* Debug */,
-				6D56611E221EC6B500014498 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F3F3BA4622204ACE00B01B42 /* Build configuration list for PBXNativeTarget "MUSampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F3F3BA4722204ACE00B01B42 /* Debug */,
-				F3F3BA4822204ACE00B01B42 /* Release */,
+				F30318DF2225542F00171E00 /* Debug */,
+				F30318E02225542F00171E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6D5660F0221EC6B200014498"
-               BuildableName = "MUSample.app"
-               BlueprintName = "MUSample"
-               ReferencedContainer = "container:MUSample.xcodeproj">
+               BuildableName = "Sample.app"
+               BlueprintName = "Sample"
+               ReferencedContainer = "container:Sample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D566104221EC6B400014498"
-               BuildableName = "MUSampleTests.xctest"
-               BlueprintName = "MUSampleTests"
-               ReferencedContainer = "container:MUSample.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D56610F221EC6B500014498"
-               BuildableName = "MUSampleUITests.xctest"
-               BlueprintName = "MUSampleUITests"
-               ReferencedContainer = "container:MUSample.xcodeproj">
+               BlueprintIdentifier = "F30318D62225542F00171E00"
+               BuildableName = "SampleUITests.xctest"
+               BlueprintName = "SampleUITests"
+               ReferencedContainer = "container:Sample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D5660F0221EC6B200014498"
-            BuildableName = "MUSample.app"
-            BlueprintName = "MUSample"
-            ReferencedContainer = "container:MUSample.xcodeproj">
+            BuildableName = "Sample.app"
+            BlueprintName = "Sample"
+            ReferencedContainer = "container:Sample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D5660F0221EC6B200014498"
-            BuildableName = "MUSample.app"
-            BlueprintName = "MUSample"
-            ReferencedContainer = "container:MUSample.xcodeproj">
+            BuildableName = "Sample.app"
+            BlueprintName = "Sample"
+            ReferencedContainer = "container:Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6D5660F0221EC6B200014498"
-            BuildableName = "MUSample.app"
-            BlueprintName = "MUSample"
-            ReferencedContainer = "container:MUSample.xcodeproj">
+            BuildableName = "Sample.app"
+            BlueprintName = "Sample"
+            ReferencedContainer = "container:Sample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
