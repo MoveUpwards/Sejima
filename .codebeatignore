@@ -1,2 +1,9 @@
 docs/**
 Sample/**
+
+{
+  "SWIFT": {
+    "TOO_MANY_IVARS": [30, 50, 74, 100],
+    "LINE_OF_CODE": [400, 500, 700, 1000]
+  }
+}

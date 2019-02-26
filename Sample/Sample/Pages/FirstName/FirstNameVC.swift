@@ -10,6 +10,7 @@ import UIKit
 import Sejima
 
 class FirstNameVC: UIViewController {
+    @IBOutlet private weak var topBar: MUTopBar!
     @IBOutlet private weak var header: MUHeader!
     @IBOutlet private weak var textfield: MUTextField!
     @IBOutlet private weak var button: MUButton!
@@ -17,7 +18,14 @@ class FirstNameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        topBar.delegate = self
         button.delegate = self
+    }
+}
+
+extension FirstNameVC: MUTopBarDelegate {
+    func didTap(_ topBar: MUTopBar) {
+        navigationController?.popViewController(animated: true)
     }
 }
 

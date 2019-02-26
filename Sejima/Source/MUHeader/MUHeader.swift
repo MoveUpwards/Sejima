@@ -1,6 +1,6 @@
 //
 //  MUHeader.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Loïc GRIFFIE on 31/10/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
@@ -35,14 +35,14 @@ open class MUHeader: MUNibView {
     // MARK: - Public UIAppearence variables ONLY
 
     /// The title’s font.
-    @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 34, weight: .regular) {
+    @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 34.0, weight: .regular) {
         didSet {
             setNeedsLayout()
         }
     }
 
     /// The detail’s font.
-    @objc open dynamic var detailFont: UIFont = .systemFont(ofSize: 14, weight: .semibold) {
+    @objc open dynamic var detailFont: UIFont = .systemFont(ofSize: 14.0, weight: .semibold) {
         didSet {
             setNeedsLayout()
         }

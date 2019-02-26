@@ -1,6 +1,6 @@
 //
 //  MUHeaderTests.swift
-//  MUComponentTests
+//  SejimaTests
 //
 //  Created by Damien Noël Dubuisson on 25/02/2019.
 //  Copyright © 2019 Damien Noël Dubuisson. All rights reserved.
