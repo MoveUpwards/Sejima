@@ -5,12 +5,6 @@
       location = "group:Sejima/Sejima.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MUCore/MUCore.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:MUComponent/MUComponent.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:MUSample/MUSample.xcodeproj">
    </FileRef>
 </Workspace>

@@ -103,9 +103,9 @@
 		F3B8121D22253F040004B830 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				F3B8122422253F040004B830 /* MUCore */,
 				F3B8121E22253F040004B830 /* MUHeader */,
 				F3B8122122253F040004B830 /* MUButton */,
-				F3B8122422253F040004B830 /* MUCore */,
 				F3B8122722253F040004B830 /* MUTextField */,
 			);
 			path = Source;
@@ -421,6 +421,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,6 +447,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

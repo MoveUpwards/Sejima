@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MUComponent
+import Sejima
 
 class FirstNameVC: UIViewController {
     @IBOutlet private weak var header: MUHeader!

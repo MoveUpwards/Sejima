@@ -6,7 +6,7 @@
 //  Copyright © 2019 Damien Noël Dubuisson. All rights reserved.
 //
 
-import MUComponent
+import Sejima
 
 class ThemeManager {
 

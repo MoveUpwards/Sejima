@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MUComponent
+import Sejima
 
 class UIAppearenceFakeView: UIView {
     // Put MUComponent in an UIAppearenceFakeView to use UIAppearence configuration
