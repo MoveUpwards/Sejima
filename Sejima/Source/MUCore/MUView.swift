@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
     /// Adds a view to the end of the receiver’s list of subviews,
     /// and then apply autolayout contraints to fit the current view.
-    public func addAutolayoutSubview(_ view: UIView) {
+    internal func addAutolayoutSubview(_ view: UIView) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         topAnchor.constraint(equalTo: view.topAnchor).isActive = true

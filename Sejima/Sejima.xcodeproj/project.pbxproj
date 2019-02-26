@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC52225722700EB4A3F /* MUPageControl.swift */; };
+		6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */; };
 		F30318E42225586D00171E00 /* MUNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E22225586D00171E00 /* MUNibView.swift */; };
 		F30318E52225586D00171E00 /* MUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E32225586D00171E00 /* MUView.swift */; };
 		F30318E82225589400171E00 /* MUTopBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E62225589400171E00 /* MUTopBarTests.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D704EC52225722700EB4A3F /* MUPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUPageControl.swift; sourceTree = "<group>"; };
+		6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUWeakProxy.swift; sourceTree = "<group>"; };
 		F30318E22225586D00171E00 /* MUNibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUNibView.swift; sourceTree = "<group>"; };
 		F30318E32225586D00171E00 /* MUView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUView.swift; sourceTree = "<group>"; };
 		F30318E62225589400171E00 /* MUTopBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTopBarTests.swift; sourceTree = "<group>"; };
@@ -77,11 +81,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D704EC42225722700EB4A3F /* MUPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				6D704EC52225722700EB4A3F /* MUPageControl.swift */,
+			);
+			path = MUPageControl;
+			sourceTree = "<group>";
+		};
 		F30318E12225586D00171E00 /* MUCore */ = {
 			isa = PBXGroup;
 			children = (
 				F30318E22225586D00171E00 /* MUNibView.swift */,
 				F30318E32225586D00171E00 /* MUView.swift */,
+				6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */,
 			);
 			path = MUCore;
 			sourceTree = "<group>";
@@ -89,8 +102,8 @@
 		F30318EA222559B400171E00 /* MUTopBar */ = {
 			isa = PBXGroup;
 			children = (
-				F30318EB222559B400171E00 /* MUTopBar.xib */,
 				F30318EC222559B400171E00 /* MUTopBar.swift */,
+				F30318EB222559B400171E00 /* MUTopBar.xib */,
 			);
 			path = MUTopBar;
 			sourceTree = "<group>";
@@ -136,6 +149,7 @@
 				F3B8122122253F040004B830 /* MUButton */,
 				F3B8122722253F040004B830 /* MUTextField */,
 				F30318EA222559B400171E00 /* MUTopBar */,
+				6D704EC42225722700EB4A3F /* MUPageControl */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -188,6 +202,8 @@
 				F3B811DE22253D380004B830 /* Sources */,
 				F3B811DF22253D380004B830 /* Frameworks */,
 				F3B811E022253D380004B830 /* Resources */,
+				6D704EC922257B4500EB4A3F /* Swiftlint */,
+				6D704ECA22257BA700EB4A3F /* Jazzy */,
 			);
 			buildRules = (
 			);
@@ -274,12 +290,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D704EC922257B4500EB4A3F /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		6D704ECA22257BA700EB4A3F /* Jazzy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Jazzy;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#if which jazzy >/dev/null; then\n# Working command to tap in your terminal:\n#jazzy -x -workspace,Sejima.xcworkspace,-scheme,Sejima -a MoveUpwards -u https://moveupwards.dev -g https://github.com/MoveUpwards/Sejima\n#else\n#echo \"warning: jazzy not installed, download from https://github.com/realm/jazzy\"\n#fi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3B811DE22253D380004B830 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */,
 				F30318E42225586D00171E00 /* MUNibView.swift in Sources */,
+				6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */,
 				F3B8123122253F040004B830 /* MUTextField.swift in Sources */,
 				F30318E52225586D00171E00 /* MUView.swift in Sources */,
 				F3B8122B22253F040004B830 /* MUHeader.swift in Sources */,
