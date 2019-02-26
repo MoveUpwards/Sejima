@@ -1,5 +1,3 @@
-# Sejima
-
 ![Sejima: User Interface Library in Swift](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/banner.png)
 
 [![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](https://moveupwards.github.io/Sejima/)
