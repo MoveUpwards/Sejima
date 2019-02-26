@@ -74,7 +74,7 @@ open class MUPageControl: UIControl {
     }
 
     /// Define the width of the active dot.
-    @IBInspectable open dynamic var activeElementWidth: CGFloat = 8.0 {
+    @IBInspectable open dynamic var activeElementWidth: CGFloat = 16.0 {
         didSet {
             setNeedsLayout()
         }
@@ -125,14 +125,14 @@ open class MUPageControl: UIControl {
     }
 
     /// The tint color to be used for the current page indicator.
-    @IBInspectable open dynamic var currentPageIndicatorTintColor: UIColor? {
+    @IBInspectable open dynamic var currentPageIndicatorTintColor: UIColor? = .black {
         didSet {
             setNeedsLayout()
         }
     }
 
     /// The tint color to be used for the page indicator.
-    @IBInspectable open dynamic var pageIndicatorTintColor: UIColor? {
+    @IBInspectable open dynamic var pageIndicatorTintColor: UIColor? = .lightGray {
         didSet {
             setNeedsLayout()
         }
@@ -156,7 +156,7 @@ open class MUPageControl: UIControl {
 
     private func tintColor(position: Int) -> UIColor {
         if tintColors.count < numberOfPages {
-            return tintColor ?? .cyan
+            return tintColor ?? .black
         } else {
             return tintColors[position]
         }
@@ -170,7 +170,7 @@ open class MUPageControl: UIControl {
 //    }
 
 //    private func setupTintColors() {
-//        tintColors = [UIColor](repeating: tintColor ?? .cyan, count: numberOfPages)
+//        tintColors = [UIColor](repeating: tintColor ?? .black, count: numberOfPages)
 //    }
 
     private func populateTintColors() {
@@ -181,7 +181,7 @@ open class MUPageControl: UIControl {
         if tintColors.count > numberOfPages {
             tintColors = Array(tintColors.prefix(numberOfPages))
         } else if tintColors.count < numberOfPages {
-            tintColors.append(contentsOf: [UIColor](repeating: tintColor ?? .cyan,
+            tintColors.append(contentsOf: [UIColor](repeating: tintColor ?? .black,
                                                     count: numberOfPages - tintColors.count))
         }
     }
@@ -261,18 +261,23 @@ open class MUPageControl: UIControl {
 
     @objc
     private func didTap(gesture: UITapGestureRecognizer) {
-        var touchIndex: Int?
-        let point = gesture.location(ofTouch: 0, in: self)
-        inactive.enumerated().forEach({ count, layer in
-            if layer.hitTest(point) != nil {
-                touchIndex = count
-            }
-        })
-
-        guard let index = touchIndex else {
+        guard !inactive.isEmpty else {
             return
         }
 
+        var index = 0
+        var closest = CGFloat.infinity
+        let position = gesture.location(ofTouch: 0, in: self).x
+
+        inactive.map({ $0.position.x }).enumerated().forEach { offset, element in
+            let distance = abs(position - element)
+            if distance < closest {
+                closest = distance
+                index = offset
+            }
+        }
+
+        set(page: index, animated: true)
         delegate?.didTap(self, index: index)
     }
 
@@ -340,6 +345,8 @@ open class MUPageControl: UIControl {
         let yAxis = (bounds.size.height - elementHeight) * 0.5
         let activeFrame = CGRect(x: xAxis(), y: yAxis, width: activeElementWidth, height: elementHeight)
         var frame = CGRect(x: xAxis(), y: yAxis, width: elementWidth, height: elementHeight)
+
+        tintColor = pageIndicatorTintColor
 
         active.cornerRadius = radius
         active.backgroundColor = (currentPageIndicatorTintColor ?? tintColor)?.cgColor

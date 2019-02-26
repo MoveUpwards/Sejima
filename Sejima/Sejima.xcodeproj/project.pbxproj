@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */; };
+		6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */; };
 		6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC52225722700EB4A3F /* MUPageControl.swift */; };
 		6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */; };
 		F30318E42225586D00171E00 /* MUNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E22225586D00171E00 /* MUNibView.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHorizontalPager.swift; sourceTree = "<group>"; };
+		6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHorizontalPager.xib; sourceTree = "<group>"; };
 		6D704EC52225722700EB4A3F /* MUPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUPageControl.swift; sourceTree = "<group>"; };
 		6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUWeakProxy.swift; sourceTree = "<group>"; };
 		F30318E22225586D00171E00 /* MUNibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUNibView.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D4F2F952225970000A0799B /* MUHorizontalPager */ = {
+			isa = PBXGroup;
+			children = (
+				6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */,
+				6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */,
+			);
+			path = MUHorizontalPager;
+			sourceTree = "<group>";
+		};
 		6D704EC42225722700EB4A3F /* MUPageControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 				F3B8122722253F040004B830 /* MUTextField */,
 				F30318EA222559B400171E00 /* MUTopBar */,
 				6D704EC42225722700EB4A3F /* MUPageControl */,
+				6D4F2F952225970000A0799B /* MUHorizontalPager */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -278,6 +292,7 @@
 				F3B8122A22253F040004B830 /* MUHeader.xib in Resources */,
 				F3B8122D22253F040004B830 /* MUButton.xib in Resources */,
 				F30318ED222559B400171E00 /* MUTopBar.xib in Resources */,
+				6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */,
 				6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */,
 				F30318E42225586D00171E00 /* MUNibView.swift in Sources */,
 				6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */,
