@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name = 'Sejima'
   s.version = '0.1.0'
   s.license = 'MIT'
-  s.summary = 'MUCore is a framework that expose reusable components.'
+  s.summary = 'Sejima is a framework that expose reusable components.'
   s.description  = <<-DESC
     As we always use the same or a really close object, we made severals components that we want to share with you.
                    DESC
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Source/**/*.{xib,swift}'
+  s.source_files = 'Sejima/Source/**/*.{xib,swift}'
 end
