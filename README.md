@@ -26,7 +26,6 @@ pod 'Sejima'
 
 <img align="left" src="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png" width="480" height="360" />
 <p><h1 align="left">Walkthrough</h1></p>
-<h4>Expanding content cell with animation inspired by folding paper card material design.</h4>
 <h3>Components</h3>
 <h4>(1) MUHeader</h4>
 
