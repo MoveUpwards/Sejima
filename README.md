@@ -27,7 +27,7 @@ pod 'Sejima'
 
 ### Walkthrough
 
-![Solution]([https://raw.githubusercontent.com/Ramotion/folding-cell/master/Screenshots.png])
+![Walkthrough components]([https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png])
 
 ## License
 
