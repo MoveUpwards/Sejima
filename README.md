@@ -1,5 +1,6 @@
 ![Sejima: User Interface Library in Swift](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/banner.png)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c366453a6bc247bd847c4ad33f2cf37c)](https://app.codacy.com/app/MoveUpwardsDev/Sejima?utm_source=github.com&utm_medium=referral&utm_content=MoveUpwards/Sejima&utm_campaign=Badge_Grade_Settings)
 [![Documentation](https://img.shields.io/badge/Read_the-Docs-67ad5c.svg)](https://moveupwards.github.io/Sejima/)
 [![Language: Swift 2, 3 and 4](https://img.shields.io/badge/language-swift%204-f48041.svg?style=flat)](https://developer.apple.com/swift)
 ![Platform: iOS 11+](https://img.shields.io/badge/platform-iOS-blue.svg?style=flat)
