@@ -19,7 +19,7 @@ class WalkthroughVC: UIViewController {
 
         addScrollViews()
         horizontalPager.pageControl = pageControl
-        horizontalPager.offset = 10.0
+        horizontalPager.horizontalMargin = 20.0
 
 //        pageControl.backgroundColor = .clear
         pageControl.enableTouchEvents = true
@@ -44,6 +44,6 @@ class WalkthroughVC: UIViewController {
         v2.backgroundColor = .blue
         let v3 = UIView()
         v3.backgroundColor = .green
-        horizontalPager.add(views: [v1, v2, v3])
+        horizontalPager.add(views: [v1, v2, v3], offset: 10.0)
     }
 }

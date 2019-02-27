@@ -24,6 +24,8 @@ open class MUHorizontalPager: MUNibView {
     @IBOutlet private var scrollViewLeadingMargin: NSLayoutConstraint!
 
     private var currentIndex = 0 // To don't call delegate each scroll moves
+    private var numberOfPages = 0
+    private var offset = CGFloat(0.0)
 
     /// The object that acts as the delegate of the pager.
     open weak var delegate: MUHorizontalPagerDelegate?
@@ -46,11 +48,9 @@ open class MUHorizontalPager: MUNibView {
         }
     }
 
-    /// Describes the offset between two pages
-    @IBInspectable open dynamic var offset: CGFloat = 0.0
+    // MARK: - Life cycle functions
 
-    // MARK: - Visual functions
-
+    /// Updates constraints for the view.
     open override func updateConstraints() {
         super.updateConstraints()
 
@@ -58,11 +58,11 @@ open class MUHorizontalPager: MUNibView {
         scrollViewLeadingMargin.constant = horizontalMargin
     }
 
-    // MARK: - Add datas
+    // MARK: - Public functions
 
-    private var numberOfPages = 0
-
-    open func add(views: [UIView]) {
+    /// Add all views to the pager with an optional offset between each pages.
+    open func add(views: [UIView], offset: CGFloat = 0.0) {
+        self.offset = offset
         scrollView.subviews.filter({ $0 != contentView }).forEach({ $0.removeFromSuperview() })
 
         var lastTrailingAnchor = contentView.leadingAnchor
@@ -87,15 +87,14 @@ open class MUHorizontalPager: MUNibView {
         lastView?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0).isActive = true
     }
 
-    // MARK: - Public functions
+    /// Define the current page index, animated or not.
+    open func set(page: Int, animated: Bool = false) {
+        guard page >= 0, page < numberOfPages else { return }
 
-    public func set(index: Int, animated: Bool = false) {
-        guard index >= 0, index < numberOfPages else { return }
-
-        pageControl?.set(page: index, animated: true)
+        pageControl?.set(page: page, animated: true)
 
         UIView.animate(withDuration: animated ? 0.3 : 0.0) { [weak self] in
-            guard let offset = self?.contentOffset(at: CGFloat(index)) else { return }
+            guard let offset = self?.contentOffset(at: CGFloat(page)) else { return }
             self?.scrollView.contentOffset.x = offset
         }
     }
@@ -108,6 +107,7 @@ open class MUHorizontalPager: MUNibView {
 }
 
 extension MUHorizontalPager: UIScrollViewDelegate {
+    /// Tells the delegate when the user scrolls the content view within the receiver.
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = Int(round(scrollView.contentOffset.x / scrollView.bounds.width))
 
@@ -118,12 +118,13 @@ extension MUHorizontalPager: UIScrollViewDelegate {
         }
     }
 
+    /// Tells the delegate when the user finishes scrolling the content.
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                           withVelocity velocity: CGPoint,
                                           targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pageWidth = scrollView.bounds.width
         var pageIndex = round(scrollView.contentOffset.x / pageWidth)
-        let pageX = pageIndex * pageWidth - scrollView.contentInset.left + pageIndex * offset
+        let pageX = contentOffset(at: pageIndex)
 
         if targetContentOffset.pointee.x < pageX - pageWidth * 0.5 {
             pageIndex -= pageIndex > 0 ? 1 : 0
@@ -136,7 +137,8 @@ extension MUHorizontalPager: UIScrollViewDelegate {
 }
 
 extension MUHorizontalPager: MUPageControlDelegate {
+    /// Will trigger each time the page control is tapped.
     public func didTap(_ pageControl: MUPageControl, index: Int) {
-        set(index: index, animated: true)
+        set(page: index, animated: true)
     }
 }
