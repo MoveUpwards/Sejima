@@ -17,6 +17,8 @@ class WalkthroughVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.clipsToBounds = true // Else scroll view will be visible on page animation
+
         addScrollViews()
         horizontalPager.pageControl = pageControl
         horizontalPager.horizontalMargin = 20.0
@@ -54,6 +56,6 @@ class WalkthroughVC: UIViewController {
         v4.backgroundColor = .orange
         let v5 = UIView()
         v5.backgroundColor = .lightGray
-        horizontalPager.add(views: [v1, v2, v3, v4, v5], offset: 10.0)
+        horizontalPager.add(views: [v1, v2, v3, v4, v5], margin: 10.0)
     }
 }

@@ -25,7 +25,7 @@ open class MUHorizontalPager: MUNibView {
 
     private var currentIndex = 0 // To don't call delegate each scroll moves
     private var numberOfPages = 0
-    private var offset = CGFloat(0.0)
+    private var margin = CGFloat(0.0)
 
     /// The object that acts as the delegate of the pager.
     open weak var delegate: MUHorizontalPagerDelegate?
@@ -60,9 +60,9 @@ open class MUHorizontalPager: MUNibView {
 
     // MARK: - Public functions
 
-    /// Add all views to the pager with an optional offset between each pages.
-    open func add(views: [UIView], offset: CGFloat = 0.0) {
-        self.offset = offset
+    /// Add all views to the pager with an optional margin between each pages.
+    open func add(views: [UIView], margin: CGFloat = 0.0) {
+        self.margin = margin
         scrollView.subviews.filter({ $0 != contentView }).forEach({ $0.removeFromSuperview() })
 
         var lastTrailingAnchor = contentView.leadingAnchor
@@ -71,14 +71,9 @@ open class MUHorizontalPager: MUNibView {
         pageControl?.numberOfPages = numberOfPages
 
         views.enumerated().forEach { index, view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            scrollView.addSubview(view)
-            view.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-            view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-            view.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
-            view.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+            scrollView.addAutolayoutSubview(view, leading: nil)
             view.leadingAnchor.constraint(equalTo: lastTrailingAnchor,
-                                          constant: index == 0 ? 0 : offset).isActive = true
+                                          constant: index == 0 ? 0 : margin).isActive = true
 
             lastTrailingAnchor = view.trailingAnchor
             lastView = view
@@ -102,7 +97,7 @@ open class MUHorizontalPager: MUNibView {
     // MARK: - Private functions
 
     private func contentOffset(at index: CGFloat) -> CGFloat {
-        return index * scrollView.bounds.width - scrollView.contentInset.left + index * offset
+        return index * scrollView.bounds.width - scrollView.contentInset.left + index * margin
     }
 }
 

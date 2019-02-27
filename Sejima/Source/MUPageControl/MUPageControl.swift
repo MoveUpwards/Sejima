@@ -137,7 +137,7 @@ open class MUPageControl: UIControl {
 
     /// Define the current page index, animated or not.
     open func set(page: Int, animated: Bool) {
-        guard page <= numberOfPages - 1 && page >= 0 else {
+        guard page >= 0 && page <= numberOfPages - 1  else {
             return
         }
 
@@ -168,10 +168,10 @@ open class MUPageControl: UIControl {
         invalidateIntrinsicContentSize()
     }
 
-    private func update(for progress: Int) {
+    private func update(for page: Int) {
         guard let targetX = inactive.first?.frame.origin.x,
             numberOfPages > 1,
-            progress >= 0 && progress <= numberOfPages - 1 else {
+            page >= 0 && page <= numberOfPages - 1 else {
                 return
         }
 
