@@ -18,12 +18,12 @@
 ## Installation
 
 use [CocoaPods](https://cocoapods.org) with Podfile:
-```
+```shell
 pod 'Sejima'
 ```
 
 ## Examples
-
+<div>
 <img align="left" src="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png" width="480" height="360" />
 <p><h1 align="left">Walkthrough</h1></p>
 <h3>Components</h3>
@@ -36,7 +36,8 @@ pod 'Sejima'
 <h4>(4) MUHorizontalPager</h4>
 
 <a href="https://goo.gl/rPFpid" ><img src="https://img.shields.io/github/followers/MoveUpwards.svg?label=Follow"> <img src="https://img.shields.io/github/stars/MoveUpwards/Sejima.svg?label=Stars"></a>
-</br>
+</div>
+</br></br></br>
 
 ## License
 
