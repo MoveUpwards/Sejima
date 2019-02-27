@@ -31,7 +31,6 @@ open class MUPageControl: UIControl {
     /// The number of pages the receiver shows (as dots).
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
-            populateTintColors()
             updateNumberOfPages(numberOfPages)
             isHidden = hidesForSinglePage && numberOfPages <= 1
         }
@@ -49,10 +48,6 @@ open class MUPageControl: UIControl {
     /// Optional: You can override pageIndicatorTintColor to have different colors on each dots.
     @objc open dynamic var tintColors: [UIColor] = [] {
         didSet {
-            guard tintColors.count == numberOfPages else {
-                print("The number of tint colors needs to be the same as the number of page.")
-                return
-            }
             setNeedsLayout()
         }
     }
@@ -66,8 +61,8 @@ open class MUPageControl: UIControl {
         }
     }
 
-    /// Define the width of each dots.
-    @IBInspectable open dynamic var elementWidth: CGFloat = 8.0 {
+    /// Define the size of each dots.
+    @IBInspectable open dynamic var elementSize: CGSize = CGSize(width: 8.0, height: 8.0) {
         didSet {
             setNeedsLayout()
         }
@@ -75,13 +70,6 @@ open class MUPageControl: UIControl {
 
     /// Define the width of the active dot.
     @IBInspectable open dynamic var activeElementWidth: CGFloat = 16.0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Define the height of each dots.
-    @IBInspectable open dynamic var elementHeight: CGFloat = 8.0 {
         didSet {
             setNeedsLayout()
         }
@@ -138,6 +126,13 @@ open class MUPageControl: UIControl {
         }
     }
 
+    /// Describes the margin around the page control.
+    @IBInspectable open dynamic var horizontalMargin: CGFloat = 0.0 {
+        didSet {
+            setNeedsUpdateConstraints()
+        }
+    }
+
     // MARK: - Public functions
 
     /// Define the current page index, animated or not.
@@ -154,42 +149,18 @@ open class MUPageControl: UIControl {
 
     // MARK: - Private functions
 
-    private func tintColor(position: Int) -> UIColor {
-        if tintColors.count < numberOfPages {
-            return tintColor ?? .black
+    private func tintColor(at position: Int) -> UIColor {
+        if tintColors.count <= position {
+            return tintColor
         } else {
             return tintColors[position]
-        }
-    }
-
-//    open func insertTintColor(_ color: UIColor, position: Int) {
-//        if tintColors.count < numberOfPages {
-//            setupTintColors()
-//        }
-//        tintColors[position] = color
-//    }
-
-//    private func setupTintColors() {
-//        tintColors = [UIColor](repeating: tintColor ?? .black, count: numberOfPages)
-//    }
-
-    private func populateTintColors() {
-        guard !tintColors.isEmpty else {
-            return
-        }
-
-        if tintColors.count > numberOfPages {
-            tintColors = Array(tintColors.prefix(numberOfPages))
-        } else if tintColors.count < numberOfPages {
-            tintColors.append(contentsOf: [UIColor](repeating: tintColor ?? .black,
-                                                    count: numberOfPages - tintColors.count))
         }
     }
 
     private func updateNumberOfPages(_ count: Int) {
         inactive.forEach { $0.removeFromSuperlayer() }
         inactive = [CAShapeLayer]()
-        inactive = (0..<count).map {_ in
+        inactive = (0 ..< count).map {_ in
             let newLayer = CAShapeLayer()
             layer.addSublayer(newLayer)
             return newLayer
@@ -211,19 +182,11 @@ open class MUPageControl: UIControl {
         UIView.animate(withDuration: 0.25) { [weak self] in
             self?.active.frame.origin.x = self?.inactive[self?.currentPage ?? 0].frame.origin.x ?? targetX
         }
-
-    }
-
-    private func xAxis() -> CGFloat {
-        let floatCount = CGFloat(inactive.count - 1)
-        let elementSize = (elementWidth * floatCount + activeElementWidth)
-        let paddingSize = padding * (floatCount - 1)
-        return (bounds.size.width - elementSize - paddingSize) * 0.5
     }
 
     private func resetInactive() {
-        let yAxis = (bounds.size.height - elementHeight) * 0.5
-        var frame = CGRect(x: xAxis(), y: yAxis, width: elementWidth, height: elementHeight)
+        let yAxis = (bounds.size.height - elementSize.height) * 0.5
+        var frame = CGRect(x: horizontalMargin, y: yAxis, width: elementSize.width, height: elementSize.height)
 
         inactive.enumerated().forEach { index, layer in
             layer.frame = frame
@@ -234,10 +197,10 @@ open class MUPageControl: UIControl {
 
                 frame.origin.x += (index == strongSelf.currentPage ?
                     strongSelf.activeElementWidth :
-                    strongSelf.elementWidth) + strongSelf.padding
+                    strongSelf.elementSize.width) + strongSelf.padding
                 frame.size.width = (index + 1) == strongSelf.currentPage ?
                     strongSelf.activeElementWidth :
-                    strongSelf.elementWidth
+                    strongSelf.elementSize.width
             })
         }
     }
@@ -342,9 +305,8 @@ open class MUPageControl: UIControl {
     override open func layoutSubviews() {
         super.layoutSubviews()
 
-        let yAxis = (bounds.size.height - elementHeight) * 0.5
-        let activeFrame = CGRect(x: xAxis(), y: yAxis, width: activeElementWidth, height: elementHeight)
-        var frame = CGRect(x: xAxis(), y: yAxis, width: elementWidth, height: elementHeight)
+        let yAxis = (bounds.size.height - elementSize.height) * 0.5
+        let activeFrame = CGRect(x: 0.0, y: yAxis, width: activeElementWidth, height: elementSize.height)
 
         tintColor = pageIndicatorTintColor
 
@@ -353,15 +315,13 @@ open class MUPageControl: UIControl {
         active.frame = activeFrame
 
         inactive.enumerated().forEach { index, layer in
-            layer.backgroundColor = tintColor(position: index)
-                .cgColor
+            layer.backgroundColor = tintColor(at: index).cgColor
+            layer.cornerRadius = radius
+
             if borderWidth > 0 {
                 layer.borderWidth = borderWidth
                 layer.borderColor = borderColor.cgColor
             }
-            layer.cornerRadius = radius
-            layer.frame = frame
-            frame.origin.x += (index == currentPage ? activeElementWidth : elementWidth) + padding
         }
         update(for: currentPage)
     }
@@ -373,10 +333,10 @@ open class MUPageControl: UIControl {
 
     /// Asks the view to calculate and return the size that best fits the specified size.
     override open func sizeThatFits(_ size: CGSize) -> CGSize {
-        let elementSize = CGFloat(inactive.count) * elementWidth + activeElementWidth
-        let paddingSize = CGFloat(inactive.count - 1) * padding
-        return CGSize(width: elementSize + paddingSize,
-                      height: elementHeight)
+        let floatCount = CGFloat(inactive.count - 1)
+        let elements = elementSize.width * floatCount + activeElementWidth
+        let paddings = padding * floatCount
+        return CGSize(width: elements + paddings + horizontalMargin * 2.0, height: elementSize.height)
     }
 
     /// Deinit the page control.

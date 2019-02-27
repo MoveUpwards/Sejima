@@ -21,8 +21,14 @@ class WalkthroughVC: UIViewController {
         horizontalPager.pageControl = pageControl
         horizontalPager.horizontalMargin = 20.0
 
-//        pageControl.backgroundColor = .clear
+        pageControl.backgroundColor = .clear
+        pageControl.tintColors = [.red, .blue, .green, .orange, .lightGray]
+        pageControl.currentPageIndicatorTintColor = .purple
         pageControl.enableTouchEvents = true
+        pageControl.activeElementWidth = 32
+        pageControl.elementSize = CGSize(width: 16, height: 16)
+        pageControl.radius = 8
+        pageControl.horizontalMargin = 20.0
 
         button.title = "SKIP"
         button.titleColor = .black
@@ -44,6 +50,10 @@ class WalkthroughVC: UIViewController {
         v2.backgroundColor = .blue
         let v3 = UIView()
         v3.backgroundColor = .green
-        horizontalPager.add(views: [v1, v2, v3], offset: 10.0)
+        let v4 = UIView()
+        v4.backgroundColor = .orange
+        let v5 = UIView()
+        v5.backgroundColor = .lightGray
+        horizontalPager.add(views: [v1, v2, v3, v4, v5], offset: 10.0)
     }
 }

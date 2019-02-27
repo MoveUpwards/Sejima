@@ -41,7 +41,7 @@ open class MUHorizontalPager: MUNibView {
 
     // MARK: - Public IBInspectable and UIAppearence variables
 
-    /// Describes the margin around the scroll view (The part on the margin will be visible but not scrollable)
+    /// Describes the margin around the scroll view (The part on the margin will be visible but not scrollable).
     @IBInspectable open dynamic var horizontalMargin: CGFloat = 0.0 {
         didSet {
             setNeedsUpdateConstraints()
