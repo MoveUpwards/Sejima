@@ -240,13 +240,13 @@ open class MUTextField: MUNibView {
 
 extension MUTextField: UITextFieldDelegate {
     /// Asks the delegate if editing should begin in the specified text field.
-    internal func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         delegate?.didSelect(self)
         return isEditable
     }
 
     /// Asks the delegate if the text field should process the pressing of the return button.
-    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         delegate?.didReturn(self)
         return true
     }
