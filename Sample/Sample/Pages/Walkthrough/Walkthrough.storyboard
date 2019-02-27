@@ -19,28 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agf-Rc-d34" customClass="MUHorizontalPager" customModule="Sejima">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="593"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-r5-mQ2" customClass="MUPageControl" customModule="Sejima">
-                                <rect key="frame" x="20" y="639" width="0.0" height="8"/>
+                                <rect key="frame" x="20" y="629" width="0.0" height="8"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
-                                <rect key="frame" x="339" y="626" width="16" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="339" y="622.5" width="16" height="21"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="BUw-2N-UTo" firstAttribute="centerY" secondItem="dgN-r5-mQ2" secondAttribute="centerY" id="1CK-le-NoU"/>
                             <constraint firstItem="dgN-r5-mQ2" firstAttribute="leading" secondItem="QhG-9M-3RI" secondAttribute="leading" constant="20" id="Gip-XO-p5b"/>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="BUw-2N-UTo" secondAttribute="trailing" constant="20" id="H6n-91-5eX"/>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="agf-Rc-d34" secondAttribute="trailing" id="HEy-Pe-Xgg"/>
                             <constraint firstItem="agf-Rc-d34" firstAttribute="top" secondItem="QhG-9M-3RI" secondAttribute="top" id="We5-of-UTr"/>
-                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="agf-Rc-d34" secondAttribute="bottom" id="jlj-NW-YO6"/>
-                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="BUw-2N-UTo" secondAttribute="bottom" constant="20" id="pqA-q0-9wx"/>
+                            <constraint firstItem="dgN-r5-mQ2" firstAttribute="bottom" secondItem="agf-Rc-d34" secondAttribute="bottom" constant="24" id="jlj-NW-YO6"/>
                             <constraint firstItem="agf-Rc-d34" firstAttribute="leading" secondItem="QhG-9M-3RI" secondAttribute="leading" id="qps-cP-qhD"/>
-                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="dgN-r5-mQ2" secondAttribute="bottom" constant="20" id="vhC-OI-taQ"/>
+                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="dgN-r5-mQ2" secondAttribute="bottom" constant="30" id="vhC-OI-taQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhG-9M-3RI"/>
                     </view>
@@ -53,6 +53,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXW-o8-8dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145" y="143"/>
+        </scene>
+        <!--Walkthrough ContentVC-->
+        <scene sceneID="ltI-De-JN4">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughView" id="xf5-S7-maa" customClass="WalkthroughContentVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vQY-y4-xla">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-p6-0j3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12h-J8-VI3" customClass="MUHeader" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="639" width="0.0" height="8"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7Sb-p6-0j3" secondAttribute="trailing" id="1Fn-p2-ZMy"/>
+                            <constraint firstAttribute="bottom" secondItem="12h-J8-VI3" secondAttribute="bottom" constant="20" id="7MT-Dl-fBZ"/>
+                            <constraint firstItem="7Sb-p6-0j3" firstAttribute="top" secondItem="vQY-y4-xla" secondAttribute="top" id="HGT-mD-bbx"/>
+                            <constraint firstItem="12h-J8-VI3" firstAttribute="leading" secondItem="vQY-y4-xla" secondAttribute="leading" id="JcV-an-oZs"/>
+                            <constraint firstItem="7Sb-p6-0j3" firstAttribute="leading" secondItem="vQY-y4-xla" secondAttribute="leading" id="YmZ-ax-TJA"/>
+                            <constraint firstItem="7Sb-p6-0j3" firstAttribute="bottom" secondItem="vQY-y4-xla" secondAttribute="bottom" id="wvi-qu-5z4"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="header" destination="12h-J8-VI3" id="1HI-4V-S3p"/>
+                        <outlet property="imageView" destination="7Sb-p6-0j3" id="uIp-ln-lc1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFm-0P-Q4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="142.57871064467767"/>
         </scene>
     </scenes>
 </document>

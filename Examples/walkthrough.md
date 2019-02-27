@@ -1,0 +1,1 @@
+![Walkthrough](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png)
