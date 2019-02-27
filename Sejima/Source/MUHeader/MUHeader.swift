@@ -85,6 +85,8 @@ open class MUHeader: MUNibView {
         }
     }
 
+    // MARK: - Life cycle functions
+
     /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()

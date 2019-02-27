@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUHorizontalPager" customModule="Sejima" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iJW-wR-fGS" id="W7p-KJ-Chm"/>
+                <outlet property="scrollView" destination="LFH-Rg-RYd" id="OgF-eV-MM9"/>
+                <outlet property="scrollViewLeadingMargin" destination="Q2j-I2-odt" id="6nF-qE-xFC"/>
+                <outlet property="scrollViewTraillingMargin" destination="9t4-ob-2s0" id="WC8-Lx-cas"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" userLabel="Main View">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFH-Rg-RYd">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                    <subviews>
+                        <view hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJW-wR-fGS" userLabel="Content View">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="iJW-wR-fGS" secondAttribute="bottom" id="SkQ-my-sNv"/>
+                        <constraint firstItem="iJW-wR-fGS" firstAttribute="leading" secondItem="LFH-Rg-RYd" secondAttribute="leading" id="Wmv-UM-Bdn"/>
+                        <constraint firstAttribute="trailing" secondItem="iJW-wR-fGS" secondAttribute="trailing" id="kgi-HD-Fo3"/>
+                        <constraint firstItem="iJW-wR-fGS" firstAttribute="top" secondItem="LFH-Rg-RYd" secondAttribute="top" id="xhG-Ed-z5Y"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="jyW-np-zsG"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="iJW-wR-fGS" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" placeholder="YES" id="6V2-ME-VYi"/>
+                <constraint firstAttribute="trailing" secondItem="LFH-Rg-RYd" secondAttribute="trailing" id="9t4-ob-2s0"/>
+                <constraint firstItem="LFH-Rg-RYd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CDP-TR-y6n"/>
+                <constraint firstItem="LFH-Rg-RYd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q2j-I2-odt"/>
+                <constraint firstItem="iJW-wR-fGS" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Sbh-HE-5Qb"/>
+                <constraint firstAttribute="bottom" secondItem="LFH-Rg-RYd" secondAttribute="bottom" id="sud-nZ-JvG"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

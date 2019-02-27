@@ -8,14 +8,17 @@
 
 import UIKit
 
+/// An object that manages the content for a rectangular area on the screen from a xib file.
 open class MUNibView: UIView {
     private var view: UIView?
 
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override public init(frame: CGRect) {
         super.init(frame: frame)
         xibSetup()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         xibSetup()
