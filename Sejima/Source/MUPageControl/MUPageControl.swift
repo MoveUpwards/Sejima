@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUPageControl.
 public protocol MUPageControlDelegate: class {
     /// Will trigger each time the page control is tapped.
-    func didTap(_ pageControl: MUPageControl, index: Int)
+    func didTap(_ pageControl: MUPageControl, at index: Int)
 }
 
 /// Class that act like UIPageControl with more customizable options.
@@ -140,11 +140,8 @@ open class MUPageControl: UIControl {
         guard page <= numberOfPages - 1 && page >= 0 else {
             return
         }
-        if animated == true {
-            moveToPage = page
-        } else {
-            currentPage = page
-        }
+
+        animated ? (moveToPage = page) : (currentPage = page)
     }
 
     // MARK: - Private functions
@@ -160,7 +157,7 @@ open class MUPageControl: UIControl {
     private func updateNumberOfPages(_ count: Int) {
         inactive.forEach { $0.removeFromSuperlayer() }
         inactive = [CAShapeLayer]()
-        inactive = (0 ..< count).map {_ in
+        inactive = (0 ..< count).map { _ in
             let newLayer = CAShapeLayer()
             layer.addSublayer(newLayer)
             return newLayer
@@ -241,7 +238,7 @@ open class MUPageControl: UIControl {
         }
 
         set(page: index, animated: true)
-        delegate?.didTap(self, index: index)
+        delegate?.didTap(self, at: index)
     }
 
     // MARK: - Life cycle functions

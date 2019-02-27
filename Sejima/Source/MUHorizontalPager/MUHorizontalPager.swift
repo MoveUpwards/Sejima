@@ -138,7 +138,7 @@ extension MUHorizontalPager: UIScrollViewDelegate {
 
 extension MUHorizontalPager: MUPageControlDelegate {
     /// Will trigger each time the page control is tapped.
-    public func didTap(_ pageControl: MUPageControl, index: Int) {
+    public func didTap(_ pageControl: MUPageControl, at index: Int) {
         set(page: index, animated: true)
     }
 }
