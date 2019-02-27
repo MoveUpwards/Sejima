@@ -23,6 +23,12 @@ use [CocoaPods](https://cocoapods.org) with Podfile:
 pod 'Sejima'
 ```
 
+## Examples
+
+### Walkthrough
+
+![Solution]([https://raw.githubusercontent.com/Ramotion/folding-cell/master/Screenshots.png])
+
 ## License
 
 Folding cell is released under the MIT license.
