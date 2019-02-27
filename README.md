@@ -18,7 +18,7 @@
 
 ## Installation
 
-use [CocoaPods](https://cocoapods.org) with Podfile:
+### use [CocoaPods](https://cocoapods.org) with Podfile
 
 ```swift
 pod 'Sejima'
@@ -28,6 +28,18 @@ open your favorite terminal, go to your project root path:
 
 ```shell
 pod install
+```
+
+### use [Carthage](https://github.com/Carthage/Carthage) with Cartfile
+
+```shell
+github "MoveUpwards/Sejima"
+```
+
+open your favorite terminal, go to your project root path and run:
+
+```shell
+carthage update
 ```
 
 ## Features
