@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage = 'https://github.com/MoveUpwards/Sejima.git'
   s.authors = { 'Damien NOËL DUBUISSON' => 'damien@slide-r.com', 'Loïc GRIFFIÉ' => 'loic@slide-r.com' }
-  s.source = { :git => 'https://github.com/MoveUpwards/Sejima.git', :tag => '0.1.0' }
+  s.source = { :git => 'https://github.com/MoveUpwards/Sejima.git', :tag => s.version }
   s.swift_version   = '4.2'
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'Sejima/Source/**/*.{xib, swift}'
+  s.source_files = 'Sejima/Source/**/*.{swift,xib}'
 end
