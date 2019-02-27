@@ -18,23 +18,49 @@
 ## Installation
 
 use [CocoaPods](https://cocoapods.org) with Podfile:
-```shell
+
+```swift
 pod 'Sejima'
 ```
 
-## Components
+open your favorite terminal, go to your project root path:
 
-### MUHeader
+```shell
+pod install
+```
 
-### MUTopBar
+## Features
 
-### MUButton
+- **MUHeader:** Elegant, entirely customizable and fully extensible admin panel.
+- **MUTopBar:** Reusable policies, CSRF, CORS, P3P, Xframe, XSS, and more.
+- **MUButton:** Install auth system, content management, custom plugins, and more, in seconds.
+- **MUHorizontalPager:** Built on top of Node.js, Strapi delivers amazing performances.
+- **MUPageControl:** Use any front-end frameworks (React, Vue, Angular, etc.), mobile apps or even IoT.
+- **MUTextField:** Scaffold projects and APIs on the fly.
 
-### MUHorizontalPager
+## Contributing
 
-### MUPageControl
+Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request to the project.
 
-### License
+## Support
+
+For more information on the upcoming version, please take a look to our [ROADMAP](https://github.com/MoveUpwards/Sejima/projects/).
+
+#### Community support
+
+For general help using Strapi, please refer to [the official Sejima documentation](https://moveupwards.github.io/Sejima/). For additional help, you can use one of this channel to ask question:
+
+- [StackOverflow](http://stackoverflow.com/questions/tagged/sejima)
+- [Slack](http://moveupwards.slack.com) (highly recommended for faster support)
+- [GitHub](https://github.com/MoveUpwards/Sejima).
+
+#### Professional support
+
+We provide a full range of solutions to get better and faster results. We're always looking for the next challenge: consulting, training, develop mobile and web solution, etc.
+
+[Drop us an email](mailto:support@moveupwards.dev) to see how we can help you.
+
+## License
 
 Folding cell is released under the MIT license.
 See [LICENSE](./LICENSE) for details.

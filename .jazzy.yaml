@@ -1,0 +1,8 @@
+author: Move Upwards
+author_url: https://github.com/MoveUpwards
+github_url: https://github.com/MoveUpwards/Sejima
+root_url: https://github.com/MoveUpwards
+module: Sejima
+output: docs
+theme: fullwidth
+xcodebuild_arguments: [-workspace, 'Sejima.xcworkspace', -scheme, 'Sejima iOS']
