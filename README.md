@@ -44,12 +44,12 @@ carthage update
 
 ## Features
 
-- **MUHeader:** Elegant, entirely customizable and fully extensible admin panel.
-- **MUTopBar:** Reusable policies, CSRF, CORS, P3P, Xframe, XSS, and more.
-- **MUButton:** Install auth system, content management, custom plugins, and more, in seconds.
-- **MUHorizontalPager:** Built on top of Node.js, Strapi delivers amazing performances.
-- **MUPageControl:** Use any front-end frameworks (React, Vue, Angular, etc.), mobile apps or even IoT.
-- **MUTextField:** Scaffold projects and APIs on the fly.
+- **MUHeader:** Component that define a title and a detail description.
+- **MUTopBar:** Component that define a title and a button on left side.
+- **MUButton:** UIButton with more customizable options.
+- **MUHorizontalPager:** UIScrollView + isPagingEnabled with more customizable options.
+- **MUPageControl:** UIPageControl with more customizable options.
+- **MUTextField:** UITextField with more customizable options.
 
 ## Contributing
 
