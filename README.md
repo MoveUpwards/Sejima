@@ -63,7 +63,14 @@ carthage update
 
 ### Walkthrough
 
-![Walkthrough](./Screenshots/Walkthrough.png =200x)
+Have a look in the sample project to see how to create a complete walkthrough with the following Sejima components:
+
+1. MUHeader
+2. MUPageControl
+3. MUButton
+4. MUHorizontalPager
+
+![Walkthrough](./Screenshots/Walkthrough-small.png)
 
 ## Sketch template
 
