@@ -45,7 +45,7 @@ open class MUTopBar: MUNibView {
     }
 
     /// The title horizontal alignment.
-    @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .left {
+    @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
             setNeedsLayout()
         }
@@ -82,9 +82,12 @@ open class MUTopBar: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the title’s horizontal alignment.
-    @IBInspectable open dynamic var titleAlignmentInt: Int = 0 {
-        didSet {
-            titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: titleAlignmentInt) ?? .left
+    @IBInspectable open dynamic var titleAlignmentInt: Int {
+        get {
+            return titleAlignment.rawValue
+        }
+        set {
+            titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: newValue) ?? .center
         }
     }
 

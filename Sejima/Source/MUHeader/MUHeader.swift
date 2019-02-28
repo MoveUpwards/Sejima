@@ -72,9 +72,12 @@ open class MUHeader: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the text’s horizontal alignment.
-    @IBInspectable open dynamic var textAlignmentInt: Int = 0 {
-        didSet {
-            textAlignment = NSTextAlignment(rawValue: textAlignmentInt) ?? .left
+    @IBInspectable open dynamic var textAlignmentInt: Int {
+        get {
+            return textAlignment.rawValue
+        }
+        set {
+            textAlignment = NSTextAlignment(rawValue: newValue) ?? .left
         }
     }
 

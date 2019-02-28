@@ -17,7 +17,7 @@ class MUTopBarTests: XCTestCase {
 
         XCTAssertEqual(bar.title, "")
         XCTAssertEqual(bar.buttonAlignment, .center)
-        XCTAssertEqual(bar.titleAlignment, .left)
+        XCTAssertEqual(bar.titleAlignment, .center)
         XCTAssertEqual(bar.titleFont, .systemFont(ofSize: 24.0, weight: .bold))
         XCTAssertEqual(bar.buttonImage, nil)
         XCTAssertEqual(bar.buttonLeftPadding, 0.0)
@@ -31,16 +31,21 @@ class MUTopBarTests: XCTestCase {
 
         bar.title = "Main Page"
         bar.buttonAlignment = .left
-        bar.titleAlignment = .center
+        bar.titleAlignment = .left
         bar.titleFont = .systemFont(ofSize: 18.0, weight: .regular)
         bar.buttonImage = UIImage(named: "left_button")
         bar.buttonLeftPadding = 4.0
         bar.titleColor = .black
+
+        bar.layoutSubviews()
+
         bar.showButton = true
+
+        bar.updateConstraints()
 
         XCTAssertEqual(bar.title, "Main Page")
         XCTAssertEqual(bar.buttonAlignment, .left)
-        XCTAssertEqual(bar.titleAlignment, .center)
+        XCTAssertEqual(bar.titleAlignment, .left)
         XCTAssertEqual(bar.titleFont, .systemFont(ofSize: 18.0, weight: .regular))
         XCTAssertEqual(bar.buttonImage, nil)
         XCTAssertEqual(bar.buttonLeftPadding, 4.0)
@@ -48,4 +53,22 @@ class MUTopBarTests: XCTestCase {
         XCTAssertEqual(bar.showButton, true)
     }
 
+    func testTitleAlignmentInt() {
+        let bar = MUTopBar()
+        XCTAssertNotNil(bar)
+
+        XCTAssertEqual(bar.titleAlignmentInt, 0)
+
+        bar.titleAlignment = .left
+
+        XCTAssertEqual(bar.titleAlignmentInt, 1)
+
+        bar.titleAlignmentInt = 2
+
+        XCTAssertEqual(bar.titleAlignment, .right)
+
+        bar.titleAlignmentInt = -2 // Wrong value
+
+        XCTAssertEqual(bar.titleAlignment.rawValue, -2)
+    }
 }

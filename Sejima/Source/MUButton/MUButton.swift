@@ -87,9 +87,12 @@ open class MUButton: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the button’s horizontal alignment.
-    @IBInspectable open dynamic var titleAlignmentInt: Int = 0 {
-        didSet {
-            titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: titleAlignmentInt) ?? .center
+    @IBInspectable open dynamic var titleAlignmentInt: Int {
+        get {
+            return titleAlignment.rawValue
+        }
+        set {
+            titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: newValue) ?? .center
         }
     }
 
