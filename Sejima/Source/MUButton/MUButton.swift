@@ -54,7 +54,7 @@ open class MUButton: MUNibView {
         }
     }
 
-    /// The button’s font. (Won't work with application's state and reserved state).
+    /// The button’s state. (Won't work with application's state and reserved state).
     @objc open dynamic var state: UIControl.State = .normal {
         didSet {
             setNeedsLayout()
