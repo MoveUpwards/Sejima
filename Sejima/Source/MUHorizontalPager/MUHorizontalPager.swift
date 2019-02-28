@@ -84,12 +84,16 @@ open class MUHorizontalPager: MUNibView {
 
     /// Define the current page index, animated or not.
     open func set(page: Int, animated: Bool = false) {
-        guard page >= 0, page < numberOfPages else { return }
+        guard page >= 0, page < numberOfPages else {
+            return
+        }
 
-        pageControl?.set(page: page, animated: true)
+        pageControl?.set(page: page, animated: animated)
 
         UIView.animate(withDuration: animated ? 0.3 : 0.0) { [weak self] in
-            guard let offset = self?.contentOffset(at: CGFloat(page)) else { return }
+            guard let offset = self?.contentOffset(at: CGFloat(page)) else {
+                return
+            }
             self?.scrollView.contentOffset.x = offset
         }
     }

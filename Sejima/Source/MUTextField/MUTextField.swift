@@ -128,9 +128,12 @@ open class MUTextField: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the title and textfield text horizontal alignment.
-    @IBInspectable open dynamic var textAlignmentInt: Int = 0 {
-        didSet {
-            textAlignment = NSTextAlignment(rawValue: textAlignmentInt) ?? .left
+    @IBInspectable open dynamic var textAlignmentInt: Int {
+        get {
+            return textAlignment.rawValue
+        }
+        set {
+            textAlignment = NSTextAlignment(rawValue: newValue) ?? .left
         }
     }
 
@@ -142,16 +145,22 @@ open class MUTextField: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the return key's visible title.
-    @IBInspectable open dynamic var keyboardTypeInt: Int = 0 {
-        didSet {
-            keyboardType = UIKeyboardType(rawValue: keyboardTypeInt) ?? .default
+    @IBInspectable open dynamic var keyboardTypeInt: Int {
+        get {
+            return keyboardType.rawValue
+        }
+        set {
+            keyboardType = UIKeyboardType(rawValue: newValue) ?? .default
         }
     }
 
     /// Optional: The IBInspectable version of the keyboard's appearance style.
-    @IBInspectable open dynamic var keyboardAppearanceInt: Int = 0 {
-        didSet {
-            keyboardAppearance = UIKeyboardAppearance(rawValue: keyboardAppearanceInt) ?? .default
+    @IBInspectable open dynamic var keyboardAppearanceInt: Int {
+        get {
+            return keyboardAppearance.rawValue
+        }
+        set {
+            keyboardAppearance = UIKeyboardAppearance(rawValue: newValue) ?? .default
         }
     }
 

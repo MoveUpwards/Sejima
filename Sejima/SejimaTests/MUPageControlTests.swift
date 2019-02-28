@@ -50,6 +50,8 @@ class MUPageControlTests: XCTestCase {
         pageControl.pageIndicatorTintColor = .black
         pageControl.horizontalMargin = 20.0
 
+        pageControl.layoutSubviews()
+
         XCTAssertEqual(pageControl.numberOfPages, 5)
         XCTAssertEqual(pageControl.currentPage, 1)
         XCTAssertEqual(pageControl.tintColors, [.blue, .white, .red])
@@ -64,5 +66,94 @@ class MUPageControlTests: XCTestCase {
         XCTAssertEqual(pageControl.currentPageIndicatorTintColor, .white)
         XCTAssertEqual(pageControl.pageIndicatorTintColor, .black)
         XCTAssertEqual(pageControl.horizontalMargin, 20.0)
+    }
+
+    func testHidesForSinglePage() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        pageControl.hidesForSinglePage = true
+        pageControl.numberOfPages = 1
+
+        XCTAssertTrue(pageControl.isHidden)
+
+        let pageControl2 = MUPageControl()
+        XCTAssertNotNil(pageControl2)
+
+        pageControl2.numberOfPages = 1
+        pageControl2.hidesForSinglePage = true
+
+        XCTAssertTrue(pageControl.isHidden)
+    }
+
+    func testEnableTouchEvents() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        pageControl.enableTouchEvents = true // Add a tap gesture
+        XCTAssertNotNil(pageControl)
+
+        pageControl.enableTouchEvents = false // Remove the tap gesture
+        XCTAssertNotNil(pageControl)
+    }
+
+    func testTintColors() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        pageControl.numberOfPages = 4
+
+        pageControl.tintColors = [.red, .green, .blue, .clear]
+
+        pageControl.layoutSubviews()
+    }
+
+    func testSetPage() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        pageControl.numberOfPages = 5
+
+        XCTAssertEqual(pageControl.currentPage, 0)
+
+        pageControl.set(page: 2, animated: false)
+
+        XCTAssertEqual(pageControl.currentPage, 2)
+
+        pageControl.set(page: 4, animated: true)
+
+        XCTAssertEqual(pageControl.currentPage, 2) // Still page 2 as animation is running
+
+        pageControl.currentPage = -1
+
+        XCTAssertEqual(pageControl.currentPage, 0)
+
+        pageControl.set(page: 4, animated: false) // Go to last one
+        pageControl.numberOfPages = 2
+
+        XCTAssertEqual(pageControl.currentPage, 1) // Should be still on last one
+    }
+
+    func testpageIndicatorTintColors() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        pageControl.pageIndicatorTintColor = nil
+        pageControl.currentPageIndicatorTintColor = nil
+
+        pageControl.layoutSubviews()
+    }
+
+    func testSizeThatFits() {
+        let pageControl = MUPageControl()
+        XCTAssertNotNil(pageControl)
+
+        var size = pageControl.sizeThatFits(CGSize(width: .greatestFiniteMagnitude, height: 20.0))
+        XCTAssertEqual(size.width, 0.0)
+
+        pageControl.numberOfPages = 5
+
+        size = pageControl.sizeThatFits(CGSize(width: .greatestFiniteMagnitude, height: 20.0))
+        XCTAssertEqual(size.width, 80.0)
     }
 }

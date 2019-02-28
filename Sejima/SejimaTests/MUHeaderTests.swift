@@ -38,6 +38,8 @@ class MUHeaderTests: XCTestCase {
         header.detailColor = .lightGray
         header.spacing = 4.0
 
+        header.layoutSubviews()
+
         XCTAssertEqual(header.textAlignment, .center)
         XCTAssertEqual(header.title, "My title")
         XCTAssertEqual(header.titleFont, .systemFont(ofSize: 30, weight: .light))
@@ -48,4 +50,22 @@ class MUHeaderTests: XCTestCase {
         XCTAssertEqual(header.spacing, 4.0)
     }
 
+    func testTextAlignmentInt() {
+        let header = MUHeader()
+        XCTAssertNotNil(header)
+
+        XCTAssertEqual(header.textAlignmentInt, 0)
+
+        header.textAlignment = .center
+
+        XCTAssertEqual(header.textAlignmentInt, 1)
+
+        header.textAlignmentInt = 2
+
+        XCTAssertEqual(header.textAlignment, .right)
+
+        header.textAlignmentInt = -2 // Wrong value
+
+        XCTAssertEqual(header.textAlignment.rawValue, -2)
+    }
 }

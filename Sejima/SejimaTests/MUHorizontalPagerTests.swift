@@ -24,6 +24,8 @@ class MUHorizontalPagerTests: XCTestCase {
 
         pager.horizontalMargin = 20.0
 
+        pager.updateConstraints()
+
         XCTAssertEqual(pager.horizontalMargin, 20.0)
     }
 
@@ -35,8 +37,20 @@ class MUHorizontalPagerTests: XCTestCase {
         XCTAssertNotNil(pager)
 
         pager.pageControl = pageControl
-        pager.add(views: [UIView(), UIView(), UIView()])
+        pager.add(views: [UIView(), UIView(), UIView()], margin: 10.0)
 
         XCTAssertEqual(pageControl.numberOfPages, 3)
+
+        pager.set(page: 2, animated: false)
+
+        XCTAssertEqual(pageControl.currentPage, 2)
+
+        pager.set(page: -1, animated: false)
+
+        XCTAssertEqual(pageControl.currentPage, 2)
+
+        pager.add(views: [UIView(), UIView()])
+
+        XCTAssertEqual(pageControl.currentPage, 1)
     }
 }

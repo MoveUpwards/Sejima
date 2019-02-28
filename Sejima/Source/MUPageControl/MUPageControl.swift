@@ -32,7 +32,7 @@ open class MUPageControl: UIControl {
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
             updateNumberOfPages(numberOfPages)
-            isHidden = hidesForSinglePage && numberOfPages <= 1
+            updateVisibility()
         }
     }
 
@@ -94,7 +94,7 @@ open class MUPageControl: UIControl {
     /// A Boolean value that controls whether the page control is hidden when there is only one page.
     @IBInspectable open dynamic var hidesForSinglePage: Bool = false {
         didSet {
-            setNeedsLayout()
+            updateVisibility()
         }
     }
 
@@ -147,11 +147,15 @@ open class MUPageControl: UIControl {
     // MARK: - Private functions
 
     private func tintColor(at position: Int) -> UIColor {
-        if tintColors.count <= position {
+        guard position < tintColors.count else {
             return tintColor
-        } else {
-            return tintColors[position]
         }
+
+        return tintColors[position]
+    }
+
+    private func updateVisibility() {
+        isHidden = hidesForSinglePage && numberOfPages <= 1
     }
 
     private func updateNumberOfPages(_ count: Int) {
@@ -163,15 +167,20 @@ open class MUPageControl: UIControl {
             return newLayer
         }
 
+        update(for: currentPage) // test if current page is still in bounds
+
         layer.addSublayer(active)
         setNeedsLayout()
         invalidateIntrinsicContentSize()
     }
 
     private func update(for page: Int) {
-        guard let targetX = inactive.first?.frame.origin.x,
-            numberOfPages > 1,
-            page >= 0 && page <= numberOfPages - 1 else {
+        guard let targetX = inactive.first?.frame.origin.x, numberOfPages > 0 else {
+                return
+        }
+
+        guard page >= 0 && page <= numberOfPages - 1 else {
+                currentPage = max(0, min(currentPage, numberOfPages - 1))
                 return
         }
 

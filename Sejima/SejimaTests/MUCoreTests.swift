@@ -11,28 +11,48 @@ import XCTest
 
 class MUCoreTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
+    func testMUNibView() {
+        // TODO: Testing MUNibView with class without xib file will crash as
+        // UINib instantiate function doesn't throw execption and crash instead
 
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+//        let fakeOne = FakeView()
+//        XCTAssertNil(fakeOne)
     }
 
-    override func tearDown() {
-        super.tearDown()
+    func testMUWeakProxy() {
+        var fakeProxy: FakeProxy? = FakeProxy()
+        XCTAssertNotNil(fakeProxy)
 
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        var proxy: MUWeakProxy?
+        if let myFakeProxy = fakeProxy {
+            proxy = MUWeakProxy(myFakeProxy)
         }
-    }
+        XCTAssertNotNil(proxy)
 
+        guard let forwardingTarget = proxy?.forwardingTarget(for: #selector(FakeProxy.printMe)) as? FakeProxy else {
+            return
+        }
+
+        XCTAssertEqual(fakeProxy, forwardingTarget)
+        XCTAssertTrue(proxy?.responds(to: #selector(FakeProxy.printMe)) ?? false)
+
+        fakeProxy = nil
+        // TODO: Garbage collector has not release fakeProxy, see how to force it.
+//        XCTAssertNil(proxy?.forwardingTarget(for: #selector(FakeProxy.printMe)))
+//        XCTAssertFalse(proxy?.responds(to: #selector(FakeProxy.printMe)) ?? true)
+
+        proxy = nil
+        XCTAssertNil(proxy)
+
+        XCTAssertNil(proxy?.responds(to: #selector(FakeProxy.printMe)))
+    }
+}
+
+internal class FakeView: MUNibView {
+}
+
+internal class FakeProxy: NSObject {
+    @objc
+    internal func printMe() {
+    }
 }

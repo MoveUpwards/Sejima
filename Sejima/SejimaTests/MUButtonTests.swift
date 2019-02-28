@@ -51,6 +51,8 @@ class MUButtonTests: XCTestCase {
         button.verticalPadding = 6.0
         button.horizontalPadding = 0.0
 
+        button.layoutSubviews()
+
         XCTAssertEqual(button.title, "My button")
         XCTAssertEqual(button.titleAlignment, .left)
         XCTAssertEqual(button.titleFont, .systemFont(ofSize: 14.0, weight: .bold))
@@ -77,4 +79,22 @@ class MUButtonTests: XCTestCase {
         XCTAssertEqual(button.isLoading, true)
     }
 
+    func testTitleAlignmentInt() {
+        let button = MUButton()
+        XCTAssertNotNil(button)
+
+        XCTAssertEqual(button.titleAlignmentInt, 0)
+
+        button.titleAlignment = .left
+
+        XCTAssertEqual(button.titleAlignmentInt, 1)
+
+        button.titleAlignmentInt = 2
+
+        XCTAssertEqual(button.titleAlignment, .right)
+
+        button.titleAlignmentInt = -2 // Wrong value
+
+        XCTAssertEqual(button.titleAlignment.rawValue, -2)
+    }
 }
