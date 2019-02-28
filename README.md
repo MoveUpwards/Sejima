@@ -11,9 +11,17 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/MoveUpwards/Sejima.svg)](https://github.com/MoveUpwards/Sejima/graphs/contributors)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/moveupwards)
 
+## Why Sejima
+
+Because in modern mobile applications, you often reuse user interface components. To avoid code duplication, we have tried to provide you with global standard user interface components.
+
+Although Apple has introduce `@IBInspectable` properties to help define components directly in storyboard files.
+
+All `Sejima` components expose its components properties using `@IBInspectable` so you can define user interface directly in your `.xib`/`.storyboard` files or using `UIAppearance`.
+
 ## Requirements
 
-- iOS 11.0+
+- iOS 9.0+
 - Xcode 9.0+
 
 ## Installation
@@ -44,12 +52,24 @@ carthage update
 
 ## Features
 
-- **MUHeader:** Component that define a title and a detail description.
+- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
 - **MUTopBar:** Component that define a title and a button on left side.
 - **MUButton:** UIButton with more customizable options.
 - **MUHorizontalPager:** UIScrollView + isPagingEnabled with more customizable options.
 - **MUPageControl:** UIPageControl with more customizable options.
 - **MUTextField:** UITextField with more customizable options.
+
+## Example
+
+### Walkthrough
+
+![Walkthrough](./Screenshots/Walkthrough.png =200x)
+
+## Sketch template
+
+To help you design applications using Sejima components in [Sketch](https://sketchapp.com/) we provide a Sketch template with all our components available in Symbols.
+
+![Sketch template](./Screenshots/Sketch.png)
 
 ## Contributing
 

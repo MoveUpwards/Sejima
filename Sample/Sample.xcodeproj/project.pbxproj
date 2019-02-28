@@ -64,6 +64,7 @@
 		F30318D92225542F00171E00 /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
 		F30318DB2225542F00171E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C1DDB72226E2BC006081AE /* MUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUView.swift; sourceTree = "<group>"; };
+		F3D96B862227D2D600C45A17 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		F3E2FC952226EA5F008476BE /* WalkthroughContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +100,8 @@
 		6D5660E8221EC6B200014498 = {
 			isa = PBXGroup;
 			children = (
-				6D5660F3221EC6B200014498 /* Sample */,
+				F3D96B862227D2D600C45A17 /* Playground.playground */,
+				6D5660F3221EC6B200014498 /* Source */,
 				F30318D82225542F00171E00 /* SampleUITests */,
 				6D5660F2221EC6B200014498 /* Products */,
 				F3F3BA362220366900B01B42 /* Frameworks */,
@@ -115,7 +117,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D5660F3221EC6B200014498 /* Sample */ = {
+		6D5660F3221EC6B200014498 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				6D5660F4221EC6B200014498 /* AppDelegate.swift */,
@@ -126,7 +128,7 @@
 				6D566100221EC6B400014498 /* Info.plist */,
 				6D5660FB221EC6B400014498 /* Assets.xcassets */,
 			);
-			path = Sample;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		6D566122221EE83900014498 /* Pages */ = {
@@ -454,8 +456,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,8 +475,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W6S4Z2KMUS;
-				INFOPLIST_FILE = Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

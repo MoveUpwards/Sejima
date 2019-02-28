@@ -79,6 +79,7 @@
                             <constraint firstItem="7Sb-p6-0j3" firstAttribute="leading" secondItem="vQY-y4-xla" secondAttribute="leading" id="YmZ-ax-TJA"/>
                             <constraint firstItem="7Sb-p6-0j3" firstAttribute="bottom" secondItem="vQY-y4-xla" secondAttribute="bottom" id="wvi-qu-5z4"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="KiC-mk-GYf"/>
                     </view>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
