@@ -66,7 +66,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12h-J8-VI3" customClass="MUHeader" customModule="Sejima">
-                                <rect key="frame" x="0.0" y="639" width="0.0" height="8"/>
+                                <rect key="frame" x="0.0" y="583.5" width="619" height="63.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>

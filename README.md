@@ -11,9 +11,17 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/MoveUpwards/Sejima.svg)](https://github.com/MoveUpwards/Sejima/graphs/contributors)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/moveupwards)
 
+## Why Sejima
+
+Because in modern mobile applications, you often reuse user interface components. To avoid code duplication, we have tried to provide you with global standard user interface components.
+
+Although Apple has introduce `@IBInspectable` properties to help define components directly in storyboard files.
+
+All `Sejima` components expose its components properties using `@IBInspectable` so you can define user interface directly in your `.xib`/`.storyboard` files or using `UIAppearance`.
+
 ## Requirements
 
-- iOS 11.0+
+- iOS 9.0+
 - Xcode 9.0+
 
 ## Installation
@@ -44,12 +52,74 @@ carthage update
 
 ## Features
 
-- **MUHeader:** Component that define a title and a detail description.
+- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
+
+![MUHeader](./Screenshots/MUHeader.png)
+
 - **MUTopBar:** Component that define a title and a button on left side.
+
+![MUTopBar](./Screenshots/MUTopBar.png)
+
 - **MUButton:** UIButton with more customizable options.
+
+![MUButton](./Screenshots/MUButton.png)
+
 - **MUHorizontalPager:** UIScrollView + isPagingEnabled with more customizable options.
+
 - **MUPageControl:** UIPageControl with more customizable options.
+
+![MUPageControl](./Screenshots/MUPageControl.png)
+
 - **MUTextField:** UITextField with more customizable options.
+
+![MUTextField](./Screenshots/MUTextField.png)
+
+- **MUNavigationBar:** Component that define a left button along with a main button with a separator.
+  
+![MUNavigationBar](./Screenshots/MUNavigationBar.png)
+
+- **MUAvatar:** UIImage with possible design round, square or custom.
+
+![MUAvatar](./Screenshots/MUAvatar.png)
+
+- **MUTag:** Component that define a title.
+  
+![MUTag](./Screenshots/MUTag.png)
+
+- **MUPinCode:** Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.
+
+![MUPinCode](./Screenshots/MUPinCode.png)
+
+- **MUSegmentedControl:** UISegmentedControl like with more designable options.
+
+![MUSegmentedControl](./Screenshots/MUNavigationBar.png)
+
+- **MUProgress:** An horizontal progress bar with multiple sections.
+
+![MUProgress](./Screenshots/MUProgress.png)
+
+- **MUTrimmer:** A draggable component usually used to trim vidéo.
+
+![MUTrimmer](./Screenshots/MUTrimmer.png)
+
+## Example
+
+### Walkthrough
+
+Have a look in the sample project to see how to create a complete walkthrough with the following Sejima components:
+
+1. MUHeader
+2. MUPageControl
+3. MUButton
+4. MUHorizontalPager
+
+![Walkthrough](./Screenshots/Walkthrough-small.png)
+
+## Sketch template
+
+To help you design applications using Sejima components in [Sketch](https://sketchapp.com/) we provide a Sketch template with all our components available in Symbols.
+
+[Sketch template](./Screenshots/Sketch.png)
 
 ## Contributing
 
