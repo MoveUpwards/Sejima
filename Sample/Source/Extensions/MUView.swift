@@ -17,10 +17,7 @@ extension UIView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
 
-        if let oldLayer = layer.sublayers?.filter({ $0.name == "MUGradientLayer" }).first {
-            layer.replaceSublayer(oldLayer, with: gradientLayer)
-        } else {
-            layer.insertSublayer(gradientLayer, at: 0)
-        }
+        layer.sublayers?.filter({ $0.name == "MUGradientLayer" }).first?.removeFromSuperlayer()
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 }
