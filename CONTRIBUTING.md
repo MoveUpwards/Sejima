@@ -19,7 +19,7 @@ Every user can send a feature request using the [issues](https://github.com/move
 ## Repository Organization
 We will do our best to keep the master branch as clean as possible, with tests passing all the times. However, it can happen that the master branch moves faster than the release cycle. To ensure you have the latest stable version, please refer to the [release on cocoapods](https://cocoapods.org/pods/sejima).
 
-If you send a pull request, please do it against the `develop` branch. We are developing upcoming versions separately to ensure non-breaking changes from master to the latest stable major version.
+If you send a pull request, please do it against the `master` branch. We are developing upcoming versions separately to ensure non-breaking changes from master to the latest stable major version.
 
 ***
 
