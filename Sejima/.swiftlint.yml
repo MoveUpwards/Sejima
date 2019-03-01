@@ -15,6 +15,7 @@ opt_in_rules:
   - overridden_super_call
   - prohibited_super_call
   - private_outlet
+  - strong_iboutlet
   - operator_usage_whitespace
   - no_extension_access_modifier
   - nimble_operator

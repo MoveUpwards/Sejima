@@ -4,93 +4,129 @@
     <title>Sejima  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="Sejima  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">Sejima Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/MoveUpwards/Sejima"><img src="img/gh.png"/>View on GitHub</a></p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">Sejima Reference</a>
-        <img id="carat" src="img/carat.png" />
-        Sejima  Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          Sejima Docs
+        </a>
+         (89% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/MoveUpwards/Sejima">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fgithub%2Ecom%2Fdocsets%2FSejima%2Exml">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">Sejima Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Sejima  Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Classes.html">Classes</a>
+            <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Classes/MUButton.html">MUButton</a>
+                <a class="nav-group-task-link" href="Classes/MUButton.html">MUButton</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUHeader.html">MUHeader</a>
+                <a class="nav-group-task-link" href="Classes/MUHeader.html">MUHeader</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUHorizontalPager.html">MUHorizontalPager</a>
+                <a class="nav-group-task-link" href="Classes/MUHorizontalPager.html">MUHorizontalPager</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUNibView.html">MUNibView</a>
+                <a class="nav-group-task-link" href="Classes/MUNavigationBar.html">MUNavigationBar</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUPageControl.html">MUPageControl</a>
+                <a class="nav-group-task-link" href="Classes/MUNibView.html">MUNibView</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUTextField.html">MUTextField</a>
+                <a class="nav-group-task-link" href="Classes/MUPageControl.html">MUPageControl</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUTopBar.html">MUTopBar</a>
+                <a class="nav-group-task-link" href="Classes/MUTextField.html">MUTextField</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/MUWeakProxy.html">MUWeakProxy</a>
+                <a class="nav-group-task-link" href="Classes/MUTopBar.html">MUTopBar</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MUWeakProxy.html">MUWeakProxy</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Protocols.html">Protocols</a>
+            <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Protocols/MUButtonDelegate.html">MUButtonDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MUButtonDelegate.html">MUButtonDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/MUHorizontalPagerDelegate.html">MUHorizontalPagerDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MUHorizontalPagerDelegate.html">MUHorizontalPagerDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/MUPageControlDelegate.html">MUPageControlDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MUNavigationBarDelegate.html">MUNavigationBarDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/MUTextFieldDelegate.html">MUTextFieldDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MUPageControlDelegate.html">MUPageControlDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a href="Protocols/MUTopBarDelegate.html">MUTopBarDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MUTextFieldDelegate.html">MUTextFieldDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MUTopBarDelegate.html">MUTopBarDelegate</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             
             <p><img src="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/banner.png" alt="Sejima: User Interface Library in Swift"></p>
 
 <p><a href="https://moveupwards.github.io/Sejima/"><img src="https://img.shields.io/badge/Read_the-Docs-67ad5c.svg" alt="Documentation"></a>
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift%204-f48041.svg?style=flat" alt="Language: Swift 2, 3 and 4"></a>
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform: iOS 11+">
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a>
 <a href="http://cocoapods.org/pods/Sejima"><img src="https://img.shields.io/cocoapods/v/Sejima.svg" alt="CocoaPods"></a>
-<a href="https://codebeat.co/projects/github-com-moveupwards-sejima-master"><img src="https://codebeat.co/badges/7089c9c3-620e-4cef-bacf-11b74d0becdb" alt="codebeat badge"></a>
-<a href="https://app.bitrise.io/app/527234c879c3952a"><img src="https://app.bitrise.io/app/527234c879c3952a.svg?token=RCLpb4OfkyZcufMQ7bVCTQ" alt="Build Status"></a>
-<a href="https://github.com/s4cha/Sejima/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT"></a>
+<a href="https://app.codacy.com/app/MoveUpwardsDev/Sejima?utm_source=github.com&utm_medium=referral&utm_content=MoveUpwards/Sejima&utm_campaign=Badge_Grade_Settings"><img src="https://api.codacy.com/project/badge/Grade/c366453a6bc247bd847c4ad33f2cf37c" alt="Codacy Badge"></a>
+<img src="https://app.bitrise.io/app/527234c879c3952a.svg?token=RCLpb4OfkyZcufMQ7bVCTQ" alt="Build Status">
+<a href="https://github.com/MoveUpwards/Sejima/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT"></a>
 <a href="https://github.com/MoveUpwards/Sejima/graphs/contributors"><img src="https://img.shields.io/github/contributors/MoveUpwards/Sejima.svg" alt="GitHub contributors"></a>
 <a href="https://paypal.me/moveupwards"><img src="https://img.shields.io/badge/Donate-PayPal-blue.svg" alt="Donate"></a></p>
 <h2 id='requirements' class='heading'>Requirements</h2>
@@ -100,10 +136,50 @@
 <li>Xcode 9.0+</li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
-
-<p>use <a href="https://cocoapods.org">CocoaPods</a> with Podfile:</p>
-<pre class="highlight plaintext"><code>pod 'Sejima'
+<h3 id='use-a-href-https-cocoapods-org-cocoapods-a-with-podfile' class='heading'>use <a href="https://cocoapods.org">CocoaPods</a> with Podfile</h3>
+<pre class="highlight swift"><code><span class="n">pod</span> <span class="err">'</span><span class="kt">Sejima</span><span class="err">'</span>
 </code></pre>
+
+<p>open your favorite terminal, go to your project root path:</p>
+<pre class="highlight shell"><code>pod <span class="nb">install</span>
+</code></pre>
+<h3 id='use-a-href-https-github-com-carthage-carthage-carthage-a-with-cartfile' class='heading'>use <a href="https://github.com/Carthage/Carthage">Carthage</a> with Cartfile</h3>
+<pre class="highlight shell"><code>github <span class="s2">"MoveUpwards/Sejima"</span>
+</code></pre>
+
+<p>open your favorite terminal, go to your project root path and run:</p>
+<pre class="highlight shell"><code>carthage update
+</code></pre>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li><strong>MUHeader:</strong> Component that define a title and a detail description.</li>
+<li><strong>MUTopBar:</strong> Component that define a title and a button on left side.</li>
+<li><strong>MUButton:</strong> UIButton with more customizable options.</li>
+<li><strong>MUHorizontalPager:</strong> UIScrollView + isPagingEnabled with more customizable options.</li>
+<li><strong>MUPageControl:</strong> UIPageControl with more customizable options.</li>
+<li><strong>MUTextField:</strong> UITextField with more customizable options.</li>
+</ul>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>Please read our <a href="./CONTRIBUTING.md">Contributing Guide</a> before submitting a Pull Request to the project.</p>
+<h2 id='support' class='heading'>Support</h2>
+
+<p>For more information on the upcoming version, please take a look to our <a href="https://github.com/MoveUpwards/Sejima/projects/">ROADMAP</a>.</p>
+<h4 id='community-support' class='heading'>Community support</h4>
+
+<p>For general help using Strapi, please refer to <a href="https://moveupwards.github.io/Sejima/">the official Sejima documentation</a>. For additional help, you can use one of this channel to ask question:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/tagged/sejima">StackOverflow</a></li>
+<li><a href="http://moveupwards.slack.com">Slack</a> (highly recommended for faster support)</li>
+<li><a href="https://github.com/MoveUpwards/Sejima">GitHub</a>.</li>
+</ul>
+<h4 id='professional-support' class='heading'>Professional support</h4>
+
+<p>We provide a full range of solutions to get better and faster results. We&rsquo;re always looking for the next challenge: consulting, training, develop mobile and web solution, etc.</p>
+
+<p><a href="mailto:support@moveupwards.dev">Drop us an email</a> to see how we can help you.</p>
 <h2 id='license' class='heading'>License</h2>
 
 <p>Folding cell is released under the MIT license.
@@ -111,14 +187,16 @@ See <a href="./LICENSE">LICENSE</a> for details.</p>
 
 <p>If you use the open-source library in your project, please make sure to credit and backlink to <a href="http://www.moveupwards.dev">www.moveupwards.dev</a></p>
 
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-02-27)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
+
       </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>

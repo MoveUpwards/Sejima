@@ -17,8 +17,8 @@ public protocol MUHorizontalPagerDelegate: class {
 /// Class that act like UIScrollView + isPagingEnabled with more customizable options.
 @IBDesignable
 open class MUHorizontalPager: MUNibView {
-    @IBOutlet private weak var scrollView: UIScrollView!
-    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var contentView: UIView!
 
     @IBOutlet private var scrollViewTraillingMargin: NSLayoutConstraint!
     @IBOutlet private var scrollViewLeadingMargin: NSLayoutConstraint!

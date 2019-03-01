@@ -13,7 +13,7 @@ class WalkthroughVC: UIViewController {
     @IBOutlet private weak var horizontalPager: MUHorizontalPager!
     @IBOutlet private weak var pageControl: MUPageControl!
     @IBOutlet private weak var button: MUButton!
-
+    
     private let margin = CGFloat(20.0)
 
     override var prefersStatusBarHidden: Bool {
@@ -26,10 +26,6 @@ class WalkthroughVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
 
         view.clipsToBounds = true // Else scroll view will be visible on page animation
-        view.addGradient([
-            UIColor(hex: 0x094256).cgColor,
-            UIColor(hex: 0x00171F).cgColor
-            ])
 
         addScrollViews()
 
@@ -51,6 +47,15 @@ class WalkthroughVC: UIViewController {
         button.titleFont = .boldSystemFont(ofSize: 17)
         button.titleColor = UIColor(hex: 0xFA7921)
         button.titleHighlightedColor = .white
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        view.addGradient([
+            UIColor(hex: 0x094256).cgColor,
+            UIColor(hex: 0x00171F).cgColor
+        ])
     }
 
     private func addScrollViews() {
