@@ -17,8 +17,8 @@ public protocol MUButtonDelegate: class {
 /// Class that act like UIButton with more customizable options.
 @IBDesignable
 open class MUButton: MUNibView {
-    @IBOutlet private weak var button: UIButton!
-    @IBOutlet private weak var progress: UIActivityIndicatorView!
+    @IBOutlet private var button: UIButton!
+    @IBOutlet private var progress: UIActivityIndicatorView!
 
     /// Keep the current background alpha value to put it back if needed.
     private var buttonBackgroundColorAlpha: CGFloat = 1.0
@@ -29,19 +29,10 @@ open class MUButton: MUNibView {
     /// The object that acts as the delegate of the button.
     open weak var delegate: MUButtonDelegate?
 
-    // MARK: - Public IBInspectable variables ONLY
+    // MARK: - Title
 
     /// The current title that is displayed by the button.
     @IBInspectable open var title: String = "" {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    // MARK: - Public UIAppearence variables ONLY
-
-    /// The button’s horizontal alignment.
-    @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
             setNeedsLayout()
         }
@@ -54,34 +45,9 @@ open class MUButton: MUNibView {
         }
     }
 
-    /// The button’s state. (Won't work with application's state and reserved state).
-    @objc open dynamic var state: UIControl.State = .normal {
+    /// The button’s horizontal alignment.
+    @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
-            setNeedsLayout()
-        }
-    }
-
-    // MARK: - Public IBInspectable and UIAppearence variables
-
-    /// The button’s alpha value for disabled state.
-    @IBInspectable open dynamic var disabledAlphaValue: CGFloat = 0.7 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// The button’s background color.
-    @IBInspectable open dynamic var buttonBackgroundColor: UIColor = .white {
-        didSet {
-            buttonBackgroundColor.getRed(nil, green: nil, blue: nil, alpha: &buttonBackgroundColorAlpha)
-            setNeedsLayout()
-        }
-    }
-
-    /// The button’s border color.
-    @IBInspectable open dynamic var borderColor: UIColor = .clear {
-        didSet {
-            borderColor.getRed(nil, green: nil, blue: nil, alpha: &borderColorAlpha)
             setNeedsLayout()
         }
     }
@@ -110,9 +76,53 @@ open class MUButton: MUNibView {
         }
     }
 
+    // MARK: - Loading
+
     /// The activity indicator’s color.
     @IBInspectable open dynamic var progressColor: UIColor = .white {
         didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Show or hide the progress indicator.
+    @IBInspectable open dynamic var isLoading: Bool = false {
+        didSet {
+            isUserInteractionEnabled = !isLoading
+            state = .normal
+
+            setNeedsLayout()
+        }
+    }
+
+    // MARK: - Generic
+
+    /// The button’s state. (Won't work with application's state and reserved state).
+    @objc open dynamic var state: UIControl.State = .normal {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The button’s alpha value for disabled state.
+    @IBInspectable open dynamic var disabledAlphaValue: CGFloat = 0.7 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The button’s background color.
+    @IBInspectable open dynamic var buttonBackgroundColor: UIColor = .white {
+        didSet {
+            buttonBackgroundColor.getRed(nil, green: nil, blue: nil, alpha: &buttonBackgroundColorAlpha)
+            setNeedsLayout()
+        }
+    }
+
+    /// The button’s border color.
+    @IBInspectable open dynamic var borderColor: UIColor = .clear {
+        didSet {
+            borderColor.getRed(nil, green: nil, blue: nil, alpha: &borderColorAlpha)
             setNeedsLayout()
         }
     }
@@ -141,16 +151,6 @@ open class MUButton: MUNibView {
     /// The button’s horizontal padding.
     @IBInspectable open dynamic var horizontalPadding: CGFloat = 8.0 {
         didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Show or hide the progress indicator.
-    @IBInspectable open dynamic var isLoading: Bool = false {
-        didSet {
-            isUserInteractionEnabled = !isLoading
-            state = .normal
-
             setNeedsLayout()
         }
     }

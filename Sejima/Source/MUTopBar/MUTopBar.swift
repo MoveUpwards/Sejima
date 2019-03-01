@@ -17,8 +17,8 @@ public protocol MUTopBarDelegate: class {
 /// Class that define a title and a button on left side.
 @IBDesignable
 open class MUTopBar: MUNibView {
-    @IBOutlet private weak var leftButton: UIButton!
-    @IBOutlet private weak var titleLabel: UIButton!
+    @IBOutlet private var leftButton: UIButton!
+    @IBOutlet private var titleLabel: UIButton!
 
     @IBOutlet private var leftButtonLeading: NSLayoutConstraint!
     @IBOutlet private var leftButtonWidth: NSLayoutConstraint!

@@ -14,6 +14,7 @@
 		6D4F2FAE2228396100A0799B /* MUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2FAC2228396100A0799B /* MUNavigationBar.swift */; };
 		6D4F2FAF2228396100A0799B /* MUNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2FAD2228396100A0799B /* MUNavigationBar.xib */; };
 		6D4F2FB122283F6700A0799B /* MUNavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */; };
+		6D4F2FB3222966CA00A0799B /* MULayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2FB2222966CA00A0799B /* MULayoutConstraint.swift */; };
 		6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC52225722700EB4A3F /* MUPageControl.swift */; };
 		6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */; };
 		F30318E42225586D00171E00 /* MUNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E22225586D00171E00 /* MUNibView.swift */; };
@@ -52,6 +53,7 @@
 		6D4F2FAC2228396100A0799B /* MUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUNavigationBar.swift; sourceTree = "<group>"; };
 		6D4F2FAD2228396100A0799B /* MUNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUNavigationBar.xib; sourceTree = "<group>"; };
 		6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUNavigationBarTests.swift; sourceTree = "<group>"; };
+		6D4F2FB2222966CA00A0799B /* MULayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MULayoutConstraint.swift; sourceTree = "<group>"; };
 		6D704EC52225722700EB4A3F /* MUPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUPageControl.swift; sourceTree = "<group>"; };
 		6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUWeakProxy.swift; sourceTree = "<group>"; };
 		F30318E22225586D00171E00 /* MUNibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUNibView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				F30318E22225586D00171E00 /* MUNibView.swift */,
 				F30318E32225586D00171E00 /* MUView.swift */,
 				6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */,
+				6D4F2FB2222966CA00A0799B /* MULayoutConstraint.swift */,
 			);
 			path = MUCore;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				F30318E52225586D00171E00 /* MUView.swift in Sources */,
 				F3B8122B22253F040004B830 /* MUHeader.swift in Sources */,
 				F3B8122C22253F040004B830 /* MUButton.swift in Sources */,
+				6D4F2FB3222966CA00A0799B /* MULayoutConstraint.swift in Sources */,
 				F30318EE222559B400171E00 /* MUTopBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

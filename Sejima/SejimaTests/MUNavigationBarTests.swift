@@ -15,39 +15,39 @@ class MUNavigationBarTests: XCTestCase {
         let navBar = MUNavigationBar()
         XCTAssertNotNil(navBar)
 
-        XCTAssertEqual(navBar.rightButtonTitle, "")
-        XCTAssertEqual(navBar.rightButtonState, .normal)
         XCTAssertEqual(navBar.leftButtonImage, nil)
         XCTAssertEqual(navBar.separatorColor, .white)
-        XCTAssertEqual(navBar.isLoading, false)
+        XCTAssertEqual(navBar.separatorWidth, 1.0)
+        XCTAssertEqual(navBar.separatorHeightMultiplier, 0.3)
+
+        XCTAssertNotNil(navBar.mainButton)
+        // Do not duplicate MUButton unit tests
     }
 
     func testCustomValues() {
         let navBar = MUNavigationBar()
         XCTAssertNotNil(navBar)
 
-        navBar.rightButtonTitle = "Validate"
-        navBar.rightButtonState = .disabled
         navBar.leftButtonImage = UIImage(named: "left_button")
         navBar.separatorColor = .black
-        navBar.isLoading = false
+        navBar.separatorWidth = 2.0
+        navBar.separatorHeightMultiplier = 1.0
 
         navBar.layoutSubviews()
 
-        XCTAssertEqual(navBar.rightButtonTitle, "Validate")
-        XCTAssertEqual(navBar.rightButtonState, .disabled)
         XCTAssertEqual(navBar.leftButtonImage, nil)
         XCTAssertEqual(navBar.separatorColor, .black)
-        XCTAssertEqual(navBar.isLoading, false)
+        XCTAssertEqual(navBar.separatorWidth, 2.0)
+        XCTAssertEqual(navBar.separatorHeightMultiplier, 1.0)
     }
 
     func testLoading() {
         let navBar = MUNavigationBar()
         XCTAssertNotNil(navBar)
 
-        navBar.isLoading = true
-
-        XCTAssertEqual(navBar.rightButtonState, .normal)
-        XCTAssertEqual(navBar.isLoading, true)
+//        navBar.isLoading = true
+//
+//        XCTAssertEqual(navBar.rightButtonState, .normal)
+//        XCTAssertEqual(navBar.isLoading, true)
     }
 }

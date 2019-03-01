@@ -11,10 +11,16 @@ import UIKit
 extension UIView {
     public func addGradient(_ colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()
+        gradientLayer.name = "MUGradientLayer"
         gradientLayer.frame = bounds
         gradientLayer.colors = colors
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        layer.insertSublayer(gradientLayer, at: 0)
+
+        if let oldLayer = layer.sublayers?.filter({ $0.name == "MUGradientLayer" }).first {
+            layer.replaceSublayer(oldLayer, with: gradientLayer)
+        } else {
+            layer.insertSublayer(gradientLayer, at: 0)
+        }
     }
 }

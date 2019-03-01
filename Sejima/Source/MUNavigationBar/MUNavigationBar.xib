@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="leftButton" destination="iXO-fL-qgS" id="tDm-yC-lbH"/>
                 <outlet property="rightButton" destination="yId-Du-Cid" id="bfZ-Nn-sV4"/>
+                <outlet property="separatorHeightConstraint" destination="2R1-sl-JkR" id="w2y-ak-dq3"/>
                 <outlet property="separatorView" destination="Jr5-fW-Dii" id="prJ-25-JRR"/>
+                <outlet property="separatorWidthConstraint" destination="UIi-II-Wy7" id="NRR-7r-6GW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -41,7 +43,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Jr5-fW-Dii" secondAttribute="trailing" id="0E6-U5-Xb2"/>
-                        <constraint firstItem="Jr5-fW-Dii" firstAttribute="height" secondItem="G1L-uv-mgV" secondAttribute="height" multiplier="24:80" id="2R1-sl-JkR"/>
+                        <constraint firstItem="Jr5-fW-Dii" firstAttribute="height" secondItem="G1L-uv-mgV" secondAttribute="height" multiplier="0.3" id="2R1-sl-JkR"/>
                         <constraint firstItem="Jr5-fW-Dii" firstAttribute="centerY" secondItem="G1L-uv-mgV" secondAttribute="centerY" id="Abd-if-uYt"/>
                         <constraint firstAttribute="bottom" secondItem="iXO-fL-qgS" secondAttribute="bottom" id="CxY-xt-GVS"/>
                         <constraint firstItem="Jr5-fW-Dii" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="M1y-TZ-CSc"/>

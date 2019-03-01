@@ -21,9 +21,9 @@ public protocol MUTextFieldDelegate: class {
 /// Class that act like UITextField with more customizable options.
 @IBDesignable
 open class MUTextField: MUNibView {
-    @IBOutlet private weak var label: UILabel!
-    @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var underlineView: UIView!
+    @IBOutlet private var label: UILabel!
+    @IBOutlet private var textField: UITextField!
+    @IBOutlet private var underlineView: UIView!
 
     @IBOutlet private var underlineHeightConstraint: NSLayoutConstraint!
 
