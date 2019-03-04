@@ -18,7 +18,6 @@ import UIKit
 @IBDesignable
 open class MUAvatar: MUNibView {
     @IBOutlet private var avatar: UIImageView!
-    @IBOutlet private var placeholder: UIImageView!
 
     /// The object that acts as the delegate of the avatar.
     @IBOutlet public weak var delegate: MUAvatarDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
@@ -50,22 +49,22 @@ open class MUAvatar: MUNibView {
     }
 
     /// The avatar's style.
-    open var avatarType: MUAvatar.Style = .round {
+    open var style: MUAvatar.Style = .round {
         didSet {
             updateStyle()
         }
     }
 
     /// Optional: The IBInspectable version of the avatar's style.
-    @IBInspectable open dynamic var avatarTypeInt: Int = 1 {
+    @IBInspectable open dynamic var avatarStyleInt: Int = 0 {
         didSet {
-            switch avatarTypeInt {
+            switch avatarStyleInt {
             case 1:
-                avatarType = .round
+                style = .square
             case 2:
-                avatarType = .custom(radius)
+                style = .custom(radius)
             default:
-                avatarType = .square
+                style = .round
             }
         }
     }
@@ -73,13 +72,19 @@ open class MUAvatar: MUNibView {
     /// The avatar's corner radius.
     @IBInspectable open dynamic var radius: Int = 0 {
         didSet {
-            avatarTypeInt = 2
+            guard radius > 0 else { return }
+            avatarStyleInt = 2
         }
     }
 
     /// The avatar’s image.
     @IBInspectable open dynamic var avatarImage: UIImage? {
         didSet {
+            guard avatarImage != nil else {
+                avatar.image = placeholderImage
+                return
+            }
+
             avatar.image = avatarImage
         }
     }
@@ -87,24 +92,24 @@ open class MUAvatar: MUNibView {
     /// The avatar’s placeholder image shown if no image defined.
     @IBInspectable open dynamic var placeholderImage: UIImage? {
         didSet {
-            placeholder.image = placeholderImage
+            guard avatarImage == nil else { return }
+            avatar.image = placeholderImage
         }
     }
 
     // MARK: - Private IBAction functions
 
     private func updateStyle() {
-        switch avatarType {
+        switch style {
         case .round:
-            layer.cornerRadius = avatar.bounds.size.width * 0.5
-            avatar.layer.cornerRadius = avatar.bounds.size.width * 0.5
+            layer.cornerRadius = bounds.size.width * 0.5
         case .custom(let radius):
             layer.cornerRadius = CGFloat(radius)
-            avatar.layer.cornerRadius = CGFloat(radius)
         case .square:
             layer.cornerRadius = 0
-            avatar.layer.cornerRadius = 0
         }
+
+        avatar.layer.cornerRadius = layer.cornerRadius
     }
 
     // MARK: - Private IBAction functions
@@ -120,7 +125,13 @@ open class MUAvatar: MUNibView {
         super.xibSetup()
 
         layer.masksToBounds = true
-        avatar.layer.masksToBounds = true
+        avatar.layer.masksToBounds = layer.masksToBounds
+    }
+
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+
+        updateStyle()
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
