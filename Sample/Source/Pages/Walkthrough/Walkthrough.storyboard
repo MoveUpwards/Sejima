@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WalkthroughVC-->
+        <!--Delegate-->
         <scene sceneID="j2F-3P-Ne5">
             <objects>
                 <viewController id="LlL-Qz-s2h" customClass="WalkthroughVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,35 +19,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agf-Rc-d34" customClass="MUHorizontalPager" customModule="Sejima">
-                                <rect key="frame" x="0.0" y="20" width="375" height="593"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="575"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="horizontalMargin">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="LlL-Qz-s2h" id="EMJ-qh-rNv"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-r5-mQ2" customClass="MUPageControl" customModule="Sejima">
-                                <rect key="frame" x="20" y="629" width="0.0" height="8"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
-                                <rect key="frame" x="339" y="622.5" width="16" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
+                                <rect key="frame" x="339" y="603" width="16" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aCo-N9-3Rc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="LlL-Qz-s2h" id="mHF-v8-XH5"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BUw-2N-UTo" firstAttribute="centerY" secondItem="dgN-r5-mQ2" secondAttribute="centerY" id="1CK-le-NoU"/>
-                            <constraint firstItem="dgN-r5-mQ2" firstAttribute="leading" secondItem="QhG-9M-3RI" secondAttribute="leading" constant="20" id="Gip-XO-p5b"/>
+                            <constraint firstItem="BUw-2N-UTo" firstAttribute="top" secondItem="agf-Rc-d34" secondAttribute="bottom" constant="8" id="4S2-Kj-cUr"/>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="BUw-2N-UTo" secondAttribute="trailing" constant="20" id="H6n-91-5eX"/>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="agf-Rc-d34" secondAttribute="trailing" id="HEy-Pe-Xgg"/>
+                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="BUw-2N-UTo" secondAttribute="bottom" constant="24" id="RxW-sj-pg1"/>
                             <constraint firstItem="agf-Rc-d34" firstAttribute="top" secondItem="QhG-9M-3RI" secondAttribute="top" id="We5-of-UTr"/>
-                            <constraint firstItem="dgN-r5-mQ2" firstAttribute="bottom" secondItem="agf-Rc-d34" secondAttribute="bottom" constant="24" id="jlj-NW-YO6"/>
                             <constraint firstItem="agf-Rc-d34" firstAttribute="leading" secondItem="QhG-9M-3RI" secondAttribute="leading" id="qps-cP-qhD"/>
-                            <constraint firstItem="QhG-9M-3RI" firstAttribute="bottom" secondItem="dgN-r5-mQ2" secondAttribute="bottom" constant="30" id="vhC-OI-taQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhG-9M-3RI"/>
                     </view>
                     <connections>
                         <outlet property="button" destination="BUw-2N-UTo" id="h0Z-JW-7nX"/>
                         <outlet property="horizontalPager" destination="agf-Rc-d34" id="1fd-gc-jg5"/>
-                        <outlet property="pageControl" destination="dgN-r5-mQ2" id="p25-24-6hV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXW-o8-8dD" userLabel="First Responder" sceneMemberID="firstResponder"/>

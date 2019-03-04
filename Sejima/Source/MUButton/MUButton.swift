@@ -124,7 +124,7 @@ open class MUButton: MUNibView {
     /// The button’s alpha value for disabled state.
     @IBInspectable open dynamic var disabledAlphaValue: CGFloat = 0.7 {
         didSet {
-            setNeedsLayout()
+            updateTitleColor()
         }
     }
 
@@ -141,8 +141,7 @@ open class MUButton: MUNibView {
         didSet {
             borderColor.getRed(nil, green: nil, blue: nil, alpha: &borderColorAlpha)
             layer.borderColor = borderColor.cgColor
-
-            setNeedsLayout()
+            updateTitleColor()
         }
     }
 
@@ -150,8 +149,7 @@ open class MUButton: MUNibView {
     @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
-
-            setNeedsLayout()
+            updateContentInsets()
         }
     }
 
@@ -166,14 +164,14 @@ open class MUButton: MUNibView {
     /// The button’s vertical padding.
     @IBInspectable open dynamic var verticalPadding: CGFloat = 0.0 {
         didSet {
-            setNeedsLayout()
+            updateContentInsets()
         }
     }
 
     /// The button’s horizontal padding.
     @IBInspectable open dynamic var horizontalPadding: CGFloat = 8.0 {
         didSet {
-            setNeedsLayout()
+            updateContentInsets()
         }
     }
 
@@ -197,6 +195,19 @@ open class MUButton: MUNibView {
         state = .highlighted
     }
 
+    // MARK: - Private functions
+
+    private func updateContentInsets() {
+        button.contentEdgeInsets = UIEdgeInsets(top: borderWidth + verticalPadding,
+                                                left: borderWidth + horizontalPadding,
+                                                bottom: borderWidth + verticalPadding,
+                                                right: borderWidth + horizontalPadding)
+    }
+
+    private func updateTitleColor() {
+        button.setTitleColor(borderColor.withAlphaComponent(borderColorAlpha * disabledAlphaValue), for: .disabled)
+    }
+
     // MARK: - Life cycle functions
 
     /// Default setup to load the view from a xib file.
@@ -205,17 +216,5 @@ open class MUButton: MUNibView {
 
         progress.hidesWhenStopped = true
         button.layer.masksToBounds = true
-    }
-
-    /// Lays out subviews.
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        button.contentEdgeInsets = UIEdgeInsets(top: borderWidth + verticalPadding,
-                                                left: borderWidth + horizontalPadding,
-                                                bottom: borderWidth + verticalPadding,
-                                                right: borderWidth + horizontalPadding)
-
-        button.setTitleColor(borderColor.withAlphaComponent(borderColorAlpha * disabledAlphaValue), for: .disabled)
     }
 }
