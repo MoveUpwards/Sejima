@@ -73,9 +73,12 @@ class MUButtonTests: XCTestCase {
         let button = MUButton()
         XCTAssertNotNil(button)
 
+        button.title = "MyTitle"
+        button.state = .disabled
         button.isLoading = true
 
-        XCTAssertEqual(button.isUserInteractionEnabled, false)
+        XCTAssertEqual(button.title, "MyTitle")
+        XCTAssertEqual(button.state, .disabled)
         XCTAssertEqual(button.isLoading, true)
     }
 

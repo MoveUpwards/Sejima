@@ -34,21 +34,21 @@ open class MUButton: MUNibView {
     /// The current title that is displayed by the button.
     @IBInspectable open var title: String = "" {
         didSet {
-            setNeedsLayout()
+            button.setTitle(title, for: .normal)
         }
     }
 
     /// The button’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 17.0, weight: .regular) {
         didSet {
-            setNeedsLayout()
+            button.titleLabel?.font = titleFont
         }
     }
 
     /// The button’s horizontal alignment.
     @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
-            setNeedsLayout()
+            button.contentHorizontalAlignment = titleAlignment
         }
     }
 
@@ -65,14 +65,14 @@ open class MUButton: MUNibView {
     /// The button’s title color.
     @IBInspectable open dynamic var titleColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            button.setTitleColor(titleColor, for: .normal)
         }
     }
 
     /// The button’s highlighted title color.
     @IBInspectable open dynamic var titleHighlightedColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            button.setTitleColor(titleHighlightedColor, for: .highlighted)
         }
     }
 
@@ -81,17 +81,16 @@ open class MUButton: MUNibView {
     /// The activity indicator’s color.
     @IBInspectable open dynamic var progressColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            progress.color = progressColor
         }
     }
 
     /// Show or hide the progress indicator.
     @IBInspectable open dynamic var isLoading: Bool = false {
         didSet {
-            isUserInteractionEnabled = !isLoading
-            state = .normal
+            button.isHidden = isLoading
 
-            setNeedsLayout()
+            isLoading ? progress.startAnimating() : progress.stopAnimating()
         }
     }
 
@@ -100,7 +99,25 @@ open class MUButton: MUNibView {
     /// The button’s state. (Won't work with application's state and reserved state).
     @objc open dynamic var state: UIControl.State = .normal {
         didSet {
-            setNeedsLayout()
+            button.isEnabled = true
+            button.isHighlighted = false
+
+            switch state {
+            case .disabled:
+                let buttonAlpha = buttonBackgroundColorAlpha * disabledAlphaValue
+                let borderAlpha = borderColorAlpha * disabledAlphaValue
+
+                layer.borderColor = borderColor.withAlphaComponent(borderAlpha).cgColor
+                backgroundColor = buttonBackgroundColor.withAlphaComponent(buttonAlpha)
+                button.isEnabled = false
+
+            case .highlighted:
+                button.isHighlighted = true
+                backgroundColor = borderColor
+
+            default:
+                backgroundColor = buttonBackgroundColor
+            }
         }
     }
 
@@ -115,7 +132,7 @@ open class MUButton: MUNibView {
     @IBInspectable open dynamic var buttonBackgroundColor: UIColor = .white {
         didSet {
             buttonBackgroundColor.getRed(nil, green: nil, blue: nil, alpha: &buttonBackgroundColorAlpha)
-            setNeedsLayout()
+            backgroundColor = buttonBackgroundColor
         }
     }
 
@@ -123,6 +140,8 @@ open class MUButton: MUNibView {
     @IBInspectable open dynamic var borderColor: UIColor = .clear {
         didSet {
             borderColor.getRed(nil, green: nil, blue: nil, alpha: &borderColorAlpha)
+            layer.borderColor = borderColor.cgColor
+
             setNeedsLayout()
         }
     }
@@ -130,6 +149,8 @@ open class MUButton: MUNibView {
     /// The button’s border width.
     @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
+            layer.borderWidth = borderWidth
+
             setNeedsLayout()
         }
     }
@@ -137,7 +158,8 @@ open class MUButton: MUNibView {
     /// The button’s corner radius.
     @IBInspectable open dynamic var cornerRadius: CGFloat = 0.0 {
         didSet {
-            setNeedsLayout()
+            layer.cornerRadius = cornerRadius
+            button.layer.cornerRadius = cornerRadius
         }
     }
 
@@ -189,55 +211,11 @@ open class MUButton: MUNibView {
     override open func layoutSubviews() {
         super.layoutSubviews()
 
-        layer.borderColor = borderColor.cgColor
-        layer.borderWidth = borderWidth
-        layer.cornerRadius = cornerRadius
-        backgroundColor = buttonBackgroundColor
-
-        progress.color = progressColor
-
-        button.layer.cornerRadius = cornerRadius
-
-        button.contentHorizontalAlignment = titleAlignment
         button.contentEdgeInsets = UIEdgeInsets(top: borderWidth + verticalPadding,
                                                 left: borderWidth + horizontalPadding,
                                                 bottom: borderWidth + verticalPadding,
                                                 right: borderWidth + horizontalPadding)
 
-        button.titleLabel?.font = titleFont
-        button.setTitle(title, for: state)
-
-        button.setTitleColor(titleColor, for: .normal)
-        button.setTitleColor(titleHighlightedColor, for: .highlighted)
         button.setTitleColor(borderColor.withAlphaComponent(borderColorAlpha * disabledAlphaValue), for: .disabled)
-
-        updateButtonState()
-    }
-
-    private func updateButtonState() {
-        progress.stopAnimating()
-
-        button.isEnabled = true
-        button.isHighlighted = false
-
-        switch state {
-        case .disabled:
-            let buttonAlpha = buttonBackgroundColorAlpha * disabledAlphaValue
-            let borderAlpha = borderColorAlpha * disabledAlphaValue
-
-            layer.borderColor = borderColor.withAlphaComponent(borderAlpha).cgColor
-            backgroundColor = buttonBackgroundColor.withAlphaComponent(buttonAlpha)
-            button.isEnabled = false
-
-        case .highlighted:
-            button.isHighlighted = true
-            backgroundColor = borderColor
-
-        default:
-            if isLoading {
-                button.setTitle("", for: state)
-                progress.startAnimating()
-            }
-        }
     }
 }
