@@ -9,7 +9,7 @@
 import UIKit
 
 /// Delegate protocol for MUTopBar.
-public protocol MUTopBarDelegate: class {
+@objc public protocol MUTopBarDelegate: class {
     /// Will trigger each time left button or title is tapped.
     func didTap(_ topBar: MUTopBar)
 }
@@ -24,7 +24,7 @@ open class MUTopBar: MUNibView {
     @IBOutlet private var leftButtonWidth: NSLayoutConstraint!
 
     /// The object that acts as the delegate of the top bar.
-    open weak var delegate: MUTopBarDelegate?
+    @IBOutlet public weak var delegate: MUTopBarDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Public IBInspectable variables ONLY
 
