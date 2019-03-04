@@ -94,9 +94,9 @@ carthage update
 
 ![MUSegmentedControl](./Screenshots/MUSegmentedControl.png)
 
-- **MUProgress:** An horizontal progress bar with multiple sections.
+- **MUProportionalBar:** An horizontal progress bar with multiple sections.
 
-![MUProgress](./Screenshots/MUProgress.png)
+![MUProportionalBar](./Screenshots/MUProgress.png)
 
 - **MUTrimmer:** A draggable component usually used to trim vidéo.
 
