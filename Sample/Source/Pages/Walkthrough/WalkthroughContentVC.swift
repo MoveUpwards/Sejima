@@ -29,7 +29,6 @@ class WalkthroughContentVC: UIViewController {
         header.detailFont = .systemFont(ofSize: 14)
         header.detailColor = .white
         header.detail = headerDetail
-        header.textAlignment = .center
 
         imageView.backgroundColor = .clear
         imageView.image = image

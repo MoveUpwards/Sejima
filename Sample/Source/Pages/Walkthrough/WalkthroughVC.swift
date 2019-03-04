@@ -11,7 +11,7 @@ import Sejima
 
 class WalkthroughVC: UIViewController {
     @IBOutlet private weak var horizontalPager: MUHorizontalPager!
-//    @IBOutlet private weak var pageControl: MUPageControl!
+    @IBOutlet private weak var pageControl: MUPageControl!
     @IBOutlet private weak var button: MUButton!
 
     override var prefersStatusBarHidden: Bool {
@@ -27,15 +27,15 @@ class WalkthroughVC: UIViewController {
 
         addScrollViews()
 
-//        horizontalPager.pageControl = pageControl
+        horizontalPager.pageControl = pageControl
 
-//        pageControl.backgroundColor = .clear
-//        pageControl.pageIndicatorTintColor = UIColor(hex: 0xFA7921, alpha: 0x80)
-//        pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xFA7921)
-//        pageControl.enableTouchEvents = true
-//        pageControl.activeElementWidth = 24
-//        pageControl.elementSize = CGSize(width: 8, height: 8)
-//        pageControl.radius = 4
+        pageControl.backgroundColor = .clear
+        pageControl.pageIndicatorTintColor = UIColor(hex: 0xFA7921, alpha: 0x80)
+        pageControl.currentPageIndicatorTintColor = UIColor(hex: 0xFA7921)
+        pageControl.enableTouchEvents = true
+        pageControl.activeElementWidth = 24
+        pageControl.elementSize = CGSize(width: 8, height: 8)
+        pageControl.radius = 4
 
         button.buttonBackgroundColor = .clear
         button.title = "SKIP"
