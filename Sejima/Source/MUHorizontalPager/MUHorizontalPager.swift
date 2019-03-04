@@ -44,18 +44,23 @@ open class MUHorizontalPager: MUNibView {
     /// Describes the margin around the scroll view (The part on the margin will be visible but not scrollable).
     @IBInspectable open dynamic var horizontalMargin: CGFloat = 0.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            scrollViewTraillingMargin.constant = horizontalMargin
+            scrollViewLeadingMargin.constant = horizontalMargin
         }
     }
 
     // MARK: - Life cycle functions
 
-    /// Updates constraints for the view.
-    open override func updateConstraints() {
-        super.updateConstraints()
+    /// Lays out subviews.
+    open override func layoutSubviews() {
+        super.layoutSubviews()
 
-        scrollViewTraillingMargin.constant = horizontalMargin
-        scrollViewLeadingMargin.constant = horizontalMargin
+        // Have to wait one frame to be sure scrollView.bounds get the new value
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) { [weak self] in
+            if let index = self?.currentIndex {
+                self?.set(page: index, animated: true)
+            }
+        }
     }
 
     // MARK: - Public functions

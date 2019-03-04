@@ -171,11 +171,8 @@ open class MUPageControl: UIControl {
     }
 
     private func update(for page: Int) {
-        print("update for:", page, "was", currentPage)
         guard page >= 0 && page <= numberOfPages - 1 else {
-            print("OUT OF BOUNDS:", page)
             currentPage = max(0, min(currentPage, numberOfPages - 1))
-            print("Fixed =>", currentPage)
             return
         }
 
