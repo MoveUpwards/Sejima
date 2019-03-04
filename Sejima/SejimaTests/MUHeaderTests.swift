@@ -18,10 +18,10 @@ class MUHeaderTests: XCTestCase {
         XCTAssertEqual(header.textAlignment, .left)
         XCTAssertEqual(header.title, "")
         XCTAssertEqual(header.titleFont, .systemFont(ofSize: 34, weight: .regular))
-        XCTAssertEqual(header.titleColor, .white)
+        XCTAssertEqual(header.titleColor, .black)
         XCTAssertEqual(header.detail, "")
         XCTAssertEqual(header.detailFont, .systemFont(ofSize: 14, weight: .semibold))
-        XCTAssertEqual(header.detailColor, .white)
+        XCTAssertEqual(header.detailColor, .black)
         XCTAssertEqual(header.spacing, 8.0)
     }
 
@@ -32,7 +32,7 @@ class MUHeaderTests: XCTestCase {
         header.textAlignment = .center
         header.title = "My title"
         header.titleFont = .systemFont(ofSize: 30, weight: .light)
-        header.titleColor = .black
+        header.titleColor = .lightGray
         header.detail = "My long description"
         header.detailFont = .systemFont(ofSize: 12, weight: .regular)
         header.detailColor = .lightGray
@@ -43,7 +43,7 @@ class MUHeaderTests: XCTestCase {
         XCTAssertEqual(header.textAlignment, .center)
         XCTAssertEqual(header.title, "My title")
         XCTAssertEqual(header.titleFont, .systemFont(ofSize: 30, weight: .light))
-        XCTAssertEqual(header.titleColor, .black)
+        XCTAssertEqual(header.titleColor, .lightGray)
         XCTAssertEqual(header.detail, "My long description")
         XCTAssertEqual(header.detailFont, .systemFont(ofSize: 12, weight: .regular))
         XCTAssertEqual(header.detailColor, .lightGray)
