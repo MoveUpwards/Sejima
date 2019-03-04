@@ -88,4 +88,12 @@ open class MUHeader: MUNibView {
             labelsSpacing.constant = spacing
         }
     }
+
+    /// Return the size with a force sizeToFit (for unit tests only)
+    internal func debugSize() -> CGSize {
+        titleLabel.sizeToFit()
+        detailLabel.sizeToFit()
+        return CGSize(width: max(titleLabel.bounds.width, detailLabel.bounds.width),
+                      height: titleLabel.bounds.height + spacing + detailLabel.bounds.height)
+    }
 }

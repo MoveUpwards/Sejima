@@ -68,4 +68,39 @@ class MUHeaderTests: XCTestCase {
 
         XCTAssertEqual(header.textAlignment.rawValue, -2)
     }
+
+    func testTitleDetailWidth() {
+        let header = MUHeader()
+        XCTAssertNotNil(header)
+
+        let titleLabel = UILabel()
+        titleLabel.font = header.titleFont
+
+        let detailLabel = UILabel()
+        detailLabel.font = header.detailFont
+
+        header.title = "Title"
+
+        titleLabel.text = "Title"
+        titleLabel.sizeToFit()
+
+        var width = header.debugSize().width
+        XCTAssertEqual(width, titleLabel.bounds.width, accuracy: width * 1.07) // accuracy of 7%
+
+        header.detail = "Long detail description."
+
+        detailLabel.text = "Long detail description."
+        detailLabel.sizeToFit()
+
+        width = header.debugSize().width
+        XCTAssertEqual(width, detailLabel.bounds.width, accuracy: width * 1.07) // accuracy of 7%
+
+        header.title = "Title very long to exceed the detail"
+
+        titleLabel.text = "Title very long to exceed the detail"
+        titleLabel.sizeToFit()
+
+        width = header.debugSize().width
+        XCTAssertEqual(width, titleLabel.bounds.width, accuracy: width * 1.07) // accuracy of 7%
+    }
 }
