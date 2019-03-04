@@ -31,7 +31,7 @@ open class MUTopBar: MUNibView {
     /// The current title.
     @IBInspectable open var title: String = "" {
         didSet {
-            setNeedsLayout()
+            titleLabel.setTitle(title, for: .normal)
         }
     }
 
@@ -40,21 +40,21 @@ open class MUTopBar: MUNibView {
     /// The button horizontal alignment.
     @objc open dynamic var buttonAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
-            setNeedsLayout()
+            leftButton.contentHorizontalAlignment = buttonAlignment
         }
     }
 
     /// The title horizontal alignment.
     @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
         didSet {
-            setNeedsLayout()
+            titleLabel.contentHorizontalAlignment = titleAlignment
         }
     }
 
     /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 24.0, weight: .bold) {
         didSet {
-            setNeedsLayout()
+            titleLabel.titleLabel?.font = titleFont
         }
     }
 
@@ -63,21 +63,21 @@ open class MUTopBar: MUNibView {
     /// A UIImage for the button.
     @IBInspectable open dynamic var buttonImage: UIImage? = nil {
         didSet {
-            setNeedsLayout()
+            leftButton.setImage(buttonImage, for: .normal)
         }
     }
 
     /// Define the left inset of the button.
     @IBInspectable open dynamic var buttonLeftPadding: CGFloat = 0.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            leftButtonLeading.constant = buttonLeftPadding
         }
     }
 
     /// The title’s text color.
     @IBInspectable open dynamic var titleColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            titleLabel.setTitleColor(titleColor, for: .normal)
         }
     }
 
@@ -95,7 +95,7 @@ open class MUTopBar: MUNibView {
     @IBInspectable open dynamic var showButton: Bool = false {
         didSet {
             leftButton.isHidden = !showButton
-            setNeedsUpdateConstraints()
+            leftButtonWidth.constant = showButton ? (buttonImage?.size.width ?? 0.0) * UIScreen.main.scale : 0.0
         }
     }
 
@@ -119,26 +119,6 @@ open class MUTopBar: MUNibView {
     }
 
     // MARK: - Life cycle functions
-
-    /// Lays out subviews.
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        leftButton.setImage(buttonImage, for: .normal)
-        leftButton.contentHorizontalAlignment = buttonAlignment
-        titleLabel.setTitleColor(titleColor, for: .normal)
-        titleLabel.titleLabel?.font = titleFont
-        titleLabel.setTitle(title, for: .normal)
-        titleLabel.contentHorizontalAlignment = titleAlignment
-    }
-
-    /// Updates constraints for the view.
-    override open func updateConstraints() {
-        super.updateConstraints()
-
-        leftButtonLeading.constant = buttonLeftPadding
-        leftButtonWidth.constant = showButton ? (buttonImage?.size.width ?? 0.0) * UIScreen.main.scale : 0.0
-    }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
