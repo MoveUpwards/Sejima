@@ -13,8 +13,6 @@ class WalkthroughVC: UIViewController {
     @IBOutlet private weak var horizontalPager: MUHorizontalPager!
     @IBOutlet private weak var pageControl: MUPageControl!
     @IBOutlet private weak var button: MUButton!
-    
-    private let margin = CGFloat(20.0)
 
     override var prefersStatusBarHidden: Bool {
         return true
@@ -29,9 +27,7 @@ class WalkthroughVC: UIViewController {
 
         addScrollViews()
 
-        horizontalPager.delegate = self
         horizontalPager.pageControl = pageControl
-        horizontalPager.horizontalMargin = margin
 
         pageControl.backgroundColor = .clear
         pageControl.pageIndicatorTintColor = UIColor(hex: 0xFA7921, alpha: 0x80)
@@ -41,7 +37,6 @@ class WalkthroughVC: UIViewController {
         pageControl.elementSize = CGSize(width: 8, height: 8)
         pageControl.radius = 4
 
-        button.delegate = self
         button.buttonBackgroundColor = .clear
         button.title = "SKIP"
         button.titleFont = .boldSystemFont(ofSize: 17)
@@ -77,7 +72,7 @@ class WalkthroughVC: UIViewController {
                         detail: "Simple tips to balance your mind, body & soul")?.view ?? UIView()
         ]
 
-        horizontalPager.add(views: vcs, margin: margin)
+        horizontalPager.add(views: vcs, margin: horizontalPager.horizontalMargin)
     }
 
     private func contentView(with image: UIImage, title: String = "", detail: String = "") -> WalkthroughContentVC? {
