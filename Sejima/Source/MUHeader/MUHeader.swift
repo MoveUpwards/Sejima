@@ -89,6 +89,11 @@ open class MUHeader: MUNibView {
         }
     }
 
+    /// The natural size for the receiving view, considering only properties of the view itself.
+    override open var intrinsicContentSize: CGSize {
+        return .zero
+    }
+
     /// Return the size with a force sizeToFit (for unit tests only)
     internal func debugSize() -> CGSize {
         titleLabel.sizeToFit()

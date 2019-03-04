@@ -217,4 +217,9 @@ open class MUButton: MUNibView {
         progress.hidesWhenStopped = true
         button.layer.masksToBounds = true
     }
+
+    /// The natural size for the receiving view, considering only properties of the view itself.
+    override open var intrinsicContentSize: CGSize {
+        return CGSize(width: verticalPadding * 2.0, height: 0.0)
+    }
 }

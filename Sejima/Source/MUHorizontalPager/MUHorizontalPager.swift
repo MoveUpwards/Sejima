@@ -63,6 +63,11 @@ open class MUHorizontalPager: MUNibView {
         }
     }
 
+    /// The natural size for the receiving view, considering only properties of the view itself.
+    override open var intrinsicContentSize: CGSize {
+        return .zero
+    }
+
     // MARK: - Public functions
 
     /// Add all views to the pager with an optional margin between each pages.

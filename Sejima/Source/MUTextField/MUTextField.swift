@@ -35,7 +35,7 @@ open class MUTextField: MUNibView {
     /// The current title that is shown on top of the textfield.
     @IBInspectable open var title: String = "" {
         didSet {
-            setNeedsLayout()
+            label.text = title
         }
     }
 
@@ -44,56 +44,57 @@ open class MUTextField: MUNibView {
     /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: UIFont.systemFontSize, weight: .medium) {
         didSet {
-            setNeedsLayout()
+            label.font = titleFont
         }
     }
 
     /// The title and textfield text horizontal alignment.
     @objc open dynamic var textAlignment: NSTextAlignment = .left {
         didSet {
-            setNeedsLayout()
+            label.textAlignment = textAlignment
+            textField.textAlignment = textAlignment
         }
     }
 
     /// The textfield’s font.
     @objc open dynamic var textFieldFont: UIFont = .systemFont(ofSize: UIFont.systemFontSize, weight: .medium) {
         didSet {
-            setNeedsLayout()
+            textField.font = textFieldFont
         }
     }
 
     /// The keyboard style associated with the text object.
     @objc open dynamic var keyboardType: UIKeyboardType = .default {
         didSet {
-            setNeedsLayout()
+            textField.keyboardType = keyboardType
         }
     }
 
     /// The appearance style of the keyboard that is associated with the text object.
     @objc open dynamic var keyboardAppearance: UIKeyboardAppearance = .default {
         didSet {
-            setNeedsLayout()
+            textField.keyboardAppearance = keyboardAppearance
         }
     }
 
     /// The visible title of the Return key.
     @objc open dynamic var keyboardReturnKeyType: UIReturnKeyType = .default {
         didSet {
-            setNeedsLayout()
+            textField.returnKeyType = keyboardReturnKeyType
         }
     }
 
     /// A Boolean value indicating whether the Return key is automatically enabled when the user is entering text.
     @objc open dynamic var keyboardEnablesReturnKeyAutomatically: Bool = false {
         didSet {
-            setNeedsLayout()
+            textField.enablesReturnKeyAutomatically = keyboardEnablesReturnKeyAutomatically
         }
     }
 
     /// The autocorrection style for the text object.
     @objc open dynamic var keyboardAutocorrectionType: UITextAutocorrectionType = .default {
         didSet {
-            setNeedsLayout()
+            textField.autocorrectionType = keyboardAutocorrectionType
         }
     }
 
@@ -102,28 +103,28 @@ open class MUTextField: MUNibView {
     /// The title’s color.
     @IBInspectable open dynamic var titleColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            label.textColor = titleColor
         }
     }
 
     /// The text displayed by the text field.
     @IBInspectable open var text: String = "" {
         didSet {
-            setNeedsLayout()
+            textField.text = text
         }
     }
 
     /// The string that is displayed when there is no other text in the text field.
     @IBInspectable open var placeholder: String = "" {
         didSet {
-            setNeedsLayout()
+            updatePlaceholder()
         }
     }
 
     /// The placehodler's color.
     @IBInspectable open dynamic var placeholderColor: UIColor = .lightGray {
         didSet {
-            setNeedsLayout()
+            updatePlaceholder()
         }
     }
 
@@ -140,7 +141,7 @@ open class MUTextField: MUNibView {
     /// The color of the text.
     @IBInspectable open dynamic var textColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+           textField.textColor = textColor
         }
     }
 
@@ -167,28 +168,24 @@ open class MUTextField: MUNibView {
     /// Identifies whether the text object should disable text copying and in some cases hide the text being entered.
     @IBInspectable open dynamic var isSecure: Bool = false {
         didSet {
-            setNeedsLayout()
+            textField.isSecureTextEntry = isSecure
         }
     }
 
     /// Identifies whether the text field should respond to user edit.
-    @IBInspectable open dynamic var isEditable: Bool = true {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    @IBInspectable open dynamic var isEditable: Bool = true
 
     /// The underline’s height.
     @IBInspectable open dynamic var underlineHeight: CGFloat = 0.0 {
         didSet {
-            setNeedsLayout()
+            underlineHeightConstraint.constant = underlineHeight
         }
     }
 
     /// The underline’s color.
     @IBInspectable open dynamic var underlineColor: UIColor = .clear {
         didSet {
-            setNeedsLayout()
+            underlineView.backgroundColor = underlineColor
         }
     }
 
@@ -210,6 +207,13 @@ open class MUTextField: MUNibView {
         delegate?.editingChanged(self)
     }
 
+    // MARK: - Private functions
+
+    private func updatePlaceholder() {
+        textField.attributedPlaceholder =
+            NSAttributedString(string: placeholder, attributes: [.foregroundColor: placeholderColor])
+    }
+
     // MARK: - Life cycle functions
 
     /// Default setup to load the view from a xib file.
@@ -219,31 +223,9 @@ open class MUTextField: MUNibView {
         textField.delegate = self
     }
 
-    /// Lays out subviews.
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        label.text = title
-        label.textColor = titleColor
-        label.font = titleFont
-        label.textAlignment = textAlignment
-
-        textField.text = text
-        textField.isSecureTextEntry = isSecure
-        textField.placeholder = placeholder
-        textField.attributedPlaceholder =
-            NSAttributedString(string: placeholder, attributes: [.foregroundColor: placeholderColor])
-        textField.textAlignment = textAlignment
-        textField.textColor = textColor
-        textField.font = textFieldFont
-        textField.keyboardType = keyboardType
-        textField.keyboardAppearance = keyboardAppearance
-        textField.returnKeyType = keyboardReturnKeyType
-        textField.autocorrectionType = keyboardAutocorrectionType
-        textField.enablesReturnKeyAutomatically = keyboardEnablesReturnKeyAutomatically
-
-        underlineHeightConstraint.constant = underlineHeight
-        underlineView.backgroundColor = underlineColor
+    /// The natural size for the receiving view, considering only properties of the view itself.
+    override open var intrinsicContentSize: CGSize {
+        return .zero
     }
 }
 
