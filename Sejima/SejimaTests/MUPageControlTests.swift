@@ -113,23 +113,28 @@ class MUPageControlTests: XCTestCase {
         XCTAssertNotNil(pageControl)
 
         pageControl.numberOfPages = 5
+        pageControl.layoutSubviews()
 
         XCTAssertEqual(pageControl.currentPage, 0)
 
         pageControl.set(page: 2, animated: false)
+        pageControl.layoutSubviews()
 
         XCTAssertEqual(pageControl.currentPage, 2)
 
         pageControl.set(page: 4, animated: true)
+        pageControl.layoutSubviews()
 
         XCTAssertEqual(pageControl.currentPage, 2) // Still page 2 as animation is running
 
         pageControl.currentPage = -1
+        pageControl.layoutSubviews()
 
         XCTAssertEqual(pageControl.currentPage, 0)
 
         pageControl.set(page: 4, animated: false) // Go to last one
         pageControl.numberOfPages = 2
+        pageControl.layoutSubviews()
 
         XCTAssertEqual(pageControl.currentPage, 1) // Should be still on last one
     }

@@ -39,7 +39,7 @@ open class MUPageControl: UIControl {
     /// The current page, shown by the receiver as a white dot.
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
-            update(for: currentPage)
+            setNeedsLayout()
         }
     }
 
@@ -79,7 +79,6 @@ open class MUPageControl: UIControl {
     @IBInspectable open dynamic var padding: CGFloat = 8.0 {
         didSet {
             setNeedsLayout()
-            update(for: currentPage)
         }
     }
 
@@ -87,7 +86,6 @@ open class MUPageControl: UIControl {
     @IBInspectable open dynamic var radius: CGFloat = 4.0 {
         didSet {
             setNeedsLayout()
-            update(for: currentPage)
         }
     }
 
@@ -167,21 +165,22 @@ open class MUPageControl: UIControl {
             return newLayer
         }
 
-        update(for: currentPage) // test if current page is still in bounds
-
         layer.addSublayer(active)
         setNeedsLayout()
         invalidateIntrinsicContentSize()
     }
 
     private func update(for page: Int) {
-        guard let targetX = inactive.first?.frame.origin.x, numberOfPages > 0 else {
-                return
+        print("update for:", page, "was", currentPage)
+        guard page >= 0 && page <= numberOfPages - 1 else {
+            print("OUT OF BOUNDS:", page)
+            currentPage = max(0, min(currentPage, numberOfPages - 1))
+            print("Fixed =>", currentPage)
+            return
         }
 
-        guard page >= 0 && page <= numberOfPages - 1 else {
-                currentPage = max(0, min(currentPage, numberOfPages - 1))
-                return
+        guard let targetX = inactive.first?.frame.origin.x, numberOfPages > 0 else {
+            return
         }
 
         resetInactive()
