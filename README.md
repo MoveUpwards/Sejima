@@ -92,7 +92,7 @@ carthage update
 
 - **MUSegmentedControl:** UISegmentedControl like with more designable options.
 
-![MUSegmentedControl](./Screenshots/MUNavigationBar.png)
+![MUSegmentedControl](./Screenshots/MUSegmentedControl.png)
 
 - **MUProgress:** An horizontal progress bar with multiple sections.
 
