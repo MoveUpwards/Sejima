@@ -9,7 +9,7 @@
 import UIKit
 
 /// Delegate protocol for MUTextField.
-public protocol MUTextFieldDelegate: class {
+@objc public protocol MUTextFieldDelegate: class {
     /// Will trigger each time textfield is selected.
     func didSelect(_ textField: MUTextField)
     /// Will trigger each time textfield loose focus.
@@ -28,7 +28,7 @@ open class MUTextField: MUNibView {
     @IBOutlet private var underlineHeightConstraint: NSLayoutConstraint!
 
     /// The object that acts as the delegate of the textfield.
-    open weak var delegate: MUTextFieldDelegate?
+    @IBOutlet public weak var delegate: MUTextFieldDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Public IBInspectable variables ONLY
 

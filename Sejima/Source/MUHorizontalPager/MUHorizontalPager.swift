@@ -9,7 +9,7 @@
 import UIKit
 
 /// Delegate protocol for MUHorizontalPager.
-public protocol MUHorizontalPagerDelegate: class {
+@objc public protocol MUHorizontalPagerDelegate: class {
     /// Will trigger each time the page index change.
     func didScroll(_ horizontalPager: MUHorizontalPager, to index: Int)
 }
@@ -28,10 +28,10 @@ open class MUHorizontalPager: MUNibView {
     private var margin = CGFloat(0.0)
 
     /// The object that acts as the delegate of the pager.
-    open weak var delegate: MUHorizontalPagerDelegate?
+    @IBOutlet public weak var delegate: MUHorizontalPagerDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     /// The pager can interact with a page control.
-    open weak var pageControl: MUPageControl? {
+    @IBOutlet public weak var pageControl: MUPageControl? { // swiftlint:disable:this private_outlet strong_iboutlet line_length
         didSet {
             pageControl?.numberOfPages = numberOfPages
             pageControl?.set(page: currentIndex, animated: false)

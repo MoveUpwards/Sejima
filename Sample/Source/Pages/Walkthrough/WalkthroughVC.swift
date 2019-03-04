@@ -47,6 +47,9 @@ class WalkthroughVC: UIViewController {
         button.titleFont = .boldSystemFont(ofSize: 17)
         button.titleColor = UIColor(hex: 0xFA7921)
         button.titleHighlightedColor = .white
+        button.borderColor = UIColor(hex: 0xFA7921)
+        button.borderWidth = 0.0
+        button.cornerRadius = button.bounds.height * 0.5
     }
 
     override func viewDidLayoutSubviews() {

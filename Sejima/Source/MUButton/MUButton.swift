@@ -9,7 +9,7 @@
 import UIKit
 
 /// Delegate protocol for MUButton.
-public protocol MUButtonDelegate: class {
+@objc public protocol MUButtonDelegate: class {
     /// Will trigger each time button is tapped.
     func didTap(_ button: MUButton)
 }
@@ -27,7 +27,7 @@ open class MUButton: MUNibView {
     private var borderColorAlpha: CGFloat = 1.0
 
     /// The object that acts as the delegate of the button.
-    open weak var delegate: MUButtonDelegate?
+    @IBOutlet public weak var delegate: MUButtonDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Title
 

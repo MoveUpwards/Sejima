@@ -9,7 +9,7 @@
 import UIKit
 
 /// Delegate protocol for MUPageControl.
-public protocol MUPageControlDelegate: class {
+@objc public protocol MUPageControlDelegate: class {
     /// Will trigger each time the page control is tapped.
     func didTap(_ pageControl: MUPageControl, at index: Int)
 }
@@ -24,7 +24,7 @@ open class MUPageControl: UIControl {
     private var displayLink: CADisplayLink?
 
     /// The object that acts as the delegate of the page control.
-    open weak var delegate: MUPageControlDelegate?
+    @IBOutlet public weak var delegate: MUPageControlDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Public IBInspectable variables ONLY
 
