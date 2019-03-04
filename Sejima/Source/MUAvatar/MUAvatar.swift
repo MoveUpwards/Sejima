@@ -1,0 +1,130 @@
+//
+//  MUAvatar.swift
+//  MUComponent
+//
+//  Created by Loïc GRIFFIE on 31/10/2018.
+//  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
+//
+
+import UIKit
+
+/// Delegate protocol for MUAvatar.
+@objc public protocol MUAvatarDelegate: class {
+    /// Will trigger each time avatar is tapped.
+    func didTap(_ avatar: MUAvatar)
+}
+
+/// Class that act like UIButton with more customizable options.
+@IBDesignable
+open class MUAvatar: MUNibView {
+    @IBOutlet private var avatar: UIImageView!
+    @IBOutlet private var placeholder: UIImageView!
+
+    /// The object that acts as the delegate of the avatar.
+    @IBOutlet public weak var delegate: MUAvatarDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
+
+    /// Avatar style representation
+    public enum Style: Equatable {
+        /// Square
+        case square
+
+        /// Round
+        case round
+
+        /// Custom corner radius
+        case custom(_ radius: Int)
+    }
+
+    /// The avatar’s border width.
+    @IBInspectable open dynamic var borderWidth: CGFloat = 2 {
+        didSet {
+            avatar.layer.borderWidth = borderWidth
+        }
+    }
+
+    /// The avatar’s border color.
+    @IBInspectable open dynamic var borderColor: UIColor = .black {
+        didSet {
+            avatar.layer.borderColor = borderColor.cgColor
+        }
+    }
+
+    /// The avatar's style.
+    open var avatarType: MUAvatar.Style = .round {
+        didSet {
+            updateStyle()
+        }
+    }
+
+    /// Optional: The IBInspectable version of the avatar's style.
+    @IBInspectable open dynamic var avatarTypeInt: Int = 1 {
+        didSet {
+            switch avatarTypeInt {
+            case 1:
+                avatarType = .round
+            case 2:
+                avatarType = .custom(radius)
+            default:
+                avatarType = .square
+            }
+        }
+    }
+
+    /// The avatar's corner radius.
+    @IBInspectable open dynamic var radius: Int = 0 {
+        didSet {
+            avatarTypeInt = 2
+        }
+    }
+
+    /// The avatar’s image.
+    @IBInspectable open dynamic var avatarImage: UIImage? {
+        didSet {
+            avatar.image = avatarImage
+        }
+    }
+
+    /// The avatar’s placeholder image shown if no image defined.
+    @IBInspectable open dynamic var placeholderImage: UIImage? {
+        didSet {
+            placeholder.image = placeholderImage
+        }
+    }
+
+    // MARK: - Private IBAction functions
+
+    private func updateStyle() {
+        switch avatarType {
+        case .round:
+            layer.cornerRadius = avatar.bounds.size.width * 0.5
+            avatar.layer.cornerRadius = avatar.bounds.size.width * 0.5
+        case .custom(let radius):
+            layer.cornerRadius = CGFloat(radius)
+            avatar.layer.cornerRadius = CGFloat(radius)
+        case .square:
+            layer.cornerRadius = 0
+            avatar.layer.cornerRadius = 0
+        }
+    }
+
+    // MARK: - Private IBAction functions
+
+    @IBAction private func didTap(_ sender: Any?) {
+        delegate?.didTap(self)
+    }
+
+    // MARK: - Life cycle functions
+
+    /// Default setup to load the view from a xib file.
+    override open func xibSetup() {
+        super.xibSetup()
+
+        layer.masksToBounds = true
+        avatar.layer.masksToBounds = true
+    }
+
+    /// The natural size for the receiving view, considering only properties of the view itself.
+    override open var intrinsicContentSize: CGSize {
+        return CGSize(width: 64.0, height: 64.0)
+    }
+}
