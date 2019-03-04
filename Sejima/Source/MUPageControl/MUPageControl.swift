@@ -169,6 +169,7 @@ open class MUPageControl: UIControl {
 
         update(for: currentPage) // test if current page is still in bounds
 
+        active.removeFromSuperlayer()
         layer.addSublayer(active)
         setNeedsLayout()
         invalidateIntrinsicContentSize()
