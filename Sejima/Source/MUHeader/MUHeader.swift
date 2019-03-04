@@ -33,7 +33,7 @@ open class MUHeader: MUNibView {
     }
 
     /// The title’s text color.
-    @IBInspectable open dynamic var titleColor: UIColor = .white {
+    @IBInspectable open dynamic var titleColor: UIColor = .black {
         didSet {
             titleLabel.textColor = titleColor
         }
@@ -56,7 +56,7 @@ open class MUHeader: MUNibView {
     }
 
     /// The detail’s text color.
-    @IBInspectable open dynamic var detailColor: UIColor = .white {
+    @IBInspectable open dynamic var detailColor: UIColor = .black {
         didSet {
             detailLabel.textColor = detailColor
         }
