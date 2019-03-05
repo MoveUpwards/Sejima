@@ -154,16 +154,12 @@ open class MUSegmentedControl: UIControl {
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
         super.init(frame: frame)
-
-//        translatesAutoresizingMaskIntoConstraints = true
         setup()
     }
 
     /// Returns an object initialized from data in a given unarchiver.
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-//        translatesAutoresizingMaskIntoConstraints = false
         setup()
     }
 

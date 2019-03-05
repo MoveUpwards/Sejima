@@ -35,16 +35,12 @@ final internal class MUSegmentIndicatorView: UIView {
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override internal init(frame: CGRect) {
         super.init(frame: frame)
-
-//        translatesAutoresizingMaskIntoConstraints = true
         setup()
     }
 
     /// Returns an object initialized from data in a given unarchiver.
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
-//        translatesAutoresizingMaskIntoConstraints = false
         setup()
     }
 
