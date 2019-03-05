@@ -52,7 +52,7 @@ open class MUHorizontalPager: MUNibView {
     // MARK: - Life cycle functions
 
     /// Lays out subviews.
-    open override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         // Have to wait one frame to be sure scrollView.bounds get the new value

@@ -26,54 +26,54 @@ open class MUAvatar: MUNibView {
     public enum Style: Equatable {
         /// Square
         case square
-
         /// Round
         case round
-
         /// Custom corner radius
-        case custom(_ radius: Int)
+        case custom(_ radius: CGFloat)
     }
 
     /// The avatar’s border width.
-    @IBInspectable open dynamic var borderWidth: CGFloat = 2 {
+    @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
             avatar.layer.borderWidth = borderWidth
         }
     }
 
     /// The avatar’s border color.
-    @IBInspectable open dynamic var borderColor: UIColor = .black {
+    @IBInspectable open dynamic var borderColor: UIColor = .clear {
         didSet {
             avatar.layer.borderColor = borderColor.cgColor
         }
     }
 
     /// The avatar's style.
-    open var style: MUAvatar.Style = .round {
+    open var style: MUAvatar.Style = .square {
         didSet {
             updateStyle()
         }
     }
 
     /// Optional: The IBInspectable version of the avatar's style.
-    @IBInspectable open dynamic var avatarStyleInt: Int = 0 {
+    @IBInspectable open dynamic var styleInt: Int = 0 {
         didSet {
-            switch avatarStyleInt {
-            case 1:
+            switch styleInt {
+            case 0:
                 style = .square
-            case 2:
-                style = .custom(radius)
-            default:
+            case 1:
                 style = .round
+            default:
+                style = .custom(radius)
             }
         }
     }
 
     /// The avatar's corner radius.
-    @IBInspectable open dynamic var radius: Int = 0 {
+    @IBInspectable open dynamic var radius: CGFloat = 0.0 {
         didSet {
-            guard radius > 0 else { return }
-            avatarStyleInt = 2
+            guard radius > 0 else {
+                return
+            }
+            style = .custom(radius)
         }
     }
 
@@ -92,12 +92,14 @@ open class MUAvatar: MUNibView {
     /// The avatar’s placeholder image shown if no image defined.
     @IBInspectable open dynamic var placeholderImage: UIImage? {
         didSet {
-            guard avatarImage == nil else { return }
+            guard avatarImage == nil else {
+                return
+            }
             avatar.image = placeholderImage
         }
     }
 
-    // MARK: - Private IBAction functions
+    // MARK: - Private functions
 
     private func updateStyle() {
         switch style {
@@ -125,10 +127,11 @@ open class MUAvatar: MUNibView {
         super.xibSetup()
 
         layer.masksToBounds = true
-        avatar.layer.masksToBounds = layer.masksToBounds
+        avatar.layer.masksToBounds = true
     }
 
-    open override func layoutSubviews() {
+    /// Lays out subviews.
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         updateStyle()

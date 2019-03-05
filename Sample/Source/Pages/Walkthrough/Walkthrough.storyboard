@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--WalkthroughVC-->
+        <!--Delegate-->
         <scene sceneID="j2F-3P-Ne5">
             <objects>
                 <viewController id="LlL-Qz-s2h" customClass="WalkthroughVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,6 +26,10 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="LlL-Qz-s2h" id="o8n-zt-sIL"/>
+                                    <outlet property="pageControl" destination="n1Y-sS-a8d" id="obr-P1-V61"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-sS-a8d" customClass="MUPageControl" customModule="Sejima">
                                 <rect key="frame" x="24" y="635" width="0.0" height="8"/>
@@ -37,9 +41,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
                                 <rect key="frame" x="325" y="622.5" width="30" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LlL-Qz-s2h" id="ESQ-WZ-O5o"/>
+                                </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="BUw-2N-UTo" secondAttribute="trailing" constant="20" id="H6n-91-5eX"/>
                             <constraint firstItem="QhG-9M-3RI" firstAttribute="trailing" secondItem="agf-Rc-d34" secondAttribute="trailing" id="HEy-Pe-Xgg"/>
@@ -53,9 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="QhG-9M-3RI"/>
                     </view>
                     <connections>
-                        <outlet property="button" destination="BUw-2N-UTo" id="h0Z-JW-7nX"/>
-                        <outlet property="horizontalPager" destination="agf-Rc-d34" id="1fd-gc-jg5"/>
-                        <outlet property="pageControl" destination="n1Y-sS-a8d" id="gmg-KW-RR2"/>
+                        <outlet property="button" destination="BUw-2N-UTo" id="8vn-ed-K2t"/>
+                        <outlet property="horizontalPager" destination="agf-Rc-d34" id="KDW-Gu-hWz"/>
+                        <outlet property="pageControl" destination="n1Y-sS-a8d" id="Jov-WH-yaN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iXW-o8-8dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -73,7 +80,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Sb-p6-0j3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12h-J8-VI3" customClass="MUHeader" customModule="Sejima">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="12h-J8-VI3" customClass="MUHeader" customModule="Sejima">
                                 <rect key="frame" x="0.0" y="639" width="0.0" height="8"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

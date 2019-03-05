@@ -15,10 +15,10 @@ class MUAvatarTests: XCTestCase {
         let avatar = MUAvatar()
         XCTAssertNotNil(avatar)
 
-        XCTAssertEqual(avatar.radius, 0)
-        XCTAssertEqual(avatar.borderWidth, 2)
-        XCTAssertEqual(avatar.borderColor, .black)
-        XCTAssertEqual(avatar.style, .round)
+        XCTAssertEqual(avatar.radius, 0.0)
+        XCTAssertEqual(avatar.borderWidth, 0.0)
+        XCTAssertEqual(avatar.borderColor, .clear)
+        XCTAssertEqual(avatar.style, .square)
         XCTAssertNil(avatar.avatarImage)
         XCTAssertNil(avatar.placeholderImage)
     }
@@ -27,18 +27,18 @@ class MUAvatarTests: XCTestCase {
         let avatar = MUAvatar()
         XCTAssertNotNil(avatar)
 
-        avatar.borderWidth = 10
+        avatar.borderWidth = 10.0
         avatar.borderColor = .orange
-        avatar.style = .square
+        avatar.radius = 5.0
         avatar.avatarImage = UIImage()
         avatar.placeholderImage = UIImage()
 
         avatar.layoutSubviews()
 
-        XCTAssertEqual(avatar.radius, 0)
-        XCTAssertEqual(avatar.borderWidth, 10)
+        XCTAssertEqual(avatar.radius, 5.0)
+        XCTAssertEqual(avatar.borderWidth, 10.0)
         XCTAssertEqual(avatar.borderColor, .orange)
-        XCTAssertEqual(avatar.style, .square)
+        XCTAssertEqual(avatar.style, .custom(5.0))
         XCTAssertNotNil(avatar.avatarImage)
         XCTAssertNotNil(avatar.placeholderImage)
     }
@@ -47,13 +47,13 @@ class MUAvatarTests: XCTestCase {
         let avatar = MUAvatar()
         XCTAssertNotNil(avatar)
 
-        XCTAssertEqual(avatar.avatarStyleInt, 0)
-        XCTAssertEqual(avatar.style, .round)
-
-        avatar.avatarStyleInt = 1
+        XCTAssertEqual(avatar.styleInt, 0)
         XCTAssertEqual(avatar.style, .square)
 
-        avatar.avatarStyleInt = 2
+        avatar.styleInt = 1
+        XCTAssertEqual(avatar.style, .round)
+
+        avatar.styleInt = 2
         XCTAssertEqual(avatar.style, .custom(0))
     }
 
