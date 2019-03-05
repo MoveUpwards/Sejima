@@ -44,7 +44,6 @@ class WalkthroughVC: UIViewController {
         button.titleHighlightedColor = .white
         button.borderColor = UIColor(hex: 0xFA7921)
         button.borderWidth = 0.0
-        button.cornerRadius = button.bounds.height * 0.5
     }
 
     override func viewDidLayoutSubviews() {
@@ -54,6 +53,8 @@ class WalkthroughVC: UIViewController {
             UIColor(hex: 0x094256).cgColor,
             UIColor(hex: 0x00171F).cgColor
         ])
+
+        button.cornerRadius = button.bounds.height * 0.5
     }
 
     private func addScrollViews() {
@@ -86,8 +87,9 @@ class WalkthroughVC: UIViewController {
 
 extension WalkthroughVC: MUHorizontalPagerDelegate {
     func didScroll(_ horizontalPager: MUHorizontalPager, to index: Int) {
-        guard let numberOfPages = horizontalPager.pageControl?.numberOfPages else { return }
-
+        guard let numberOfPages = horizontalPager.pageControl?.numberOfPages else {
+            return
+        }
         button.title = numberOfPages - 1 == index ? "LET'S GO" : "SKIP"
     }
 }

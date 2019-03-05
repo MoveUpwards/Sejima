@@ -335,7 +335,7 @@ open class MUPageControl: UIControl {
 
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return .zero
+        return sizeThatFits(CGSize.zero)
     }
 
     /// Asks the view to calculate and return the size that best fits the specified size.
