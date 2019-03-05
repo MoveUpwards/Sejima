@@ -16,6 +16,8 @@
 		6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5660FD221EC6B400014498 /* LaunchScreen.storyboard */; };
 		6D566142221EECAF00014498 /* MUColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566141221EECAF00014498 /* MUColor.swift */; };
 		6D566144221EF98000014498 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D566143221EF98000014498 /* ThemeManager.swift */; };
+		6DDD7E3C222ECA3E0033F5F9 /* ToastsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDD7E3B222ECA3E0033F5F9 /* ToastsVC.swift */; };
+		6DDD7E3E222ECA500033F5F9 /* Toasts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDD7E3D222ECA500033F5F9 /* Toasts.storyboard */; };
 		F30318D12225535B00171E00 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; };
 		F30318D22225535B00171E00 /* Sejima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F30318DA2225542F00171E00 /* SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318D92225542F00171E00 /* SampleUITests.swift */; };
@@ -59,6 +61,8 @@
 		6D566100221EC6B400014498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D566141221EECAF00014498 /* MUColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUColor.swift; sourceTree = "<group>"; };
 		6D566143221EF98000014498 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		6DDD7E3B222ECA3E0033F5F9 /* ToastsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastsVC.swift; sourceTree = "<group>"; };
+		6DDD7E3D222ECA500033F5F9 /* Toasts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Toasts.storyboard; sourceTree = "<group>"; };
 		F30318D02225535B00171E00 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30318D72225542F00171E00 /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30318D92225542F00171E00 /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
@@ -134,9 +138,19 @@
 		6D566122221EE83900014498 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				6DDD7E3A222ECA1A0033F5F9 /* Toasts */,
 				6D4F2F9A222598B700A0799B /* Walkthrough */,
 			);
 			path = Pages;
+			sourceTree = "<group>";
+		};
+		6DDD7E3A222ECA1A0033F5F9 /* Toasts */ = {
+			isa = PBXGroup;
+			children = (
+				6DDD7E3B222ECA3E0033F5F9 /* ToastsVC.swift */,
+				6DDD7E3D222ECA500033F5F9 /* Toasts.storyboard */,
+			);
+			path = Toasts;
 			sourceTree = "<group>";
 		};
 		F30318D82225542F00171E00 /* SampleUITests */ = {
@@ -267,6 +281,7 @@
 			files = (
 				6D4F2F9E222598EF00A0799B /* Walkthrough.storyboard in Resources */,
 				6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */,
+				6DDD7E3E222ECA500033F5F9 /* Toasts.storyboard in Resources */,
 				6D5660FC221EC6B400014498 /* Assets.xcassets in Resources */,
 				6D5660FA221EC6B200014498 /* Main.storyboard in Resources */,
 			);
@@ -286,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDD7E3C222ECA3E0033F5F9 /* ToastsVC.swift in Sources */,
 				6D566142221EECAF00014498 /* MUColor.swift in Sources */,
 				F3E2FC962226EA5F008476BE /* WalkthroughContentVC.swift in Sources */,
 				F3C1DDB82226E2BC006081AE /* MUView.swift in Sources */,
