@@ -10,8 +10,8 @@ import UIKit
 
 /// Delegate protocol for MUSegmentControl.
 @objc public protocol MUSegmentControlDelegate: class {
-    /// Will trigger each time a button is tapped.
-    func didSelect(_ button: MUSegmentedControl, at index: Int)
+    /// Will trigger each time an item is selected.
+    func didSelect(_ segmentedControl: MUSegmentedControl, at index: Int)
 }
 
 /// Class that act like UISegmentedControl with more customizable options.
