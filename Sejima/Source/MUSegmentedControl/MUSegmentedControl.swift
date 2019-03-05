@@ -22,6 +22,7 @@ open class MUSegmentedControl: UIControl {
     private var selectedSegmentsView = UIView()
     private var indicatorView = MUSegmentIndicatorView()
 
+    /// The object that acts as the delegate of the segmented control.
     @IBOutlet public weak var delegate: MUSegmentControlDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     /// The button’s corner radius.
