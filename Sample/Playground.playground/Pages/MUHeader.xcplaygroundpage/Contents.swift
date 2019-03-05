@@ -39,7 +39,6 @@ segmentedControl.borderWidth = 1.0
 segmentedControl.titleColor = .white
 segmentedControl.selectedTitleColor = .black
 segmentedControl.indicatorInset = 4.0
-segmentedControl.allowPanningGesture = false
 segmentedControl.segments = [MUSegmentItem(title: "MAN", selectedColor: UIColor(red: 48.0/255.0, green: 208.0/255.0, blue: 248.0/255.0, alpha: 1.0)),
                              MUSegmentItem(title: "WOMAN", selectedColor: UIColor(red: 240.0/255.0, green: 182.0/255.0, blue: 241.0/255.0, alpha: 1.0))]
 

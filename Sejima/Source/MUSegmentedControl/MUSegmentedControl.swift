@@ -290,7 +290,7 @@ open class MUSegmentedControl: UIControl {
 
     @objc
     private func tapped(_ gestureRecognizer: UITapGestureRecognizer) {
-        set(index: nearestIndex(to: gestureRecognizer.location(in: self)))
+        set(index: nearestIndex(to: gestureRecognizer.location(in: self)), animated: true)
     }
 
     @objc
@@ -310,7 +310,7 @@ open class MUSegmentedControl: UIControl {
             indicatorView.frame = frame
         case .ended, .failed, .cancelled:
             let nearestPoint = nearestIndex(to: indicatorView.center)
-            set(index: nearestPoint)
+            set(index: nearestPoint, animated: true)
         default:
             break
         }
