@@ -82,10 +82,6 @@ carthage update
 
 ![MUAvatar](./Screenshots/MUAvatar.png)
 
-- **MUTag:** Component that define a title.
-  
-![MUTag](./Screenshots/MUTag.png)
-
 - **MUPinCode:** Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.
 
 ![MUPinCode](./Screenshots/MUPinCode.png)
@@ -101,6 +97,8 @@ carthage update
 - **MUTrimmer:** A draggable component usually used to trim vidéo.
 
 ![MUTrimmer](./Screenshots/MUTrimmer.png)
+
+- **MUToast:** A toast message component.
 
 ## Example
 
