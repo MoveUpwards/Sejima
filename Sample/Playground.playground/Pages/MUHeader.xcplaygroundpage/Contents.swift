@@ -15,7 +15,6 @@ PlaygroundPage.current.liveView = view
 
 let header = MUHeader()
 header.textAlignment = .center
-header.textAlignment = .center
 header.title = "My header title"
 header.titleFont = .boldSystemFont(ofSize: 24)
 header.titleColor = .green
