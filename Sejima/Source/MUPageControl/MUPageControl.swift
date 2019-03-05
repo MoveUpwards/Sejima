@@ -136,7 +136,7 @@ open class MUPageControl: UIControl {
     // MARK: - Public functions
 
     /// Define the current page index, animated or not.
-    open func set(page: Int, animated: Bool) {
+    open func set(page: Int, animated: Bool = false) {
         guard page >= 0 && page <= numberOfPages - 1  else {
             return
         }
