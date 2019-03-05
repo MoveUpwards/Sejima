@@ -12,8 +12,7 @@ import UIKit
 @IBDesignable
 open class MUToast: MUNibView {
     @IBOutlet private var imageView: UIImageView!
-    @IBOutlet private var title: UILabel!
-    @IBOutlet private var desc: UILabel!
+    @IBOutlet private var header: MUHeader!
 
     // Image inset constraint
     @IBOutlet private var imageTop: NSLayoutConstraint!
@@ -47,72 +46,110 @@ open class MUToast: MUNibView {
         }
     }
 
-    // MARK: - Labels
-
-    @objc open dynamic var headerFont: UIFont = .systemFont(ofSize: 34, weight: .regular) {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    @objc open dynamic var detailFont: UIFont = .systemFont(ofSize: 14, weight: .semibold) {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @IBInspectable open dynamic var headerColor: UIColor = .white {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @IBInspectable open dynamic var detailColor: UIColor = .white {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @IBInspectable open var header: String = "" {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @IBInspectable open var detail: String = "" {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    @objc open dynamic var textAlignment: NSTextAlignment = .left {
-        didSet {
-            setNeedsLayout()
-        }
-    }
-
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
-    @IBInspectable open dynamic var textAlignmentInt: Int = 0 {
-        didSet {
-            textAlignment = NSTextAlignment(rawValue: textAlignmentInt) ?? .left
-        }
-    }
-
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var textHorizontalInset: CGFloat = 16.0 {
         didSet {
-            setNeedsLayout()
+            labelsLeading.constant = textHorizontalInset
+            labelsTrailing.constant = textHorizontalInset
         }
     }
 
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var textVerticalInset: CGFloat = 16.0 {
         didSet {
-            setNeedsLayout()
+            labelsVerticalInset.constant = textVerticalInset
+        }
+    }
+
+    // MARK: - Header
+
+    /// The current title.
+    @IBInspectable open var title: String {
+        get {
+            return header.title
+        }
+        set {
+            header.title = newValue
+        }
+    }
+
+    /// The title’s font.
+    @objc open dynamic var titleFont: UIFont {
+        get {
+            return header.titleFont
+        }
+        set {
+            header.titleFont = newValue
+        }
+    }
+
+    /// The title’s text color.
+    @IBInspectable open dynamic var titleColor: UIColor {
+        get {
+            return header.titleColor
+        }
+        set {
+            header.titleColor = newValue
+        }
+    }
+
+    /// The current detail description.
+    @IBInspectable open var detail: String {
+        get {
+            return header.detail
+        }
+        set {
+            header.detail = newValue
+        }
+    }
+
+    /// The detail’s font.
+    @objc open dynamic var detailFont: UIFont {
+        get {
+            return header.detailFont
+        }
+        set {
+            header.detailFont = newValue
+        }
+    }
+
+    /// The detail’s text color.
+    @IBInspectable open dynamic var detailColor: UIColor {
+        get {
+            return header.detailColor
+        }
+        set {
+            header.detailColor = newValue
+        }
+    }
+
+    /// The text’s horizontal alignment.
+    @objc open dynamic var textAlignment: NSTextAlignment {
+        get {
+            return header.textAlignment
+        }
+        set {
+            header.textAlignment = newValue
+        }
+    }
+
+    /// Optional: The IBInspectable version of the text’s horizontal alignment.
+    @IBInspectable open var textAlignmentInt: Int {
+        get {
+            return header.textAlignmentInt
+        }
+        set {
+            header.textAlignmentInt = newValue
+        }
+    }
+
+    /// The text’s vertical spacing.
+    @IBInspectable open dynamic var spacing: CGFloat {
+        get {
+            return header.spacing
+        }
+        set {
+            header.spacing = newValue
         }
     }
 
@@ -193,20 +230,6 @@ open class MUToast: MUNibView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-
-        title.textColor = headerColor
-        title.font = headerFont
-        title.text = header
-        title.textAlignment = textAlignment
-
-        desc.textColor = detailColor
-        desc.font = detailFont
-        desc.text = detail
-        desc.textAlignment = textAlignment
-
-        labelsLeading.constant = textHorizontalInset
-        labelsTrailing.constant = textHorizontalInset
-        labelsVerticalInset.constant = textVerticalInset
 
         if icon == nil {
             hideImageView()

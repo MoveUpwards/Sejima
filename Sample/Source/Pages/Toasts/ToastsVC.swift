@@ -21,12 +21,13 @@ class ToastsVC: UIViewController {
 extension ToastsVC: MUButtonDelegate {
     func didTap(_ button: MUButton) {
         let toast = MUToast()
-        toast.header = "Title"
-        toast.detail = "Long description"
-        toast.headerColor = .black
+        toast.title = "Title"
+        toast.detail = "Long description dgfe dfgdfjhgdf fg dfg ffdfg dfgfdg dfgdfgdfjgshl fd fkgdflkgd dfgj dfjg"
+        toast.titleColor = .black
         toast.detailColor = .black
         toast.backgroundColor = .green
         toast.cornerRadius = 10.0
+        toast.spacing = 0.0
         toast.show(in: self)
     }
 }
