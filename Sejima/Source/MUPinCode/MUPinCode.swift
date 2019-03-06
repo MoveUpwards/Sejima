@@ -96,16 +96,14 @@ open class MUPinCode: MUNibView {
     /// Describes the MUPinCode's cell's background color appearance while it shows
     @IBInspectable open dynamic var cellColor: UIColor = .white {
         didSet {
-            stackView.arrangedSubviews.compactMap({ $0 as? MUPinCodeCell }).forEach({ $0.backgroundColor = cellColor })
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.backgroundColor = cellColor })
         }
     }
 
     /// Describes the MUPinCode's cell's corner radius appearance while it shows
     @IBInspectable open dynamic var cellCornerRadius: CGFloat = 10.0 {
         didSet {
-            stackView.arrangedSubviews
-                .compactMap({ $0 as? MUPinCodeCell })
-                .forEach({ $0.layer.cornerRadius = cellCornerRadius })
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.layer.cornerRadius = cellCornerRadius })
         }
     }
 
@@ -119,14 +117,14 @@ open class MUPinCode: MUNibView {
     /// Describes the MUPinCode's font appearance while it shows
     @objc open dynamic var cellFont: UIFont = .systemFont(ofSize: UIFont.systemFontSize, weight: .medium) {
         didSet {
-            stackView.arrangedSubviews.compactMap({ $0 as? MUPinCodeCell }).forEach({ $0.set(font: cellFont) })
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(font: cellFont) })
         }
     }
 
     /// Describes the MUPinCode's cell's empty text while it shows
     @IBInspectable open dynamic var emptyCharacter: String = "•" {
         didSet {
-            stackView.arrangedSubviews.compactMap({ $0 as? MUPinCodeCell }).forEach({ $0.set(text: emptyCharacter) })
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(text: emptyCharacter) })
         }
     }
 
@@ -176,7 +174,7 @@ open class MUPinCode: MUNibView {
     // MARK: - Private functions
 
     private func layoutPinCodeCell() {
-        stackView.arrangedSubviews.compactMap({ $0 as? MUPinCodeCell }).forEach({ $0.removeFromSuperview() })
+        stackView.arrangedSubviews.forEach({ $0.removeFromSuperview() })
 
         stackView.distribution = .fillEqually
         stackView.spacing = cellSpacing
