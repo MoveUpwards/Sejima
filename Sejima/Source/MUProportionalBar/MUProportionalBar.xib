@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUProportionalBar" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="proportionalBackgroundView" destination="Ogu-yA-yVx" id="xZz-nS-kmj"/>
+                <outlet property="proportionalStackView" destination="fL1-nj-U6b" id="vzo-wG-oiZ"/>
+                <outlet property="titleLeading" destination="lKw-QR-J3C" id="6FO-2r-qV9"/>
+                <outlet property="titleTrailing" destination="yLJ-LJ-5dK" id="jxf-DZ-kdi"/>
+                <outlet property="titlesStackView" destination="4h3-e8-HSL" id="5di-SS-j2e"/>
+                <outlet property="verticalStackView" destination="Vfk-Z1-eqw" id="lo0-yZ-BsZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Vfk-Z1-eqw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogu-yA-yVx">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fL1-nj-U6b">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="fL1-nj-U6b" secondAttribute="trailing" id="S3S-6w-qI0"/>
+                                <constraint firstItem="fL1-nj-U6b" firstAttribute="top" secondItem="Ogu-yA-yVx" secondAttribute="top" id="eS6-R2-UeM"/>
+                                <constraint firstAttribute="bottom" secondItem="fL1-nj-U6b" secondAttribute="bottom" id="i7P-Up-1sI"/>
+                                <constraint firstItem="fL1-nj-U6b" firstAttribute="leading" secondItem="Ogu-yA-yVx" secondAttribute="leading" id="tDF-fL-kg3"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dze-6M-ZWm">
+                            <rect key="frame" x="0.0" y="52" width="375" height="48"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-e8-HSL">
+                                    <rect key="frame" x="4" y="0.0" width="367" height="48"/>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="4h3-e8-HSL" firstAttribute="top" secondItem="dze-6M-ZWm" secondAttribute="top" id="Stp-J3-F6a"/>
+                                <constraint firstItem="4h3-e8-HSL" firstAttribute="leading" secondItem="dze-6M-ZWm" secondAttribute="leading" constant="4" id="lKw-QR-J3C"/>
+                                <constraint firstAttribute="bottom" secondItem="4h3-e8-HSL" secondAttribute="bottom" id="qp2-ez-c2x"/>
+                                <constraint firstAttribute="trailing" secondItem="4h3-e8-HSL" secondAttribute="trailing" constant="4" id="yLJ-LJ-5dK"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Vfk-Z1-eqw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Rt-no-UYt"/>
+                <constraint firstAttribute="trailing" secondItem="Vfk-Z1-eqw" secondAttribute="trailing" id="Gqi-Gl-Ogl"/>
+                <constraint firstAttribute="bottom" secondItem="Vfk-Z1-eqw" secondAttribute="bottom" id="b1Z-AC-py3"/>
+                <constraint firstItem="Vfk-Z1-eqw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bTO-vb-n6u"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.40000000000001" y="-100.74962518740631"/>
+        </view>
+    </objects>
+</document>
