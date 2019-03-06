@@ -9,10 +9,10 @@
 import UIKit
 
 open class MUProportionalBar: MUNibView {
-    @IBOutlet private weak var verticalStackView: UIStackView!
-    @IBOutlet private weak var proportionalStackView: UIStackView!
-    @IBOutlet private weak var proportionalBackgroundView: UIView!
-    @IBOutlet private weak var titlesStackView: UIStackView!
+    @IBOutlet private var verticalStackView: UIStackView!
+    @IBOutlet private var proportionalStackView: UIStackView!
+    @IBOutlet private var proportionalBackgroundView: UIView!
+    @IBOutlet private var titlesStackView: UIStackView!
 
     @IBOutlet private var titleLeading: NSLayoutConstraint!
     @IBOutlet private var titleTrailing: NSLayoutConstraint!
@@ -38,27 +38,28 @@ open class MUProportionalBar: MUNibView {
     /// Describes the NavigationNavBar's separator background color appearance while it shows
     @IBInspectable open dynamic var titleOffset: CGFloat = 4.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            verticalStackView.spacing = titleOffset
         }
     }
 
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var titleHorizontalPadding: CGFloat = 4.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            titleLeading.constant = titleHorizontalPadding
+            titleTrailing.constant = titleHorizontalPadding
         }
     }
 
     /// Describes the bar's corner radius as a percentage (0.0 is square, 0.5 is round, 0.75 will be ugly)
     @IBInspectable open dynamic var roundBarPercentage: CGFloat = 0.5 {
         didSet {
-            setNeedsLayout()
+            proportionalBackgroundView.layer.cornerRadius = proportionalBackgroundView.frame.height * roundBarPercentage
         }
     }
 
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 12, weight: .regular) {
         didSet {
-            setNeedsLayout()
+            titlesStackView.arrangedSubviews.forEach { ($0 as? UILabel)?.font = titleFont }
         }
     }
 
@@ -68,10 +69,10 @@ open class MUProportionalBar: MUNibView {
 
         datas.forEach { data in
             // Bar
-            let view = MUProportionalView()
-            view.backgroundColor = data.color
-            view.set(width: data.value * 100)
-            proportionalStackView.addArrangedSubview(view)
+//            let view = MUProportionalView()
+//            view.backgroundColor = data.color
+//            view.set(width: data.value * 100)
+//            proportionalStackView.addArrangedSubview(view)
 
             // Titles
             let label = UILabel(frame: .zero)
@@ -80,21 +81,5 @@ open class MUProportionalBar: MUNibView {
             label.font = titleFont
             titlesStackView.addArrangedSubview(label)
         }
-    }
-
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        verticalStackView.spacing = titleOffset
-        proportionalBackgroundView.layer.cornerRadius = proportionalBackgroundView.frame.height * roundBarPercentage
-
-        titlesStackView.arrangedSubviews.forEach { ($0 as? UILabel)?.font = titleFont }
-    }
-
-    open override func updateConstraints() {
-        super.updateConstraints()
-
-        titleLeading.constant = titleHorizontalPadding
-        titleTrailing.constant = titleHorizontalPadding
     }
 }
