@@ -1,6 +1,6 @@
 //
 //  MUPinCodeCell.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Damien Noël Dubuisson on 05/11/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
