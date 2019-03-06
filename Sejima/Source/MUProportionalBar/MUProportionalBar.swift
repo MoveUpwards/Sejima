@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Class that provide a proportional progress with customizable options.
+@IBDesignable
 open class MUProportionalBar: MUNibView {
     @IBOutlet private var verticalStackView: UIStackView!
     @IBOutlet private var proportionalStackView: UIStackView!
@@ -17,32 +19,47 @@ open class MUProportionalBar: MUNibView {
     @IBOutlet private var titleLeading: NSLayoutConstraint!
     @IBOutlet private var titleTrailing: NSLayoutConstraint!
 
-    public struct Data {
-        public let title: String
-        public let value: CGFloat
-        public let color: UIColor
-
-        public init(title: String, value: CGFloat, color: UIColor) {
-            self.title = title
-            self.value = value
-            self.color = color
+    /// The progress bar's style.
+    open var style: MUCornerStyle = .square {
+        didSet {
+            updateStyle()
         }
     }
 
-    open override func xibSetup() {
-        super.xibSetup()
+    // MARK: - Public IBInspectable and UIAppearence variables
 
-        proportionalBackgroundView.clipsToBounds = true
+    /// Optional: The IBInspectable version of the progress bar's style.
+    @IBInspectable open dynamic var styleInt: Int = 0 {
+        didSet {
+            switch styleInt {
+            case 0:
+                style = .square
+            case 1:
+                style = .round
+            default:
+                style = .custom(radius)
+            }
+        }
     }
 
-    /// Describes the NavigationNavBar's separator background color appearance while it shows
+    /// The progress bar's corner radius.
+    @IBInspectable open dynamic var radius: CGFloat = 0.0 {
+        didSet {
+            guard radius > 0 else {
+                return
+            }
+            style = .custom(radius)
+        }
+    }
+
+    /// The title’s top offset.
     @IBInspectable open dynamic var titleOffset: CGFloat = 4.0 {
         didSet {
             verticalStackView.spacing = titleOffset
         }
     }
 
-    /// Define the inset of the background and chart
+    /// The title’s horizontal padding.
     @IBInspectable open dynamic var titleHorizontalPadding: CGFloat = 4.0 {
         didSet {
             titleLeading.constant = titleHorizontalPadding
@@ -50,36 +67,63 @@ open class MUProportionalBar: MUNibView {
         }
     }
 
-    /// Describes the bar's corner radius as a percentage (0.0 is square, 0.5 is round, 0.75 will be ugly)
-    @IBInspectable open dynamic var roundBarPercentage: CGFloat = 0.5 {
-        didSet {
-            proportionalBackgroundView.layer.cornerRadius = proportionalBackgroundView.frame.height * roundBarPercentage
-        }
-    }
-
+    /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 12, weight: .regular) {
         didSet {
             titlesStackView.arrangedSubviews.forEach { ($0 as? UILabel)?.font = titleFont }
         }
     }
 
-    public func set(datas: [Data]) {
-        proportionalStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        titlesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    /// The proportioal items
+    public var items = [MUProportionalItem]() {
+        didSet {
+            guard items.count > 1 else { return }
 
-        datas.forEach { data in
-            // Bar
-//            let view = MUProportionalView()
-//            view.backgroundColor = data.color
-//            view.set(width: data.value * 100)
-//            proportionalStackView.addArrangedSubview(view)
+            proportionalStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+            titlesStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-            // Titles
-            let label = UILabel(frame: .zero)
-            label.text = data.title
-            label.textColor = data.color
-            label.font = titleFont
-            titlesStackView.addArrangedSubview(label)
+            for item in items {
+                addBar(for: item)
+                addTitle(for: item)
+            }
         }
+    }
+
+    // MARK: - Private functions
+
+    private func updateStyle() {
+        switch style {
+        case .round:
+            proportionalBackgroundView.layer.cornerRadius = proportionalBackgroundView.bounds.height * 0.25
+        case .custom(let radius):
+            proportionalBackgroundView.layer.cornerRadius = CGFloat(radius) * 0.5
+        case .square:
+            proportionalBackgroundView.layer.cornerRadius = 0
+        }
+    }
+
+    private func addBar(for item: MUProportionalItem) {
+        let view = MUProportionalView()
+        view.backgroundColor = item.color
+        view.set(width: item.value * 100)
+        proportionalStackView.addArrangedSubview(view)
+    }
+
+    private func addTitle(for item: MUProportionalItem) {
+        let label = UILabel(frame: .zero)
+        label.text = item.title
+        label.textColor = item.color
+        label.font = titleFont
+        titlesStackView.addArrangedSubview(label)
+    }
+
+    // MARK: - Life cycle functions
+
+    /// Default setup to load the view from a xib file.
+    open override func xibSetup() {
+        super.xibSetup()
+
+        proportionalBackgroundView.clipsToBounds = true
+        print(proportionalBackgroundView)
     }
 }
