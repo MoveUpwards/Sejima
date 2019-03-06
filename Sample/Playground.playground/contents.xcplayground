@@ -3,5 +3,6 @@
     <pages>
         <page name='MUHeader'/>
         <page name='MUTag'/>
+        <page name='MUPinCode'/>
     </pages>
 </playground>
