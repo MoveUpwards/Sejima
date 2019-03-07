@@ -8,7 +8,8 @@
 
 import UIKit
 
-internal final class MUSubRangeView: MUNibView {
+/// View that define an associated MUSubRange.
+final internal class MUSubRangeView: MUNibView {
     @IBOutlet private var leftPickerView: UIView!
     @IBOutlet private var leftPickerIndicator: UIView!
     @IBOutlet private var leftPickerLeading: NSLayoutConstraint!
@@ -29,6 +30,7 @@ internal final class MUSubRangeView: MUNibView {
 
     // MARK: - Internal variables
 
+    /// Define the trimmer handler width
     internal var pickerWidth: CGFloat = 8.0 {
         didSet {
             leftPickerWidth.constant = pickerWidth
@@ -36,6 +38,7 @@ internal final class MUSubRangeView: MUNibView {
         }
     }
 
+    /// Define the trimmer indicator color
     internal var indicatorColor: UIColor = .black {
         didSet {
             leftPickerIndicator.backgroundColor = indicatorColor
@@ -43,12 +46,14 @@ internal final class MUSubRangeView: MUNibView {
         }
     }
 
+    /// Define the trimmer border width
     internal var borderWidth: CGFloat = 0.0 {
         didSet {
             updateBorderWidth()
         }
     }
 
+    /// Define the trimmer border color
     internal var borderColor: UIColor = .white {
         didSet {
             layer.borderColor = borderColor.cgColor
@@ -58,6 +63,7 @@ internal final class MUSubRangeView: MUNibView {
         }
     }
 
+    /// Define the trimmer corner radius
     internal var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -65,6 +71,7 @@ internal final class MUSubRangeView: MUNibView {
         }
     }
 
+    /// Define the trimmer title
     internal var title: String {
         get {
             return textField.text ?? ""
@@ -74,30 +81,35 @@ internal final class MUSubRangeView: MUNibView {
         }
     }
 
+    /// Define the trimmer title padding
     internal var titlePadding: CGFloat = 20.0 {
         didSet {
             updatePadding()
         }
     }
 
+    /// Define the trimmer title color
     internal var titleColor: UIColor = .black {
         didSet {
             textField.textColor = titleColor
         }
     }
 
+    /// Define the trimmer title font
     internal var titleFont: UIFont = .systemFont(ofSize: 16.0) {
         didSet {
             textField.font = titleFont
         }
     }
 
+    /// Define the keyboard appearance when editing the trimmer title
     internal var keyboardAppearance: UIKeyboardAppearance = .default {
         didSet {
             textField.keyboardAppearance = keyboardAppearance
         }
     }
 
+    /// Define the trimmer title caret color while editing
     internal var caretColor: UIColor = .clear {
         didSet {
             textField.tintColor = caretColor
