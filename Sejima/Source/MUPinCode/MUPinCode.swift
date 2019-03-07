@@ -32,24 +32,6 @@ open class MUPinCode: MUNibView {
         return textField.text ?? ""
     }
 
-    /// Visual characters allow
-    public enum AllowCharacters: Equatable {
-        /// Only numbers
-        case number
-
-        /// Only letters
-        case letter
-
-        /// Numbers and letters
-        case alphanumeric
-
-        /// No restriction
-        case all
-
-        /// Custom restriction
-        case custom(rexep: String)
-    }
-
     // MARK: - Public IBInspectable variables ONLY
 
     /// Describes the MUPinCode's cell's number shown
