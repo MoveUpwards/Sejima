@@ -25,7 +25,7 @@ open class MUCard: MUNibView {
     /// The card's style.
     open var style: MUCornerStyle = .square {
         didSet {
-            setNeedsLayout()
+            updateStyle()
         }
     }
 
