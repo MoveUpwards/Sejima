@@ -21,7 +21,7 @@ All `Sejima` components expose its components properties using `@IBInspectable` 
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 9.1+
 - Xcode 9.0+
 
 ## Installation
