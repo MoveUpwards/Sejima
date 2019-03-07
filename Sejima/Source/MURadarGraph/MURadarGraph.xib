@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MURadarGraph" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="background" destination="Ob9-DS-1WO" id="U8L-6V-c47"/>
+                <outlet property="charts" destination="YKK-qf-TS8" id="BvJ-Tt-TtS"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-DS-1WO" customClass="MURadarGraphBackground" customModule="MUComponent" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                </imageView>
+                <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKK-qf-TS8">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YKK-qf-TS8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="15a-Ge-T94"/>
+                <constraint firstAttribute="bottom" secondItem="Ob9-DS-1WO" secondAttribute="bottom" id="Dfo-b1-Gkd"/>
+                <constraint firstAttribute="bottom" secondItem="YKK-qf-TS8" secondAttribute="bottom" id="I39-bi-iUv"/>
+                <constraint firstItem="Ob9-DS-1WO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Opf-cd-DVq"/>
+                <constraint firstAttribute="trailing" secondItem="YKK-qf-TS8" secondAttribute="trailing" id="Opr-5w-0ue"/>
+                <constraint firstAttribute="trailing" secondItem="Ob9-DS-1WO" secondAttribute="trailing" id="VsW-yf-ZOp"/>
+                <constraint firstItem="Ob9-DS-1WO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nhZ-1J-Ptx"/>
+                <constraint firstItem="YKK-qf-TS8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qQQ-kt-0AJ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

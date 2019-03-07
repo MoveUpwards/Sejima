@@ -3,5 +3,8 @@
     <pages>
         <page name='MUHeader'/>
         <page name='MUTag'/>
+        <page name='MUPinCode'/>
+        <page name='MUProportionalBar'/>
+        <page name='MURadarGraph'/>
     </pages>
 </playground>
