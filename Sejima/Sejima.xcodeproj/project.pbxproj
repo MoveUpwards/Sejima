@@ -27,6 +27,10 @@
 		F30318E92225589400171E00 /* MUTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318E72225589400171E00 /* MUTextFieldTests.swift */; };
 		F30318ED222559B400171E00 /* MUTopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30318EB222559B400171E00 /* MUTopBar.xib */; };
 		F30318EE222559B400171E00 /* MUTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318EC222559B400171E00 /* MUTopBar.swift */; };
+		F35A3DBF2231214E009341D2 /* MUHistogram.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DBD2231214E009341D2 /* MUHistogram.swift */; };
+		F35A3DC02231214E009341D2 /* MUHistogram.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35A3DBE2231214E009341D2 /* MUHistogram.xib */; };
+		F35A3DC222312478009341D2 /* MUImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DC122312478009341D2 /* MUImage.swift */; };
+		F35A3DC422312704009341D2 /* MUHistogramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DC322312704009341D2 /* MUHistogramTests.swift */; };
 		F3B811EC22253D380004B830 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B811E222253D380004B830 /* Sejima.framework */; };
 		F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8121522253DC00004B830 /* MUButtonTests.swift */; };
 		F3B8121822253DC00004B830 /* MUHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8121622253DC00004B830 /* MUHeaderTests.swift */; };
@@ -73,6 +77,10 @@
 		F30318E72225589400171E00 /* MUTextFieldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTextFieldTests.swift; sourceTree = "<group>"; };
 		F30318EB222559B400171E00 /* MUTopBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUTopBar.xib; sourceTree = "<group>"; };
 		F30318EC222559B400171E00 /* MUTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTopBar.swift; sourceTree = "<group>"; };
+		F35A3DBD2231214E009341D2 /* MUHistogram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHistogram.swift; sourceTree = "<group>"; };
+		F35A3DBE2231214E009341D2 /* MUHistogram.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHistogram.xib; sourceTree = "<group>"; };
+		F35A3DC122312478009341D2 /* MUImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUImage.swift; sourceTree = "<group>"; };
+		F35A3DC322312704009341D2 /* MUHistogramTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHistogramTests.swift; sourceTree = "<group>"; };
 		F3B811E222253D380004B830 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B811EB22253D380004B830 /* SejimaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SejimaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B811F222253D380004B830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 				F30318E32225586D00171E00 /* MUView.swift */,
 				6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */,
 				6D4F2FB2222966CA00A0799B /* MULayoutConstraint.swift */,
+				F35A3DC122312478009341D2 /* MUImage.swift */,
 			);
 			path = MUCore;
 			sourceTree = "<group>";
@@ -165,6 +174,15 @@
 				F30318EB222559B400171E00 /* MUTopBar.xib */,
 			);
 			path = MUTopBar;
+			sourceTree = "<group>";
+		};
+		F35A3DBC2231214E009341D2 /* MUHistogram */ = {
+			isa = PBXGroup;
+			children = (
+				F35A3DBD2231214E009341D2 /* MUHistogram.swift */,
+				F35A3DBE2231214E009341D2 /* MUHistogram.xib */,
+			);
+			path = MUHistogram;
 			sourceTree = "<group>";
 		};
 		F3B811D822253D380004B830 = {
@@ -190,6 +208,7 @@
 		F3B811EF22253D380004B830 /* SejimaTests */ = {
 			isa = PBXGroup;
 			children = (
+				F35A3DC322312704009341D2 /* MUHistogramTests.swift */,
 				6DD518B4222EB60F00A1611F /* MUSegmentedControlTests.swift */,
 				F3C2DD35222DA62F00C08300 /* MUAvatarTests.swift */,
 				6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */,
@@ -209,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				F30318E12225586D00171E00 /* MUCore */,
+				F35A3DBC2231214E009341D2 /* MUHistogram */,
 				F3C2DD30222D9A4000C08300 /* MUAvatar */,
 				F3B8121E22253F040004B830 /* MUHeader */,
 				F3B8122122253F040004B830 /* MUButton */,
@@ -351,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35A3DC02231214E009341D2 /* MUHistogram.xib in Resources */,
 				F3B8123022253F040004B830 /* MUTextField.xib in Resources */,
 				F3B8122A22253F040004B830 /* MUHeader.xib in Resources */,
 				F3C2DD33222D9A4000C08300 /* MUAvatar.xib in Resources */,
@@ -426,7 +447,9 @@
 				6DD518B1222E7E1B00A1611F /* MUSegment.swift in Sources */,
 				F3B8122B22253F040004B830 /* MUHeader.swift in Sources */,
 				F3B8122C22253F040004B830 /* MUButton.swift in Sources */,
+				F35A3DBF2231214E009341D2 /* MUHistogram.swift in Sources */,
 				6D4F2FB3222966CA00A0799B /* MULayoutConstraint.swift in Sources */,
+				F35A3DC222312478009341D2 /* MUImage.swift in Sources */,
 				6DD518AF222E7BC300A1611F /* MUSegmentedControl.swift in Sources */,
 				F30318EE222559B400171E00 /* MUTopBar.swift in Sources */,
 			);
@@ -440,6 +463,7 @@
 				6D4F2FA22226AFD800A0799B /* MUHorizontalPagerTests.swift in Sources */,
 				F3B8121822253DC00004B830 /* MUHeaderTests.swift in Sources */,
 				6D4F2FA02226AFC200A0799B /* MUPageControlTests.swift in Sources */,
+				F35A3DC422312704009341D2 /* MUHistogramTests.swift in Sources */,
 				6DD518B5222EB61000A1611F /* MUSegmentedControlTests.swift in Sources */,
 				F3B8121A22253DD50004B830 /* MUCoreTests.swift in Sources */,
 				F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */,
