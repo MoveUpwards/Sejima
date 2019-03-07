@@ -37,6 +37,12 @@
 		F35A3DC02231214E009341D2 /* MUHistogram.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35A3DBE2231214E009341D2 /* MUHistogram.xib */; };
 		F35A3DC222312478009341D2 /* MUImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DC122312478009341D2 /* MUImage.swift */; };
 		F35A3DC422312704009341D2 /* MUHistogramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DC322312704009341D2 /* MUHistogramTests.swift */; };
+		F35A3DA122302D61009341D2 /* MUProportionalBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3D9F22302D61009341D2 /* MUProportionalBar.swift */; };
+		F35A3DA222302D61009341D2 /* MUProportionalBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35A3DA022302D61009341D2 /* MUProportionalBar.xib */; };
+		F35A3DA4223033CD009341D2 /* MUProportionalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA3223033CD009341D2 /* MUProportionalItem.swift */; };
+		F35A3DA6223035A9009341D2 /* MUProportionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA5223035A9009341D2 /* MUProportionalView.swift */; };
+		F35A3DAA22303EF6009341D2 /* MUCornerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */; };
+		F35A3DAC22310629009341D2 /* MUProportionalBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DAB22310629009341D2 /* MUProportionalBarTests.swift */; };
 		F3B811EC22253D380004B830 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B811E222253D380004B830 /* Sejima.framework */; };
 		F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8121522253DC00004B830 /* MUButtonTests.swift */; };
 		F3B8121822253DC00004B830 /* MUHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8121622253DC00004B830 /* MUHeaderTests.swift */; };
@@ -93,6 +99,12 @@
 		F35A3DBE2231214E009341D2 /* MUHistogram.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHistogram.xib; sourceTree = "<group>"; };
 		F35A3DC122312478009341D2 /* MUImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUImage.swift; sourceTree = "<group>"; };
 		F35A3DC322312704009341D2 /* MUHistogramTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHistogramTests.swift; sourceTree = "<group>"; };
+		F35A3D9F22302D61009341D2 /* MUProportionalBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUProportionalBar.swift; sourceTree = "<group>"; };
+		F35A3DA022302D61009341D2 /* MUProportionalBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUProportionalBar.xib; sourceTree = "<group>"; };
+		F35A3DA3223033CD009341D2 /* MUProportionalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUProportionalItem.swift; sourceTree = "<group>"; };
+		F35A3DA5223035A9009341D2 /* MUProportionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUProportionalView.swift; sourceTree = "<group>"; };
+		F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUCornerStyle.swift; sourceTree = "<group>"; };
+		F35A3DAB22310629009341D2 /* MUProportionalBarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUProportionalBarTests.swift; sourceTree = "<group>"; };
 		F3B811E222253D380004B830 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B811EB22253D380004B830 /* SejimaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SejimaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B811F222253D380004B830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +188,8 @@
 				6D4F2FB2222966CA00A0799B /* MULayoutConstraint.swift */,
 				F3A57909222EEBCF00746981 /* MUString.swift */,
 				F35A3DC122312478009341D2 /* MUImage.swift */,
+				F35A3DA5223035A9009341D2 /* MUProportionalView.swift */,
+				F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */,
 			);
 			path = MUCore;
 			sourceTree = "<group>";
@@ -209,6 +223,16 @@
 			path = MUHistogram;
 			sourceTree = "<group>";
 		};
+		F35A3D9E22302D61009341D2 /* MUProportionalBar */ = {
+			isa = PBXGroup;
+			children = (
+				F35A3D9F22302D61009341D2 /* MUProportionalBar.swift */,
+				F35A3DA3223033CD009341D2 /* MUProportionalItem.swift */,
+				F35A3DA022302D61009341D2 /* MUProportionalBar.xib */,
+			);
+			path = MUProportionalBar;
+			sourceTree = "<group>";
+		};
 		F3B811D822253D380004B830 = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +258,7 @@
 			children = (
 				F35A3D9722301F94009341D2 /* MUPinCodeTests.swift */,
 				F35A3DC322312704009341D2 /* MUHistogramTests.swift */,
+				F35A3DAB22310629009341D2 /* MUProportionalBarTests.swift */,
 				6DD518B4222EB60F00A1611F /* MUSegmentedControlTests.swift */,
 				F3C2DD35222DA62F00C08300 /* MUAvatarTests.swift */,
 				6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */,
@@ -255,6 +280,7 @@
 				F30318E12225586D00171E00 /* MUCore */,
 				F3A57900222EEB5A00746981 /* MUPinCode */,
 				F35A3DBC2231214E009341D2 /* MUHistogram */,
+				F35A3D9E22302D61009341D2 /* MUProportionalBar */,
 				F3C2DD30222D9A4000C08300 /* MUAvatar */,
 				F3B8121E22253F040004B830 /* MUHeader */,
 				F3B8122122253F040004B830 /* MUButton */,
@@ -406,6 +432,7 @@
 				F3A57908222EEB5A00746981 /* MUPinCodeCell.xib in Resources */,
 				6D4F2FAF2228396100A0799B /* MUNavigationBar.xib in Resources */,
 				F30318ED222559B400171E00 /* MUTopBar.xib in Resources */,
+				F35A3DA222302D61009341D2 /* MUProportionalBar.xib in Resources */,
 				6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +493,7 @@
 				6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */,
 				6D4F2FAE2228396100A0799B /* MUNavigationBar.swift in Sources */,
 				F3A57905222EEB5A00746981 /* MUPinCodeCell.swift in Sources */,
+				F35A3DA122302D61009341D2 /* MUProportionalBar.swift in Sources */,
 				6DD518B3222E7FB000A1611F /* MUSegmentIndicatorView.swift in Sources */,
 				F3C2DD34222D9A4000C08300 /* MUAvatar.swift in Sources */,
 				6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */,
@@ -474,8 +502,10 @@
 				6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */,
 				F3B8123122253F040004B830 /* MUTextField.swift in Sources */,
 				F30318E52225586D00171E00 /* MUView.swift in Sources */,
+				F35A3DAA22303EF6009341D2 /* MUCornerStyle.swift in Sources */,
 				6DD518B1222E7E1B00A1611F /* MUSegment.swift in Sources */,
 				F3A57907222EEB5A00746981 /* MUPinCode.swift in Sources */,
+				F35A3DA4223033CD009341D2 /* MUProportionalItem.swift in Sources */,
 				F3B8122B22253F040004B830 /* MUHeader.swift in Sources */,
 				F3B8122C22253F040004B830 /* MUButton.swift in Sources */,
 				F35A3DBF2231214E009341D2 /* MUHistogram.swift in Sources */,
@@ -483,6 +513,7 @@
 				F35A3DC222312478009341D2 /* MUImage.swift in Sources */,
 				6DD518AF222E7BC300A1611F /* MUSegmentedControl.swift in Sources */,
 				F30318EE222559B400171E00 /* MUTopBar.swift in Sources */,
+				F35A3DA6223035A9009341D2 /* MUProportionalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +528,7 @@
 				F35A3DC422312704009341D2 /* MUHistogramTests.swift in Sources */,
 				6DD518B5222EB61000A1611F /* MUSegmentedControlTests.swift in Sources */,
 				F3B8121A22253DD50004B830 /* MUCoreTests.swift in Sources */,
+				F35A3DAC22310629009341D2 /* MUProportionalBarTests.swift in Sources */,
 				F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */,
 				F30318E82225589400171E00 /* MUTopBarTests.swift in Sources */,
 				6D4F2FB122283F6700A0799B /* MUNavigationBarTests.swift in Sources */,

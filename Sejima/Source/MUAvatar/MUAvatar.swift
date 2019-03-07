@@ -22,16 +22,6 @@ open class MUAvatar: MUNibView {
     /// The object that acts as the delegate of the avatar.
     @IBOutlet public weak var delegate: MUAvatarDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
-    /// Avatar style representation
-    public enum Style: Equatable {
-        /// Square
-        case square
-        /// Round
-        case round
-        /// Custom corner radius
-        case custom(_ radius: CGFloat)
-    }
-
     /// The avatar’s border width.
     @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
@@ -47,7 +37,7 @@ open class MUAvatar: MUNibView {
     }
 
     /// The avatar's style.
-    open var style: MUAvatar.Style = .square {
+    open var style: MUCornerStyle = .square {
         didSet {
             updateStyle()
         }

@@ -4,5 +4,6 @@
         <page name='MUHeader'/>
         <page name='MUTag'/>
         <page name='MUPinCode'/>
+        <page name='MUProportionalBar'/>
     </pages>
 </playground>
