@@ -9,7 +9,7 @@
 import Foundation
 
 /// Visual characters allow
-public enum AllowCharacters: Equatable {
+public enum MUPinCodeCharacterSet: Equatable {
     /// Only numbers
     case number
 
