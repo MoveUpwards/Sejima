@@ -28,7 +28,7 @@ class MUTag: MUButton {
     }
 }
 
-// ### Align left header with autolayout ###
+// ### Add tags with autolayout ###
 
 var tags = [MUTag]()
 let titles = ["swift", "development", "framework"]
