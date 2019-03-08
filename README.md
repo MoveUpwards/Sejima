@@ -86,7 +86,7 @@ You can open the sketch template file provided with the source code to have a lo
 
 ### Walkthrough
 
-![Read the Medium article on how to build this Walkthrough](https://medium.com/@loic_19820/ios-tutorial-create-a-complete-walkthrough-3cac16112010)
+[Read the Medium article on how to build this Walkthrough](https://medium.com/@loic_19820/ios-tutorial-create-a-complete-walkthrough-3cac16112010)
 
 1. MUHeader
 2. MUPageControl
