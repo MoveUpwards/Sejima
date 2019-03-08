@@ -52,57 +52,35 @@ carthage update
 
 ## Features
 
-- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
+You can open the sketch template file provided with the source code to have a look at all the components.
 
-![MUHeader](./Screenshots/MUHeader.png)
+- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
 
 - **MUTopBar:** Component that define a title and a button on left side.
 
-![MUTopBar](./Screenshots/MUTopBar.png)
-
 - **MUButton:** UIButton with more customizable options.
-
-![MUButton](./Screenshots/MUButton.png)
 
 - **MUHorizontalPager:** UIScrollView + isPagingEnabled with more customizable options.
 
 - **MUPageControl:** UIPageControl with more customizable options.
 
-![MUPageControl](./Screenshots/MUPageControl.png)
-
 - **MUTextField:** UITextField with more customizable options.
 
-![MUTextField](./Screenshots/MUTextField.png)
-
 - **MUNavigationBar:** Component that define a left button along with a main button with a separator.
-  
-![MUNavigationBar](./Screenshots/MUNavigationBar.png)
 
 - **MUAvatar:** UIImage with possible design round, square or custom.
 
-![MUAvatar](./Screenshots/MUAvatar.png)
-
 - **MUPinCode:** Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.
-
-![MUPinCode](./Screenshots/MUPinCode.png)
 
 - **MUSegmentedControl:** UISegmentedControl like with more designable options.
 
-![MUSegmentedControl](./Screenshots/MUSegmentedControl.png)
-
 - **MUProportionalBar:** An horizontal progress bar with multiple sections.
 
-![MUProportionalBar](./Screenshots/MUProgress.png)
-
 - **MUTrimmer:** A draggable component usually used to trim vidéo.
-
-![MUTrimmer](./Screenshots/MUTrimmer.png)
 
 - **MUToast:** A toast message component.
 
 - **MURadarGraph:** A sprider graph to visualize multiple charts.
-
-![MURadarGraph](./Screenshots/MURadarGraph.png)
 
 ## Example
 
