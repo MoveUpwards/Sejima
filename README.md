@@ -107,7 +107,7 @@ You can open the sketch template file provided with the source code to have a lo
 
 To help you design applications using Sejima components in [Sketch](https://sketchapp.com/) we provide a Sketch template with all our components available in Symbols.
 
-[Sketch template](./Screenshots/Sketch.png)
+![Sketch template](./Screenshots/Sketch.png)
 
 ## Contributing
 
