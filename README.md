@@ -50,11 +50,15 @@ open your favorite terminal, go to your project root path and run:
 carthage update
 ```
 
+## Components
+
+![Sketch template](./Screenshots/Sketch.png)
+
 ## Features
 
 You can open the sketch template file provided with the source code to have a look at all the components.
 
-- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
+- [**MUHeader:**](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Examples/MUHeader.md) Component that define a title and a detail description.
 
 - **MUTopBar:** Component that define a title and a button on left side.
 
@@ -93,7 +97,7 @@ You can open the sketch template file provided with the source code to have a lo
 3. MUButton
 4. MUHorizontalPager
 
-![Walkthrough](./Screenshots/Walkthrough.png)
+![Walkthrough](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png)
 
 ### Login
 
@@ -101,17 +105,17 @@ You can open the sketch template file provided with the source code to have a lo
 2. MUTextField
 3. MUButton
 
-![Login](./Screenshots/Login.png)
+![Login](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Login.png)
 
 ## Sketch template
 
 To help you design applications using Sejima components in [Sketch](https://sketchapp.com/) we provide a Sketch template with all our components available in Symbols.
 
-![Sketch template](./Screenshots/Sketch.png)
+[Sketch template](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Sejima.sketch)
 
 ## Contributing
 
-Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request to the project.
+Please read our [Contributing Guide](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/CONTRIBUTING.md) before submitting a Pull Request to the project.
 
 ## Support
 
@@ -134,6 +138,6 @@ We provide a full range of solutions to get better and faster results. We're alw
 ## License
 
 Folding cell is released under the MIT license.
-See [LICENSE](./LICENSE) for details.
+See [LICENSE](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/LICENSE) for details.
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.moveupwards.dev
