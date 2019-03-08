@@ -93,7 +93,7 @@ Have a look in the sample project to see how to create a complete walkthrough wi
 3. MUButton
 4. MUHorizontalPager
 
-![Walkthrough](./Screenshots/Walkthrough-small.png)
+![Walkthrough](./Screenshots/Walkthrough.png)
 
 ### Login
 
