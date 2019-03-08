@@ -86,7 +86,7 @@ You can open the sketch template file provided with the source code to have a lo
 
 ### Walkthrough
 
-Have a look in the sample project to see how to create a complete walkthrough with the following Sejima components:
+![Read the Medium article on how to build this Walkthrough](https://medium.com/@loic_19820/ios-tutorial-create-a-complete-walkthrough-3cac16112010)
 
 1. MUHeader
 2. MUPageControl
