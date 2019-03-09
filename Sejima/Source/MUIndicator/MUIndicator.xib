@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUIndicator" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomBackground" destination="xaM-Ki-sma" id="sER-9Z-7rK"/>
+                <outlet property="label" destination="n7l-tq-PU2" id="enx-u8-Mjx"/>
+                <outlet property="topBackground" destination="YSQ-Jd-2zJ" id="PW4-qi-ZJF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="76" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSQ-Jd-2zJ">
+                    <rect key="frame" x="0.0" y="0.0" width="76" height="32"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7l-tq-PU2" customClass="MULabelCounter" customModule="MUComponent" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="76" height="32"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="n7l-tq-PU2" secondAttribute="bottom" id="HZ0-Lo-KVX"/>
+                        <constraint firstAttribute="trailing" secondItem="n7l-tq-PU2" secondAttribute="trailing" id="MxB-I6-gsj"/>
+                        <constraint firstItem="n7l-tq-PU2" firstAttribute="top" secondItem="YSQ-Jd-2zJ" secondAttribute="top" id="mqH-wP-8Nj"/>
+                        <constraint firstItem="n7l-tq-PU2" firstAttribute="leading" secondItem="YSQ-Jd-2zJ" secondAttribute="leading" id="nW1-VK-FvH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xaM-Ki-sma">
+                    <rect key="frame" x="0.0" y="32" width="76" height="8"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YSQ-Jd-2zJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="230-a0-m50"/>
+                <constraint firstItem="xaM-Ki-sma" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3zc-EQ-Pd8"/>
+                <constraint firstItem="YSQ-Jd-2zJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CQx-fJ-bzB"/>
+                <constraint firstItem="YSQ-Jd-2zJ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="80:100" id="OGV-IY-L8A"/>
+                <constraint firstAttribute="trailing" secondItem="YSQ-Jd-2zJ" secondAttribute="trailing" id="SMY-jv-5iN"/>
+                <constraint firstAttribute="bottom" secondItem="xaM-Ki-sma" secondAttribute="bottom" id="YZg-OC-Ire"/>
+                <constraint firstItem="xaM-Ki-sma" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="20:100" id="awK-eD-QFK"/>
+                <constraint firstAttribute="trailing" secondItem="xaM-Ki-sma" secondAttribute="trailing" id="gLd-7u-qMm"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
