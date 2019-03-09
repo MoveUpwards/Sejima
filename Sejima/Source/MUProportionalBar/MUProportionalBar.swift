@@ -124,6 +124,5 @@ open class MUProportionalBar: MUNibView {
         super.xibSetup()
 
         proportionalBackgroundView.clipsToBounds = true
-        print(proportionalBackgroundView)
     }
 }
