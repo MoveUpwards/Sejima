@@ -68,7 +68,12 @@ extension ToastsVC: MUButtonDelegate {
             let toast = redToast()
             toast.title = "LONG ALERT TITLE"
             toast.detail = "ID: \(counter) You have to read this now!"
-            toast.show(in: self, completion: { succeed in
+            toast.show(in: self, onTap: {
+                print("Tapped")
+                toast.hide(completion: { succeed in
+                    print("DISSMISSED: Top alert toast succeed:", succeed)
+                })
+            }, completion: { succeed in
                 print("Top alert toast succeed:", succeed)
             })
         case bottomInfoButton:

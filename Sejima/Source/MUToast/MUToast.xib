@@ -39,6 +39,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="Pq6-sz-WaI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IcN-KN-rid"/>
                 <constraint firstItem="xCF-DK-RMr" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Pq6-sz-WaI" secondAttribute="height" id="NM4-RQ-hZ3"/>
@@ -52,6 +53,14 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="ONT-Dk-fgP" appends="YES" id="3YJ-jl-9Mb"/>
+            </connections>
         </view>
+        <tapGestureRecognizer id="ONT-Dk-fgP">
+            <connections>
+                <action selector="didTap:" destination="-1" id="sxh-gI-60M"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

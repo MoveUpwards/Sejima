@@ -24,6 +24,8 @@ open class MUToast: MUNibView {
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
 
+    private var onTapBlock: (() -> Void)?
+
     /// Toast possible position
     public enum Position {
         /// Top of the screen
@@ -218,7 +220,8 @@ open class MUToast: MUNibView {
     // MARK: - Animation functions
 
     /// Performs a show animation using the animation's values.
-    open func show(in vc: UIViewController, completion: ((Bool) -> Void)? = nil) {
+    open func show(in vc: UIViewController, onTap: (() -> Void)? = nil, completion: ((Bool) -> Void)? = nil) {
+        onTapBlock = onTap
         add(in: vc)
 
         showingAnimation(completion: { [weak self] _ in
@@ -230,6 +233,17 @@ open class MUToast: MUNibView {
                 self?.hidingAnimation(completion)
             })
         })
+    }
+
+    /// Optional: If you want to hide the toast sooner than the normal animation.
+    open func hide(completion: ((Bool) -> Void)? = nil) {
+        hidingAnimation(completion)
+    }
+
+    // MARK: - Private IBActionfunctions
+
+    @IBAction private func didTap(_ sender: UITapGestureRecognizer) {
+        onTapBlock?()
     }
 
     // MARK: - Private functions
@@ -358,6 +372,7 @@ open class MUToast: MUNibView {
             }
             strongSelf.transform = strongSelf.hideTransform
         }, completion: { [weak self] completed in
+            self?.onTapBlock = nil
             self?.removeFromSuperview()
             completion?(completed)
         })
