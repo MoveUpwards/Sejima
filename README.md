@@ -21,7 +21,7 @@ All `Sejima` components expose its components properties using `@IBInspectable` 
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 9.1+
 - Xcode 9.0+
 
 ## Installation
@@ -50,80 +50,72 @@ open your favorite terminal, go to your project root path and run:
 carthage update
 ```
 
+## Components
+
+![Sketch template](./Screenshots/Sketch.png)
+
 ## Features
 
-- [**MUHeader:**](./Examples/MUHeader.md) Component that define a title and a detail description.
+You can open the sketch template file provided with the source code to have a look at all the components.
 
-![MUHeader](./Screenshots/MUHeader.png)
+- [**MUHeader:**](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Examples/MUHeader.md) Component that define a title and a detail description.
 
 - **MUTopBar:** Component that define a title and a button on left side.
 
-![MUTopBar](./Screenshots/MUTopBar.png)
-
 - **MUButton:** UIButton with more customizable options.
-
-![MUButton](./Screenshots/MUButton.png)
 
 - **MUHorizontalPager:** UIScrollView + isPagingEnabled with more customizable options.
 
 - **MUPageControl:** UIPageControl with more customizable options.
 
-![MUPageControl](./Screenshots/MUPageControl.png)
-
 - **MUTextField:** UITextField with more customizable options.
 
-![MUTextField](./Screenshots/MUTextField.png)
-
 - **MUNavigationBar:** Component that define a left button along with a main button with a separator.
-  
-![MUNavigationBar](./Screenshots/MUNavigationBar.png)
 
 - **MUAvatar:** UIImage with possible design round, square or custom.
 
-![MUAvatar](./Screenshots/MUAvatar.png)
-
-- **MUTag:** Component that define a title.
-  
-![MUTag](./Screenshots/MUTag.png)
-
 - **MUPinCode:** Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.
-
-![MUPinCode](./Screenshots/MUPinCode.png)
 
 - **MUSegmentedControl:** UISegmentedControl like with more designable options.
 
-![MUSegmentedControl](./Screenshots/MUSegmentedControl.png)
-
 - **MUProportionalBar:** An horizontal progress bar with multiple sections.
-
-![MUProportionalBar](./Screenshots/MUProgress.png)
 
 - **MUTrimmer:** A draggable component usually used to trim vidéo.
 
-![MUTrimmer](./Screenshots/MUTrimmer.png)
+- **MUToast:** A toast message component.
+
+- **MURadarGraph:** A sprider graph to visualize multiple charts.
 
 ## Example
 
 ### Walkthrough
 
-Have a look in the sample project to see how to create a complete walkthrough with the following Sejima components:
+[Read the Medium article on how to build this Walkthrough](https://medium.com/@loic_19820/ios-tutorial-create-a-complete-walkthrough-3cac16112010)
 
 1. MUHeader
 2. MUPageControl
 3. MUButton
 4. MUHorizontalPager
 
-![Walkthrough](./Screenshots/Walkthrough-small.png)
+![Walkthrough](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png)
+
+### Login
+
+1. MUTopBar
+2. MUTextField
+3. MUButton
+
+![Login](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Login.png)
 
 ## Sketch template
 
 To help you design applications using Sejima components in [Sketch](https://sketchapp.com/) we provide a Sketch template with all our components available in Symbols.
 
-[Sketch template](./Screenshots/Sketch.png)
+[Sketch template](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Sejima.sketch)
 
 ## Contributing
 
-Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request to the project.
+Please read our [Contributing Guide](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/CONTRIBUTING.md) before submitting a Pull Request to the project.
 
 ## Support
 
@@ -146,6 +138,6 @@ We provide a full range of solutions to get better and faster results. We're alw
 ## License
 
 Folding cell is released under the MIT license.
-See [LICENSE](./LICENSE) for details.
+See [LICENSE](https://raw.githubusercontent.com/MoveUpwards/Sejima/master/LICENSE) for details.
 
 If you use the open-source library in your project, please make sure to credit and backlink to www.moveupwards.dev

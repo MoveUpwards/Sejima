@@ -243,8 +243,6 @@ open class MUNavigationBar: MUNibView {
         rightButton.delegate = self
     }
 
-    // MARK: - Life cycle functions
-
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
         return CGSize(width: 375, height: 44) // To act like a UINavigationBar with a default size

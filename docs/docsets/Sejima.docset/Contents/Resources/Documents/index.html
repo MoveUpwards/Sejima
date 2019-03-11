@@ -22,7 +22,7 @@
         <a class="header-link" href="index.html">
           Sejima Docs
         </a>
-         (100% documented)
+         (94% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -62,10 +62,10 @@
                 <a class="nav-group-task-link" href="Classes/MUAvatar.html">MUAvatar</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/MUAvatar/Style.html">– Style</a>
+                <a class="nav-group-task-link" href="Classes/MUButton.html">MUButton</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/MUButton.html">MUButton</a>
+                <a class="nav-group-task-link" href="Classes/MUCircularProgress.html">MUCircularProgress</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MUHeader.html">MUHeader</a>
@@ -83,16 +83,56 @@
                 <a class="nav-group-task-link" href="Classes/MUPageControl.html">MUPageControl</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/MUSegmentedControl.html">MUSegmentedControl</a>
+                <a class="nav-group-task-link" href="Classes/MUProportionalView.html">MUProportionalView</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MURadarGraph.html">MURadarGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MURadarGraphBackgroundLine.html">MURadarGraphBackgroundLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MURangeTrimmer.html">MURangeTrimmer</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MUTextField.html">MUTextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MUToast.html">MUToast</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MUToast/Position.html">– Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MUToast/Priority.html">– Priority</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MUTopBar.html">MUTopBar</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/MUWeakProxy.html">MUWeakProxy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MUCornerStyle.html">MUCornerStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MURadarGraphStyle.html">MURadarGraphStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/FloatingPoint.html">FloatingPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/Range.html">Range</a>
               </li>
             </ul>
           </li>
@@ -115,7 +155,7 @@
                 <a class="nav-group-task-link" href="Protocols/MUPageControlDelegate.html">MUPageControlDelegate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/MUSegmentControlDelegate.html">MUSegmentControlDelegate</a>
+                <a class="nav-group-task-link" href="Protocols/MURangeTrimmerDelegate.html">MURangeTrimmerDelegate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/MUTextFieldDelegate.html">MUTextFieldDelegate</a>
@@ -129,7 +169,10 @@
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Structs/MUSegmentItem.html">MUSegmentItem</a>
+                <a class="nav-group-task-link" href="Structs/MURadarGraphData.html">MURadarGraphData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/MURange.html">MURange</a>
               </li>
             </ul>
           </li>
@@ -162,7 +205,7 @@
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
-<li>iOS 9.0+</li>
+<li>iOS 9.1+</li>
 <li>Xcode 9.0+</li>
 </ul>
 <h2 id='installation' class='heading'>Installation</h2>
@@ -180,84 +223,33 @@
 <p>open your favorite terminal, go to your project root path and run:</p>
 <pre class="highlight shell"><code>carthage update
 </code></pre>
+<h2 id='components' class='heading'>Components</h2>
+
+<p><img src="./Screenshots/Sketch.png" alt="Sketch template"></p>
 <h2 id='features' class='heading'>Features</h2>
 
-<ul>
-<li><a href="./Examples/MUHeader.md"><strong>MUHeader:</strong></a> Component that define a title and a detail description.</li>
-</ul>
-
-<p><img src="./Screenshots/MUHeader.png" alt="MUHeader"></p>
+<p>You can open the sketch template file provided with the source code to have a look at all the components.</p>
 
 <ul>
-<li><strong>MUTopBar:</strong> Component that define a title and a button on left side.</li>
-</ul>
-
-<p><img src="./Screenshots/MUTopBar.png" alt="MUTopBar"></p>
-
-<ul>
-<li><strong>MUButton:</strong> UIButton with more customizable options.</li>
-</ul>
-
-<p><img src="./Screenshots/MUButton.png" alt="MUButton"></p>
-
-<ul>
+<li><p><a href="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Examples/MUHeader.md"><strong>MUHeader:</strong></a> Component that define a title and a detail description.</p></li>
+<li><p><strong>MUTopBar:</strong> Component that define a title and a button on left side.</p></li>
+<li><p><strong>MUButton:</strong> UIButton with more customizable options.</p></li>
 <li><p><strong>MUHorizontalPager:</strong> UIScrollView + isPagingEnabled with more customizable options.</p></li>
 <li><p><strong>MUPageControl:</strong> UIPageControl with more customizable options.</p></li>
+<li><p><strong>MUTextField:</strong> UITextField with more customizable options.</p></li>
+<li><p><strong>MUNavigationBar:</strong> Component that define a left button along with a main button with a separator.</p></li>
+<li><p><strong>MUAvatar:</strong> UIImage with possible design round, square or custom.</p></li>
+<li><p><strong>MUPinCode:</strong> Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.</p></li>
+<li><p><strong>MUSegmentedControl:</strong> UISegmentedControl like with more designable options.</p></li>
+<li><p><strong>MUProportionalBar:</strong> An horizontal progress bar with multiple sections.</p></li>
+<li><p><strong>MUTrimmer:</strong> A draggable component usually used to trim vidéo.</p></li>
+<li><p><strong>MUToast:</strong> A toast message component.</p></li>
+<li><p><strong>MURadarGraph:</strong> A sprider graph to visualize multiple charts.</p></li>
 </ul>
-
-<p><img src="./Screenshots/MUPageControl.png" alt="MUPageControl"></p>
-
-<ul>
-<li><strong>MUTextField:</strong> UITextField with more customizable options.</li>
-</ul>
-
-<p><img src="./Screenshots/MUTextField.png" alt="MUTextField"></p>
-
-<ul>
-<li><strong>MUNavigationBar:</strong> Component that define a left button along with a main button with a separator.</li>
-</ul>
-
-<p><img src="./Screenshots/MUNavigationBar.png" alt="MUNavigationBar"></p>
-
-<ul>
-<li><strong>MUAvatar:</strong> UIImage with possible design round, square or custom.</li>
-</ul>
-
-<p><img src="./Screenshots/MUAvatar.png" alt="MUAvatar"></p>
-
-<ul>
-<li><strong>MUTag:</strong> Component that define a title.</li>
-</ul>
-
-<p><img src="./Screenshots/MUTag.png" alt="MUTag"></p>
-
-<ul>
-<li><strong>MUPinCode:</strong> Component to handle pin code usage with possibly being alpha-numeric, emoji, numeric.</li>
-</ul>
-
-<p><img src="./Screenshots/MUPinCode.png" alt="MUPinCode"></p>
-
-<ul>
-<li><strong>MUSegmentedControl:</strong> UISegmentedControl like with more designable options.</li>
-</ul>
-
-<p><img src="./Screenshots/MUSegmentedControl.png" alt="MUSegmentedControl"></p>
-
-<ul>
-<li><strong>MUProportionalBar:</strong> An horizontal progress bar with multiple sections.</li>
-</ul>
-
-<p><img src="./Screenshots/MUProgress.png" alt="MUProportionalBar"></p>
-
-<ul>
-<li><strong>MUTrimmer:</strong> A draggable component usually used to trim vidéo.</li>
-</ul>
-
-<p><img src="./Screenshots/MUTrimmer.png" alt="MUTrimmer"></p>
 <h2 id='example' class='heading'>Example</h2>
 <h3 id='walkthrough' class='heading'>Walkthrough</h3>
 
-<p>Have a look in the sample project to see how to create a complete walkthrough with the following Sejima components:</p>
+<p><a href="https://medium.com/@loic_19820/ios-tutorial-create-a-complete-walkthrough-3cac16112010">Read the Medium article on how to build this Walkthrough</a></p>
 
 <ol>
 <li>MUHeader</li>
@@ -266,15 +258,24 @@
 <li>MUHorizontalPager</li>
 </ol>
 
-<p><img src="./Screenshots/Walkthrough-small.png" alt="Walkthrough"></p>
+<p><img src="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Walkthrough.png" alt="Walkthrough"></p>
+<h3 id='login' class='heading'>Login</h3>
+
+<ol>
+<li>MUTopBar</li>
+<li>MUTextField</li>
+<li>MUButton</li>
+</ol>
+
+<p><img src="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Screenshots/Login.png" alt="Login"></p>
 <h2 id='sketch-template' class='heading'>Sketch template</h2>
 
 <p>To help you design applications using Sejima components in <a href="https://sketchapp.com/">Sketch</a> we provide a Sketch template with all our components available in Symbols.</p>
 
-<p><a href="./Screenshots/Sketch.png">Sketch template</a></p>
+<p><a href="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/Sejima.sketch">Sketch template</a></p>
 <h2 id='contributing' class='heading'>Contributing</h2>
 
-<p>Please read our <a href="./CONTRIBUTING.md">Contributing Guide</a> before submitting a Pull Request to the project.</p>
+<p>Please read our <a href="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/CONTRIBUTING.md">Contributing Guide</a> before submitting a Pull Request to the project.</p>
 <h2 id='support' class='heading'>Support</h2>
 
 <p>For more information on the upcoming version, please take a look to our <a href="https://github.com/MoveUpwards/Sejima/projects/">ROADMAP</a>.</p>
@@ -295,7 +296,7 @@
 <h2 id='license' class='heading'>License</h2>
 
 <p>Folding cell is released under the MIT license.
-See <a href="./LICENSE">LICENSE</a> for details.</p>
+See <a href="https://raw.githubusercontent.com/MoveUpwards/Sejima/master/LICENSE">LICENSE</a> for details.</p>
 
 <p>If you use the open-source library in your project, please make sure to credit and backlink to <a href="http://www.moveupwards.dev">www.moveupwards.dev</a></p>
 
@@ -306,7 +307,7 @@ See <a href="./LICENSE">LICENSE</a> for details.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-05)</p>
+      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-11)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
