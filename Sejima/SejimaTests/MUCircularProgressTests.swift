@@ -15,6 +15,8 @@ class MUCircularProgressTests: XCTestCase {
         let progress = MUCircularProgress()
         XCTAssertNotNil(progress)
 
+        XCTAssertNil(progress.icon)
+        XCTAssertEqual(progress.iconMargin, .zero)
         XCTAssertEqual(progress.titleFont, .systemFont(ofSize: 34, weight: .regular))
         XCTAssertEqual(progress.detailFont, .systemFont(ofSize: 14, weight: .semibold))
         XCTAssertEqual(progress.titleColor, .white)
@@ -79,6 +81,17 @@ class MUCircularProgressTests: XCTestCase {
         XCTAssertEqual(progress.trackValue, 0.8)
         XCTAssertEqual(progress.progressValue, 0.4)
         XCTAssertEqual(progress.animationDuration, 0.5)
+    }
+
+    func testIcon() {
+        let progress = MUCircularProgress()
+        XCTAssertNotNil(progress)
+
+        progress.icon = UIImage()
+        progress.iconMargin = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
+        XCTAssertNotNil(progress.icon)
+        XCTAssertEqual(progress.iconMargin, UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
 
     func testResetProgress() {
