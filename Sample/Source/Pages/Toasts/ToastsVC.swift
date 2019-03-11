@@ -28,6 +28,7 @@ extension ToastsVC: MUButtonDelegate {
         toast.backgroundColor = .green
         toast.cornerRadius = 10.0
         toast.spacing = 0.0
+        toast.icon = #imageLiteral(resourceName: "walkthrough_sleep")
         toast.show(in: self)
     }
 }

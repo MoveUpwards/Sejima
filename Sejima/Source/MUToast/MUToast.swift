@@ -39,7 +39,7 @@ open class MUToast: MUNibView {
 
     // MARK: - Background
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
+    /// The toast’s corner radius.
     @IBInspectable open dynamic var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
