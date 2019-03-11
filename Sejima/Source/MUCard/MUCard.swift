@@ -186,6 +186,8 @@ open class MUCard: MUNibView {
         case .square:
             layer.cornerRadius = 0
         }
+
+        layoutSubviews()
     }
 
     // MARK: - Life cycle functions
