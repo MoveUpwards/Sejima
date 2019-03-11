@@ -222,12 +222,14 @@ open class MUToast: MUNibView {
 
     // MARK: - Life cycle
 
+    /// Default setup to load the view from a xib file.
     open override func xibSetup() {
         super.xibSetup()
 
         layer.masksToBounds = true
     }
 
+    /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()
 

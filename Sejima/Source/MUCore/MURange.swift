@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// A class that create a weak target to avoid retain cycles.
+/// Class that act like NSRange and Range merged.
 public struct MURange<Bound: Numeric> {
-    ///
+    /// NSRange location equivalent
     public var location: Bound
-    /// 
+    /// NSRange length equivalent
     public var length: Bound
 
     /// Initializes and returns a newly allocated MURange.
@@ -21,7 +21,7 @@ public struct MURange<Bound: Numeric> {
         self.length = length
     }
 
-    ///
+    /// Range lowerBound equivalent
     public var lowerBound: Bound {
         get {
             return location
@@ -31,7 +31,7 @@ public struct MURange<Bound: Numeric> {
         }
     }
 
-    ///
+    /// Range upperBound equivalent
     public var upperBound: Bound {
         get {
             return location + length
@@ -39,27 +39,5 @@ public struct MURange<Bound: Numeric> {
         set {
             length = newValue - location
         }
-    }
-}
-
-extension Range where Bound: Numeric {
-    /// NSRange(location: Int, length: Int) style
-    public init(location: Bound, length: Bound) {
-        self.init(uncheckedBounds: (lower: location, upper: location + length))
-    }
-
-    public var location: Bound {
-        return lowerBound // Get ONLY as lowerBound is a constant
-    }
-
-    public var length: Bound {
-        return upperBound - lowerBound // Get ONLY as upperBound is a constant
-    }
-}
-
-extension Range where Bound == String.Index {
-    internal var nsRange: NSRange {
-        return NSRange(location: lowerBound.encodedOffset,
-                       length: upperBound.encodedOffset - lowerBound.encodedOffset)
     }
 }

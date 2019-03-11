@@ -204,6 +204,7 @@ open class MURangeTrimmer: MUNibView {
         addSubRange(start: 0.0, length: 100.0) // Add a full SubRange by default
     }
 
+    /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Class that define a card (title, description and image) with screen animation.
+/// Class that define a circular progress with an animation.
 @IBDesignable
 open class MUCircularProgress: MUNibView {
     @IBOutlet private var label: UILabel!

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Define the line in the radar graph's background
 public final class MURadarGraphBackgroundLine: NSObject {
     /// Define the radar graph's background line fill color
     public var fillColor: UIColor = .clear
