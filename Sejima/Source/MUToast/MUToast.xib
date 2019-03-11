@@ -12,11 +12,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUToast" customModule="Sejima" customModuleProvider="target">
             <connections>
                 <outlet property="header" destination="xCF-DK-RMr" id="90C-kR-3bU"/>
-                <outlet property="imageBottom" destination="rxN-YN-d7o" id="NE4-Wo-oE5"/>
                 <outlet property="imageLeading" destination="IcN-KN-rid" id="Zwc-uU-U8G"/>
-                <outlet property="imageTop" destination="uoR-EK-vXE" id="OxI-nU-f32"/>
                 <outlet property="imageView" destination="Pq6-sz-WaI" id="2A3-Cg-D93"/>
+                <outlet property="imageWidth" destination="t1J-JV-PBc" id="zK7-ED-3od"/>
+                <outlet property="labelsBottom" destination="a2L-E5-99Q" id="rgf-VJ-U7a"/>
                 <outlet property="labelsLeading" destination="waw-DK-JvO" id="jPU-Dh-4Ns"/>
+                <outlet property="labelsTop" destination="wVf-kg-UQA" id="wji-Fb-lNL"/>
                 <outlet property="labelsTrailing" destination="vi4-go-gmO" id="vbw-3k-urI"/>
                 <outlet property="labelsVerticalInset" destination="CN2-QK-qSS" id="oV5-1a-6bQ"/>
             </connections>
@@ -27,13 +28,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pq6-sz-WaI">
-                    <rect key="frame" x="16" y="16" width="88" height="88"/>
+                    <rect key="frame" x="16" y="16" width="64" height="64"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Pq6-sz-WaI" secondAttribute="height" multiplier="1:1" id="KUh-9H-BJY"/>
+                        <constraint firstAttribute="width" constant="64" id="t1J-JV-PBc"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCF-DK-RMr" customClass="MUHeader" customModule="Sejima" customModuleProvider="target">
-                    <rect key="frame" x="120" y="56" width="239" height="8"/>
+                    <rect key="frame" x="96" y="16" width="263" height="88"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -41,10 +43,11 @@
             <constraints>
                 <constraint firstAttribute="height" relation="greaterThanOrEqual" secondItem="xCF-DK-RMr" secondAttribute="height" constant="16" id="CN2-QK-qSS"/>
                 <constraint firstItem="Pq6-sz-WaI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IcN-KN-rid"/>
+                <constraint firstAttribute="bottom" secondItem="xCF-DK-RMr" secondAttribute="bottom" constant="16" id="a2L-E5-99Q"/>
                 <constraint firstItem="xCF-DK-RMr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dQC-YE-HYw"/>
-                <constraint firstAttribute="bottom" secondItem="Pq6-sz-WaI" secondAttribute="bottom" constant="16" id="rxN-YN-d7o"/>
-                <constraint firstItem="Pq6-sz-WaI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="uoR-EK-vXE"/>
+                <constraint firstItem="Pq6-sz-WaI" firstAttribute="top" secondItem="xCF-DK-RMr" secondAttribute="top" id="hF1-Dv-NPb"/>
                 <constraint firstAttribute="trailing" secondItem="xCF-DK-RMr" secondAttribute="trailing" constant="16" id="vi4-go-gmO"/>
+                <constraint firstItem="xCF-DK-RMr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="wVf-kg-UQA"/>
                 <constraint firstItem="xCF-DK-RMr" firstAttribute="leading" secondItem="Pq6-sz-WaI" secondAttribute="trailing" constant="16" id="waw-DK-JvO"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>

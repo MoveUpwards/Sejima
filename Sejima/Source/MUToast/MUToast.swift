@@ -15,11 +15,12 @@ open class MUToast: MUNibView {
     @IBOutlet private var header: MUHeader!
 
     // Image inset constraint
-    @IBOutlet private var imageTop: NSLayoutConstraint!
     @IBOutlet private var imageLeading: NSLayoutConstraint!
-    @IBOutlet private var imageBottom: NSLayoutConstraint!
+    @IBOutlet private var imageWidth: NSLayoutConstraint!
 
-    // Labels inset constraint
+    // Labels inset constraints
+    @IBOutlet private var labelsTop: NSLayoutConstraint!
+    @IBOutlet private var labelsBottom: NSLayoutConstraint!
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
     @IBOutlet private var labelsVerticalInset: NSLayoutConstraint!
@@ -158,6 +159,14 @@ open class MUToast: MUNibView {
         }
     }
 
+    /// The icon’s vertical padding.
+    @IBInspectable open dynamic var headerVerticalPadding: CGFloat = 16.0 {
+        didSet {
+            labelsTop.constant = headerVerticalPadding
+            labelsBottom.constant = headerVerticalPadding
+        }
+    }
+
     // MARK: - ImageView
 
     /// Returns the image of the toast.
@@ -176,10 +185,10 @@ open class MUToast: MUNibView {
         }
     }
 
-    /// The icon’s vertical padding.
-    @IBInspectable open dynamic var iconVerticalPadding: CGFloat = 16.0 {
+    /// The icon’s width.
+    @IBInspectable open dynamic var iconWidth: CGFloat = 64.0 {
         didSet {
-            updateImageView()
+            imageWidth.constant = iconWidth
         }
     }
 
@@ -218,30 +227,26 @@ open class MUToast: MUNibView {
 
     /// Performs a show animation using the animation's values.
     open func show(in vc: UIViewController, completion: ((Bool) -> Void)? = nil) {
-        var areaFrame: CGRect
-        if #available(iOS 11.0, *) {
-            areaFrame = vc.view.safeAreaLayoutGuide.layoutFrame
+        let safeArea = areaFrame(of: vc)
+        let width = safeArea.width - 2.0 * horizontalPadding
+        let headerWidth = width - iconLeftPadding - iconWidth - 2.0 * textHorizontalInset
+        let height = header.expectedHeight(for: headerWidth) + 2.0 * headerVerticalPadding
+        let origin: CGFloat
+
+        if displayPosition == .top {
+            origin = safeArea.origin.y + verticalPadding
+            transform = CGAffineTransform(translationX: 0.0, y: -(origin + height))
         } else {
-            areaFrame = vc.view.frame
-            if !vc.prefersStatusBarHidden {
-                areaFrame.origin.y += 20.0
-            }
-            if let navBarHeight = vc.navigationController?.navigationBar.bounds.height {
-                areaFrame.origin.y += navBarHeight
-            }
+            origin = safeArea.origin.y + safeArea.height - height - verticalPadding
+            transform = CGAffineTransform(translationX: 0.0, y: vc.view.frame.height - origin)
         }
-        let width = areaFrame.width - 2.0 * horizontalPadding
-        let height = width * 120.0 / 375.0 // Aspect ratio of 375:120
 
-        frame = CGRect(x: areaFrame.origin.x + horizontalPadding,
-                       y: displayPosition == .top ?
-                            areaFrame.origin.y + verticalPadding :
-                            areaFrame.origin.y + areaFrame.height - height - verticalPadding,
-                       width: width,
-                       height: height)
-        add(in: vc.view)
+        vc.view.addAutolayoutSubview(self,
+                                     top: origin,
+                                     height: nil,
+                                     leading: safeArea.origin.x + horizontalPadding,
+                                     width: width / vc.view.bounds.width)
 
-        transform = hideTransform
         showingAnimation(completion: { [weak self] _ in
             guard let displayDuration = self?.displayDuration else {
                 return
@@ -255,15 +260,29 @@ open class MUToast: MUNibView {
 
     // MARK: - Private functions
 
+    private func areaFrame(of vc: UIViewController) -> CGRect {
+        var areaFrame: CGRect
+        if #available(iOS 11.0, *) {
+            areaFrame = vc.view.safeAreaLayoutGuide.layoutFrame
+        } else {
+            areaFrame = vc.view.frame
+            if !vc.prefersStatusBarHidden {
+                areaFrame.origin.y += 20.0
+                areaFrame.size.height -= 20.0
+            }
+            if let navBarHeight = vc.navigationController?.navigationBar.bounds.height {
+                areaFrame.origin.y += navBarHeight
+                areaFrame.size.height -= navBarHeight
+            }
+        }
+        return areaFrame
+    }
+
     private func updateImageView() {
         if icon == nil {
             imageLeading.constant = 0
-            imageTop.constant = bounds.height * 0.5
-            imageBottom.constant = bounds.height * 0.5
         } else {
             imageLeading.constant = iconLeftPadding
-            imageTop.constant = iconVerticalPadding
-            imageBottom.constant = iconVerticalPadding
         }
     }
 
@@ -282,8 +301,6 @@ open class MUToast: MUNibView {
                 return
             }
         }
-        translatesAutoresizingMaskIntoConstraints = true
-        vcView.addSubview(self)
     }
 
     private func getLowestToast(in vcView: UIView, priorities: [Priority]) -> UIView? {
