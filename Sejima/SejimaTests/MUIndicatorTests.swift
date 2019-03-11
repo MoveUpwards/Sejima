@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 @testable import Sejima
 
 class MUIndicatorTests: XCTestCase {
@@ -42,4 +43,19 @@ class MUIndicatorTests: XCTestCase {
         XCTAssertEqual(indicator.animationType, .easeInOut)
     }
 
+    func testTextAlignment() {
+        let indicator = MUIndicator()
+        XCTAssertNotNil(indicator)
+
+        indicator.textAlignmentInt = 2
+        XCTAssertEqual(indicator.textAlignment, .right)
+    }
+
+    func testAnimationType() {
+        let indicator = MUIndicator()
+        XCTAssertNotNil(indicator)
+
+        indicator.animationTypeInt = 2
+        XCTAssertEqual(indicator.animationType, .easeOut)
+    }
 }

@@ -1,5 +1,5 @@
 //
-//  MULabel.swift
+//  MULabelCounter.swift
 //  MUComponent
 //
 //  Created by Loïc GRIFFIE on 31/10/2018.
@@ -70,7 +70,7 @@ open class MULabelCounter: MUNibView {
     }
 
     /// The label’s text color.
-    @IBInspectable open dynamic var textColor: UIColor = .white {
+    @IBInspectable open dynamic var textColor: UIColor = .black {
         didSet {
             label.textColor = textColor
         }
@@ -137,6 +137,7 @@ open class MULabelCounter: MUNibView {
 
     // MARK: - Public functions
 
+    /// Returns the current value
     public var currentValue: Double {
         if progress == 0 {
             return 0
@@ -150,6 +151,7 @@ open class MULabelCounter: MUNibView {
         return startValue + updatedValue * (targetValue - startValue)
     }
 
+    /// Start counter animation from 0 up to given value with optional animation duration. Default duration is 0.
     public func count(to value: Double, duration: TimeInterval = 0, completion: (() -> Void)? = nil) {
         startValue = currentValue
         targetValue = value
