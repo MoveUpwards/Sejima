@@ -23,7 +23,6 @@ open class MUToast: MUNibView {
     @IBOutlet private var labelsBottom: NSLayoutConstraint!
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
-    @IBOutlet private var labelsVerticalInset: NSLayoutConstraint!
 
     /// Toast possible position
     public enum Position {
@@ -49,21 +48,6 @@ open class MUToast: MUNibView {
     @IBInspectable open dynamic var cornerRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = cornerRadius
-        }
-    }
-
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var textHorizontalInset: CGFloat = 16.0 {
-        didSet {
-            labelsLeading.constant = textHorizontalInset
-            labelsTrailing.constant = textHorizontalInset
-        }
-    }
-
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var textVerticalInset: CGFloat = 16.0 {
-        didSet {
-            labelsVerticalInset.constant = textVerticalInset
         }
     }
 
@@ -159,7 +143,15 @@ open class MUToast: MUNibView {
         }
     }
 
-    /// The icon’s vertical padding.
+    /// The header’s horizontal padding.
+    @IBInspectable open dynamic var headerHorizontalPadding: CGFloat = 16.0 {
+        didSet {
+            labelsLeading.constant = headerHorizontalPadding
+            labelsTrailing.constant = headerHorizontalPadding
+        }
+    }
+
+    /// The header’s vertical padding.
     @IBInspectable open dynamic var headerVerticalPadding: CGFloat = 16.0 {
         didSet {
             labelsTop.constant = headerVerticalPadding
@@ -227,25 +219,7 @@ open class MUToast: MUNibView {
 
     /// Performs a show animation using the animation's values.
     open func show(in vc: UIViewController, completion: ((Bool) -> Void)? = nil) {
-        let safeArea = areaFrame(of: vc)
-        let width = safeArea.width - 2.0 * horizontalPadding
-        let headerWidth = width - iconLeftPadding - iconWidth - 2.0 * textHorizontalInset
-        let height = header.expectedHeight(for: headerWidth) + 2.0 * headerVerticalPadding
-        let origin: CGFloat
-
-        if displayPosition == .top {
-            origin = safeArea.origin.y + verticalPadding
-            transform = CGAffineTransform(translationX: 0.0, y: -(origin + height))
-        } else {
-            origin = safeArea.origin.y + safeArea.height - height - verticalPadding
-            transform = CGAffineTransform(translationX: 0.0, y: vc.view.frame.height - origin)
-        }
-
-        vc.view.addAutolayoutSubview(self,
-                                     top: origin,
-                                     height: nil,
-                                     leading: safeArea.origin.x + horizontalPadding,
-                                     width: width / vc.view.bounds.width)
+        add(in: vc)
 
         showingAnimation(completion: { [weak self] _ in
             guard let displayDuration = self?.displayDuration else {
@@ -286,21 +260,56 @@ open class MUToast: MUNibView {
         }
     }
 
-    private func add(in vcView: UIView) {
+    private func add(in vc: UIViewController) {
+        let safeArea = areaFrame(of: vc)
+        let width = safeArea.width - 2.0 * horizontalPadding
+        let headerWidth = width - iconLeftPadding - iconWidth - 2.0 * headerHorizontalPadding
+
+        var headerHeight = header.expectedHeight(for: headerWidth)
+        if headerHeight < iconWidth {
+            headerHeight = iconWidth
+        }
+        let height = headerHeight + 2.0 * headerVerticalPadding
+
+        let origin: CGFloat
+        if displayPosition == .top {
+            origin = safeArea.origin.y + verticalPadding
+            transform = CGAffineTransform(translationX: 0.0, y: -(origin + height))
+        } else {
+            origin = safeArea.origin.y + safeArea.height - height - verticalPadding
+            transform = CGAffineTransform(translationX: 0.0, y: vc.view.frame.height - origin)
+        }
+
         switch displayPriority {
         case .alert:
             break // Default case on top of all views
         case .warning:
-            if let toastView = getLowestToast(in: vcView, priorities: [.alert]) {
-                vcView.insertSubview(self, belowSubview: toastView)
+            if let toastView = getLowestToast(in: vc.view, priorities: [.alert]) {
+                vc.view.insertAutolayoutSubview(self,
+                                                belowSubview: toastView,
+                                                top: origin,
+                                                height: nil,
+                                                leading: safeArea.origin.x + horizontalPadding,
+                                                width: width / vc.view.bounds.width)
                 return
             }
         case .info:
-            if let toastView = getLowestToast(in: vcView, priorities: [.alert, .warning]) {
-                vcView.insertSubview(self, belowSubview: toastView)
+            if let toastView = getLowestToast(in: vc.view, priorities: [.alert, .warning]) {
+                vc.view.insertAutolayoutSubview(self,
+                                                belowSubview: toastView,
+                                                top: origin,
+                                                height: nil,
+                                                leading: safeArea.origin.x + horizontalPadding,
+                                                width: width / vc.view.bounds.width)
                 return
             }
         }
+
+        vc.view.addAutolayoutSubview(self,
+                                     top: origin,
+                                     height: nil,
+                                     leading: safeArea.origin.x + horizontalPadding,
+                                     width: width / vc.view.bounds.width)
     }
 
     private func getLowestToast(in vcView: UIView, priorities: [Priority]) -> UIView? {

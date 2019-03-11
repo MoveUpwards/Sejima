@@ -19,7 +19,6 @@
                 <outlet property="labelsLeading" destination="waw-DK-JvO" id="jPU-Dh-4Ns"/>
                 <outlet property="labelsTop" destination="wVf-kg-UQA" id="wji-Fb-lNL"/>
                 <outlet property="labelsTrailing" destination="vi4-go-gmO" id="vbw-3k-urI"/>
-                <outlet property="labelsVerticalInset" destination="CN2-QK-qSS" id="oV5-1a-6bQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -41,8 +40,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="height" relation="greaterThanOrEqual" secondItem="xCF-DK-RMr" secondAttribute="height" constant="16" id="CN2-QK-qSS"/>
                 <constraint firstItem="Pq6-sz-WaI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IcN-KN-rid"/>
+                <constraint firstItem="xCF-DK-RMr" firstAttribute="height" relation="greaterThanOrEqual" secondItem="Pq6-sz-WaI" secondAttribute="height" id="NM4-RQ-hZ3"/>
                 <constraint firstAttribute="bottom" secondItem="xCF-DK-RMr" secondAttribute="bottom" constant="16" id="a2L-E5-99Q"/>
                 <constraint firstItem="xCF-DK-RMr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dQC-YE-HYw"/>
                 <constraint firstItem="Pq6-sz-WaI" firstAttribute="top" secondItem="xCF-DK-RMr" secondAttribute="top" id="hF1-Dv-NPb"/>
