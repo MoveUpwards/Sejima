@@ -35,6 +35,7 @@ class MUTextFieldTests: XCTestCase {
         XCTAssertEqual(textField.isSecure, false)
     }
 
+    //swiftlint:disable:next function_body_length
     func testCustomValues() {
         let textField = MUTextField()
         XCTAssertNotNil(textField)

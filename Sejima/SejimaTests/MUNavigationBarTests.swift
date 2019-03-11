@@ -40,14 +40,4 @@ class MUNavigationBarTests: XCTestCase {
         XCTAssertEqual(navBar.separatorWidth, 2.0)
         XCTAssertEqual(navBar.separatorHeightMultiplier, 1.0)
     }
-
-    func testLoading() {
-        let navBar = MUNavigationBar()
-        XCTAssertNotNil(navBar)
-
-//        navBar.isLoading = true
-//
-//        XCTAssertEqual(navBar.rightButtonState, .normal)
-//        XCTAssertEqual(navBar.isLoading, true)
-    }
 }

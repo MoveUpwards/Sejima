@@ -12,6 +12,16 @@ import UIKit
 open class MUNibView: UIView {
     private var view: UIView?
 
+    /// Return the nib name file to be used. Override it if you use a xib different that the class name.
+    open var nibName: String? {
+        return type(of: self).description().components(separatedBy: ".").last
+    }
+
+    /// Return the bundle that contains the associated xib. Override it if you use a xib different that the class name.
+    open var bundle: Bundle? {
+        return Bundle(for: type(of: self))
+    }
+
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,13 +48,12 @@ open class MUNibView: UIView {
         self.view = view
     }
 
-    /// Load a nib file as the same class' name or if it not exists, a default view.
     private func loadNib() -> UIView {
-        guard let nibName = type(of: self).description().components(separatedBy: ".").last else {
+        guard let nibName = nibName else {
             return UIView()
         }
 
-        let nib = UINib(nibName: nibName, bundle: Bundle(for: type(of: self)))
+        let nib = UINib(nibName: nibName, bundle: bundle)
         guard let nibView = nib.instantiate(withOwner: self, options: nil).first as? UIView else {
             return UIView()
         }

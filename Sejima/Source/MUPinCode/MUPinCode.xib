@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUPinCode" customModule="Sejima" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="ZwX-xZ-d5K" id="op4-H9-5Ep"/>
+                <outlet property="tapView" destination="Kld-Es-MTv" id="5hZ-LV-VoA"/>
+                <outlet property="textField" destination="PTa-81-4zN" id="0bv-cK-8tI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dOR-er-SF4">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwX-xZ-d5K">
+                    <rect key="frame" x="0.0" y="0.0" width="170" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTa-81-4zN">
+                    <rect key="frame" x="0.0" y="0.0" width="170" height="56"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kld-Es-MTv">
+                    <rect key="frame" x="0.0" y="0.0" width="170" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.47450980390000003" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="PTa-81-4zN" firstAttribute="bottom" secondItem="ZwX-xZ-d5K" secondAttribute="bottom" id="5Wu-I3-ZMe"/>
+                <constraint firstItem="PTa-81-4zN" firstAttribute="leading" secondItem="ZwX-xZ-d5K" secondAttribute="leading" id="LAL-LY-0ga"/>
+                <constraint firstItem="ZwX-xZ-d5K" firstAttribute="bottom" secondItem="dOR-er-SF4" secondAttribute="bottom" id="LIS-jk-8fV"/>
+                <constraint firstItem="PTa-81-4zN" firstAttribute="trailing" secondItem="ZwX-xZ-d5K" secondAttribute="trailing" id="OS3-sU-Hs0"/>
+                <constraint firstItem="ZwX-xZ-d5K" firstAttribute="top" secondItem="dOR-er-SF4" secondAttribute="top" id="cR7-oM-jCW"/>
+                <constraint firstItem="Kld-Es-MTv" firstAttribute="top" secondItem="dOR-er-SF4" secondAttribute="top" id="dUb-tG-iLi"/>
+                <constraint firstItem="PTa-81-4zN" firstAttribute="top" secondItem="ZwX-xZ-d5K" secondAttribute="top" id="dni-EF-sH4"/>
+                <constraint firstAttribute="trailing" secondItem="Kld-Es-MTv" secondAttribute="trailing" id="e2s-cw-fZu"/>
+                <constraint firstAttribute="bottom" secondItem="Kld-Es-MTv" secondAttribute="bottom" id="ldj-og-0dC"/>
+                <constraint firstItem="ZwX-xZ-d5K" firstAttribute="trailing" secondItem="dOR-er-SF4" secondAttribute="trailing" id="sSE-SO-CGj"/>
+                <constraint firstItem="Kld-Es-MTv" firstAttribute="leading" secondItem="dOR-er-SF4" secondAttribute="leading" id="uhY-zT-X3F"/>
+                <constraint firstItem="ZwX-xZ-d5K" firstAttribute="leading" secondItem="S83-zS-AL5" secondAttribute="leading" id="zNl-jh-iXs"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="S83-zS-AL5"/>
+            <point key="canvasLocation" x="196.80000000000001" y="-304.04797601199402"/>
+        </view>
+    </objects>
+</document>

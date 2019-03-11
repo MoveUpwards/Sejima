@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'/>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
+    <pages>
+        <page name='MUHeader'/>
+        <page name='MUTag'/>
+        <page name='MUPinCode'/>
+        <page name='MUProportionalBar'/>
+        <page name='MURadarGraph'/>
+        <page name='MUCard'/>
+        <page name='MUCircularProgress'/>
+    </pages>
+</playground>
