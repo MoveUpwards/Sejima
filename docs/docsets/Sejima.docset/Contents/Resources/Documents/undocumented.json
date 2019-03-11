@@ -1,41 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphBackgroundLine.swift",
-      "line": 11,
-      "symbol": "MURadarGraphBackgroundLine",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphStyle.swift",
-      "line": 11,
-      "symbol": "MURadarGraphStyle",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphStyle.swift",
-      "line": 12,
-      "symbol": "MURadarGraphStyle.circular",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphStyle.swift",
-      "line": 13,
-      "symbol": "MURadarGraphStyle.spiderWeb",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURangeTrimmer/MURangeTrimmer.swift",
-      "line": 207,
-      "symbol": "MURangeTrimmer.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUToast/MUToast.swift",
       "line": 29,
       "symbol": "MUToast.Position.top",
@@ -68,20 +33,6 @@
       "line": 37,
       "symbol": "MUToast.Priority.info",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUToast/MUToast.swift",
-      "line": 231,
-      "symbol": "MUToast.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUToast/MUToast.swift",
-      "line": 244,
-      "symbol": "MUToast.show(in:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],

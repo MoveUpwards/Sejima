@@ -26,14 +26,19 @@ open class MUToast: MUNibView {
 
     /// Toast possible position
     public enum Position {
+        /// Top of the screen
         case top
+        /// Bottom of the screen
         case bottom
     }
 
     /// Toast priority order
     public enum Priority {
+        /// Alert immediatly
         case alert
+        /// Warning something important
         case warning
+        /// Info to show
         case info
     }
 
@@ -153,72 +158,52 @@ open class MUToast: MUNibView {
         }
     }
 
-    // MARK: - ImageVIew
+    // MARK: - ImageView
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @IBInspectable open dynamic var icon: UIImage? {
+    /// Returns the image of the toast.
+    @IBInspectable open dynamic var icon: UIImage? = nil {
         didSet {
-            setNeedsLayout()
+            imageView.image = icon
+
+            updateImageView()
         }
     }
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var iconLeftInset: CGFloat = 16.0 {
+    /// The icon’s left padding.
+    @IBInspectable open dynamic var iconLeftPadding: CGFloat = 16.0 {
         didSet {
-            setNeedsLayout()
+            updateImageView()
         }
     }
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var iconVerticalInset: CGFloat = 16.0 {
+    /// The icon’s vertical padding.
+    @IBInspectable open dynamic var iconVerticalPadding: CGFloat = 16.0 {
         didSet {
-            setNeedsLayout()
+            updateImageView()
         }
     }
 
     // MARK: - Animation
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @objc open dynamic var animationDuration: TimeInterval = 0.3 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The total duration of the animations, measured in seconds.
+    /// If you specify a negative value or 0, the changes are made without animating them.
+    @IBInspectable open dynamic var animationDuration: Double = 0.3
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    @objc open dynamic var displayDuration: TimeInterval = 3.0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The total duration of the display, measured in seconds.
+    /// If you specify a negative value or 0, the toast will hide as soon as the animation end.
+    @IBInspectable open dynamic var displayDuration: Double = 3.0
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    open var displayPosition: Position = .top {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The position where the toast will be visible.
+    open var displayPosition: Position = .top
 
-    /// Describes the NavigationNavBar's background color appearance while it shows
-    open var displayPriority: Priority = .info {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The toast's priority. Higher will be on top of lower toasts.
+    open var displayPriority: Priority = .info
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var horizontalPadding: CGFloat = 16.0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The toast’s horizontal padding.
+    @IBInspectable open dynamic var horizontalPadding: CGFloat = 16.0
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var verticalPadding: CGFloat = 16.0 {
-        didSet {
-            setNeedsLayout()
-        }
-    }
+    /// The toast’s vertical padding.
+    @IBInspectable open dynamic var verticalPadding: CGFloat = 16.0
 
     // MARK: - Life cycle
 
@@ -229,20 +214,9 @@ open class MUToast: MUNibView {
         layer.masksToBounds = true
     }
 
-    /// Lays out subviews.
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        if icon == nil {
-            hideImageView()
-        } else {
-            imageView.image = icon
-            setupImageView()
-        }
-    }
-
     // MARK: - Animation functions
 
+    /// Performs a show animation using the animation's values.
     open func show(in vc: UIViewController, completion: ((Bool) -> Void)? = nil) {
         var areaFrame: CGRect
         if #available(iOS 11.0, *) {
@@ -281,16 +255,16 @@ open class MUToast: MUNibView {
 
     // MARK: - Private functions
 
-    private func hideImageView() {
-        imageLeading.constant = 0
-        imageTop.constant = bounds.height * 0.5
-        imageBottom.constant = bounds.height * 0.5
-    }
-
-    private func setupImageView() {
-        imageLeading.constant = iconLeftInset
-        imageTop.constant = iconVerticalInset
-        imageBottom.constant = iconVerticalInset
+    private func updateImageView() {
+        if icon == nil {
+            imageLeading.constant = 0
+            imageTop.constant = bounds.height * 0.5
+            imageBottom.constant = bounds.height * 0.5
+        } else {
+            imageLeading.constant = iconLeftPadding
+            imageTop.constant = iconVerticalPadding
+            imageBottom.constant = iconVerticalPadding
+        }
     }
 
     private func add(in vcView: UIView) {
