@@ -1,6 +1,6 @@
 //
 //  MURange.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Loïc GRIFFIE on 15/11/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.

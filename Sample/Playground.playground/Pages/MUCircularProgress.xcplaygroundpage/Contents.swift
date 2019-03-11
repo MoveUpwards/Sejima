@@ -12,6 +12,8 @@ view.backgroundColor = .black
 PlaygroundPage.current.liveView = view
 
 let progress = MUCircularProgress()
+progress.icon = #imageLiteral(resourceName: "gender_male@2x.png")
+progress.iconMargin = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
 progress.title = "0 %".uppercased()
 progress.titleFont = .systemFont(ofSize: 24, weight: .heavy)
 progress.titleColor = .blue
@@ -20,7 +22,8 @@ progress.detailFont = .systemFont(ofSize: 14, weight: .regular)
 progress.detailColor = .orange
 progress.trackValue = 1.0
 progress.trackLineWidth = 10
-progress.trackLineColor = .red
+progress.trackBackgroundColor = .green
+progress.offset = 20
 progress.progressLineWidth = 10
 progress.progressLineColor = .orange
 
