@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUCard" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="contentBottom" destination="ydh-cy-VOi" id="caw-eR-bDk"/>
+                <outlet property="contentLeading" destination="p9r-Td-RsL" id="IG9-TI-Awf"/>
+                <outlet property="contentTop" destination="gET-22-jdN" id="exU-JJ-gvx"/>
+                <outlet property="contentTrailing" destination="fIQ-TA-lyH" id="vWL-EZ-3r1"/>
+                <outlet property="contentView" destination="fCP-7F-t78" id="4aw-Qt-jRn"/>
+                <outlet property="headerLeading" destination="fcS-Hp-RYJ" id="9KR-Cu-5pp"/>
+                <outlet property="headerTrailing" destination="u3W-sQ-7oU" id="pUe-EI-Hch"/>
+                <outlet property="headerView" destination="Cvk-bV-TGc" id="TkZ-42-2dN"/>
+                <outlet property="top" destination="WB1-ga-Mf8" id="kXY-9v-eMD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="40" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-bV-TGc" customClass="MUHeader" customModule="Sejima">
+                    <rect key="frame" x="16" y="12" width="268" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCP-7F-t78">
+                    <rect key="frame" x="16" y="68" width="268" height="116"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Cvk-bV-TGc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="WB1-ga-Mf8"/>
+                <constraint firstAttribute="trailing" secondItem="fCP-7F-t78" secondAttribute="trailing" constant="16" id="fIQ-TA-lyH"/>
+                <constraint firstItem="Cvk-bV-TGc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="fcS-Hp-RYJ"/>
+                <constraint firstItem="fCP-7F-t78" firstAttribute="top" secondItem="Cvk-bV-TGc" secondAttribute="bottom" constant="16" id="gET-22-jdN"/>
+                <constraint firstItem="fCP-7F-t78" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="p9r-Td-RsL"/>
+                <constraint firstAttribute="trailing" secondItem="Cvk-bV-TGc" secondAttribute="trailing" constant="16" id="u3W-sQ-7oU"/>
+                <constraint firstAttribute="bottom" secondItem="fCP-7F-t78" secondAttribute="bottom" constant="16" id="ydh-cy-VOi"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-358.39999999999998" y="56.671664167916049"/>
+        </view>
+    </objects>
+</document>
