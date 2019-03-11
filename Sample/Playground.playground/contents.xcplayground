@@ -6,5 +6,7 @@
         <page name='MUPinCode'/>
         <page name='MUProportionalBar'/>
         <page name='MURadarGraph'/>
+        <page name='MUCard'/>
+        <page name='MUCircularProgress'/>
     </pages>
 </playground>
