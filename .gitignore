@@ -30,7 +30,7 @@ Temporary Items
 .apdisk
 
 ### Jazzy ###
-docs/
+# docs/
 
 ### Xcode ###
 # Xcode
