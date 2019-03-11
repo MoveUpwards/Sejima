@@ -25,29 +25,11 @@ open class MUPinCode: MUNibView {
     @IBOutlet public weak var delegate: MUPinCodeDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     /// Describes the pin code caracters set allowed
-    open var allowCharacters: AllowCharacters = .all
+    open var allowCharacters: MUPinCodeCharacterSet = .all
 
     /// Return the current code
     open var code: String {
         return textField.text ?? ""
-    }
-
-    /// Visual characters allow
-    public enum AllowCharacters: Equatable {
-        /// Only numbers
-        case number
-
-        /// Only letters
-        case letter
-
-        /// Numbers and letters
-        case alphanumeric
-
-        /// No restriction
-        case all
-
-        /// Custom restriction
-        case custom(rexep: String)
     }
 
     // MARK: - Public IBInspectable variables ONLY
