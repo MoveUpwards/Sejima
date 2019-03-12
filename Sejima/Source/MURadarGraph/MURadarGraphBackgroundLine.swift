@@ -10,14 +10,14 @@ import UIKit
 
 /// Class that defines radar graph bachground line layout.
 public final class MURadarGraphBackgroundLine: NSObject {
-    /// Define the radar graph's background line fill color
+    /// Define the radar graph's background line fill color.
     public var fillColor: UIColor = .clear
-    /// Define the radar graph's background line stroke color
+    /// Define the radar graph's background line stroke color.
     public var strokeColor: UIColor = .white
-    /// Define the radar graph's background line thickness
+    /// Define the radar graph's background line thickness.
     public var strokeThickness: CGFloat = 0.0
 
-    /// Init radar graph background line style with default values
+    /// Init radar graph background line style with default values.
     public convenience init(fillColor: UIColor = .clear,
                             strokeColor: UIColor = .white,
                             strokeThickness: CGFloat = 0.0) {
