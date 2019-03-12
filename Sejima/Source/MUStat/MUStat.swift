@@ -10,9 +10,20 @@ import UIKit
 
 /// Delegate protocol for MUStat.
 @objc public protocol MUStatDelegate: class {
+    /// Will trigger each time stat is tapped.
     func didTap(_ stat: MUStat)
 }
 
+/**
+ Class that provide a value with unit, and a detail string below
+
+ A view with customizable options as:
+ * A separator on the most left.
+ * An image on the right of the separator or on the most left if no separator.
+ * A block of labels with:
+   * A value label and an unit label.
+   * A description label.
+ */
 @IBDesignable
 open class MUStat: MUNibView {
     @IBOutlet private var valueLabel: UILabel!
@@ -26,15 +37,11 @@ open class MUStat: MUNibView {
     @IBOutlet private var imageLeadingConstraint: NSLayoutConstraint! // inactive if no image
     @IBOutlet private var imageHeightConstraint: NSLayoutConstraint! // inactive if no image
 
-    @IBOutlet private var tagGesture: UITapGestureRecognizer!
+    @IBOutlet private var labelsTopConstraint: NSLayoutConstraint!
+    @IBOutlet private var labelsBottomConstraint: NSLayoutConstraint!
 
     /// The object that acts as the delegate of the avatar.
-    // swiftlint:disable:next private_outlet strong_iboutlet
-    @IBOutlet public weak var delegate: MUStatDelegate? {
-        didSet {
-            tagGesture.isEnabled = delegate == nil ? false : true
-        }
-    }
+    @IBOutlet public weak var delegate: MUStatDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Separator
 
@@ -54,32 +61,48 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the separator color.
-    @IBInspectable open dynamic var separatorWidth: CGFloat = 1 {
+    @IBInspectable open dynamic var separatorWidth: CGFloat = 1.0 {
         didSet {
             separatorWidthConstraint.constant = separatorWidth
         }
     }
 
+    /// Specifies the left space if separator is shown.
+    @IBInspectable open dynamic var separatorLeftPadding: CGFloat = 0.0 {
+        didSet {
+            separatorLeadingConstraint.constant = separatorLeftPadding
+        }
+    }
+
+    // MARK: - Icon
+
     /// Specifies the stat's icon.
     @IBInspectable open dynamic var icon: UIImage? = nil {
         didSet {
             imageView.image = icon
-            imageLeadingConstraint.isActive = icon == nil
+            imageLeadingConstraint.isActive = icon != nil
             imageHeightConstraint.isActive = icon == nil
+        }
+    }
+
+    /// Specifies the left space if icon is shown.
+    @IBInspectable open dynamic var iconLeftPadding: CGFloat = 0.0 {
+        didSet {
+            imageLeadingConstraint.constant = iconLeftPadding
         }
     }
 
     // MARK: - Value label
 
     /// Defines the value text.
-    @IBInspectable open dynamic var value: Double = 0 {
+    @IBInspectable open dynamic var value: Double = 0.0 {
         didSet {
             setTextValue()
         }
     }
 
     /// Specifies the value label font.
-    @objc open dynamic var valueFont: UIFont = .systemFont(ofSize: 12, weight: .regular) {
+    @objc open dynamic var valueFont: UIFont = .systemFont(ofSize: 12.0, weight: .regular) {
         didSet {
             valueLabel.font = valueFont
         }
@@ -109,7 +132,7 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the detail label font.
-    @objc open dynamic var detailFont: UIFont = .systemFont(ofSize: 12, weight: .regular) {
+    @objc open dynamic var detailFont: UIFont = .systemFont(ofSize: 12.0, weight: .regular) {
         didSet {
             detailLabel.font = detailFont
         }
@@ -132,7 +155,7 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the unit label font.
-    @objc open dynamic var unitFont: UIFont = .systemFont(ofSize: 12, weight: .regular) {
+    @objc open dynamic var unitFont: UIFont = .systemFont(ofSize: 12.0, weight: .regular) {
         didSet {
             unitLabel.font = unitFont
         }
@@ -142,6 +165,16 @@ open class MUStat: MUNibView {
     @IBInspectable open dynamic var unitColor: UIColor = .black {
         didSet {
             unitLabel.textColor = unitColor
+        }
+    }
+
+    // MARK: - Labels padding
+
+    /// Define the top and bottom padding of the labels.
+    @IBInspectable open dynamic var verticalPadding: CGFloat = 8.0 {
+        didSet {
+            labelsTopConstraint.constant = verticalPadding
+            labelsBottomConstraint.constant = verticalPadding
         }
     }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 internal class MUPinCodeCell: MUNibView {
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private var label: UILabel!
 
     internal func set(font: UIFont) {
         label.font = font
