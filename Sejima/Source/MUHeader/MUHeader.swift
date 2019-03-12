@@ -94,6 +94,12 @@ open class MUHeader: MUNibView {
         return .zero
     }
 
+    /// Return the height the header will have if constraint with this width.
+    open func expectedHeight(for width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        return titleLabel.sizeThatFits(size).height + spacing + detailLabel.sizeThatFits(size).height
+    }
+
     /// Return the size with a force sizeToFit (for unit tests only)
     internal func debugSize() -> CGSize {
         titleLabel.sizeToFit()

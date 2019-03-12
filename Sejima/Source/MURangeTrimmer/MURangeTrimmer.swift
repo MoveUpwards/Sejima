@@ -21,6 +21,7 @@ private enum DragType {
 }
 
 /// Controller to create one to n range(s) trimmer
+@IBDesignable
 open class MURangeTrimmer: MUNibView {
     /// The object that acts as the delegate of the range trimmer.
     @IBOutlet public weak var delegate: MURangeTrimmerDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
@@ -204,6 +205,7 @@ open class MURangeTrimmer: MUNibView {
         addSubRange(start: 0.0, length: 100.0) // Add a full SubRange by default
     }
 
+    /// Lays out subviews.
     override open func layoutSubviews() {
         super.layoutSubviews()
 
@@ -365,7 +367,7 @@ extension MURangeTrimmer {
 // MARK: - Delegate functions
 
 extension MURangeTrimmer {
-    @IBAction func touchUpInside(_ sender: UIControl, forEvent event: UIEvent) {
+    @IBAction private func touchUpInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
         guard dragType == .none else {
             dragEnded(sender)
@@ -385,11 +387,11 @@ extension MURangeTrimmer {
     // MARK: - Draggable functions
 
     // Connect TouchDragExit, TouchDragOutside, TouchUpOutside
-    @IBAction func dragEnded(_ sender: UIControl) {
+    @IBAction private func dragEnded(_ sender: UIControl) {
         dragType = .none
     }
 
-    @IBAction func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
+    @IBAction private func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
         delegate?.didCancel(self)
 

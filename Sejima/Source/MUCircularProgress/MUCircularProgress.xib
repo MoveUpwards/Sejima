@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUCircularProgress" customModule="Sejima" customModuleProvider="target">
             <connections>
+                <outlet property="image" destination="Lq8-5C-63A" id="814-0f-Xg7"/>
+                <outlet property="imageBottom" destination="sBy-tR-XmS" id="pfE-Xd-FvF"/>
+                <outlet property="imageLeading" destination="Eoi-Pz-AzN" id="Izi-NN-R0A"/>
+                <outlet property="imageTop" destination="5g1-i3-Jfb" id="O9O-69-83I"/>
+                <outlet property="imageTrailing" destination="NVC-Mw-yWX" id="IcE-eb-kmH"/>
                 <outlet property="label" destination="d1C-kZ-fbb" id="FoP-TF-S0a"/>
                 <outlet property="labelsLeading" destination="vH8-Dk-utW" id="q3d-9I-AIm"/>
                 <outlet property="labelsTrailing" destination="x6O-uf-HGj" id="lLv-tI-osO"/>
@@ -23,6 +28,9 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Lq8-5C-63A">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                </imageView>
                 <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Bie-kY-cfN">
                     <rect key="frame" x="0.0" y="146" width="300" height="8"/>
                     <subviews>
@@ -53,7 +61,11 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Lq8-5C-63A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5g1-i3-Jfb"/>
+                <constraint firstItem="Lq8-5C-63A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Eoi-Pz-AzN"/>
+                <constraint firstAttribute="trailing" secondItem="Lq8-5C-63A" secondAttribute="trailing" id="NVC-Mw-yWX"/>
                 <constraint firstItem="Bie-kY-cfN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fjK-Zo-WuN"/>
+                <constraint firstAttribute="bottom" secondItem="Lq8-5C-63A" secondAttribute="bottom" id="sBy-tR-XmS"/>
                 <constraint firstItem="Bie-kY-cfN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vH8-Dk-utW"/>
                 <constraint firstAttribute="trailing" secondItem="Bie-kY-cfN" secondAttribute="trailing" id="x6O-uf-HGj"/>
             </constraints>

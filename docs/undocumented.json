@@ -1,5 +1,6 @@
 {
   "warnings": [
+<<<<<<< HEAD
     {
       "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCircularProgress/MUCircularProgress.swift",
       "line": 12,
@@ -70,6 +71,9 @@
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
+=======
+
+>>>>>>> origin/master
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }

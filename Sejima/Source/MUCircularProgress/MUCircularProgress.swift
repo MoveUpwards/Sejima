@@ -8,15 +8,42 @@
 
 import UIKit
 
+/// Class that provide a circular progress indicator with customizable options.
 @IBDesignable
 open class MUCircularProgress: MUNibView {
+    @IBOutlet private var image: UIImageView!
     @IBOutlet private var label: UILabel!
     @IBOutlet private var sublabel: UILabel!
+
+    // Labels icon constraint
+    @IBOutlet private var imageLeading: NSLayoutConstraint!
+    @IBOutlet private var imageTop: NSLayoutConstraint!
+    @IBOutlet private var imageTrailing: NSLayoutConstraint!
+    @IBOutlet private var imageBottom: NSLayoutConstraint!
 
     // Labels inset constraint
     @IBOutlet private var labelsVerticalInset: NSLayoutConstraint!
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
+
+    // MARK: - Icon
+
+    /// An image displayed.
+    @IBInspectable open var icon: UIImage? = nil {
+        didSet {
+            image.image = icon
+        }
+    }
+
+    /// An image padding.
+    @objc open dynamic var iconMargin: UIEdgeInsets = .zero {
+        didSet {
+            imageLeading.constant = iconMargin.left
+            imageTop.constant = iconMargin.top
+            imageTrailing.constant = iconMargin.right
+            imageBottom.constant = iconMargin.bottom
+        }
+    }
 
     // MARK: - Labels
 
@@ -85,6 +112,13 @@ open class MUCircularProgress: MUNibView {
         }
     }
 
+    /// Define the track background color.
+    @IBInspectable open dynamic var trackBackgroundColor: UIColor = .clear {
+        didSet {
+            backgroundPathLayer.fillColor = trackBackgroundColor.cgColor
+        }
+    }
+
     /// Define the track line width.
     @IBInspectable open dynamic var trackLineWidth: CGFloat = 8.0 {
         didSet {
@@ -115,6 +149,9 @@ open class MUCircularProgress: MUNibView {
     }
 
     // MARK: - Progress line
+
+    /// Define the progress offet.
+    @IBInspectable open dynamic var offset: CGFloat = 0.0
 
     /// Define the progress line color.
     @IBInspectable open dynamic var progressLineColor: UIColor = .white {
@@ -216,8 +253,7 @@ open class MUCircularProgress: MUNibView {
         backgroundPathLayer.removeFromSuperlayer()
         backgroundPathLayer.strokeEnd = trackValue
         backgroundPathLayer.frame = bounds
-        backgroundPathLayer.fillColor = UIColor.clear.cgColor
-        layer.addSublayer(backgroundPathLayer)
+        layer.insertSublayer(backgroundPathLayer, at: 0)
     }
 
     private func progressLayer() {
@@ -225,20 +261,21 @@ open class MUCircularProgress: MUNibView {
         pathLayer.strokeEnd = progressValue
         pathLayer.frame = bounds
         pathLayer.fillColor = UIColor.clear.cgColor
-        layer.addSublayer(pathLayer)
+        layer.insertSublayer(pathLayer, above: backgroundPathLayer)
     }
 
-    private func progressFrame() -> CGRect {
-        let radius = min(pathLayer.frame.width, pathLayer.frame.height)
-        var circleFrame = CGRect(x: 0, y: 0, width: radius, height: radius)
-        circleFrame.origin.x = pathLayer.bounds.midX - circleFrame.midX
-        circleFrame.origin.y = pathLayer.bounds.midY - circleFrame.midY
+    private func frame(for shape: CAShapeLayer, offset: CGFloat) -> CGRect {
+        let radius = min(shape.frame.width, shape.frame.height)
+        var circleFrame = CGRect(x: 0, y: 0, width: radius - offset, height: radius - offset)
+        circleFrame.origin.x = shape.bounds.midX - circleFrame.midX
+        circleFrame.origin.y = shape.bounds.midY - circleFrame.midY
 
         return circleFrame
     }
 
-    private func progressPath() -> UIBezierPath {
-        return UIBezierPath(ovalIn: progressFrame())
+    private func bezier(for shape: CAShapeLayer, offset: CGFloat = 0) -> UIBezierPath {
+        let frame = self.frame(for: shape, offset: offset)
+        return UIBezierPath(ovalIn: frame)
     }
 
     private func progressAnimation(duration: TimeInterval = 0) {
@@ -268,8 +305,8 @@ open class MUCircularProgress: MUNibView {
         super.layoutSubviews()
         configure()
 
-        backgroundPathLayer.path = progressPath().cgPath
-        pathLayer.path = progressPath().cgPath
+        backgroundPathLayer.path = bezier(for: backgroundPathLayer, offset: offset).cgPath
+        pathLayer.path = bezier(for: pathLayer).cgPath
     }
 
     /// Updates constraints for the view.
