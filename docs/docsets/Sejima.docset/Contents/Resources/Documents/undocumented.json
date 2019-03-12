@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURangeTrimmer/MUSubRangeView.swift",
-      "line": 172,
-      "symbol": "MUSubRangeView.textFieldShouldReturn(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }

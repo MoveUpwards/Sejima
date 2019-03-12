@@ -11,7 +11,7 @@ import UIKit
 extension String {
     /// Check if string is valid with given regex
     internal func isValidRegex(_ regex: String) -> Bool {
-        return !isEmpty && range(of: regex, options: .regularExpression) == nil
+        return !isEmpty && range(of: regex, options: .regularExpression) != nil
     }
 
     /// Check if string is only letters character set

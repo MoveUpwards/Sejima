@@ -9,6 +9,7 @@
 import UIKit
 
 extension UIImage {
+    /// Initializes and returns the image object with the specified MUHistogram datas.
     internal convenience init?(histogram: [CGFloat], bar: UIColor, size: CGSize) {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         defer {
