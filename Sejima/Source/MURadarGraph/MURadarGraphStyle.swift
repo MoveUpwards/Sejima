@@ -8,10 +8,10 @@
 
 import Foundation
 
-/// Define the style of the radar graph's background
+/// Define the style of the radar graph's background.
 public enum MURadarGraphStyle: Int {
-    /// Circular draw cirles on each step values
+    /// Circular draw cirles on each step values.
     case circular
-    /// SpiderWeb draw lines on each step values
+    /// SpiderWeb draw lines on each step values.
     case spiderWeb
 }

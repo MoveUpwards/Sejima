@@ -9,6 +9,7 @@
 import UIKit
 
 /// Class that act like a bar chart image generator with customizable options.
+@IBDesignable
 open class MUHistogram: MUNibView {
     @IBOutlet private var background: UIImageView!
 
