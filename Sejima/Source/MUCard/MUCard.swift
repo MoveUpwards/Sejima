@@ -8,6 +8,13 @@
 
 import UIKit
 
+/**
+ Class that provide a header and a content view
+
+ A view with customizable options as:
+ * A header on the top with title and detail labels.
+ * A content view that can be anything of type UIView.
+ */
 @IBDesignable
 open class MUCard: MUNibView {
     @IBOutlet private var headerView: MUHeader!

@@ -8,14 +8,22 @@
 
 import UIKit
 
+/// Struct that represent stat data
 public struct MUStatData {
+    /// Defines the icon
     public let image: UIImage?
+    /// Defines the format
     public let format: String
+    /// Defines the value
     public let value: Double
+    /// Defines the unit
     public let unit: String
+    /// Defines the detail
     public let detail: String
+    /// Defines the show / hide separator
     public let showSeparator: Bool
 
+    /// Init a stat data with default values
     public init(image: UIImage? = nil,
                 format: String = "%.f",
                 value: Double,
