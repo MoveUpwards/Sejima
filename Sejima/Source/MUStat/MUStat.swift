@@ -64,8 +64,8 @@ open class MUStat: MUNibView {
     @IBInspectable open dynamic var icon: UIImage? = nil {
         didSet {
             imageView.image = icon
-            imageLeadingConstraint.isActive = icon != nil
-            imageHeightConstraint.isActive = icon != nil
+            imageLeadingConstraint.isActive = icon == nil
+            imageHeightConstraint.isActive = icon == nil
         }
     }
 
@@ -86,7 +86,7 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the value label text color.
-    @IBInspectable open dynamic var valueColor: UIColor = .white {
+    @IBInspectable open dynamic var valueColor: UIColor = .black {
         didSet {
             valueLabel.textColor = valueColor
         }
@@ -116,7 +116,7 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the detail label text color.
-    @IBInspectable open dynamic var detailColor: UIColor = .white {
+    @IBInspectable open dynamic var detailColor: UIColor = .black {
         didSet {
             detailLabel.textColor = detailColor
         }
@@ -139,7 +139,7 @@ open class MUStat: MUNibView {
     }
 
     /// Specifies the unit label text color.
-    @IBInspectable open dynamic var unitColor: UIColor = .white {
+    @IBInspectable open dynamic var unitColor: UIColor = .black {
         didSet {
             unitLabel.textColor = unitColor
         }
@@ -175,12 +175,5 @@ open class MUStat: MUNibView {
 
     @IBAction private func didTap(_ sender: Any?) {
         delegate?.didTap(self)
-    }
-
-    // MARK: - Life cycle functions
-
-    /// The natural size for the receiving view, considering only properties of the view itself.
-    override open var intrinsicContentSize: CGSize {
-        return .zero
     }
 }
