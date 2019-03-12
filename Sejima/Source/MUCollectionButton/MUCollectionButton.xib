@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUCollectionButton" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="I2G-yM-fOv" id="UU7-K1-vSJ"/>
+                <outlet property="leading" destination="6kQ-5P-X1t" id="Z6m-ae-Wuk"/>
+                <outlet property="stackView" destination="npV-7D-7LA" id="l70-hM-uR9"/>
+                <outlet property="trailing" destination="GpM-zs-z5v" id="by0-Rp-YvB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="I2G-yM-fOv">
+                    <rect key="frame" x="177.5" y="17.5" width="20" height="20"/>
+                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="npV-7D-7LA">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="npV-7D-7LA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6kQ-5P-X1t"/>
+                <constraint firstItem="I2G-yM-fOv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8EQ-JE-Iq3"/>
+                <constraint firstAttribute="trailing" secondItem="npV-7D-7LA" secondAttribute="trailing" id="GpM-zs-z5v"/>
+                <constraint firstAttribute="bottom" secondItem="npV-7D-7LA" secondAttribute="bottom" id="UGS-lP-psz"/>
+                <constraint firstItem="I2G-yM-fOv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="knD-Td-9jM"/>
+                <constraint firstItem="npV-7D-7LA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rwb-9N-8Vo"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
