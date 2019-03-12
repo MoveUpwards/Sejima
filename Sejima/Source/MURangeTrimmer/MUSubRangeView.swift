@@ -169,6 +169,7 @@ final internal class MUSubRangeView: MUNibView {
 // MARK: - Delegate functions
 
 extension MUSubRangeView: UITextFieldDelegate {
+    /// Asks the delegate if the text field should process the pressing of the return button.
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
