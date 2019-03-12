@@ -10,12 +10,12 @@ import Foundation
 
 extension FloatingPoint {
     /// Convert current degrees to radians
-    public var toRadians: Self {
+    internal var toRadians: Self {
         return .pi * self / Self(180)
     }
 
     /// Convert current radians to degrees
-    public var toDegrees: Self {
+    internal var toDegrees: Self {
         return self * Self(180) / .pi
     }
 }

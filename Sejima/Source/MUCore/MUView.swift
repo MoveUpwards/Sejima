@@ -51,12 +51,12 @@ extension UIView {
 
     /// Inserts a view above another view in the view hierarchy
     /// and then apply autolayout contraints to fit the current view.
-    internal func insertSubview(_ view: UIView,
-                                aboveSubview siblingSubview: UIView,
-                                top: CGFloat? = 0.0,
-                                height: CGFloat? = 1.0,
-                                leading: CGFloat? = 0.0,
-                                width: CGFloat? = 1.0) {
+    internal func insertAutolayoutSubview(_ view: UIView,
+                                          aboveSubview siblingSubview: UIView,
+                                          top: CGFloat? = 0.0,
+                                          height: CGFloat? = 1.0,
+                                          leading: CGFloat? = 0.0,
+                                          width: CGFloat? = 1.0) {
         insertSubview(view, aboveSubview: siblingSubview)
         applyAutolayout(on: view, top: top, height: height, leading: leading, width: width)
     }

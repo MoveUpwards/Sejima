@@ -26,24 +26,6 @@ open class MUToast: MUNibView {
 
     private var onTapBlock: (() -> Void)?
 
-    /// Toast possible position
-    public enum Position {
-        /// Top of the screen
-        case top
-        /// Bottom of the screen
-        case bottom
-    }
-
-    /// Toast priority order
-    public enum Priority {
-        /// Alert immediatly
-        case alert
-        /// Warning something important
-        case warning
-        /// Info to show
-        case info
-    }
-
     // MARK: - Background
 
     /// The toast’s corner radius.
@@ -197,10 +179,10 @@ open class MUToast: MUNibView {
     @IBInspectable open dynamic var displayDuration: Double = 3.0
 
     /// The position where the toast will be visible.
-    open var displayPosition: Position = .top
+    open var displayPosition: MUToastPosition = .top
 
     /// The toast's priority. Higher will be on top of lower toasts.
-    open var displayPriority: Priority = .info
+    open var displayPriority: MUToastPriority = .info
 
     /// The toast’s horizontal padding.
     @IBInspectable open dynamic var horizontalPadding: CGFloat = 16.0
@@ -267,30 +249,33 @@ open class MUToast: MUNibView {
     }
 
     private func updateImageView() {
-        if icon == nil {
-            imageLeading.constant = 0
-        } else {
-            imageLeading.constant = iconLeftPadding
-        }
+        imageLeading.constant = icon == nil ? 0.0 : iconLeftPadding
     }
 
-    private func add(in vc: UIViewController) {
-        let safeArea = areaFrame(of: vc)
-        let width = safeArea.width - 2.0 * horizontalPadding
-        let headerWidth = width - iconLeftPadding - iconWidth - 2.0 * headerHorizontalPadding
+    private func expectedSize(in width: CGFloat) -> CGSize {
+        var size = CGSize(width: width - 2.0 * horizontalPadding, height: 0.0)
+
+        let headerWidth = size.width - iconLeftPadding - iconWidth - 2.0 * headerHorizontalPadding
 
         var headerHeight = header.expectedHeight(for: headerWidth)
         if headerHeight < iconWidth {
             headerHeight = iconWidth
         }
-        let height = headerHeight + 2.0 * headerVerticalPadding
+        size.height = headerHeight + 2.0 * headerVerticalPadding
 
+        return size
+    }
+
+    private func add(in vc: UIViewController) {
+        let safeArea = areaFrame(of: vc)
+        let size = expectedSize(in: safeArea.width)
         let origin: CGFloat
+
         if displayPosition == .top {
             origin = safeArea.origin.y + verticalPadding
-            transform = CGAffineTransform(translationX: 0.0, y: -(origin + height))
+            transform = CGAffineTransform(translationX: 0.0, y: -(origin + size.height))
         } else {
-            origin = safeArea.origin.y + safeArea.height - height - verticalPadding
+            origin = safeArea.origin.y + safeArea.height - size.height - verticalPadding
             transform = CGAffineTransform(translationX: 0.0, y: vc.view.frame.height - origin)
         }
 
@@ -304,7 +289,7 @@ open class MUToast: MUNibView {
                                                 top: origin,
                                                 height: nil,
                                                 leading: safeArea.origin.x + horizontalPadding,
-                                                width: width / vc.view.bounds.width)
+                                                width: size.width / vc.view.bounds.width)
                 return
             }
         case .info:
@@ -314,7 +299,7 @@ open class MUToast: MUNibView {
                                                 top: origin,
                                                 height: nil,
                                                 leading: safeArea.origin.x + horizontalPadding,
-                                                width: width / vc.view.bounds.width)
+                                                width: size.width / vc.view.bounds.width)
                 return
             }
         }
@@ -323,15 +308,15 @@ open class MUToast: MUNibView {
                                      top: origin,
                                      height: nil,
                                      leading: safeArea.origin.x + horizontalPadding,
-                                     width: width / vc.view.bounds.width)
+                                     width: size.width / vc.view.bounds.width)
     }
 
-    private func getLowestToast(in vcView: UIView, priorities: [Priority]) -> UIView? {
+    private func getLowestToast(in vcView: UIView, priorities: [MUToastPriority]) -> UIView? {
         var returnView: UIView?
-        myLoop: for subview in vcView.subviews {
+        for subview in vcView.subviews {
             if let v = subview as? MUToast, priorities.contains(v.displayPriority) {
                 returnView = v
-                break myLoop
+                break
             }
         }
         return returnView

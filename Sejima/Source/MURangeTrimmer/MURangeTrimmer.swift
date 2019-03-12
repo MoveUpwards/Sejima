@@ -366,7 +366,7 @@ extension MURangeTrimmer {
 // MARK: - Delegate functions
 
 extension MURangeTrimmer {
-    @IBAction func touchUpInside(_ sender: UIControl, forEvent event: UIEvent) {
+    @IBAction private func touchUpInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
         guard dragType == .none else {
             dragEnded(sender)
@@ -386,11 +386,11 @@ extension MURangeTrimmer {
     // MARK: - Draggable functions
 
     // Connect TouchDragExit, TouchDragOutside, TouchUpOutside
-    @IBAction func dragEnded(_ sender: UIControl) {
+    @IBAction private func dragEnded(_ sender: UIControl) {
         dragType = .none
     }
 
-    @IBAction func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
+    @IBAction private func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
         delegate?.didCancel(self)
 

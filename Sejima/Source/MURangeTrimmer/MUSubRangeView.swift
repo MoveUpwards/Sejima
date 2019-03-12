@@ -169,7 +169,7 @@ final internal class MUSubRangeView: MUNibView {
 // MARK: - Delegate functions
 
 extension MUSubRangeView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
