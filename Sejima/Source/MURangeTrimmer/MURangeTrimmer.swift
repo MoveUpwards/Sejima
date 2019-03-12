@@ -21,6 +21,7 @@ private enum DragType {
 }
 
 /// Controller to create one to n range(s) trimmer
+@IBDesignable
 open class MURangeTrimmer: MUNibView {
     /// The object that acts as the delegate of the range trimmer.
     @IBOutlet public weak var delegate: MURangeTrimmerDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Class that provide a circular progress indicator with customizable options.
 @IBDesignable
 open class MUCircularProgress: MUNibView {
     @IBOutlet private var image: UIImageView!

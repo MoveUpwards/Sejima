@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Radar graph style.
 public enum MURadarGraphStyle: Int {
     case circular
     case spiderWeb
