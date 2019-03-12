@@ -10,6 +10,7 @@ import UIKit
 
 /// Delegate protocol for MUCollectionButton.
 @objc public protocol MUCollectionButtonDelegate: class {
+    /// Will trigger each time a button is tapped.
     func didTap(_ collectionButton: MUCollectionButton, at index: Int)
 }
 
