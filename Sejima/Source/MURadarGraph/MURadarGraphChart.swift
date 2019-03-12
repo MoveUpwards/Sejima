@@ -9,7 +9,7 @@
 import UIKit
 
 /// Class that handle radar graph view
-class MURadarGraphChart: UIImageView {
+final internal class MURadarGraphChart: UIImageView {
     /// Define the chart view inset
     internal var viewInset: CGFloat = 25.0 {
         didSet {
@@ -106,7 +106,8 @@ class MURadarGraphChart: UIImageView {
 
     // MARK: - Life cycle functions
 
-    override func layoutSubviews() {
+    /// Lays out subviews.
+    override internal func layoutSubviews() {
         super.layoutSubviews()
 
         drawChartImage()

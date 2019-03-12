@@ -31,14 +31,14 @@
                                     <outlet property="pageControl" destination="n1Y-sS-a8d" id="obr-P1-V61"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-sS-a8d" customClass="MUPageControl" customModule="Sejima">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1Y-sS-a8d" customClass="MUPageControl" customModule="Sejima">
                                 <rect key="frame" x="24" y="635" width="0.0" height="8"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="0Ag-jA-N9p"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUw-2N-UTo" customClass="MUButton" customModule="Sejima">
                                 <rect key="frame" x="325" y="622.5" width="30" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>

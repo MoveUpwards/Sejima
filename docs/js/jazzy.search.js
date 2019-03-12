@@ -2,10 +2,7 @@ $(function(){
   var searchIndex = lunr(function() {
     this.ref('url');
     this.field('name');
-<<<<<<< HEAD
     this.field('abstract');
-=======
->>>>>>> origin/master
   });
 
   var $typeahead = $('[data-typeahead]');
@@ -31,11 +28,7 @@ $(function(){
 
     $.getJSON(searchURL).then(function(searchData) {
       $.each(searchData, function (url, doc) {
-<<<<<<< HEAD
         searchIndex.add({url: url, name: doc.name, abstract: doc.abstract});
-=======
-        searchIndex.add({url: url, name: doc.name});
->>>>>>> origin/master
       });
 
       $typeahead.typeahead(
