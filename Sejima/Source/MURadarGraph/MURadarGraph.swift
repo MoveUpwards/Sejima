@@ -9,6 +9,7 @@
 import UIKit
 
 /// Class that provide radar graph with multiple charts data.
+@IBDesignable
 open class MURadarGraph: MUNibView {
     @IBOutlet private var background: MURadarGraphBackground!
     @IBOutlet private var charts: UIView!

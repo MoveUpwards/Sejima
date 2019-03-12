@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Class that provide an indicator with a animated counter label with customizable options. See MULabelCounter.
 @IBDesignable
 open class MUIndicator: MUNibView {
     @IBOutlet private var topBackground: UIView!

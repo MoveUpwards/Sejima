@@ -41,6 +41,7 @@ final private class MULabelCounterEaseInOut: MUCounter {
     }
 }
 
+/// Class that provide a counter label with customizable options.
 @IBDesignable
 open class MULabelCounter: MUNibView {
     @IBOutlet private var label: UILabel!
