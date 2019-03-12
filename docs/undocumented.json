@@ -1,47 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUImage.swift",
-      "line": 12,
-      "symbol": "UIImage.init(histogram:bar:size:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUPinCode/MUPinCodeCell.swift",
-      "line": 11,
-      "symbol": "MUPinCodeCell",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUPinCode/MUPinCodeCell.swift",
-      "line": 14,
-      "symbol": "MUPinCodeCell.set(font:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUPinCode/MUPinCodeCell.swift",
-      "line": 18,
-      "symbol": "MUPinCodeCell.set(text:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphBackground.swift",
-      "line": 251,
-      "symbol": "MURadarGraphBackground.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MURadarGraph/MURadarGraphChart.swift",
-      "line": 109,
-      "symbol": "MURadarGraphChart.layoutSubviews()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }

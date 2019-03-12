@@ -8,13 +8,16 @@
 
 import UIKit
 
-internal class MUPinCodeCell: MUNibView {
+/// A view that define a unique cell in the MUPinCode
+final internal class MUPinCodeCell: MUNibView {
     @IBOutlet private var label: UILabel!
 
+    /// Set the font of the label
     internal func set(font: UIFont) {
         label.font = font
     }
 
+    /// Set the text of the label
     internal func set(text: String) {
         label.text = text
     }

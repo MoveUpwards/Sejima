@@ -9,7 +9,7 @@
 import UIKit
 
 /// Class that handle radar graph background view
-internal class MURadarGraphBackground: UIImageView {
+final internal class MURadarGraphBackground: UIImageView {
     /// Define the view inset
     internal var viewInset: CGFloat = 25.0 {
         didSet {
@@ -248,7 +248,8 @@ internal class MURadarGraphBackground: UIImageView {
 
     // MARK: - Life cycle functions
 
-    override func layoutSubviews() {
+    /// Lays out subviews.
+    override internal func layoutSubviews() {
         super.layoutSubviews()
 
         guard !spokeTitles.isEmpty else {
