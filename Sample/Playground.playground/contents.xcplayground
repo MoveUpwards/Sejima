@@ -10,5 +10,6 @@
         <page name='MUCircularProgress'/>
         <page name='MUIndicator'/>
         <page name='MUStat'/>
+        <page name='MUCollectionButton'/>
     </pages>
 </playground>
