@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUStat" customModule="MUComponent" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUStat" customModule="Sejima" customModuleProvider="target">
             <connections>
                 <outlet property="detailLabel" destination="2ig-aX-nIb" id="Omp-Gb-qpy"/>
                 <outlet property="imageHeightConstraint" destination="J8O-Am-55U" id="RFJ-ch-1Kb"/>
@@ -17,6 +17,7 @@
                 <outlet property="imageView" destination="YKy-vl-4v5" id="mT3-AH-WZV"/>
                 <outlet property="separator" destination="UBY-Ao-0ro" id="N6g-hY-QHr"/>
                 <outlet property="separatorLeadingConstraint" destination="cJp-St-RfS" id="DsE-Au-zWW"/>
+                <outlet property="separatorWidthConstraint" destination="qut-ht-tYP" id="Lrd-qK-lWZ"/>
                 <outlet property="tagGesture" destination="Bkd-sz-1MA" id="RUo-Or-d9S"/>
                 <outlet property="unitLabel" destination="ngy-mx-KXl" id="JmK-VP-Glg"/>
                 <outlet property="valueLabel" destination="Vfn-px-ZYK" id="sfo-BA-j3I"/>

@@ -22,6 +22,7 @@ open class MUStat: MUNibView {
     @IBOutlet private var imageView: UIImageView!
 
     @IBOutlet private var separatorLeadingConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var separatorWidthConstraint: NSLayoutConstraint! // inactive if no separator
     @IBOutlet private var imageLeadingConstraint: NSLayoutConstraint! // inactive if no image
     @IBOutlet private var imageHeightConstraint: NSLayoutConstraint! // inactive if no image
 
@@ -49,6 +50,13 @@ open class MUStat: MUNibView {
     @IBInspectable open dynamic var separatorColor: UIColor = .white {
         didSet {
             separator.backgroundColor = separatorColor
+        }
+    }
+
+    /// Specifies the separator color.
+    @IBInspectable open dynamic var separatorWidth: CGFloat = 1 {
+        didSet {
+            separatorWidthConstraint.constant = separatorWidth
         }
     }
 

@@ -8,5 +8,7 @@
         <page name='MURadarGraph'/>
         <page name='MUCard'/>
         <page name='MUCircularProgress'/>
+        <page name='MUIndicator'/>
+        <page name='MUStat'/>
     </pages>
 </playground>
