@@ -81,7 +81,14 @@ open class MUStat: MUNibView {
         didSet {
             imageView.image = icon
             imageLeadingConstraint.isActive = icon != nil
-            imageHeightConstraint.isActive = icon == nil
+            imageHeightConstraint.constant = icon == nil ? 0.0 : iconWidth
+        }
+    }
+
+    /// Specifies the left space if icon is shown.
+    @IBInspectable open dynamic var iconWidth: CGFloat = 50.0 {
+        didSet {
+            imageHeightConstraint.constant = icon == nil ? 0.0 : iconWidth
         }
     }
 

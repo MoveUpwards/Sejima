@@ -20,6 +20,7 @@ class MUStatTests: XCTestCase {
         XCTAssertEqual(stat.separatorWidth, 1.0)
         XCTAssertEqual(stat.separatorLeftPadding, 0.0)
         XCTAssertEqual(stat.icon, nil)
+        XCTAssertEqual(stat.iconWidth, 50.0)
         XCTAssertEqual(stat.iconLeftPadding, 0.0)
         XCTAssertEqual(stat.value, 0.0)
         XCTAssertEqual(stat.valueFont, .systemFont(ofSize: 12.0, weight: .regular))
@@ -45,6 +46,7 @@ class MUStatTests: XCTestCase {
         stat.separatorWidth = 0.0
         stat.separatorLeftPadding = 8.0
         stat.icon = myImage
+        stat.iconWidth = 64.0
         stat.iconLeftPadding = 8.0
         stat.value = 1.23
         stat.valueFont = .systemFont(ofSize: 18.0, weight: .bold)
@@ -63,6 +65,7 @@ class MUStatTests: XCTestCase {
         XCTAssertEqual(stat.separatorWidth, 0.0)
         XCTAssertEqual(stat.separatorLeftPadding, 8.0)
         XCTAssertEqual(stat.icon, myImage)
+        XCTAssertEqual(stat.iconWidth, 64.0)
         XCTAssertEqual(stat.iconLeftPadding, 8.0)
         XCTAssertEqual(stat.value, 1.23)
         XCTAssertEqual(stat.valueFont, .systemFont(ofSize: 18.0, weight: .bold))

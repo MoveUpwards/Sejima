@@ -41,7 +41,6 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="YKy-vl-4v5" secondAttribute="height" multiplier="1:1" id="1EO-2G-reA"/>
                         <constraint firstAttribute="height" id="8Mz-7e-0a5"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="50" id="ZRk-vt-am5"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zi3-zo-Oz2">

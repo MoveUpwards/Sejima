@@ -145,7 +145,7 @@ multilineStat.unitColor = .orange
 multilineStat.detailColor = .gray
 multilineStat.valueFont = .systemFont(ofSize: 24, weight: .regular)
 multilineStat.unitFont = .systemFont(ofSize: 13, weight: .regular)
-multilineStat.detailFont = .systemFont(ofSize: 11, weight: .semibold)
+multilineStat.detailFont = .systemFont(ofSize: 18, weight: .semibold)
 multilineStat.format = "%.1f"
 multilineStat.value = 4.2
 multilineStat.unit = "km/h"
@@ -156,13 +156,14 @@ multilineStat.separatorWidth = 5
 multilineStat.separatorLeftPadding = 8
 multilineStat.iconLeftPadding = 8
 multilineStat.icon = UIImage(named: "icon")
+multilineStat.iconWidth = 60.0
 
 view.addSubview(multilineStat)
 multilineStat.centerXAnchor
     .constraint(equalTo: view.centerXAnchor)
     .isActive = true
 multilineStat.widthAnchor
-    .constraint(equalToConstant: 140.0)
+    .constraint(equalToConstant: 150.0)
     .isActive = true
 multilineStat.topAnchor
     .constraint(equalTo: fullStat.bottomAnchor, constant: 20.0)
