@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPM-qX-KnI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Delegate-->
+        <scene sceneID="ft1-OC-lXs">
+            <objects>
+                <viewController id="uPM-qX-KnI" customClass="ToastsVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ya-dK-6EJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4X-RZ-Ye3">
+                                <rect key="frame" x="0.0" y="273.5" width="375" height="120.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Toast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIb-Wn-SnS">
+                                        <rect key="frame" x="156" y="0.0" width="63" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgH-MV-Qn5" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="20" y="24.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="4U6-Jd-XUF"/>
+                                            <constraint firstAttribute="width" constant="100" id="4uE-pF-kYA"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="horizontalPadding">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightedColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.71535209759999996" green="0.94279751710000004" blue="0.62772902399999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Info"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="kWt-9B-XsP"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CM-Q4-VmQ" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="137.5" y="24.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Warning"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.94279751710000004" blue="0.4686429795" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="xgp-cX-gmm"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xy-tG-CHk" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="255" y="24.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Alert"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="FNm-RZ-di7"/>
+                                        </connections>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom Toast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOP-nH-VAG">
+                                        <rect key="frame" x="144.5" y="64" width="86" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mU-gD-x78" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="20" y="88.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="2jk-Dw-WjW"/>
+                                            <constraint firstAttribute="height" constant="32" id="zCk-pR-qIa"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Info"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                <color key="value" red="0.71535209759999996" green="0.94279751710000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="M4U-j4-dJ1"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fck-R7-qo1" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="137.5" y="88.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonBackgroundColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleHighlightedColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Warning"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="gme-w2-gZS"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-hT-KWT" customClass="MUButton" customModule="Sejima">
+                                        <rect key="frame" x="255" y="88.5" width="100" height="32"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.1153491685" blue="0.054391542280000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Alert"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="uPM-qX-KnI" id="wnc-pv-e4X"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1mU-gD-x78" firstAttribute="leading" secondItem="e4X-RZ-Ye3" secondAttribute="leading" constant="20" id="0id-0m-eYN"/>
+                                    <constraint firstItem="fck-R7-qo1" firstAttribute="centerX" secondItem="e4X-RZ-Ye3" secondAttribute="centerX" id="1J5-uV-Wh1"/>
+                                    <constraint firstItem="jgH-MV-Qn5" firstAttribute="firstBaseline" secondItem="VIb-Wn-SnS" secondAttribute="baseline" constant="11" symbolType="layoutAnchor" id="586-DP-Uu1"/>
+                                    <constraint firstItem="1CM-Q4-VmQ" firstAttribute="width" secondItem="jgH-MV-Qn5" secondAttribute="width" id="5dB-hv-G4k"/>
+                                    <constraint firstItem="fck-R7-qo1" firstAttribute="bottom" secondItem="1mU-gD-x78" secondAttribute="bottom" id="ABl-aB-LnY"/>
+                                    <constraint firstItem="1CM-Q4-VmQ" firstAttribute="top" secondItem="jgH-MV-Qn5" secondAttribute="top" id="AyD-GF-fMC"/>
+                                    <constraint firstItem="gaI-hT-KWT" firstAttribute="bottom" secondItem="fck-R7-qo1" secondAttribute="bottom" id="CWQ-KZ-9Ys"/>
+                                    <constraint firstItem="fck-R7-qo1" firstAttribute="width" secondItem="1mU-gD-x78" secondAttribute="width" id="GGs-AS-Gci"/>
+                                    <constraint firstItem="7Xy-tG-CHk" firstAttribute="top" secondItem="1CM-Q4-VmQ" secondAttribute="top" id="GWr-e4-BU9"/>
+                                    <constraint firstItem="jgH-MV-Qn5" firstAttribute="leading" secondItem="e4X-RZ-Ye3" secondAttribute="leading" constant="20" id="Igi-Bv-JS4"/>
+                                    <constraint firstItem="VIb-Wn-SnS" firstAttribute="centerX" secondItem="e4X-RZ-Ye3" secondAttribute="centerX" id="Iv7-aR-TNk"/>
+                                    <constraint firstItem="7Xy-tG-CHk" firstAttribute="bottom" secondItem="1CM-Q4-VmQ" secondAttribute="bottom" id="KNN-bC-O7q"/>
+                                    <constraint firstAttribute="bottom" secondItem="1mU-gD-x78" secondAttribute="bottom" id="KQt-aa-obc"/>
+                                    <constraint firstItem="gaI-hT-KWT" firstAttribute="top" secondItem="fck-R7-qo1" secondAttribute="top" id="Wfl-3c-MvU"/>
+                                    <constraint firstItem="VIb-Wn-SnS" firstAttribute="top" secondItem="e4X-RZ-Ye3" secondAttribute="top" id="dzU-pv-cRu"/>
+                                    <constraint firstItem="7Xy-tG-CHk" firstAttribute="width" secondItem="1CM-Q4-VmQ" secondAttribute="width" id="eQi-fx-fPb"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Xy-tG-CHk" secondAttribute="trailing" constant="20" id="i5s-GJ-FId"/>
+                                    <constraint firstItem="fck-R7-qo1" firstAttribute="top" secondItem="1mU-gD-x78" secondAttribute="top" id="jnV-AT-ygP"/>
+                                    <constraint firstItem="1mU-gD-x78" firstAttribute="firstBaseline" secondItem="NOP-nH-VAG" secondAttribute="firstBaseline" constant="11" symbolType="layoutAnchor" id="kuP-o9-vbm"/>
+                                    <constraint firstItem="gaI-hT-KWT" firstAttribute="width" secondItem="fck-R7-qo1" secondAttribute="width" id="m8f-By-grn"/>
+                                    <constraint firstItem="NOP-nH-VAG" firstAttribute="firstBaseline" secondItem="jgH-MV-Qn5" secondAttribute="baseline" constant="21" symbolType="layoutAnchor" id="tDi-Z9-0Y5"/>
+                                    <constraint firstItem="1CM-Q4-VmQ" firstAttribute="bottom" secondItem="jgH-MV-Qn5" secondAttribute="bottom" id="x4c-gL-IXA"/>
+                                    <constraint firstAttribute="trailing" secondItem="gaI-hT-KWT" secondAttribute="trailing" constant="20" id="yAr-Se-APA"/>
+                                    <constraint firstItem="1CM-Q4-VmQ" firstAttribute="centerX" secondItem="e4X-RZ-Ye3" secondAttribute="centerX" id="ywn-ob-Tps"/>
+                                    <constraint firstItem="NOP-nH-VAG" firstAttribute="centerX" secondItem="e4X-RZ-Ye3" secondAttribute="centerX" id="z4T-ZW-iyy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YF7-Ya-XNK" firstAttribute="trailing" secondItem="e4X-RZ-Ye3" secondAttribute="trailing" id="CWr-OH-0Xe"/>
+                            <constraint firstItem="e4X-RZ-Ye3" firstAttribute="centerY" secondItem="2Ya-dK-6EJ" secondAttribute="centerY" id="clo-nt-VWN"/>
+                            <constraint firstItem="e4X-RZ-Ye3" firstAttribute="leading" secondItem="YF7-Ya-XNK" secondAttribute="leading" id="l9Y-Jc-2zA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YF7-Ya-XNK"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomAlertButton" destination="gaI-hT-KWT" id="cic-xm-tdV"/>
+                        <outlet property="bottomInfoButton" destination="1mU-gD-x78" id="gaZ-yk-8gS"/>
+                        <outlet property="bottomWarningButton" destination="fck-R7-qo1" id="wzj-5G-Rqq"/>
+                        <outlet property="topAlertButton" destination="7Xy-tG-CHk" id="Jll-Yu-w9f"/>
+                        <outlet property="topInfoButton" destination="jgH-MV-Qn5" id="hp5-hf-FaB"/>
+                        <outlet property="topWarningButton" destination="1CM-Q4-VmQ" id="97a-ga-OzD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP7-uj-k8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="140"/>
+        </scene>
+    </scenes>
+</document>
