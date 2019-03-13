@@ -164,7 +164,7 @@ open class MUToast: MUNibView {
     /// The icon’s width.
     @IBInspectable open dynamic var iconWidth: CGFloat = 64.0 {
         didSet {
-            imageWidth.constant = iconWidth
+            updateImageView()
         }
     }
 
@@ -250,6 +250,7 @@ open class MUToast: MUNibView {
 
     private func updateImageView() {
         imageLeading.constant = icon == nil ? 0.0 : iconLeftPadding
+        imageWidth.constant = icon == nil ? 0.0 : iconWidth
     }
 
     private func expectedSize(in width: CGFloat) -> CGSize {
