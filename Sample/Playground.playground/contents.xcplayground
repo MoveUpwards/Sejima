@@ -12,5 +12,7 @@
         <page name='MURadarGraph'/>
         <page name='MUTag'/>
         <page name='MUToast'/>
+        <page name='MURangeTrimmer'/>
+        <page name='MUHistogram'/>
     </pages>
 </playground>

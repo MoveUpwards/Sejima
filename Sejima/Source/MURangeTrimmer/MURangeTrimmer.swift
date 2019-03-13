@@ -240,8 +240,7 @@ extension MURangeTrimmer {
                                             relatedBy: .equal,
                                             toItem: self,
                                             attribute: .width,
-                                            multiplier: 100.0,
-                                            constant: 0)
+                                            multiplier: length / 100.0)
         constraint.priority = .init(0.1)
         constraint.isActive = true
         subRange.width = constraint
@@ -254,25 +253,24 @@ extension MURangeTrimmer {
     }
 
     private func updateSubRange(at index: Int) {
-        var subRange = subRanges[index]
-        subRange.leading?.constant = subRanges[index].range.location / 100.0 * bounds.width
-        subRange.width?.isActive = false
-        let constraint = NSLayoutConstraint(item: subRange.view,
+//        var subRange = subRanges[index]
+        subRanges[index].leading?.constant = subRanges[index].range.location / 100.0 * bounds.width
+        subRanges[index].width?.isActive = false
+        let constraint = NSLayoutConstraint(item: subRanges[index].view,
                                             attribute: .width,
                                             relatedBy: .equal,
                                             toItem: self,
                                             attribute: .width,
-                                            multiplier: subRange.range.length / 100.0,
-                                            constant: 0)
+                                            multiplier: subRanges[index].range.length / 100.0)
         let priority: Float
-        if let width = subRange.width, width.priority.rawValue < 1000.0 - 0.1 {
+        if let width = subRanges[index].width, width.priority.rawValue < 1000.0 - 0.1 {
             priority = width.priority.rawValue + 0.1
         } else {
             priority = 1000.0
         }
         constraint.priority = .init(priority)
         constraint.isActive = true
-        subRange.width = constraint
+        subRanges[index].width = constraint
     }
 
     private func index(of touch: UITouch) -> Int {
