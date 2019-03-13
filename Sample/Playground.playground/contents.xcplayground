@@ -2,14 +2,15 @@
 <playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
     <pages>
         <page name='MUHeader'/>
-        <page name='MUTag'/>
+        <page name='MUStat'/>
+        <page name='MUCard'/>
+        <page name='MUCircularProgress'/>
+        <page name='MUCollectionButton'/>
+        <page name='MUIndicator'/>
         <page name='MUPinCode'/>
         <page name='MUProportionalBar'/>
         <page name='MURadarGraph'/>
-        <page name='MUCard'/>
-        <page name='MUCircularProgress'/>
-        <page name='MUIndicator'/>
-        <page name='MUStat'/>
-        <page name='MUCollectionButton'/>
+        <page name='MUTag'/>
+        <page name='MUToast'/>
     </pages>
 </playground>
