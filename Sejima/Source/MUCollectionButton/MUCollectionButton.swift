@@ -1,6 +1,6 @@
 //
 //  MUCollectionButton.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Damien Noël Dubuisson on 28/01/2019.
 //  Copyright © 2019 Loïc GRIFFIE. All rights reserved.

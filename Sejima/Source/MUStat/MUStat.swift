@@ -1,6 +1,6 @@
 //
 //  MUStat.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Loïc GRIFFIE on 31/10/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
