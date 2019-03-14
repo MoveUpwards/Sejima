@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUStat.
 @objc public protocol MUStatDelegate: class {
     /// Will trigger each time stat is tapped.
-    func didTap(_ stat: MUStat)
+    func didTap(stat: MUStat)
 }
 
 /**
@@ -214,6 +214,6 @@ open class MUStat: MUNibView {
     // MARK: - Private IBAction functions
 
     @IBAction private func didTap(_ sender: Any?) {
-        delegate?.didTap(self)
+        delegate?.didTap(stat: self)
     }
 }

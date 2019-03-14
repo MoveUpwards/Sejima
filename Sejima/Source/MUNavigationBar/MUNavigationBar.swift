@@ -11,9 +11,9 @@ import UIKit
 /// Delegate protocol for MUNavigationBar.
 @objc public protocol MUNavigationBarDelegate: class {
     /// Will trigger on cancel / back button tap.
-    func leftDidTap(_ navigationBar: MUNavigationBar)
+    func leftDidTap(navigationBar: MUNavigationBar)
     /// Will trigger on main / validate button tap.
-    func rightDidTap(_ navigationBar: MUNavigationBar)
+    func rightDidTap(navigationBar: MUNavigationBar)
 }
 
 /// Class that act like UINavigationBar with more customizable options.
@@ -232,7 +232,7 @@ open class MUNavigationBar: MUNibView {
     // MARK: - Private IBAction functions
 
     @IBAction private func leftButtonDidTap(_ sender: Any?) {
-        delegate?.leftDidTap(self)
+        delegate?.leftDidTap(navigationBar: self)
     }
 
     // MARK: - Life cycle functions
@@ -251,7 +251,7 @@ open class MUNavigationBar: MUNibView {
 
 extension MUNavigationBar: MUButtonDelegate {
     /// Will trigger each time the main button is tapped.
-    public func didTap(_ button: MUButton) {
-        delegate?.rightDidTap(self)
+    public func didTap(button: MUButton) {
+        delegate?.rightDidTap(navigationBar: self)
     }
 }

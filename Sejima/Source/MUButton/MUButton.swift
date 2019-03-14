@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUButton.
 @objc public protocol MUButtonDelegate: class {
     /// Will trigger each time button is tapped.
-    func didTap(_ button: MUButton)
+    func didTap(button: MUButton)
 }
 
 /// Class that act like UIButton with more customizable options.
@@ -179,7 +179,7 @@ open class MUButton: MUNibView {
 
     @IBAction private func didTap(_ sender: Any?) {
         state = .normal
-        delegate?.didTap(self)
+        delegate?.didTap(button: self)
     }
 
     @IBAction private func touchDown(_ sender: Any?) {
