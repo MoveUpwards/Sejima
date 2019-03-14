@@ -95,8 +95,10 @@ open class MUHistogram: MUNibView {
         layer.masksToBounds = true
     }
 
-    /// The natural size for the receiving view, considering only properties of the view itself.
-    override open var intrinsicContentSize: CGSize {
-        return .zero
+    /// Lays out subviews.
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+
+        drawInImageView()
     }
 }

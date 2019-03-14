@@ -12,6 +12,7 @@ view.backgroundColor = .black
 PlaygroundPage.current.liveView = view
 
 let progress = MUCircularProgress()
+progress.backgroundColor = .lightGray
 progress.icon = #imageLiteral(resourceName: "gender_male@2x.png")
 progress.iconMargin = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
 progress.title = "0 %".uppercased()
@@ -20,12 +21,14 @@ progress.titleColor = .blue
 progress.detail = "downloading".uppercased()
 progress.detailFont = .systemFont(ofSize: 14, weight: .regular)
 progress.detailColor = .orange
-progress.trackValue = 1.0
+progress.trackValue = 0.5
+progress.trackStartAngle = -90.0
 progress.trackLineWidth = 10
-progress.trackBackgroundColor = .green
+progress.trackLineColor = .green
 progress.offset = 20
 progress.progressLineWidth = 10
 progress.progressLineColor = .orange
+progress.progressStartAngle = -90.0
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
     progress.set(value: 0.4, progress: { value in

@@ -137,14 +137,14 @@ final internal class MUSubRangeView: MUNibView {
     // MARK: - Life cycle functions
 
     /// Default setup to load the view from a xib file.
-    override public func xibSetup() {
+    override internal func xibSetup() {
         super.xibSetup()
 
         layer.masksToBounds = true
     }
 
     /// Updates constraints for the view.
-    override func updateConstraints() {
+    override internal func updateConstraints() {
         super.updateConstraints()
 
         leftPickerIndicator.layer.cornerRadius = leftPickerIndicator.bounds.width * 0.5
@@ -153,14 +153,9 @@ final internal class MUSubRangeView: MUNibView {
         textFieldBottom.constant = borderWidth + verticalPadding
     }
 
-    /// The natural size for the receiving view, considering only properties of the view itself.
-    override public var intrinsicContentSize: CGSize {
-        return .zero
-    }
-
-    /** Returns the farthest descendant of the receiver in the view hierarchy
-     (including itself) that contains a specified point. **/
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    /// Returns the farthest descendant of the receiver in the view hierarchy (including itself)
+    /// that contains a specified point.
+    override internal func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard super.hitTest(point, with: event) is UITextField else { return nil }
         return textField // You can adapt it if more than one object respond to touch
     }
