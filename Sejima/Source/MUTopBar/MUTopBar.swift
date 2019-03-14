@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUTopBar.
 @objc public protocol MUTopBarDelegate: class {
     /// Will trigger each time left button or title is tapped.
-    func didTap(_ topBar: MUTopBar)
+    func didTap(topBar: MUTopBar)
 }
 
 /// Class that define a title and a button on left side.
@@ -115,7 +115,7 @@ open class MUTopBar: MUNibView {
         leftButton.isHighlighted = false
         titleLabel.isHighlighted = false
 
-        delegate?.didTap(self)
+        delegate?.didTap(topBar: self)
     }
 
     // MARK: - Life cycle functions

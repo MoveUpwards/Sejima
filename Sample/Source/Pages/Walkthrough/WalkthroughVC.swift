@@ -86,7 +86,7 @@ class WalkthroughVC: UIViewController {
 }
 
 extension WalkthroughVC: MUHorizontalPagerDelegate {
-    func didScroll(_ horizontalPager: MUHorizontalPager, to index: Int) {
+    func didScroll(horizontalPager: MUHorizontalPager, to index: Int) {
         guard let numberOfPages = horizontalPager.pageControl?.numberOfPages else {
             return
         }
@@ -95,7 +95,7 @@ extension WalkthroughVC: MUHorizontalPagerDelegate {
 }
 
 extension WalkthroughVC: MUButtonDelegate {
-    func didTap(_ button: MUButton) {
+    func didTap(button: MUButton) {
         navigationController?.popViewController(animated: true)
     }
 }

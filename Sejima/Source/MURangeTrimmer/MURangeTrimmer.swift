@@ -11,14 +11,17 @@ import UIKit
 /// Delegate protocol for MURangeTrimmer.
 @objc public protocol MURangeTrimmerDelegate: class {
     /// Will trigger each time a range trimmer is selected.
-    func didSelect(_ trimmer: MURangeTrimmer, at index: Int)
+    func didSelect(trimmer: MURangeTrimmer, at index: Int)
     /// Will trigger when a range is cancelled.
-    func didCancel(_ trimmer: MURangeTrimmer)
+    func didCancel(trimmer: MURangeTrimmer)
 }
 
 private enum DragType {
     case none, left, center, right
 }
+
+/// Type to expose a MUSubRange with just range and title
+public typealias MUSimpleRange = (range: MURange<CGFloat>, title: String)
 
 /// Controller to create one to n range(s) trimmer
 @IBDesignable
@@ -130,7 +133,7 @@ open class MURangeTrimmer: MUNibView {
     }
 
     /// Returns all range trimmer
-    open var ranges: [(range: MURange<CGFloat>, title: String)] {
+    open var ranges: [MUSimpleRange] {
         get {
             return subRanges.enumerated().map({ index, subRange in
                 return (subRange.range, subRanges[index].view.title)
@@ -376,9 +379,9 @@ extension MURangeTrimmer {
 
         let selectedIndex = index(of: touch)
         if selectedIndex >= 0 {
-            delegate?.didSelect(self, at: selectedIndex)
+            delegate?.didSelect(trimmer: self, at: selectedIndex)
         } else {
-            delegate?.didCancel(self)
+            delegate?.didCancel(trimmer: self)
         }
     }
 
@@ -391,7 +394,7 @@ extension MURangeTrimmer {
 
     @IBAction private func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
-        delegate?.didCancel(self)
+        delegate?.didCancel(trimmer: self)
 
         guard let touch = event.allTouches?.first else { return }
         guard dragType == .none else {

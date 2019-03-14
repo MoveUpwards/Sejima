@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MIPinCode.
 @objc public protocol MUPinCodeDelegate: class {
     /// Will trigger each time an entry is added.
-    func didUpdate(_ pinCode: MUPinCode, with code: String)
+    func didUpdate(pinCode: MUPinCode, with code: String)
 }
 
 /// Class that provide a pin code like component with customizable options.
@@ -238,7 +238,7 @@ extension MUPinCode: UITextFieldDelegate {
         let cell = stackView.subviews[index] as? MUPinCodeCell
         cell?.set(text: addOneChar ? string.uppercased() : emptyCharacter)
 
-        delegate?.didUpdate(self, with: addOneChar ? text + string : String(text.dropLast()))
+        delegate?.didUpdate(pinCode: self, with: addOneChar ? text + string : String(text.dropLast()))
 
         return true
     }

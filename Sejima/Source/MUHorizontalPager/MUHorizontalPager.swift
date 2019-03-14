@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUHorizontalPager.
 @objc public protocol MUHorizontalPagerDelegate: class {
     /// Will trigger each time the page index change.
-    func didScroll(_ horizontalPager: MUHorizontalPager, to index: Int)
+    func didScroll(horizontalPager: MUHorizontalPager, to index: Int)
 }
 
 /// Class that act like UIScrollView + isPagingEnabled with more customizable options.
@@ -123,7 +123,7 @@ extension MUHorizontalPager: UIScrollViewDelegate {
         if index != currentIndex {
             currentIndex = index
             pageControl?.set(page: index, animated: true)
-            delegate?.didScroll(self, to: currentIndex)
+            delegate?.didScroll(horizontalPager: self, to: currentIndex)
         }
     }
 
@@ -147,7 +147,7 @@ extension MUHorizontalPager: UIScrollViewDelegate {
 
 extension MUHorizontalPager: MUPageControlDelegate {
     /// Will trigger each time the page control is tapped.
-    public func didTap(_ pageControl: MUPageControl, at index: Int) {
+    public func didTap(pageControl: MUPageControl, at index: Int) {
         set(page: index, animated: true)
     }
 }
