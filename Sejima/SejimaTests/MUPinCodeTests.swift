@@ -60,6 +60,26 @@ class MUPinCodeTests: XCTestCase {
 
         pinCode.allowCharactersInt = 2
         XCTAssertEqual(pinCode.allowCharacters, .alphanumeric)
+
+        pinCode.allowCharactersInt = 0
+        XCTAssertEqual(pinCode.allowCharacters, .number)
+
+        pinCode.allowCharactersInt = 1
+        XCTAssertEqual(pinCode.allowCharacters, .letter)
+
+        pinCode.allowCharactersInt = -2 // All invalid values will be .all
+        XCTAssertEqual(pinCode.allowCharacters, .all)
+
+        pinCode.allowCharactersInt = 3 // Custom not available with int property
+        XCTAssertEqual(pinCode.allowCharacters, .all)
+    }
+
+    func testActiveKeyboard() {
+        let pinCode = MUPinCode()
+        XCTAssertNotNil(pinCode)
+
+        pinCode.activeKeyboard(true) // Show keyboard
+        pinCode.activeKeyboard(false) // Hide keyboard
     }
 
     func testKeyboardType() {
@@ -76,5 +96,32 @@ class MUPinCodeTests: XCTestCase {
 
         pinCode.keyboardAppearanceInt = 1
         XCTAssertEqual(pinCode.keyboardAppearance, .dark)
+    }
+
+    func testCode() {
+        let pinCode = MUPinCode()
+        XCTAssertNotNil(pinCode)
+        XCTAssertEqual(pinCode.code, "")
+
+        pinCode.set(code: "ABCD")
+
+        XCTAssertEqual(pinCode.code, "ABCD")
+
+        pinCode.reset()
+
+        XCTAssertEqual(pinCode.code, "")
+
+        pinCode.pinCount = 2
+        pinCode.set(code: "ABCD")
+
+        XCTAssertEqual(pinCode.code, "")
+
+        pinCode.set(code: "AB")
+
+        XCTAssertEqual(pinCode.code, "AB")
+
+        pinCode.set(code: "ABCD")
+
+        XCTAssertEqual(pinCode.code, "AB")
     }
 }
