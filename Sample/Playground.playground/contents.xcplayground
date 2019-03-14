@@ -15,5 +15,6 @@
         <page name='MURangeTrimmer'/>
         <page name='MUToast'/>
         <page name='MUProgress'/>
+        <page name='MULabelCounter'/>
     </pages>
 </playground>
