@@ -217,11 +217,6 @@ open class MULabelCounter: MUNibView {
 
     // MARK: - Life cycle functions
 
-    /// The natural size for the receiving view, considering only properties of the view itself.
-    override open var intrinsicContentSize: CGSize {
-        return .zero
-    }
-
     /// Deinit the page control.
     deinit {
         displayLink?.remove(from: .current, forMode: .common)
