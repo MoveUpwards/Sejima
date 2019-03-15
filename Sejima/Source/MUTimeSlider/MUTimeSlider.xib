@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTimeSlider" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="indicator" destination="3OV-R0-eM0" id="oHz-JI-U76"/>
+                <outlet property="indicatorLeadingConstraint" destination="7ka-OR-HJ5" id="vx5-UZ-Ykk"/>
+                <outlet property="indicatorWidthConstraint" destination="QdJ-O1-e1x" id="QA5-SE-ayP"/>
+                <outlet property="label" destination="sNH-KD-HCO" id="HLn-Rv-eIu"/>
+                <outlet property="labelTopConstraint" destination="2GM-a7-EgV" id="77I-JJ-9Yz"/>
+                <outlet property="labelTrailingConstraint" destination="nmB-j2-ItO" id="R62-SL-Jgd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OV-R0-eM0">
+                    <rect key="frame" x="0.0" y="0.0" width="2" height="130"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="2" id="QdJ-O1-e1x"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNH-KD-HCO">
+                    <rect key="frame" x="-38" y="2" width="36" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwX-Ts-Wra">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                    <connections>
+                        <action selector="touchEvent:forEvent:" destination="-1" eventType="touchUpInside" id="YPd-BP-U1s"/>
+                        <action selector="touchEvent:forEvent:" destination="-1" eventType="touchDragInside" id="ttM-12-kWo"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="sNH-KD-HCO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="2GM-a7-EgV"/>
+                <constraint firstAttribute="bottom" secondItem="XwX-Ts-Wra" secondAttribute="bottom" id="2rD-mW-BUE"/>
+                <constraint firstItem="3OV-R0-eM0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7ka-OR-HJ5"/>
+                <constraint firstAttribute="trailing" secondItem="XwX-Ts-Wra" secondAttribute="trailing" id="AwJ-pI-fKT"/>
+                <constraint firstItem="XwX-Ts-Wra" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KzH-aI-Cds"/>
+                <constraint firstAttribute="bottom" secondItem="3OV-R0-eM0" secondAttribute="bottom" id="O1r-gQ-Rdl"/>
+                <constraint firstItem="XwX-Ts-Wra" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b5d-GN-pzT"/>
+                <constraint firstItem="3OV-R0-eM0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eEe-r5-OqN"/>
+                <constraint firstItem="3OV-R0-eM0" firstAttribute="leading" secondItem="sNH-KD-HCO" secondAttribute="trailing" constant="2" id="nmB-j2-ItO"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

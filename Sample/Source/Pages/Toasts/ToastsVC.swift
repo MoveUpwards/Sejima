@@ -37,7 +37,7 @@ class ToastsVC: UIViewController {
 }
 
 extension ToastsVC: MUButtonDelegate {
-    func didTap(_ button: MUButton) {
+    func didTap(button: MUButton) {
         counter += 1
 
         switch button {

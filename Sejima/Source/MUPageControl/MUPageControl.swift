@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUPageControl.
 @objc public protocol MUPageControlDelegate: class {
     /// Will trigger each time the page control is tapped.
-    func didTap(_ pageControl: MUPageControl, at index: Int)
+    func didTap(pageControl: MUPageControl, at index: Int)
 }
 
 /// Class that act like UIPageControl with more customizable options.
@@ -248,7 +248,7 @@ open class MUPageControl: UIControl {
         }
 
         set(page: index, animated: true)
-        delegate?.didTap(self, at: index)
+        delegate?.didTap(pageControl: self, at: index)
     }
 
     // MARK: - Life cycle functions

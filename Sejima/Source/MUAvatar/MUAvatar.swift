@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUAvatar.
 @objc public protocol MUAvatarDelegate: class {
     /// Will trigger each time avatar is tapped.
-    func didTap(_ avatar: MUAvatar)
+    func didTap(avatar: MUAvatar)
 }
 
 /// Class that act like UIButton with more customizable options.
@@ -107,7 +107,7 @@ open class MUAvatar: MUNibView {
     // MARK: - Private IBAction functions
 
     @IBAction private func didTap(_ sender: Any?) {
-        delegate?.didTap(self)
+        delegate?.didTap(avatar: self)
     }
 
     // MARK: - Life cycle functions

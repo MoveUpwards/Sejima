@@ -11,9 +11,9 @@ import UIKit
 /// Delegate protocol for MURangeTrimmer.
 @objc public protocol MURangeTrimmerDelegate: class {
     /// Will trigger each time a range trimmer is selected.
-    func didSelect(_ trimmer: MURangeTrimmer, at index: Int)
+    func didSelect(trimmer: MURangeTrimmer, at index: Int)
     /// Will trigger when a range is cancelled.
-    func didCancel(_ trimmer: MURangeTrimmer)
+    func didCancel(trimmer: MURangeTrimmer)
 }
 
 private enum DragType {
@@ -130,10 +130,10 @@ open class MURangeTrimmer: MUNibView {
     }
 
     /// Returns all range trimmer
-    open var ranges: [(range: MURange<CGFloat>, title: String)] {
+    open var ranges: [MUBasicRange] {
         get {
             return subRanges.enumerated().map({ index, subRange in
-                return (subRange.range, subRanges[index].view.title)
+                return MUBasicRange(with: subRanges[index].view.title, range: subRange.range)
             })
         }
         set {
@@ -141,9 +141,8 @@ open class MURangeTrimmer: MUNibView {
             subRanges.removeAll()
 
             newValue.forEach { args in
-                let (range, title) = args
-                addSubRange(start: range.location, length: range.length)
-                subRanges.last?.view.title = title
+                addSubRange(start: args.range.location, length: args.range.length)
+                subRanges.last?.view.title = args.title
             }
         }
     }
@@ -376,9 +375,9 @@ extension MURangeTrimmer {
 
         let selectedIndex = index(of: touch)
         if selectedIndex >= 0 {
-            delegate?.didSelect(self, at: selectedIndex)
+            delegate?.didSelect(trimmer: self, at: selectedIndex)
         } else {
-            delegate?.didCancel(self)
+            delegate?.didCancel(trimmer: self)
         }
     }
 
@@ -391,7 +390,7 @@ extension MURangeTrimmer {
 
     @IBAction private func dragInside(_ sender: UIControl, forEvent event: UIEvent) {
         endEditing(true)
-        delegate?.didCancel(self)
+        delegate?.didCancel(trimmer: self)
 
         guard let touch = event.allTouches?.first else { return }
         guard dragType == .none else {

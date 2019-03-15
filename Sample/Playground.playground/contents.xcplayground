@@ -16,5 +16,6 @@
         <page name='MUToast'/>
         <page name='MUProgress'/>
         <page name='MULabelCounter'/>
+        <page name='MUTimeSlider'/>
     </pages>
 </playground>

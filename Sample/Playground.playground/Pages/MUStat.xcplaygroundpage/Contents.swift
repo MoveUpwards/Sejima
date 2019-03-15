@@ -11,6 +11,16 @@ view.backgroundColor = .black
 
 PlaygroundPage.current.liveView = view
 
+// ### Delegate class ###
+
+final class MyDelegate: MUStatDelegate {
+    func didTap(stat: MUStat) {
+        print(stat)
+    }
+}
+
+let delegate = MyDelegate()
+
 // ### Empty one ###
 
 let emptyStat = MUStat()
@@ -42,6 +52,7 @@ textStat.value = 4.2
 textStat.unit = "km/h"
 textStat.detail = "average speed"
 textStat.showSeparator = false
+textStat.delegate = delegate
 
 view.addSubview(textStat)
 textStat.centerXAnchor

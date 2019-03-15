@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUCollectionButton.
 @objc public protocol MUCollectionButtonDelegate: class {
     /// Will trigger each time a button is tapped.
-    func didTap(_ collectionButton: MUCollectionButton, at index: Int)
+    func didTap(collectionButton: MUCollectionButton, at index: Int)
 }
 
 /// Class that regroup multiple UIButton with customizable options.
@@ -216,7 +216,7 @@ open class MUCollectionButton: MUNibView {
 
     @objc
     private func buttonTapped(sender: UIButton) {
-        delegate?.didTap(self, at: sender.tag)
+        delegate?.didTap(collectionButton: self, at: sender.tag)
     }
 
     // MARK: - Life cycle functions

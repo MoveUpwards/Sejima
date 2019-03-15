@@ -11,7 +11,7 @@ import UIKit
 /// Delegate protocol for MUSegmentControl.
 @objc public protocol MUSegmentControlDelegate: class {
     /// Will trigger each time an item is selected.
-    func didSelect(_ segmentedControl: MUSegmentedControl, at index: Int)
+    func didSelect(segmentedControl: MUSegmentedControl, at index: Int)
 }
 
 /// Class that act like UISegmentedControl with more customizable options.
@@ -105,7 +105,7 @@ open class MUSegmentedControl: UIControl {
     /// The index number identifying the selected segment (that is, the last segment touched).
     public private(set) var selectedSegmentIndex: Int = 0 {
         didSet {
-            delegate?.didSelect(self, at: selectedSegmentIndex)
+            delegate?.didSelect(segmentedControl: self, at: selectedSegmentIndex)
         }
     }
 
