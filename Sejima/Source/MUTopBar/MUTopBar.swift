@@ -64,6 +64,7 @@ open class MUTopBar: MUNibView {
     @IBInspectable open dynamic var buttonImage: UIImage? = nil {
         didSet {
             leftButton.setImage(buttonImage, for: .normal)
+            updateImageWidth()
         }
     }
 
@@ -95,8 +96,14 @@ open class MUTopBar: MUNibView {
     @IBInspectable open dynamic var showButton: Bool = false {
         didSet {
             leftButton.isHidden = !showButton
-            leftButtonWidth.constant = showButton ? (buttonImage?.size.width ?? 0.0) * UIScreen.main.scale : 0.0
+            updateImageWidth()
         }
+    }
+
+    // MARK: - Private functions
+
+    private func updateImageWidth() {
+        leftButtonWidth.constant = showButton ? (buttonImage?.size.width ?? 0.0) * UIScreen.main.scale : 0.0
     }
 
     // MARK: - Private IBAction functions
