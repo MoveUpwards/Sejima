@@ -15,6 +15,7 @@ public struct MUBasicRange {
     /// Spécifies the range value.
     public let range: MURange<CGFloat>
 
+    /// Init a MUBasicRange.
     public init(with title: String, range: MURange<CGFloat>) {
         self.title = title
         self.range = range
