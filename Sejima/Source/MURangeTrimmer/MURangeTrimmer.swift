@@ -20,9 +20,6 @@ private enum DragType {
     case none, left, center, right
 }
 
-/// Type to expose a MUSubRange with just range and title
-public typealias MUSimpleRange = (range: MURange<CGFloat>, title: String)
-
 /// Controller to create one to n range(s) trimmer
 @IBDesignable
 open class MURangeTrimmer: MUNibView {
@@ -133,10 +130,10 @@ open class MURangeTrimmer: MUNibView {
     }
 
     /// Returns all range trimmer
-    open var ranges: [MUSimpleRange] {
+    open var ranges: [MUBasicRange] {
         get {
             return subRanges.enumerated().map({ index, subRange in
-                return (subRange.range, subRanges[index].view.title)
+                return MUBasicRange(with: subRanges[index].view.title, range: subRange.range)
             })
         }
         set {
@@ -144,9 +141,8 @@ open class MURangeTrimmer: MUNibView {
             subRanges.removeAll()
 
             newValue.forEach { args in
-                let (range, title) = args
-                addSubRange(start: range.location, length: range.length)
-                subRanges.last?.view.title = title
+                addSubRange(start: args.range.location, length: args.range.length)
+                subRanges.last?.view.title = args.title
             }
         }
     }
