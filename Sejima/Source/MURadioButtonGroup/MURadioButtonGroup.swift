@@ -48,7 +48,7 @@ open class MURadioButtonGroup {
 
     /// Select the MURadioButtonProtocol at specific index. It will unselect the current one if needed.
     open func select(index: Int) {
-        guard index < buttons.count else {
+        guard index >= 0, index < buttons.count else {
             return
         }
         buttons[index].selected = true
