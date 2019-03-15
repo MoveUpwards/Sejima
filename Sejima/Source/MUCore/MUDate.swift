@@ -1,6 +1,6 @@
 //
 //  MUDate.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Loïc GRIFFIE on 27/11/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date {
-    /// MUComponent: Date from now with updated component(s).
+    /// Date from now with updated component(s).
     ///
     ///     Date(day: -1) // Yesterday at the same hour/minute
     ///     Date(year: 1) // Next year at the same day/month
@@ -48,7 +48,7 @@ extension Date {
         self = date
     }
 
-    /// MUComponent: Date string from date.
+    /// Date string from date.
     ///
     ///     Date().string(withFormat: "dd/MM/yyyy") -> "1/12/17"
     ///     Date().string(withFormat: "HH:mm") -> "23:50"
@@ -62,7 +62,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// MUComponent: Date string from date.
+    /// Date string from date.
     ///
     ///     Date().dateString(ofStyle: .short) -> "1/12/17"
     ///     Date().dateString(ofStyle: .medium) -> "Jan 12, 2017"
@@ -78,7 +78,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// MUComponent: Date and time string from date.
+    /// Date and time string from date.
     ///
     ///     Date().dateTimeString(ofStyle: .short) -> "1/12/17, 7:32 PM"
     ///     Date().dateTimeString(ofStyle: .medium) -> "Jan 12, 2017, 7:32:00 PM"
@@ -94,7 +94,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// MUComponent: Time string from date
+    /// Time string from date
     ///
     ///     Date().timeString(ofStyle: .short) -> "7:37 PM"
     ///     Date().timeString(ofStyle: .medium) -> "7:37:02 PM"
@@ -110,7 +110,7 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 
-    /// MUComponent: get number of years between two date
+    /// Get number of years between two date.
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of years between self and given date.
@@ -118,7 +118,7 @@ extension Date {
         return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
     }
 
-    /// MUComponent: Check if date is within today.
+    /// Check if date is within today.
     ///
     ///     Date().isToday -> true
     ///
@@ -126,7 +126,7 @@ extension Date {
         return Calendar.current.isDateInToday(self)
     }
 
-    /// MUComponent: Generate intervale of date from midnight to midnight net day.
+    /// Generate intervale of date from midnight to midnight net day.
     ///
     ///     Date().dayInterval(for: 31-01-2019 15:34:13) -> (start: 31-01-2019 00:00:00, end: 31-01-2019 23:59:59)
     ///
@@ -144,18 +144,22 @@ extension Date {
 }
 
 extension TimeInterval {
+    /// TimeInterval for one second.
     internal static var second: TimeInterval = {
         return 1
     }()
 
+    /// TimeInterval for one minute (in seconds).
     internal static var minute: TimeInterval = {
         return 60 * .second
     }()
 
+    /// TimeInterval for one hour (in seconds).
     internal static var hour: TimeInterval = {
         return 60 * .minute
     }()
 
+    /// TimeInterval for one day (in seconds).
     internal static var day: TimeInterval = {
         return 24 * .hour
     }()

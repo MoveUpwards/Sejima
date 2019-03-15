@@ -10,6 +10,7 @@ import UIKit
 
 /// Delegate protocol for MUTimeSlider.
 @objc public protocol MUTimeSliderDelegate: class {
+    /// Will trigger each time the slider moves.
     func didUpdate(timeSlider: MUTimeSlider, time: TimeInterval)
 }
 
@@ -25,6 +26,7 @@ open class MUTimeSlider: MUNibView {
     @IBOutlet private var labelTopConstraint: NSLayoutConstraint!
     @IBOutlet private var labelTrailingConstraint: NSLayoutConstraint!
 
+    /// The object that acts as the delegate of the time slider.
     @IBOutlet public weak var delegate: MUTimeSliderDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Private variables
@@ -141,7 +143,7 @@ open class MUTimeSlider: MUNibView {
     // MARK: - Button functions
 
     // Connect touchUpInside and touchDragInside
-    @IBAction func touchEvent(_ sender: Any, forEvent event: UIEvent) {
+    @IBAction private func touchEvent(_ sender: Any, forEvent event: UIEvent) {
         guard let x = event.allTouches?.first?.preciseLocation(in: self).x else { return }
         set(positionX: x)
         delegate?.didUpdate(timeSlider: self, time: currentTime)
