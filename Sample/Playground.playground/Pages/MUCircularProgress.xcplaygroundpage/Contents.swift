@@ -25,6 +25,7 @@ progress.trackValue = 0.5
 progress.trackStartAngle = -90.0
 progress.trackLineWidth = 10
 progress.trackLineColor = .green
+progress.trackBackgroundColor = .clear
 progress.offset = 20
 progress.progressLineWidth = 10
 progress.progressLineColor = .orange
