@@ -1,6 +1,26 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
+      "line": 13,
+      "symbol": "MUTimeSliderDelegate.didUpdate(timeSlider:time:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
+      "line": 28,
+      "symbol": "MUTimeSlider.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
+      "line": 144,
+      "symbol": "MUTimeSlider.touchEvent(_:forEvent:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }
