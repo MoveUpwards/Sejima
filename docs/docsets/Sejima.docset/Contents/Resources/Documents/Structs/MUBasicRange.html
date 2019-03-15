@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MUToastPosition Enumeration Reference</title>
+    <title>MUBasicRange Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/MUToastPosition" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Struct/MUBasicRange" class="dashAnchor"></a>
 
-    <a title="MUToastPosition Enumeration Reference"></a>
+    <a title="MUBasicRange Structure Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Sejima Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MUToastPosition Enumeration Reference
+      MUBasicRange Structure Reference
     </p>
 
     <div class="content-wrapper">
@@ -267,14 +267,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>MUToastPosition</h1>
+            <h1>MUBasicRange</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MUToastPosition</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MUBasicRange</span></code></pre>
 
                 </div>
               </div>
-            <p>Toast possible position</p>
+            <p>Struct with just range and title</p>
 
           </div>
         </section>
@@ -286,9 +286,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima15MUToastPositionO3topyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/top" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima15MUToastPositionO3topyA2CmF">top</a>
+                    <a name="/s:6Sejima12MUBasicRangeV5titleSSvp"></a>
+                    <a name="//apple_ref/swift/Property/title" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima12MUBasicRangeV5titleSSvp">title</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -296,14 +296,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Top of the screen</p>
+                        <p>Specifies the range title.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">top</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -313,9 +313,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima15MUToastPositionO6bottomyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/bottom" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima15MUToastPositionO6bottomyA2CmF">bottom</a>
+                    <a name="/s:6Sejima12MUBasicRangeV5rangeAA7MURangeVy12CoreGraphics7CGFloatVGvp"></a>
+                    <a name="//apple_ref/swift/Property/range" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima12MUBasicRangeV5rangeAA7MURangeVy12CoreGraphics7CGFloatVGvp">range</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,14 +323,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Bottom of the screen</p>
+                        <p>Spécifies the range value.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">bottom</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">range</span><span class="p">:</span> <span class="kt"><a href="../Structs/MURange.html">MURange</a></span><span class="o">&lt;</span><span class="kt">CGFloat</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sejima12MUBasicRangeV4with5rangeACSS_AA7MURangeVy12CoreGraphics7CGFloatVGtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(with:range:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima12MUBasicRangeV4with5rangeACSS_AA7MURangeVy12CoreGraphics7CGFloatVGtcfc">init(with:range:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Init a MUBasicRange.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">range</span><span class="p">:</span> <span class="kt"><a href="../Structs/MURange.html">MURange</a></span><span class="o">&lt;</span><span class="kt">CGFloat</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
