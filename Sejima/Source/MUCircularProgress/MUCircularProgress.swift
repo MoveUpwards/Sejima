@@ -113,7 +113,7 @@ open class MUCircularProgress: MUNibView {
     }
 
     /// Define the track background color.
-    @IBInspectable open dynamic var trackBackgroundColor: UIColor = .clear {
+    @IBInspectable open dynamic var trackBackgroundColor: UIColor = .black {
         didSet {
             backgroundPathLayer.fillColor = trackBackgroundColor.cgColor
         }
