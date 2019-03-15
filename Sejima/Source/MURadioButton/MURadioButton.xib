@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MURadioButton" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="cGT-y4-iYz" id="kDM-g6-KkC"/>
+                <outlet property="indicator" destination="RXN-TQ-oSD" id="1de-a5-u3L"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXN-TQ-oSD">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGT-y4-iYz">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <connections>
+                        <action selector="didTap:" destination="-1" eventType="touchUpInside" id="GpH-bP-YP2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="cGT-y4-iYz" secondAttribute="bottom" id="7oA-zF-d1A"/>
+                <constraint firstItem="cGT-y4-iYz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FVy-Bp-Dbg"/>
+                <constraint firstItem="RXN-TQ-oSD" firstAttribute="leading" secondItem="cGT-y4-iYz" secondAttribute="leading" id="b8G-Ue-anc"/>
+                <constraint firstItem="RXN-TQ-oSD" firstAttribute="top" secondItem="cGT-y4-iYz" secondAttribute="top" id="lsy-kb-Pai"/>
+                <constraint firstItem="cGT-y4-iYz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="o45-H7-Lc5"/>
+                <constraint firstAttribute="trailing" secondItem="cGT-y4-iYz" secondAttribute="trailing" id="qov-I5-2BR"/>
+                <constraint firstItem="RXN-TQ-oSD" firstAttribute="bottom" secondItem="cGT-y4-iYz" secondAttribute="bottom" id="siK-Yu-QYS"/>
+                <constraint firstItem="RXN-TQ-oSD" firstAttribute="trailing" secondItem="cGT-y4-iYz" secondAttribute="trailing" id="zhK-5q-341"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

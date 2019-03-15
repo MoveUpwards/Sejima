@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Delegate protocol for MIPinCode.
+/// Delegate protocol for MUPinCode.
 @objc public protocol MUPinCodeDelegate: class {
     /// Will trigger each time an entry is added.
     func didUpdate(pinCode: MUPinCode, with code: String)

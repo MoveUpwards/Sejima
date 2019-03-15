@@ -1,6 +1,6 @@
 //
 //  MUTimeSlider.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Damien Noël Dubuisson on 13/02/2019.
 //  Copyright © 2019 Loïc GRIFFIE. All rights reserved.

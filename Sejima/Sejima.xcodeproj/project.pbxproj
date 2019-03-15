@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1E7714223BE46B0030A2C4 /* MURadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7712223BE46B0030A2C4 /* MURadioButton.swift */; };
+		6D1E7715223BE46B0030A2C4 /* MURadioButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1E7713223BE46B0030A2C4 /* MURadioButton.xib */; };
+		6D1E7718223BE6410030A2C4 /* MURadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */; };
 		6D3E541D2237B0D600729290 /* MUStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E541C2237B0D600729290 /* MUStatTests.swift */; };
 		6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */; };
 		6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */; };
@@ -71,13 +74,13 @@
 		F33D660222345ADB0077D7CD /* MUIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D660122345ADA0077D7CD /* MUIndicatorTests.swift */; };
 		F33D6608223656B20077D7CD /* MULabelCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D6607223656B20077D7CD /* MULabelCounterTests.swift */; };
 		F34BD139223A9CAA00793EDE /* MUProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD138223A9CA900793EDE /* MUProgressTests.swift */; };
+		F34BD13B223AB97E00793EDE /* MUBasicRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD13A223AB97E00793EDE /* MUBasicRange.swift */; };
+		F34BD13D223ABAE400793EDE /* MUBasicRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD13C223ABAE400793EDE /* MUBasicRangeTests.swift */; };
 		F34BD141223B902600793EDE /* MUTimeSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = F34BD13F223B902600793EDE /* MUTimeSlider.xib */; };
 		F34BD142223B902600793EDE /* MUTimeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD140223B902600793EDE /* MUTimeSlider.swift */; };
 		F34BD144223B928C00793EDE /* MUDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD143223B928C00793EDE /* MUDate.swift */; };
 		F34BD148223BA12900793EDE /* MUDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD145223BA03400793EDE /* MUDateTests.swift */; };
 		F34BD14A223BB6AA00793EDE /* MUTimeSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD149223BB6AA00793EDE /* MUTimeSliderTests.swift */; };
-		F34BD13B223AB97E00793EDE /* MUBasicRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD13A223AB97E00793EDE /* MUBasicRange.swift */; };
-		F34BD13D223ABAE400793EDE /* MUBasicRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD13C223ABAE400793EDE /* MUBasicRangeTests.swift */; };
 		F35A3DA6223035A9009341D2 /* MUProportionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA5223035A9009341D2 /* MUProportionalView.swift */; };
 		F35A3DAA22303EF6009341D2 /* MUCornerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */; };
 		F35A3DB222310A90009341D2 /* MUSubRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DAE22310A90009341D2 /* MUSubRangeView.swift */; };
@@ -126,6 +129,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D1E7712223BE46B0030A2C4 /* MURadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MURadioButton.swift; sourceTree = "<group>"; };
+		6D1E7713223BE46B0030A2C4 /* MURadioButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MURadioButton.xib; sourceTree = "<group>"; };
+		6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MURadioButtonGroup.swift; sourceTree = "<group>"; };
 		6D3E541C2237B0D600729290 /* MUStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUStatTests.swift; sourceTree = "<group>"; };
 		6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHorizontalPager.swift; sourceTree = "<group>"; };
 		6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHorizontalPager.xib; sourceTree = "<group>"; };
@@ -189,13 +195,13 @@
 		F33D660122345ADA0077D7CD /* MUIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUIndicatorTests.swift; sourceTree = "<group>"; };
 		F33D6607223656B20077D7CD /* MULabelCounterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULabelCounterTests.swift; sourceTree = "<group>"; };
 		F34BD138223A9CA900793EDE /* MUProgressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUProgressTests.swift; sourceTree = "<group>"; };
+		F34BD13A223AB97E00793EDE /* MUBasicRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBasicRange.swift; sourceTree = "<group>"; };
+		F34BD13C223ABAE400793EDE /* MUBasicRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBasicRangeTests.swift; sourceTree = "<group>"; };
 		F34BD13F223B902600793EDE /* MUTimeSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUTimeSlider.xib; sourceTree = "<group>"; };
 		F34BD140223B902600793EDE /* MUTimeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTimeSlider.swift; sourceTree = "<group>"; };
 		F34BD143223B928C00793EDE /* MUDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUDate.swift; sourceTree = "<group>"; };
 		F34BD145223BA03400793EDE /* MUDateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUDateTests.swift; sourceTree = "<group>"; };
 		F34BD149223BB6AA00793EDE /* MUTimeSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUTimeSliderTests.swift; sourceTree = "<group>"; };
-		F34BD13A223AB97E00793EDE /* MUBasicRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBasicRange.swift; sourceTree = "<group>"; };
-		F34BD13C223ABAE400793EDE /* MUBasicRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBasicRangeTests.swift; sourceTree = "<group>"; };
 		F35A3DA5223035A9009341D2 /* MUProportionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUProportionalView.swift; sourceTree = "<group>"; };
 		F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUCornerStyle.swift; sourceTree = "<group>"; };
 		F35A3DAE22310A90009341D2 /* MUSubRangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSubRangeView.swift; sourceTree = "<group>"; };
@@ -257,6 +263,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D1E7711223BE46B0030A2C4 /* MURadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				6D1E7712223BE46B0030A2C4 /* MURadioButton.swift */,
+				6D1E7713223BE46B0030A2C4 /* MURadioButton.xib */,
+			);
+			path = MURadioButton;
+			sourceTree = "<group>";
+		};
+		6D1E7716223BE6410030A2C4 /* MURadioButtonGroup */ = {
+			isa = PBXGroup;
+			children = (
+				6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */,
+			);
+			path = MURadioButtonGroup;
+			sourceTree = "<group>";
+		};
 		6D4F2F952225970000A0799B /* MUHorizontalPager */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +582,8 @@
 				6DDD7E4B22365C630033F5F9 /* MUProportionalBar */,
 				F317FFA4223A5702001DBDDD /* MUProgress */,
 				F34BD13E223B902600793EDE /* MUTimeSlider */,
+				6D1E7711223BE46B0030A2C4 /* MURadioButton */,
+				6D1E7716223BE6410030A2C4 /* MURadioButtonGroup */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -715,6 +740,7 @@
 				F35A3DB322310A90009341D2 /* MUSubRangeView.xib in Resources */,
 				F35A3E032231A3F0009341D2 /* MUCard.xib in Resources */,
 				F35A3DE2223159A6009341D2 /* MURadarGraph.xib in Resources */,
+				6D1E7715223BE46B0030A2C4 /* MURadioButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,10 +812,12 @@
 				F317FF8F2236CD5A001DBDDD /* MUStatData.swift in Sources */,
 				F317FF9F22380191001DBDDD /* MUCollectionItem.swift in Sources */,
 				F3C2DD34222D9A4000C08300 /* MUAvatar.swift in Sources */,
+				6D1E7718223BE6410030A2C4 /* MURadioButtonGroup.swift in Sources */,
 				6DDD7E5522365C640033F5F9 /* MUHistogram.swift in Sources */,
 				F33D65FB223453FA0077D7CD /* MUIndicator.swift in Sources */,
 				F3B377B72232CA2800F07B11 /* MUCircularProgress.swift in Sources */,
 				F317FFA8223A5702001DBDDD /* MUProgress.swift in Sources */,
+				6D1E7714223BE46B0030A2C4 /* MURadioButton.swift in Sources */,
 				6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */,
 				6DDD7E5D22365C780033F5F9 /* MUSegmentIndicatorView.swift in Sources */,
 				F3A5790A222EEBCF00746981 /* MUString.swift in Sources */,
