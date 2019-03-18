@@ -17,6 +17,7 @@ open class MUOptionPicker: MUNibView {
 
     private let buttonGroup = MURadioButtonGroup()
 
+    /// Get the current index or nil if none.
     public private(set) var selectedIndex: Int? // Read only to get selected value
 
     // MARK: - Public UIAppearence variables

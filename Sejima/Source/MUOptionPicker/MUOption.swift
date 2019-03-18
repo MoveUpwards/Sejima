@@ -54,21 +54,21 @@ internal class MUOption: MUNibView, MURadioButtonProtocol {
 
     // MARK: - Set functions
 
-    /// Set a title's font
+    /// Set title's font.
     @discardableResult
     internal func set(font: UIFont) -> MUOption {
         label.font = font
         return self
     }
 
-    // Set a selected color
+    /// Set selected color.
     @discardableResult
     internal func set(selectedColor: UIColor) -> MUOption {
         self.selectedColor = selectedColor
         return self
     }
 
-    // Set an unselected color
+    /// Set unselected color.
     @discardableResult
     internal func set(unselectedColor: UIColor) -> MUOption {
         self.unselectedColor = unselectedColor
