@@ -22,16 +22,31 @@ internal class MUOption: MUNibView, MURadioButtonProtocol {
     /// The option button's selected state.
     internal var selected: Bool = false {
         didSet {
-            imageView.tintColor = selected ? selectedColor : unselectedColor
-            label.textColor = selected ? selectedColor : unselectedColor
+            updateColors()
             if selected {
                 delegate?.didSelect(button: self)
             }
         }
     }
 
-    private var selectedColor = UIColor.white
-    private var unselectedColor = UIColor.darkGray
+    private var selectedColor = UIColor.white {
+        didSet {
+            updateColors()
+        }
+    }
+
+    private var unselectedColor = UIColor.darkGray {
+        didSet {
+            updateColors()
+        }
+    }
+
+    // MARK: - Private functions
+
+    private func updateColors() {
+        imageView.tintColor = selected ? selectedColor : unselectedColor
+        label.textColor = selected ? selectedColor : unselectedColor
+    }
 
     // MARK: - Life cycle
 

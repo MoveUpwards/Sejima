@@ -25,21 +25,27 @@ open class MUOptionPicker: MUNibView {
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var selectedColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+                option.set(selectedColor: selectedColor)
+            }
         }
     }
 
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var unselectedColor: UIColor = .darkGray {
         didSet {
-            setNeedsLayout()
+            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+                option.set(unselectedColor: unselectedColor)
+            }
         }
     }
 
     /// Define the inset of the background and chart
-    @objc open dynamic var textFont: UIFont = .systemFont(ofSize: 16, weight: .regular) {
+    @objc open dynamic var textFont: UIFont = .systemFont(ofSize: 16.0, weight: .regular) {
         didSet {
-            setNeedsLayout()
+            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+                option.set(font: textFont)
+            }
         }
     }
 
@@ -64,6 +70,9 @@ open class MUOptionPicker: MUNibView {
         datas.enumerated().forEach { index, data in
             let option = MUOption(data: data)
             option.tag = index
+            option.set(selectedColor: selectedColor)
+            option.set(unselectedColor: unselectedColor)
+            option.set(font: textFont)
             buttonGroup.add(button: option)
             stackView.addArrangedSubview(option)
         }
