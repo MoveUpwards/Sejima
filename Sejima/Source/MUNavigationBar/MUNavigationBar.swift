@@ -70,7 +70,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The current title that is displayed by the main button.
-    @IBInspectable public var mainButtonTitle: String {
+    @IBInspectable open var mainButtonTitle: String {
         get {
             return rightButton.title
         }
@@ -100,7 +100,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// Optional: The IBInspectable version of the main button’s horizontal alignment.
-    @IBInspectable public var mainButtonTitleAlignmentInt: Int {
+    @IBInspectable open var mainButtonTitleAlignmentInt: Int {
         get {
             return rightButton.titleAlignmentInt
         }
@@ -110,7 +110,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s title color.
-    @IBInspectable public dynamic var mainButtonTitleColor: UIColor {
+    @IBInspectable open dynamic var mainButtonTitleColor: UIColor {
         get {
             return rightButton.titleColor
         }
@@ -120,7 +120,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s highlighted title color.
-    @IBInspectable public dynamic var mainButtonTitleHighlightedColor: UIColor {
+    @IBInspectable open dynamic var mainButtonTitleHighlightedColor: UIColor {
         get {
             return rightButton.titleHighlightedColor
         }
@@ -130,7 +130,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The activity indicator’s color of the main button.
-    @IBInspectable public dynamic var mainButtonProgressColor: UIColor {
+    @IBInspectable open dynamic var mainButtonProgressColor: UIColor {
         get {
             return rightButton.progressColor
         }
@@ -140,7 +140,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// Show or hide the progress indicator of the main button.
-    @IBInspectable public dynamic var mainButtonIsLoading: Bool {
+    @IBInspectable open dynamic var mainButtonIsLoading: Bool {
         get {
             return rightButton.isLoading
         }
@@ -160,7 +160,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s alpha value for disabled state.
-    @IBInspectable public dynamic var mainButtonDisabledAlphaValue: CGFloat {
+    @IBInspectable open dynamic var mainButtonDisabledAlphaValue: CGFloat {
         get {
             return rightButton.disabledAlphaValue
         }
@@ -170,7 +170,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s background color.
-    @IBInspectable public dynamic var mainButtonBackgroundColor: UIColor {
+    @IBInspectable open dynamic var mainButtonBackgroundColor: UIColor {
         get {
             return rightButton.buttonBackgroundColor
         }
@@ -180,7 +180,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s border color.
-    @IBInspectable public dynamic var mainButtonBorderColor: UIColor {
+    @IBInspectable open dynamic var mainButtonBorderColor: UIColor {
         get {
             return rightButton.borderColor
         }
@@ -190,7 +190,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s border width.
-    @IBInspectable public dynamic var mainButtonBorderWidth: CGFloat {
+    @IBInspectable open dynamic var mainButtonBorderWidth: CGFloat {
         get {
             return rightButton.borderWidth
         }
@@ -200,7 +200,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s corner radius.
-    @IBInspectable public dynamic var mainButtonCornerRadius: CGFloat {
+    @IBInspectable open dynamic var mainButtonCornerRadius: CGFloat {
         get {
             return rightButton.cornerRadius
         }
@@ -210,7 +210,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s vertical padding.
-    @IBInspectable public dynamic var mainButtonVerticalPadding: CGFloat {
+    @IBInspectable open dynamic var mainButtonVerticalPadding: CGFloat {
         get {
             return rightButton.verticalPadding
         }
@@ -220,7 +220,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// The main button’s horizontal padding.
-    @IBInspectable public dynamic var mainButtonHorizontalPadding: CGFloat {
+    @IBInspectable open dynamic var mainButtonHorizontalPadding: CGFloat {
         get {
             return rightButton.horizontalPadding
         }

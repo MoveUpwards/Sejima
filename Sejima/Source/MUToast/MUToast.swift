@@ -222,7 +222,7 @@ open class MUToast: MUNibView {
         hidingAnimation(completion)
     }
 
-    // MARK: - Private IBActionfunctions
+    // MARK: - Private IBAction functions
 
     @IBAction private func didTap(_ sender: UITapGestureRecognizer) {
         onTapBlock?()
