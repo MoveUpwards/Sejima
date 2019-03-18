@@ -85,7 +85,7 @@ open class MUOptionPicker: MUNibView {
 
 extension MUOptionPicker: MURadioButtonDelegate {
     /// Will trigger each time a radio button is selected.
-    public func didSelect(button: MURadioButtonGroupProtocol) {
+    public func didSelect(button: MURadioButtonProtocol) {
         guard let option = button as? MUOption else {
             return
         }
@@ -93,5 +93,5 @@ extension MUOptionPicker: MURadioButtonDelegate {
     }
 
     /// Will trigger each time a radio button is unselected.
-    public func didUnselect(button: MURadioButtonGroupProtocol) { }
+    public func didUnselect(button: MURadioButtonProtocol) { }
 }

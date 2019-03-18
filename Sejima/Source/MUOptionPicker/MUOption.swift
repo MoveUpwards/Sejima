@@ -10,7 +10,7 @@ import UIKit.UIImageView
 import UIKit.UILabel
 
 /// Class that act like an UISwitch and can be group.
-internal class MUOption: MUNibView, MURadioButtonGroupProtocol {
+internal class MUOption: MUNibView, MURadioButtonProtocol {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var label: UILabel!
 
