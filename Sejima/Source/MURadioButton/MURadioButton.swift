@@ -22,7 +22,6 @@ open class MURadioButton: MUNibView, MURadioButtonProtocol {
     /// The radio button's selected state.
     @IBInspectable open dynamic var selected: Bool = false {
         didSet {
-            setNeedsLayout()
             animateState()
         }
     }
@@ -30,28 +29,28 @@ open class MURadioButton: MUNibView, MURadioButtonProtocol {
     /// The radio button’s border width.
     @IBInspectable open dynamic var borderWidth: CGFloat = 0 {
         didSet {
-            setNeedsLayout()
+            button.layer.borderWidth = borderWidth
         }
     }
 
     /// The radio button’s border color.
     @IBInspectable open dynamic var borderColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            button.layer.borderColor = borderColor.cgColor
         }
     }
 
     /// Specifies the indicator's color.
     @IBInspectable open dynamic var indicatorColor: UIColor = .white {
         didSet {
-            setNeedsLayout()
+            indicator.backgroundColor = indicatorColor
         }
     }
 
     /// Specifies the indicator's padding.
     @IBInspectable open dynamic var indicatorPadding: CGFloat = 2.0 {
         didSet {
-            setNeedsLayout()
+            indicator.layer.borderWidth = indicatorPadding * 2
         }
     }
 
@@ -65,11 +64,17 @@ open class MURadioButton: MUNibView, MURadioButtonProtocol {
     // MARK: - Private functions
 
     private func configure() {
-        button.backgroundColor = .clear
-        button.layer.masksToBounds = true
         layer.masksToBounds = true
         clipsToBounds = true
+
+        button.backgroundColor = .clear
+        button.layer.masksToBounds = true
+        button.layer.borderColor = borderColor.cgColor
+        button.layer.borderWidth = borderWidth
+
         indicator.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        indicator.backgroundColor = indicatorColor
+        indicator.layer.borderWidth = indicatorPadding * 2
     }
 
     private func animateState() {
@@ -99,15 +104,9 @@ open class MURadioButton: MUNibView, MURadioButtonProtocol {
         let radius = min(bounds.width, bounds.height) * 0.5
         layer.cornerRadius = radius
         button.layer.cornerRadius = radius
-        button.layer.borderColor = borderColor.cgColor
-        button.layer.borderWidth = borderWidth
 
-        indicator.backgroundColor = indicatorColor
         indicator.layer.cornerRadius = radius
-        indicator.layer.borderWidth = indicatorPadding * 2
         indicator.layer.borderColor = backgroundColor?.cgColor
-
-        animateState()
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
