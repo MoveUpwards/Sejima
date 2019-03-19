@@ -25,7 +25,7 @@ open class MUOptionPicker: MUNibView {
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var selectedColor: UIColor = .white {
         didSet {
-            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+            stackView.arrangedSubviews.compactMap({ $0 as? MUOption }).forEach { option in
                 option.set(selectedColor: selectedColor)
             }
         }
@@ -34,7 +34,7 @@ open class MUOptionPicker: MUNibView {
     /// Define the inset of the background and chart
     @IBInspectable open dynamic var unselectedColor: UIColor = .darkGray {
         didSet {
-            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+            stackView.arrangedSubviews.compactMap({ $0 as? MUOption }).forEach { option in
                 option.set(unselectedColor: unselectedColor)
             }
         }
@@ -43,7 +43,7 @@ open class MUOptionPicker: MUNibView {
     /// Define the inset of the background and chart
     @objc open dynamic var textFont: UIFont = .systemFont(ofSize: 16.0, weight: .regular) {
         didSet {
-            stackView.arrangedSubviews.map({ $0 as? MUOption }).compactMap({ $0 }).forEach { option in
+            stackView.arrangedSubviews.compactMap({ $0 as? MUOption }).forEach { option in
                 option.set(font: textFont)
             }
         }

@@ -11,8 +11,8 @@ optionPicker.backgroundColor = .black
 optionPicker.selectedColor = .red
 optionPicker.unselectedColor = .purple
 optionPicker.textFont = .systemFont(ofSize: 18.0, weight: .bold)
-optionPicker.add(datas: [.init(image: nil, text: "Left"),
-                         .init(image: nil, text: "Right")])
+optionPicker.add(datas: [.init(text: "Left"),
+                         .init(text: "Right")])
 
 // View
 

@@ -17,10 +17,7 @@
         <page name='MUProgress'/>
         <page name='MULabelCounter'/>
         <page name='MUTimeSlider'/>
-<<<<<<< HEAD
         <page name='MUOptionPicker'/>
-=======
         <page name='MUNumberSlider'/>
->>>>>>> origin/master
     </pages>
 </playground>

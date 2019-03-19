@@ -16,7 +16,7 @@ public struct MUOptionData {
     public let text: String
 
     /// Initializes and returns a newly allocated MUOptionData.
-    public init(image: UIImage?, text: String) {
+    public init(text: String, image: UIImage? = nil) {
         self.image = image
         self.text = text
     }

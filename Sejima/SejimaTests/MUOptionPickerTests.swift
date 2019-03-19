@@ -32,8 +32,8 @@ class MUOptionPickerTests: XCTestCase {
         picker.spacing = 5.0
         picker.selectedColor = .black
         picker.unselectedColor = .white
-        picker.add(datas: [.init(image: nil, text: ""),
-                           .init(image: nil, text: "")])
+        picker.add(datas: [.init(text: ""),
+                           .init(text: "")])
         picker.select(index: 1)
 
         XCTAssertEqual(picker.textFont, .systemFont(ofSize: 20.0, weight: .bold))
