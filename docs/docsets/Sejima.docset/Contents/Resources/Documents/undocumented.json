@@ -1,57 +1,6 @@
 {
   "warnings": [
-    {
-<<<<<<< HEAD
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUDate.swift",
-      "line": 147,
-      "symbol": "TimeInterval.second",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUDate.swift",
-      "line": 151,
-      "symbol": "TimeInterval.minute",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUDate.swift",
-      "line": 155,
-      "symbol": "TimeInterval.hour",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUDate.swift",
-      "line": 159,
-      "symbol": "TimeInterval.day",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-=======
->>>>>>> origin/master
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
-      "line": 13,
-      "symbol": "MUTimeSliderDelegate.didUpdate(timeSlider:time:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
-      "line": 28,
-      "symbol": "MUTimeSlider.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUTimeSlider/MUTimeSlider.swift",
-      "line": 144,
-      "symbol": "MUTimeSlider.touchEvent(_:forEvent:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }
