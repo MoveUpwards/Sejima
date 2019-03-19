@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUOption" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="lDq-ZN-2Xg" id="ltF-Ve-fjd"/>
+                <outlet property="label" destination="u0M-0Z-e1O" id="w6G-uq-qQg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="107" height="178"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jx3-IP-quv">
+                    <rect key="frame" x="53.5" y="27.5" width="0.0" height="123"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lDq-ZN-2Xg">
+                            <rect key="frame" x="-27" y="0.0" width="54" height="107"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="lDq-ZN-2Xg" secondAttribute="height" multiplier="54:107" id="ZXj-IU-wbI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0M-0Z-e1O">
+                            <rect key="frame" x="0.0" y="123" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="u0M-0Z-e1O" secondAttribute="bottom" id="1Yz-Yz-MWQ"/>
+                        <constraint firstItem="u0M-0Z-e1O" firstAttribute="leading" secondItem="jx3-IP-quv" secondAttribute="leading" id="8C9-kv-jek"/>
+                        <constraint firstItem="lDq-ZN-2Xg" firstAttribute="centerX" secondItem="jx3-IP-quv" secondAttribute="centerX" id="CzU-Dj-2Nm"/>
+                        <constraint firstItem="lDq-ZN-2Xg" firstAttribute="top" secondItem="jx3-IP-quv" secondAttribute="top" id="fQH-dW-TLW"/>
+                        <constraint firstItem="u0M-0Z-e1O" firstAttribute="top" secondItem="lDq-ZN-2Xg" secondAttribute="bottom" constant="16" id="pxq-ng-zTO"/>
+                        <constraint firstAttribute="trailing" secondItem="u0M-0Z-e1O" secondAttribute="trailing" id="qgg-9K-Z8E"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="jx3-IP-quv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="36P-cG-6TD"/>
+                <constraint firstItem="jx3-IP-quv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="FQA-0b-7Rw"/>
+                <constraint firstItem="jx3-IP-quv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Rvh-VV-F2K"/>
+                <constraint firstItem="lDq-ZN-2Xg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="54:107" priority="750" id="Wtl-IM-w9b"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jx3-IP-quv" secondAttribute="bottom" id="rvk-WC-BXu"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

@@ -12,6 +12,11 @@
 		6D1E7718223BE6410030A2C4 /* MURadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */; };
 		6D1E771A223BF56E0030A2C4 /* MURadioButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7719223BF56E0030A2C4 /* MURadioButtonTests.swift */; };
 		6D1E771C223BF5880030A2C4 /* MURadioButtonGroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E771B223BF5880030A2C4 /* MURadioButtonGroupTests.swift */; };
+		6D1E7722223C08FF0030A2C4 /* MUOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E771E223C08FF0030A2C4 /* MUOption.swift */; };
+		6D1E7723223C08FF0030A2C4 /* MUOption.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1E771F223C08FF0030A2C4 /* MUOption.xib */; };
+		6D1E7724223C08FF0030A2C4 /* MUOptionPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D1E7720223C08FF0030A2C4 /* MUOptionPicker.xib */; };
+		6D1E7725223C08FF0030A2C4 /* MUOptionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7721223C08FF0030A2C4 /* MUOptionPicker.swift */; };
+		6D1E7727223C0CDD0030A2C4 /* MUOptionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1E7726223C0CDD0030A2C4 /* MUOptionData.swift */; };
 		6D3E541D2237B0D600729290 /* MUStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E541C2237B0D600729290 /* MUStatTests.swift */; };
 		6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */; };
 		6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */; };
@@ -25,6 +30,7 @@
 		6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */; };
 		6D8BC0D62237EE53006AFE7E /* MUToastPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC0D52237EE53006AFE7E /* MUToastPosition.swift */; };
 		6D8BC0D82237EE8C006AFE7E /* MUToastPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC0D72237EE8C006AFE7E /* MUToastPriority.swift */; };
+		6DA4E73E223FBB7300424216 /* MUOptionPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4E73D223FBB7300424216 /* MUOptionPickerTests.swift */; };
 		6DD518B9222EC39F00A1611F /* MUToast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD518B7222EC39F00A1611F /* MUToast.xib */; };
 		6DD518BA222EC39F00A1611F /* MUToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518B8222EC39F00A1611F /* MUToast.swift */; };
 		6DD518BC222EC90900A1611F /* MUToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518BB222EC90900A1611F /* MUToastTests.swift */; };
@@ -141,6 +147,11 @@
 		6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MURadioButtonGroup.swift; sourceTree = "<group>"; };
 		6D1E7719223BF56E0030A2C4 /* MURadioButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MURadioButtonTests.swift; sourceTree = "<group>"; };
 		6D1E771B223BF5880030A2C4 /* MURadioButtonGroupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MURadioButtonGroupTests.swift; sourceTree = "<group>"; };
+		6D1E771E223C08FF0030A2C4 /* MUOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUOption.swift; sourceTree = "<group>"; };
+		6D1E771F223C08FF0030A2C4 /* MUOption.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUOption.xib; sourceTree = "<group>"; };
+		6D1E7720223C08FF0030A2C4 /* MUOptionPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUOptionPicker.xib; sourceTree = "<group>"; };
+		6D1E7721223C08FF0030A2C4 /* MUOptionPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUOptionPicker.swift; sourceTree = "<group>"; };
+		6D1E7726223C0CDD0030A2C4 /* MUOptionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUOptionData.swift; sourceTree = "<group>"; };
 		6D3E541C2237B0D600729290 /* MUStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUStatTests.swift; sourceTree = "<group>"; };
 		6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHorizontalPager.swift; sourceTree = "<group>"; };
 		6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHorizontalPager.xib; sourceTree = "<group>"; };
@@ -154,6 +165,7 @@
 		6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUWeakProxy.swift; sourceTree = "<group>"; };
 		6D8BC0D52237EE53006AFE7E /* MUToastPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastPosition.swift; sourceTree = "<group>"; };
 		6D8BC0D72237EE8C006AFE7E /* MUToastPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastPriority.swift; sourceTree = "<group>"; };
+		6DA4E73D223FBB7300424216 /* MUOptionPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUOptionPickerTests.swift; sourceTree = "<group>"; };
 		6DD518B7222EC39F00A1611F /* MUToast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUToast.xib; sourceTree = "<group>"; };
 		6DD518B8222EC39F00A1611F /* MUToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUToast.swift; sourceTree = "<group>"; };
 		6DD518BB222EC90900A1611F /* MUToastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastTests.swift; sourceTree = "<group>"; };
@@ -292,6 +304,18 @@
 				6D1E7717223BE6410030A2C4 /* MURadioButtonGroup.swift */,
 			);
 			path = MURadioButtonGroup;
+			sourceTree = "<group>";
+		};
+		6D1E771D223C08FF0030A2C4 /* MUOptionPicker */ = {
+			isa = PBXGroup;
+			children = (
+				6D1E7726223C0CDD0030A2C4 /* MUOptionData.swift */,
+				6D1E771E223C08FF0030A2C4 /* MUOption.swift */,
+				6D1E771F223C08FF0030A2C4 /* MUOption.xib */,
+				6D1E7721223C08FF0030A2C4 /* MUOptionPicker.swift */,
+				6D1E7720223C08FF0030A2C4 /* MUOptionPicker.xib */,
+			);
+			path = MUOptionPicker;
 			sourceTree = "<group>";
 		};
 		6D4F2F952225970000A0799B /* MUHorizontalPager */ = {
@@ -544,6 +568,7 @@
 		F3B811EF22253D380004B830 /* SejimaTests */ = {
 			isa = PBXGroup;
 			children = (
+				6DA4E73D223FBB7300424216 /* MUOptionPickerTests.swift */,
 				6D1E771B223BF5880030A2C4 /* MURadioButtonGroupTests.swift */,
 				6D1E7719223BF56E0030A2C4 /* MURadioButtonTests.swift */,
 				F34BD138223A9CA900793EDE /* MUProgressTests.swift */,
@@ -588,6 +613,7 @@
 			children = (
 				F30318E12225586D00171E00 /* MUCore */,
 				6DD518B6222EC36A00A1611F /* MUToast */,
+				6D1E771D223C08FF0030A2C4 /* MUOptionPicker */,
 				F35A3DFF2231A3F0009341D2 /* MUCard */,
 				F3C2DD30222D9A4000C08300 /* MUAvatar */,
 				F3B8121E22253F040004B830 /* MUHeader */,
@@ -763,11 +789,13 @@
 				F34BD159223FDF0400793EDE /* MUNumberSlider.xib in Resources */,
 				F34BD141223B902600793EDE /* MUTimeSlider.xib in Resources */,
 				F33D65FA223453FA0077D7CD /* MUIndicator.xib in Resources */,
+				6D1E7723223C08FF0030A2C4 /* MUOption.xib in Resources */,
 				F3B377B82232CA2800F07B11 /* MUCircularProgress.xib in Resources */,
 				6DDD7E4A22365C340033F5F9 /* MUPinCodeCell.xib in Resources */,
 				6DDD7E5622365C640033F5F9 /* MUHistogram.xib in Resources */,
 				6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */,
 				F35A3DB322310A90009341D2 /* MUSubRangeView.xib in Resources */,
+				6D1E7724223C08FF0030A2C4 /* MUOptionPicker.xib in Resources */,
 				F35A3E032231A3F0009341D2 /* MUCard.xib in Resources */,
 				F35A3DE2223159A6009341D2 /* MURadarGraph.xib in Resources */,
 				6D1E7715223BE46B0030A2C4 /* MURadioButton.xib in Resources */,
@@ -831,6 +859,7 @@
 				6DD518BA222EC39F00A1611F /* MUToast.swift in Sources */,
 				6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */,
 				F35A3DB722310B05009341D2 /* MURange.swift in Sources */,
+				6D1E7722223C08FF0030A2C4 /* MUOption.swift in Sources */,
 				6D4F2FAE2228396100A0799B /* MUNavigationBar.swift in Sources */,
 				F317FF8D2236CD3A001DBDDD /* MUStat.swift in Sources */,
 				6DDD7E4722365C340033F5F9 /* MUPinCodeCell.swift in Sources */,
@@ -848,6 +877,7 @@
 				F33D65FB223453FA0077D7CD /* MUIndicator.swift in Sources */,
 				F3B377B72232CA2800F07B11 /* MUCircularProgress.swift in Sources */,
 				F317FFA8223A5702001DBDDD /* MUProgress.swift in Sources */,
+				6D1E7727223C0CDD0030A2C4 /* MUOptionData.swift in Sources */,
 				6D1E7714223BE46B0030A2C4 /* MURadioButton.swift in Sources */,
 				6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */,
 				6DDD7E5D22365C780033F5F9 /* MUSegmentIndicatorView.swift in Sources */,
@@ -865,6 +895,7 @@
 				F33D65FF2234549D0077D7CD /* MULabelCounter.swift in Sources */,
 				F34BD13B223AB97E00793EDE /* MUBasicRange.swift in Sources */,
 				F35A3E022231A3F0009341D2 /* MUCard.swift in Sources */,
+				6D1E7725223C08FF0030A2C4 /* MUOptionPicker.swift in Sources */,
 				F35A3DB922310BD6009341D2 /* MUSubRange.swift in Sources */,
 				6DDD7E5322365C640033F5F9 /* MUProportionalItem.swift in Sources */,
 				F34BD142223B902600793EDE /* MUTimeSlider.swift in Sources */,
@@ -904,6 +935,7 @@
 				6D3E541D2237B0D600729290 /* MUStatTests.swift in Sources */,
 				6DFA2BB12237FF20004F5605 /* MUMathTests.swift in Sources */,
 				6DFA2BA92237FCB8004F5605 /* MURangeTrimmerTests.swift in Sources */,
+				6DA4E73E223FBB7300424216 /* MUOptionPickerTests.swift in Sources */,
 				F3B8121A22253DD50004B830 /* MUCoreTests.swift in Sources */,
 				F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */,
 				6DFA2BAA2237FCB8004F5605 /* MUHistogramTests.swift in Sources */,
