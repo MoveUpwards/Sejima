@@ -1,26 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUOptionPicker/MUOption.swift",
-      "line": 66,
-      "symbol": "MUOption.set(selectedColor:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUOptionPicker/MUOption.swift",
-      "line": 73,
-      "symbol": "MUOption.set(unselectedColor:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUOptionPicker/MUOptionPicker.swift",
-      "line": 20,
-      "symbol": "MUOptionPicker.selectedIndex",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    }
+
   ],
-  "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
+  "source_directory": "/Users/lgriffie/Projects/Surfin/Sejima"
 }
