@@ -194,15 +194,11 @@ open class MUCircularProgress: MUNibView {
     /// Specifies the animation duration for the progress line to go from current progress value up to target value.
     @objc open dynamic var animationDuration: TimeInterval = 0.3
 
-    // MARK: - Public variables
-
-    private var progressObserver: ((CGFloat) -> Void)?
-
     // MARK: - Private variables
 
+    private var progressObserver: ((CGFloat) -> Void)?
     private let backgroundPathLayer = CAShapeLayer()
     private let pathLayer = CAShapeLayer()
-
     private var displayLink: CADisplayLink?
 
     // MARK: - Public functions
@@ -323,9 +319,8 @@ open class MUCircularProgress: MUNibView {
         return CGSize(width: 150, height: 150)
     }
 
-    /// Deinit the page control.
+    /// Deinit the circular progress.
     deinit {
-        displayLink?.remove(from: .current, forMode: .common)
-        displayLink?.invalidate()
+       removeDisplayLink()
     }
 }
