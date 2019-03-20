@@ -19,5 +19,6 @@
         <page name='MUTimeSlider'/>
         <page name='MUOptionPicker'/>
         <page name='MUNumberSlider'/>
+        <page name='MUTime'/>
     </pages>
 </playground>
