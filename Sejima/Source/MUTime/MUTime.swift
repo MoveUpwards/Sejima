@@ -15,17 +15,24 @@ open class MUTime: MUNibView {
     @IBOutlet private var timeLabel: MULabelCounter!
     @IBOutlet private var timeBackground: UIView!
 
+    // MARK: - Animation
+
+    /// Specifies the animation duration for the progress line to go from current progress value up to target value.
+    @objc open dynamic var animationDuration: TimeInterval = 0.3
+
+    // MARK: - Label
+
     /// The progress value text font.
-    @objc open dynamic var timeFont: UIFont = .systemFont(ofSize: 13, weight: .bold) {
+    @objc open dynamic var font: UIFont = .systemFont(ofSize: 13, weight: .bold) {
         didSet {
-            timeLabel.textFont = timeFont
+            timeLabel.textFont = font
         }
     }
 
     /// The progress value text color.
-    @IBInspectable open dynamic var timeColor: UIColor = .clear {
+    @IBInspectable open dynamic var color: UIColor = .clear {
         didSet {
-            timeLabel.textColor = timeColor
+            timeLabel.textColor = color
         }
     }
 
@@ -60,15 +67,15 @@ open class MUTime: MUNibView {
         }
     }
 
-    /// Specifies the start angle for the progress line path.
-    @IBInspectable open dynamic var indicatorStartAngle: CGFloat = 0 {
+    /// Specifies the start angle in degrees for the progress line path.
+    @IBInspectable open dynamic var indicatorStartAngle: CGFloat = 0.0 {
         didSet {
             setNeedsLayout()
         }
     }
 
-    /// Specifies the end angle for the progress line path.
-    @IBInspectable open dynamic var indicatorEndAngle: CGFloat = 360 {
+    /// Specifies the end angle in degrees for the progress line path.
+    @IBInspectable open dynamic var indicatorEndAngle: CGFloat = 360.0 {
         didSet {
             setNeedsLayout()
         }
@@ -110,11 +117,6 @@ open class MUTime: MUNibView {
             progressPathLayer.lineCap = indicatorLineCap
         }
     }
-
-    // MARK: - Animation
-
-    /// Specifies the animation duration for the progress line to go from current progress value up to target value.
-    @objc open dynamic var animationDuration: TimeInterval = 0.3
 
     // MARK: - Private functions
 
@@ -191,9 +193,9 @@ open class MUTime: MUNibView {
         let endAngle = indicatorEndAngle
         let minValue = indicatorMinValue
         let maxValue = indicatorMaxValue * 0.5
-        let angleDiff: CGFloat = (startAngle > endAngle) ?
-            (360.0 - startAngle + endAngle) :
-            (endAngle - startAngle)
+        let angleDiff: CGFloat = startAngle > endAngle ?
+            360.0 - startAngle + endAngle :
+            endAngle - startAngle
 
         let progressEndAngle = (progressValue - minValue) / (maxValue - minValue) * angleDiff + startAngle
 

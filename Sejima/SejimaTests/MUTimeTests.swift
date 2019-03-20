@@ -15,13 +15,14 @@ class MUTimeTests: XCTestCase {
         let time = MUTime()
         XCTAssertNotNil(time)
 
+        XCTAssertEqual(time.font, .systemFont(ofSize: 13, weight: .bold))
         XCTAssertEqual(time.indicatorMinValue, 0)
         XCTAssertEqual(time.indicatorMaxValue, 90)
-        XCTAssertEqual(time.indicatorStartAngle, 0)
-        XCTAssertEqual(time.indicatorEndAngle, 360)
+        XCTAssertEqual(time.indicatorStartAngle, 0.0)
+        XCTAssertEqual(time.indicatorEndAngle, 360.0)
         XCTAssertEqual(time.animationDuration, 0.3)
         XCTAssertEqual(time.indicatorLineCap, .round)
-        XCTAssertEqual(time.timeColor, .clear)
+        XCTAssertEqual(time.color, .clear)
         XCTAssertEqual(time.timeBackgroundColor, .clear)
         XCTAssertEqual(time.indicatorColor, .clear)
         XCTAssertEqual(time.indicatorWidth, 8)
@@ -34,27 +35,29 @@ class MUTimeTests: XCTestCase {
         XCTAssertNotNil(time)
 
         time.backgroundColor = .white
+        time.font = .systemFont(ofSize: 15)
         time.indicatorMinValue = 0
         time.indicatorMaxValue = 120
         time.indicatorStartAngle = 270
         time.indicatorEndAngle = 90
         time.animationDuration = 0.75
         time.indicatorLineCap = .round
-        time.timeColor = .black
+        time.color = .black
         time.timeBackgroundColor = .orange
         time.indicatorColor = .green
         time.indicatorWidth = 2
         time.format = "%.f%%"
         time.showValue = false
 
+        XCTAssertEqual(time.font, .systemFont(ofSize: 15))
         XCTAssertEqual(time.backgroundColor, .white)
         XCTAssertEqual(time.indicatorMinValue, 0)
         XCTAssertEqual(time.indicatorMaxValue, 120)
-        XCTAssertEqual(time.indicatorStartAngle, 270)
-        XCTAssertEqual(time.indicatorEndAngle, 90)
+        XCTAssertEqual(time.indicatorStartAngle, 270.0)
+        XCTAssertEqual(time.indicatorEndAngle, 90.0)
         XCTAssertEqual(time.animationDuration, 0.75)
         XCTAssertEqual(time.indicatorLineCap, .round)
-        XCTAssertEqual(time.timeColor, .black)
+        XCTAssertEqual(time.color, .black)
         XCTAssertEqual(time.timeBackgroundColor, .orange)
         XCTAssertEqual(time.indicatorColor, .green)
         XCTAssertEqual(time.indicatorWidth, 2)
