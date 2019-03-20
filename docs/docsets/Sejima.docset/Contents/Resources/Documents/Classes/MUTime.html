@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MUNumberSlider Class Reference</title>
+    <title>MUTime Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/MUNumberSlider" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/MUTime" class="dashAnchor"></a>
 
-    <a title="MUNumberSlider Class Reference"></a>
+    <a title="MUTime Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Sejima Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MUNumberSlider Class Reference
+      MUTime Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -315,15 +315,15 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>MUNumberSlider</h1>
+            <h1>MUTime</h1>
               <div class="declaration">
                 <div class="language">
                   <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
-<span class="kd">open</span> <span class="kd">class</span> <span class="kt">MUNumberSlider</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MUNibView.html">MUNibView</a></span></code></pre>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">MUTime</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MUNibView.html">MUNibView</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Class that provide a custom number slider.</p>
+            <p>Class that provide a circular indicator to represent time with customizable options.</p>
 
           </div>
         </section>
@@ -331,20 +331,13 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Public%20variables"></a>
-                <a name="//apple_ref/swift/Section/Public variables" class="dashAnchor"></a>
-                <a href="#/Public%20variables">
-                  <h3 class="section-name">Public variables</h3>
-                </a>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima14MUNumberSliderC12currentIndexSivp"></a>
-                    <a name="//apple_ref/swift/Property/currentIndex" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima14MUNumberSliderC12currentIndexSivp">currentIndex</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)timeFont"></a>
+                    <a name="//apple_ref/swift/Property/timeFont" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)timeFont">timeFont</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -352,14 +345,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the current item index.</p>
+                        <p>The progress value text font.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">currentIndex</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">timeFont</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -369,9 +363,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima14MUNumberSliderC12currentValueSivp"></a>
-                    <a name="//apple_ref/swift/Property/currentValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima14MUNumberSliderC12currentValueSivp">currentValue</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)timeColor"></a>
+                    <a name="//apple_ref/swift/Property/timeColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)timeColor">timeColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -379,14 +373,99 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The current item value.</p>
+                        <p>The progress value text color.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">currentValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">timeColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)timeBackgroundColor"></a>
+                    <a name="//apple_ref/swift/Property/timeBackgroundColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)timeBackgroundColor">timeBackgroundColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The progress value text background color.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">timeBackgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)format"></a>
+                    <a name="//apple_ref/swift/Property/format" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)format">format</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the progress text value format.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">format</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)showValue"></a>
+                    <a name="//apple_ref/swift/Property/showValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)showValue">showValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Show / Hide the progress text value. Shown by default.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">showValue</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -397,19 +476,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Public%20UIAppearence%20variables"></a>
-                <a name="//apple_ref/swift/Section/Public UIAppearence variables" class="dashAnchor"></a>
-                <a href="#/Public%20UIAppearence%20variables">
-                  <h3 class="section-name">Public UIAppearence variables</h3>
+                <a name="/Indicator"></a>
+                <a name="//apple_ref/swift/Section/Indicator" class="dashAnchor"></a>
+                <a href="#/Indicator">
+                  <h3 class="section-name">Indicator</h3>
                 </a>
               </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)selectedColor"></a>
-                    <a name="//apple_ref/swift/Property/selectedColor" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)selectedColor">selectedColor</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorColor"></a>
+                    <a name="//apple_ref/swift/Property/indicatorColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorColor">indicatorColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -417,7 +496,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
+                        <p>Define the progress line color.</p>
 
                       </div>
                       <div class="declaration">
@@ -425,7 +504,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">selectedColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -435,9 +514,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)unselectedColor"></a>
-                    <a name="//apple_ref/swift/Property/unselectedColor" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)unselectedColor">unselectedColor</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorStartAngle"></a>
+                    <a name="//apple_ref/swift/Property/indicatorStartAngle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorStartAngle">indicatorStartAngle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -445,7 +524,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
+                        <p>Specifies the start angle for the progress line path.</p>
 
                       </div>
                       <div class="declaration">
@@ -453,7 +532,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">unselectedColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorStartAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -463,9 +542,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)font"></a>
-                    <a name="//apple_ref/swift/Property/font" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)font">font</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorEndAngle"></a>
+                    <a name="//apple_ref/swift/Property/indicatorEndAngle" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorEndAngle">indicatorEndAngle</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -473,7 +552,147 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
+                        <p>Specifies the end angle for the progress line path.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorEndAngle</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorWidth"></a>
+                    <a name="//apple_ref/swift/Property/indicatorWidth" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorWidth">indicatorWidth</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Define the progress line width.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorMinValue"></a>
+                    <a name="//apple_ref/swift/Property/indicatorMinValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorMinValue">indicatorMinValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the minimum progress value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorMinValue</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorMaxValue"></a>
+                    <a name="//apple_ref/swift/Property/indicatorMaxValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorMaxValue">indicatorMaxValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the maximum progress value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorMaxValue</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)progressValue"></a>
+                    <a name="//apple_ref/swift/Property/progressValue" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)progressValue">progressValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the progress value from 0.0 up to 1.0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">progressValue</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)indicatorLineCap"></a>
+                    <a name="//apple_ref/swift/Property/indicatorLineCap" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)indicatorLineCap">indicatorLineCap</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the progress line cap style for the shape’s path.</p>
 
                       </div>
                       <div class="declaration">
@@ -481,175 +700,7 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">font</span><span class="p">:</span> <span class="kt">UIFont</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)cellWidth"></a>
-                    <a name="//apple_ref/swift/Property/cellWidth" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)cellWidth">cellWidth</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">cellWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)heightMultiplier"></a>
-                    <a name="//apple_ref/swift/Property/heightMultiplier" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)heightMultiplier">heightMultiplier</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">heightMultiplier</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)image"></a>
-                    <a name="//apple_ref/swift/Property/image" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)image">image</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)minValue"></a>
-                    <a name="//apple_ref/swift/Property/minValue" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)minValue">minValue</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">minValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)maxValue"></a>
-                    <a name="//apple_ref/swift/Property/maxValue" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)maxValue">maxValue</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the inset of the background and chart</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">maxValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(py)selectedScaleValue"></a>
-                    <a name="//apple_ref/swift/Property/selectedScaleValue" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(py)selectedScaleValue">selectedScaleValue</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Define the scale for current collection item</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">selectedScaleValue</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">indicatorLineCap</span><span class="p">:</span> <span class="kt">CAShapeLayerLineCap</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -660,19 +711,126 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Life%20cycle%20functions"></a>
-                <a name="//apple_ref/swift/Section/Life cycle functions" class="dashAnchor"></a>
-                <a href="#/Life%20cycle%20functions">
-                  <h3 class="section-name">Life cycle functions</h3>
+                <a name="/Animation"></a>
+                <a name="//apple_ref/swift/Section/Animation" class="dashAnchor"></a>
+                <a href="#/Animation">
+                  <h3 class="section-name">Animation</h3>
                 </a>
               </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima14MUNumberSliderC8xibSetupyyF"></a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)animationDuration"></a>
+                    <a name="//apple_ref/swift/Property/animationDuration" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)animationDuration">animationDuration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies the animation duration for the progress line to go from current progress value up to target value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">animationDuration</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20functions"></a>
+                <a name="//apple_ref/swift/Section/Public functions" class="dashAnchor"></a>
+                <a href="#/Public%20functions">
+                  <h3 class="section-name">Public functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sejima6MUTimeC5resetyyF"></a>
+                    <a name="//apple_ref/swift/Method/reset()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima6MUTimeC5resetyyF">reset()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resets the progress back to 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reset</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sejima6MUTimeC3set5value8animated8progressy12CoreGraphics7CGFloatV_SbyAJcSgtF"></a>
+                    <a name="//apple_ref/swift/Method/set(value:animated:progress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima6MUTimeC3set5value8animated8progressy12CoreGraphics7CGFloatV_SbyAJcSgtF">set(value:animated:progress:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the progress value with optional animation. Default is animated true.</p>
+
+<p>Current progress value can be observed using the progress closure.
+*</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="nv">value</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">progress</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">current</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Private%20functions"></a>
+                <a name="//apple_ref/swift/Section/Private functions" class="dashAnchor"></a>
+                <a href="#/Private%20functions">
+                  <h3 class="section-name">Private functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sejima6MUTimeC8xibSetupyyF"></a>
                     <a name="//apple_ref/swift/Method/xibSetup()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima14MUNumberSliderC8xibSetupyyF">xibSetup()</a>
+                    <a class="token" href="#/s:6Sejima6MUTimeC8xibSetupyyF">xibSetup()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -697,9 +855,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUNumberSlider(im)layoutSubviews"></a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(im)layoutSubviews"></a>
                     <a name="//apple_ref/swift/Method/layoutSubviews()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUNumberSlider(im)layoutSubviews">layoutSubviews()</a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(im)layoutSubviews">layoutSubviews()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -721,23 +879,12 @@
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UICollectionView%20DataSource"></a>
-                <a name="//apple_ref/swift/Section/UICollectionView DataSource" class="dashAnchor"></a>
-                <a href="#/UICollectionView%20DataSource">
-                  <h3 class="section-name">UICollectionView DataSource</h3>
-                </a>
-              </div>
-              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Sejima@objc(cs)MUNumberSlider(im)collectionView:numberOfItemsInSection:"></a>
-                    <a name="//apple_ref/swift/Method/collectionView(_:numberOfItemsInSection:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Sejima@objc(cs)MUNumberSlider(im)collectionView:numberOfItemsInSection:">collectionView(_:numberOfItemsInSection:)</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(py)intrinsicContentSize"></a>
+                    <a name="//apple_ref/swift/Property/intrinsicContentSize" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(py)intrinsicContentSize">intrinsicContentSize</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -745,14 +892,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Asks your data source object for the cell that corresponds to the specified item in the collection view.</p>
+                        <p>The natural size for the receiving view, considering only properties of the view itself.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span> <span class="n">numberOfItemsInSection</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="k">var</span> <span class="nv">intrinsicContentSize</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -762,9 +909,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@CM@Sejima@objc(cs)MUNumberSlider(im)collectionView:cellForItemAtIndexPath:"></a>
-                    <a name="//apple_ref/swift/Method/collectionView(_:cellForItemAt:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Sejima@objc(cs)MUNumberSlider(im)collectionView:cellForItemAtIndexPath:">collectionView(_:cellForItemAt:)</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTime(im)dealloc"></a>
+                    <a name="//apple_ref/swift/Method/deinit" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTime(im)dealloc">deinit</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -772,82 +919,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Asks your data source object for the cell that corresponds to the specified item in the collection view.</p>
+                        <p>Deinit the time progress.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">collectionView</span><span class="p">(</span><span class="n">_</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">,</span>
-                           <span class="n">cellForItemAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UICollectionViewCell</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/UICollectionView%20Delegate"></a>
-                <a name="//apple_ref/swift/Section/UICollectionView Delegate" class="dashAnchor"></a>
-                <a href="#/UICollectionView%20Delegate">
-                  <h3 class="section-name">UICollectionView Delegate</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Sejima@objc(cs)MUNumberSlider(im)scrollViewWillEndDragging:withVelocity:targetContentOffset:"></a>
-                    <a name="//apple_ref/swift/Method/scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Sejima@objc(cs)MUNumberSlider(im)scrollViewWillEndDragging:withVelocity:targetContentOffset:">scrollViewWillEndDragging(_:withVelocity:targetContentOffset:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Tells the delegate when the user finishes scrolling the content.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">scrollViewWillEndDragging</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">,</span>
-                                      <span class="n">withVelocity</span> <span class="nv">velocity</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span>
-                                      <span class="nv">targetContentOffset</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">CGPoint</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@CM@Sejima@objc(cs)MUNumberSlider(im)scrollViewDidScroll:"></a>
-                    <a name="//apple_ref/swift/Method/scrollViewDidScroll(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@CM@Sejima@objc(cs)MUNumberSlider(im)scrollViewDidScroll:">scrollViewDidScroll(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Tells the delegate when the user scrolls the content view within the receiver.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">scrollViewDidScroll</span><span class="p">(</span><span class="n">_</span> <span class="nv">scrollView</span><span class="p">:</span> <span class="kt">UIScrollView</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">deinit</span></code></pre>
 
                         </div>
                       </div>
