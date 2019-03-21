@@ -81,7 +81,7 @@ open class MUIndicator: MUNibView {
     }
 
     /// Specifies the indicator's value format.
-    @IBInspectable open var format: String = "%.f" {
+    @IBInspectable open dynamic var format: String = "%.f" {
         didSet {
             label.format = format
         }

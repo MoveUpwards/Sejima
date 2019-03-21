@@ -67,7 +67,7 @@ open class MUProgress: MUNibView {
     // MARK: - Progress line
 
     /// Specifies the progress thickness.
-    @IBInspectable open var thickness: CGFloat = 3.0 {
+    @IBInspectable open dynamic var thickness: CGFloat = 3.0 {
         didSet {
             progressHeight.constant = thickness
         }
@@ -91,14 +91,14 @@ open class MUProgress: MUNibView {
 
     /// Specifies the progress value multiplier.
     /// A value of 0.1 with multiplier of 100 will show 10 in the progress value.
-    @IBInspectable open var indicatorMultiplier: CGFloat = 0.0 {
+    @IBInspectable open dynamic var indicatorMultiplier: CGFloat = 0.0 {
         didSet {
             updateIndicatorLabelValue(with: value)
         }
     }
 
     /// Specifies the indicator's value format.
-    @IBInspectable open var indicatorFormat: String = "%.f" {
+    @IBInspectable open dynamic var indicatorFormat: String = "%.f" {
         didSet {
             indicator.format = indicatorFormat
         }

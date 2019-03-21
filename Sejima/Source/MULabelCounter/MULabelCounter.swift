@@ -78,7 +78,7 @@ open class MULabelCounter: MUNibView {
     }
 
     /// Specifies the output format of the label value.
-    @IBInspectable open var format: String = "%.f" {
+    @IBInspectable open dynamic var format: String = "%.f" {
         didSet {
             setTextValue(currentValue)
         }
