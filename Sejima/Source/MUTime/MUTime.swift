@@ -137,7 +137,7 @@ open class MUTime: MUNibView {
 
      Current progress value can be observed using the progress closure.
      **/
-    public func set(value: CGFloat, animated: Bool = false, progress: ((_ current: CGFloat) -> Void)? = nil) {
+    public func set(value: CGFloat, animated: Bool = true, progress: ((_ current: CGFloat) -> Void)? = nil) {
         progressObserver = progress
         progressPathLayer.removeAllAnimations()
         progressValue = value
@@ -209,10 +209,10 @@ open class MUTime: MUNibView {
 
     private func animateCircle() {
         progressPathLayer.removeAllAnimations()
-        setupDisplayLink()
+        displayLink?.isPaused = false
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         CATransaction.setCompletionBlock({ [weak self] in
-            self?.removeDisplayLink()
+            self?.displayLink?.isPaused = true
             guard let indicatorProgress = self?.progressValue else {
                 return
             }
@@ -243,6 +243,7 @@ open class MUTime: MUNibView {
     open override func xibSetup() {
         super.xibSetup()
 
+        setupDisplayLink()
         progressLayer()
 
         timeLabel.textAlignment = .center
@@ -252,7 +253,7 @@ open class MUTime: MUNibView {
     override open func layoutSubviews() {
         super.layoutSubviews()
 
-        timeBackground.layer.cornerRadius = timeBackground.bounds.size.width * 0.5
+        timeBackground.layer.cornerRadius = timeBackground.bounds.width * 0.5
         progressPathLayer.frame = CGRect(x: indicatorWidth * 0.5,
                                          y: indicatorWidth * 0.5,
                                          width: bounds.width - indicatorWidth,
@@ -261,7 +262,7 @@ open class MUTime: MUNibView {
 
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return CGSize(width: 50, height: 50)
+        return CGSize(width: 40, height: 40)
     }
 
     /// Deinit the time progress.
