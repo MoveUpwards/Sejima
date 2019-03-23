@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>UIView Extension Reference</title>
+    <title>MUTabBar Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Extension/UIView" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Class/MUTabBar" class="dashAnchor"></a>
 
-    <a title="UIView Extension Reference"></a>
+    <a title="MUTabBar Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Sejima Reference</a>
       <img class="carat" src="../img/carat.png" />
-      UIView Extension Reference
+      MUTabBar Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -318,27 +318,36 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>UIView</h1>
+            <h1>MUTabBar</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">UIView</span> <span class="p">:</span> <span class="kt">UIResponder</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">UIAppearance</span><span class="p">,</span> <span class="kt">UIAppearanceContainer</span><span class="p">,</span> <span class="kt">UIDynamicItem</span><span class="p">,</span> <span class="kt">UITraitEnvironment</span><span class="p">,</span> <span class="kt">UICoordinateSpace</span><span class="p">,</span> <span class="kt">UIFocusItem</span><span class="p">,</span> <span class="kt">UIFocusItemContainer</span><span class="p">,</span> <span class="kt">CALayerDelegate</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="kt">MUTabBar</span> <span class="p">:</span> <span class="kt">UITabBar</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>Class that act like UITabBar with more customizable options.</p>
+
           </div>
         </section>
 
         <section class="section">
           <div class="section-content">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Background"></a>
+                <a name="//apple_ref/swift/Section/Background" class="dashAnchor"></a>
+                <a href="#/Background">
+                  <h3 class="section-name">Background</h3>
+                </a>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC6SejimaE20addAutolayoutSubview_3top6height7leading5widthyAB_12CoreGraphics7CGFloatVSgA3LtF"></a>
-                    <a name="//apple_ref/swift/Method/addAutolayoutSubview(_:top:height:leading:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC6SejimaE20addAutolayoutSubview_3top6height7leading5widthyAB_12CoreGraphics7CGFloatVSgA3LtF">addAutolayoutSubview(_:top:height:leading:width:)</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(py)backgroundColor"></a>
+                    <a name="//apple_ref/swift/Property/backgroundColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(py)backgroundColor">backgroundColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -346,19 +355,53 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Adds a view to the end of the receiver’s list of subviews
-and then apply autolayout contraints to fit the current view.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">addAutolayoutSubview</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span>
-                                   <span class="nv">top</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                   <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-                                   <span class="nv">leading</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                   <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">override</span> <span class="k">var</span> <span class="nv">backgroundColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Color"></a>
+                <a name="//apple_ref/swift/Section/Color" class="dashAnchor"></a>
+                <a href="#/Color">
+                  <h3 class="section-name">Color</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(py)selectedColor"></a>
+                    <a name="//apple_ref/swift/Property/selectedColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(py)selectedColor">selectedColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Describes the MUTabBar&rsquo;s selected color while it shows</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">selectedColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -368,9 +411,9 @@ and then apply autolayout contraints to fit the current view.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC6SejimaE23insertAutolayoutSubview_05belowE03top6height7leading5widthyAB_AB12CoreGraphics7CGFloatVSgA3MtF"></a>
-                    <a name="//apple_ref/swift/Method/insertAutolayoutSubview(_:belowSubview:top:height:leading:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC6SejimaE23insertAutolayoutSubview_05belowE03top6height7leading5widthyAB_AB12CoreGraphics7CGFloatVSgA3MtF">insertAutolayoutSubview(_:belowSubview:top:height:leading:width:)</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(py)unselectedColor"></a>
+                    <a name="//apple_ref/swift/Property/unselectedColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(py)unselectedColor">unselectedColor</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -378,20 +421,54 @@ and then apply autolayout contraints to fit the current view.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Inserts a view below another view in the view hierarchy
-and then apply autolayout contraints to fit the current view.</p>
+                        <p>Describes the MUTabBar&rsquo;s unselected color while it shows</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">insertAutolayoutSubview</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span>
-                                      <span class="n">belowSubview</span> <span class="nv">siblingSubview</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span>
-                                      <span class="nv">top</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                      <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-                                      <span class="nv">leading</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                      <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">unselectedColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Separator"></a>
+                <a name="//apple_ref/swift/Section/Separator" class="dashAnchor"></a>
+                <a href="#/Separator">
+                  <h3 class="section-name">Separator</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(py)separatorColor"></a>
+                    <a name="//apple_ref/swift/Property/separatorColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(py)separatorColor">separatorColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Describes the MUTabBar&rsquo;s separator color while it shows</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">separatorColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -401,9 +478,9 @@ and then apply autolayout contraints to fit the current view.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So6UIViewC6SejimaE23insertAutolayoutSubview_05aboveE03top6height7leading5widthyAB_AB12CoreGraphics7CGFloatVSgA3MtF"></a>
-                    <a name="//apple_ref/swift/Method/insertAutolayoutSubview(_:aboveSubview:top:height:leading:width:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So6UIViewC6SejimaE23insertAutolayoutSubview_05aboveE03top6height7leading5widthyAB_AB12CoreGraphics7CGFloatVSgA3MtF">insertAutolayoutSubview(_:aboveSubview:top:height:leading:width:)</a>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(py)separatorHeight"></a>
+                    <a name="//apple_ref/swift/Property/separatorHeight" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(py)separatorHeight">separatorHeight</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -411,20 +488,145 @@ and then apply autolayout contraints to fit the current view.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Inserts a view above another view in the view hierarchy
-and then apply autolayout contraints to fit the current view.</p>
+                        <p>Describes the MUTabBar&rsquo;s separator height while it shows</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">insertAutolayoutSubview</span><span class="p">(</span><span class="n">_</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span>
-                                      <span class="n">aboveSubview</span> <span class="nv">siblingSubview</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span>
-                                      <span class="nv">top</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                      <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
-                                      <span class="nv">leading</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
-                                      <span class="nv">width</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">?</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
+<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">separatorHeight</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20functions"></a>
+                <a name="//apple_ref/swift/Section/Public functions" class="dashAnchor"></a>
+                <a href="#/Public%20functions">
+                  <h3 class="section-name">Public functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:6Sejima8MUTabBarC6select2atySi_tF"></a>
+                    <a name="//apple_ref/swift/Method/select(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:6Sejima8MUTabBarC6select2atySi_tF">select(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Select item at index (if this index is valid)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">select</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Private%20functions"></a>
+                <a name="//apple_ref/swift/Section/Private functions" class="dashAnchor"></a>
+                <a href="#/Private%20functions">
+                  <h3 class="section-name">Private functions</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(im)initWithFrame:"></a>
+                    <a name="//apple_ref/swift/Method/init(frame:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(im)initWithFrame:">init(frame:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes and returns a newly allocated view object with the specified frame rectangle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(im)initWithCoder:"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(im)initWithCoder:">init(coder:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns an object initialized from data in a given unarchiver.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@Sejima@objc(cs)MUTabBar(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUTabBar(im)init">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes and returns a newly allocated view object with the specified frame rectangle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="n">convenience</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
