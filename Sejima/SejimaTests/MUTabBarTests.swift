@@ -16,7 +16,7 @@ class MUTabBarTests: XCTestCase {
         XCTAssertNotNil(tabBar)
 
         XCTAssertEqual(tabBar.selectedColor, .white)
-        XCTAssertEqual(tabBar.unselectedColor, .white)
+        XCTAssertNil(tabBar.unselectedColor)
         XCTAssertEqual(tabBar.separatorColor, .white)
         XCTAssertEqual(tabBar.separatorHeight, 1)
     }
