@@ -18,11 +18,8 @@ let tabBar = MUTabBar()
 tabBar.backgroundColor = .orange
 tabBar.selectedColor = UIColor(red: 0.80, green: 0.61, blue: 0.04, alpha: 1)
 tabBar.unselectedColor = UIColor(red: 0.86, green: 0.89, blue: 0.92, alpha: 0.5)
-//tabBar.showText = false
 tabBar.separatorColor = UIColor(red: 0.86, green: 0.89, blue: 0.92, alpha: 0.5)
 tabBar.separatorHeight = 4.0
-
-//tabBar.set(items: items)
 tabBar.items = items
 tabBar.select(at: 0)
 

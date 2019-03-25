@@ -1,6 +1,6 @@
 //
 //  MUTabBar.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Damien Noël Dubuisson on 06/11/2018.
 //  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
@@ -18,6 +18,7 @@ open class MUTabBar: UITabBar {
 
     // MARK: - Background
 
+    /// Describes the MUTabBar's background color
     open override var backgroundColor: UIColor? {
         didSet {
             backgroundView.backgroundColor = backgroundColor
@@ -34,11 +35,13 @@ open class MUTabBar: UITabBar {
     }
 
     /// Describes the MUTabBar's unselected color while it shows
-    @IBInspectable open dynamic var unselectedColor: UIColor = .white {
-        didSet {
-            if #available(iOS 10.0, *) {
-                unselectedItemTintColor = unselectedColor
-            }
+    @available(iOS 10.0, *)
+    @IBInspectable open dynamic var unselectedColor: UIColor? {
+        get {
+            return unselectedItemTintColor
+        }
+        set {
+            unselectedItemTintColor = newValue
         }
     }
 
