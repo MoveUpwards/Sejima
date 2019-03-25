@@ -18,6 +18,7 @@ import UIKit
     func willDisplay(picker: MUDateSlider, cell: MUDateSliderCell, date: Date)
 }
 
+/// Class that act like an horizontal slider with date components.
 @IBDesignable
 public class MUDateSlider: MUNibView {
     @IBOutlet private var dayCollectionView: UICollectionView!
