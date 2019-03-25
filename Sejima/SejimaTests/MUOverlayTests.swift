@@ -15,10 +15,10 @@ class MUOverlayTests: XCTestCase {
         let overlay = MUOverlay()
         XCTAssertNotNil(overlay)
 
-        XCTAssertEqual(overlay.style, .round)
-        XCTAssertEqual(overlay.borderWidth, 2)
+        XCTAssertEqual(overlay.style, .square)
+        XCTAssertEqual(overlay.borderWidth, 0.0)
         XCTAssertEqual(overlay.radius, 0)
-        XCTAssertEqual(overlay.borderColor, .white)
+        XCTAssertEqual(overlay.borderColor, .black)
     }
 
     func testCustomValues() {
@@ -26,27 +26,30 @@ class MUOverlayTests: XCTestCase {
         XCTAssertNotNil(overlay)
 
         overlay.style = .custom(8)
+        XCTAssertEqual(overlay.style, .custom(8))
+
         overlay.backgroundColor = .red
         overlay.borderWidth = 10
-        overlay.radius = 4
         overlay.borderColor = .orange
 
-        XCTAssertEqual(overlay.style, .custom(4))
         XCTAssertEqual(overlay.backgroundColor, .red)
         XCTAssertEqual(overlay.borderWidth, 10)
-        XCTAssertEqual(overlay.radius, 4)
         XCTAssertEqual(overlay.borderColor, .orange)
+
+        overlay.radius = 4
+        XCTAssertEqual(overlay.style, .custom(4))
+        XCTAssertEqual(overlay.radius, 4)
     }
 
     func testOverlayTypeInt() {
         let overlay = MUOverlay()
         XCTAssertNotNil(overlay)
 
-        XCTAssertEqual(overlay.styleInt, 1)
-        XCTAssertEqual(overlay.style, .round)
-
-        overlay.styleInt = 0
+        XCTAssertEqual(overlay.styleInt, 0)
         XCTAssertEqual(overlay.style, .square)
+
+        overlay.styleInt = 1
+        XCTAssertEqual(overlay.style, .round)
 
         overlay.styleInt = 2
         XCTAssertEqual(overlay.style, .custom(0))

@@ -14,28 +14,28 @@ open class MUOverlay: MUNibView {
     @IBOutlet private var overlay: UIView!
 
     /// Describes the Overlay's border width appearance while it shows
-    @IBInspectable open dynamic var borderWidth: CGFloat = 2 {
+    @IBInspectable open dynamic var borderWidth: CGFloat = 0.0 {
         didSet {
             overlay.layer.borderWidth = borderWidth
         }
     }
 
     /// Describes the Overlay's border color appearance while it shows
-    @IBInspectable open dynamic var borderColor: UIColor = .white {
+    @IBInspectable open dynamic var borderColor: UIColor = .black {
         didSet {
             overlay.layer.borderColor = borderColor.cgColor
         }
     }
 
     /// The overlay's style.
-    open var style: MUCornerStyle = .round {
+    open var style: MUCornerStyle = .square {
         didSet {
             updateStyle()
         }
     }
 
     /// Optional: The IBInspectable version of the overlay's style.
-    @IBInspectable open dynamic var styleInt: Int = 1 {
+    @IBInspectable open dynamic var styleInt: Int = 0 {
         didSet {
             switch styleInt {
             case 0:
@@ -81,9 +81,6 @@ open class MUOverlay: MUNibView {
 
         layer.masksToBounds = true
         overlay.layer.masksToBounds = true
-        overlay.layer.borderColor = borderColor.cgColor
-        overlay.layer.borderWidth = borderWidth
-        overlay.backgroundColor = backgroundColor
     }
 
     /// Lays out subviews.
