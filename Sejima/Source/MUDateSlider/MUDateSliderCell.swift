@@ -2,8 +2,10 @@
 //  MUDateSliderCell.swift
 //  Sejima
 //
-//  Created by Jess Chandler on 10/14/17.
-//  Copyright © 2017 ichigo. All rights reserved.
+//  Created by Loïc GRIFFIE on 31/10/2018.
+//  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
+//
+//  Based on: https://github.com/itsmeichigo/DateTimePicker
 //
 
 import UIKit
