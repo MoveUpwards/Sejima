@@ -102,7 +102,7 @@ open class MUTabBar: UITabBar {
         sendSubviewToBack(backgroundView)
     }
 
-    // MARK: - Private functions
+    // MARK: - Life cycle functions
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     public override init(frame: CGRect) {
