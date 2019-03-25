@@ -20,5 +20,6 @@
         <page name='MUOptionPicker'/>
         <page name='MUNumberSlider'/>
         <page name='MUTime'/>
+        <page name='MUTabBar'/>
     </pages>
 </playground>
