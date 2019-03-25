@@ -1,6 +1,33 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/lgriffie/Projects/Surfin/Sejima/Sejima/Source/MUDateSlider/MUDateSlider.swift",
+      "line": null,
+      "symbol": "MUDateSlider",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lgriffie/Projects/Surfin/Sejima/Sejima/Source/MUDateSlider/MUDateSlider.swift",
+      "line": null,
+      "symbol": "MUDateSlider",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lgriffie/Projects/Surfin/Sejima/Sejima/Source/MUDateSlider/MUDateSlider.swift",
+      "line": 20,
+      "symbol": "MUDateSlider",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lgriffie/Projects/Surfin/Sejima/Sejima/Source/MUDateSlider/MUDateSlider.swift",
+      "line": 304,
+      "symbol": "MUDateSlider.collectionView(_:cellForItemAt:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/lgriffie/Projects/Surfin/Sejima"
 }

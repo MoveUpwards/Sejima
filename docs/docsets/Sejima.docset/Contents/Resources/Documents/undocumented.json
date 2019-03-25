@@ -1,12 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/lgriffie/Projects/Surfin/Sejima/Sejima/Source/MUTabBar/MUTabBar.swift",
-      "line": 21,
-      "symbol": "MUTabBar.backgroundColor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/lgriffie/Projects/Surfin/Sejima"
 }
