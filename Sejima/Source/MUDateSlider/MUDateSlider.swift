@@ -2,8 +2,10 @@
 //  MUDateSlider.swift
 //  Sejima
 //
-//  Created by Huong Do on 9/16/16.
-//  Copyright © 2016 ichigo. All rights reserved.
+//  Created by Loïc GRIFFIE on 31/10/2018.
+//  Copyright © 2018 Loïc GRIFFIE. All rights reserved.
+//
+//  Based on: https://github.com/itsmeichigo/DateTimePicker
 //
 
 import UIKit
