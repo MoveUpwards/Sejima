@@ -21,5 +21,6 @@
         <page name='MUNumberSlider'/>
         <page name='MUTime'/>
         <page name='MUOverlay'/>
+        <page name='MUTabBar'/>
     </pages>
 </playground>

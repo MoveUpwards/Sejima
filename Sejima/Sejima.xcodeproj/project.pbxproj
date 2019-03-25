@@ -97,6 +97,8 @@
 		F35341F622463DE400F878CB /* MUOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35341F422463DE400F878CB /* MUOverlay.swift */; };
 		F35341F722463DE400F878CB /* MUOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = F35341F522463DE400F878CB /* MUOverlay.xib */; };
 		F35341F92246404400F878CB /* MUOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35341F82246404400F878CB /* MUOverlayTests.swift */; };
+		F35341FF224644F400F878CB /* MUTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35341FB2246449B00F878CB /* MUTabBar.swift */; };
+		F35342002246457D00F878CB /* MUTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35341FD224644D400F878CB /* MUTabBarTests.swift */; };
 		F35A3DA6223035A9009341D2 /* MUProportionalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA5223035A9009341D2 /* MUProportionalView.swift */; };
 		F35A3DAA22303EF6009341D2 /* MUCornerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */; };
 		F35A3DB222310A90009341D2 /* MUSubRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3DAE22310A90009341D2 /* MUSubRangeView.swift */; };
@@ -237,6 +239,8 @@
 		F35341F422463DE400F878CB /* MUOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUOverlay.swift; sourceTree = "<group>"; };
 		F35341F522463DE400F878CB /* MUOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUOverlay.xib; sourceTree = "<group>"; };
 		F35341F82246404400F878CB /* MUOverlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUOverlayTests.swift; sourceTree = "<group>"; };
+		F35341FB2246449B00F878CB /* MUTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTabBar.swift; sourceTree = "<group>"; };
+		F35341FD224644D400F878CB /* MUTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUTabBarTests.swift; sourceTree = "<group>"; };
 		F35A3DA5223035A9009341D2 /* MUProportionalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUProportionalView.swift; sourceTree = "<group>"; };
 		F35A3DA922303EF5009341D2 /* MUCornerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUCornerStyle.swift; sourceTree = "<group>"; };
 		F35A3DAE22310A90009341D2 /* MUSubRangeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSubRangeView.swift; sourceTree = "<group>"; };
@@ -520,6 +524,14 @@
 			path = MUOverlay;
 			sourceTree = "<group>";
 		};
+		F35341FA2246449B00F878CB /* MUTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F35341FB2246449B00F878CB /* MUTabBar.swift */,
+			);
+			path = MUTabBar;
+			sourceTree = "<group>";
+		};
 		F35A3DAD22310A90009341D2 /* MURangeTrimmer */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +648,7 @@
 				F3B811F222253D380004B830 /* Info.plist */,
 				F3A44D2F22424AC000590460 /* MUTimeTests.swift */,
 				F35341F82246404400F878CB /* MUOverlayTests.swift */,
+				F35341FD224644D400F878CB /* MUTabBarTests.swift */,
 			);
 			path = SejimaTests;
 			sourceTree = "<group>";
@@ -673,6 +686,7 @@
 				F34BD14D223FD7B400793EDE /* MUNumberSlider */,
 				F3A44D2A224232FF00590460 /* MUTime */,
 				F35341F322463DE400F878CB /* MUOverlay */,
+				F35341FA2246449B00F878CB /* MUTabBar */,
 			);
 			path = Source;
 			sourceTree = SOURCE_ROOT;
@@ -899,6 +913,7 @@
 				6D4F2FAE2228396100A0799B /* MUNavigationBar.swift in Sources */,
 				F317FF8D2236CD3A001DBDDD /* MUStat.swift in Sources */,
 				6DDD7E4722365C340033F5F9 /* MUPinCodeCell.swift in Sources */,
+				F35341FF224644F400F878CB /* MUTabBar.swift in Sources */,
 				F317FF982237EECA001DBDDD /* MUCollectionButton.swift in Sources */,
 				F3B377BA2232CA6300F07B11 /* MUMath.swift in Sources */,
 				F34BD15A223FDF0400793EDE /* MUNumberSliderCell.swift in Sources */,
@@ -963,6 +978,7 @@
 				6DFA2BA72237FCB8004F5605 /* MURadarGraphTests.swift in Sources */,
 				F34BD13D223ABAE400793EDE /* MUBasicRangeTests.swift in Sources */,
 				6D4F2FA22226AFD800A0799B /* MUHorizontalPagerTests.swift in Sources */,
+				F35342002246457D00F878CB /* MUTabBarTests.swift in Sources */,
 				6DFA2BAB2237FCB8004F5605 /* MUProportionalBarTests.swift in Sources */,
 				F3B8121822253DC00004B830 /* MUHeaderTests.swift in Sources */,
 				F33D660222345ADB0077D7CD /* MUIndicatorTests.swift in Sources */,
