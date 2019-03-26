@@ -1,19 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUBarGraph/MUBarGraph.swift",
-      "line": 11,
-      "symbol": "MUBarGraph",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUDateSlider/MUDateSlider.swift",
-      "line": 307,
-      "symbol": "MUDateSlider.collectionView(_:cellForItemAt:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }

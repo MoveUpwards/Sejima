@@ -113,17 +113,17 @@ open class MUBarGraph: MUNibView {
     }
 
     ///
-    @IBInspectable open dynamic var bkgLineColor: UIColor = .black {
+    @IBInspectable open dynamic var lineColor: UIColor = .black {
         didSet {
             setNeedsLayout()
         }
     }
 
     ///
-    @IBInspectable open dynamic var bkgLineWidth: CGFloat = 1.0 {
+    @IBInspectable open dynamic var lineWidth: CGFloat = 1.0 {
         didSet {
-            backgroundLeading.constant = bkgLineWidth * 0.5
-            backgroundBottom.constant = bkgLineWidth * 0.5
+            backgroundLeading.constant = lineWidth * 0.5
+            backgroundBottom.constant = lineWidth * 0.5
 
             setNeedsLayout()
         }
@@ -164,8 +164,8 @@ open class MUBarGraph: MUNibView {
             return
         }
 
-        bkgLineColor.setStroke()
-        context.setLineWidth(bkgLineWidth)
+        lineColor.setStroke()
+        context.setLineWidth(lineWidth)
 
         // Add main lines
         context.move(to: .zero)
@@ -253,10 +253,9 @@ open class MUBarGraph: MUNibView {
     }
 
     private func updateValues() {
-        var maxValueWidth = CGFloat(0.0)
-
         barValues.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
+        var maxValueWidth = CGFloat(0.0)
         values.reversed().forEach { value in
             let title = UILabel()
             title.text = value

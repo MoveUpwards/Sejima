@@ -29,8 +29,8 @@ class MUBarGraphTests: XCTestCase {
         XCTAssertEqual(barGraph.titleTopInset, 0.0)
         XCTAssertEqual(barGraph.values, [])
         XCTAssertEqual(barGraph.valueRightInset, 0.0)
-        XCTAssertEqual(barGraph.bkgLineColor, .black)
-        XCTAssertEqual(barGraph.bkgLineWidth, 1.0)
+        XCTAssertEqual(barGraph.lineColor, .black)
+        XCTAssertEqual(barGraph.lineWidth, 1.0)
     }
 
     func testCustomValues() {
@@ -38,6 +38,7 @@ class MUBarGraphTests: XCTestCase {
         XCTAssertNotNil(barGraph)
 
         barGraph.datas = getDatas()
+        barGraph.values = ["0", "300m", "600m", "900m", "1.2km", "1.5km"]
         barGraph.barTopInset = 5.0
         barGraph.barWidth = 2.0
         barGraph.indicatorMultiplier = 100.0
@@ -49,10 +50,11 @@ class MUBarGraphTests: XCTestCase {
         barGraph.titleFont = .systemFont(ofSize: 8, weight: .regular)
         barGraph.titleColor = .red
         barGraph.titleTopInset = 10.0
-        barGraph.values = ["0", "300m", "600m", "900m", "1.2km", "1.5km"]
         barGraph.valueRightInset = 10.0
-        barGraph.bkgLineColor = .lightGray
-        barGraph.bkgLineWidth = 2.0
+        barGraph.lineColor = .lightGray
+        barGraph.lineWidth = 2.0
+
+        barGraph.layoutSubviews()
 
         XCTAssertEqual(barGraph.datas.count, getDatas().count)
         XCTAssertEqual(barGraph.barTopInset, 5.0)
@@ -68,8 +70,8 @@ class MUBarGraphTests: XCTestCase {
         XCTAssertEqual(barGraph.titleTopInset, 10.0)
         XCTAssertEqual(barGraph.values, ["0", "300m", "600m", "900m", "1.2km", "1.5km"])
         XCTAssertEqual(barGraph.valueRightInset, 10.0)
-        XCTAssertEqual(barGraph.bkgLineColor, .lightGray)
-        XCTAssertEqual(barGraph.bkgLineWidth, 2.0)
+        XCTAssertEqual(barGraph.lineColor, .lightGray)
+        XCTAssertEqual(barGraph.lineWidth, 2.0)
     }
 
     private func getDatas() -> [MUBarGraphData] {
