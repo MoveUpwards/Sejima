@@ -23,12 +23,12 @@ extension Date {
     /// - second:       The second to add.
     ///
     /// - Returns: a Date.
-    internal init(year: Int? = nil,
-                  month: Int? = nil,
-                  day: Int? = nil,
-                  hour: Int? = nil,
-                  minute: Int? = nil,
-                  second: Int? = nil) {
+    public init(year: Int? = nil,
+                month: Int? = nil,
+                day: Int? = nil,
+                hour: Int? = nil,
+                minute: Int? = nil,
+                second: Int? = nil) {
         let now = Date()
         let calendar = Calendar.current
 
