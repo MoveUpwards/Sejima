@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Class that define a bar graph.
+@IBDesignable
 open class MUBarGraph: MUNibView {
     @IBOutlet private var background: UIImageView!
     @IBOutlet private var bars: UIStackView!
