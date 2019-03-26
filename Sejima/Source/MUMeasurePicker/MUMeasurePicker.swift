@@ -119,7 +119,7 @@ open class MUMeasurePicker: MUNibView {
     // MARK: - MUMeasureData
 
     /// Set values and units from MUMeasureData.
-    open func set(data: MUMeasureData) {
+    open func set(_ data: MUMeasureData) {
         minValue = data.min
         maxValue = data.max
         units = data.units
