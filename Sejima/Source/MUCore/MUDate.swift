@@ -56,7 +56,7 @@ extension Date {
     ///
     /// - Parameter format: Date format (default is "dd/MM/yyyy").
     /// - Returns: date string.
-    internal func string(withFormat format: String = "dd/MM/yyyy HH:mm") -> String {
+    public func string(withFormat format: String = "dd/MM/yyyy HH:mm") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: self)
@@ -71,7 +71,7 @@ extension Date {
     ///
     /// - Parameter style: DateFormatter style (default is .medium).
     /// - Returns: date string.
-    internal func dateString(ofStyle style: DateFormatter.Style = .medium) -> String {
+    public func dateString(ofStyle style: DateFormatter.Style = .medium) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .none
         dateFormatter.dateStyle = style
@@ -87,7 +87,7 @@ extension Date {
     ///
     /// - Parameter style: DateFormatter style (default is .medium).
     /// - Returns: date and time string.
-    internal func dateTimeString(ofStyle style: DateFormatter.Style = .medium) -> String {
+    public func dateTimeString(ofStyle style: DateFormatter.Style = .medium) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = style
         dateFormatter.dateStyle = style
@@ -103,7 +103,7 @@ extension Date {
     ///
     /// - Parameter style: DateFormatter style (default is .medium).
     /// - Returns: time string.
-    internal func timeString(ofStyle style: DateFormatter.Style = .medium) -> String {
+    public func timeString(ofStyle style: DateFormatter.Style = .medium) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = style
         dateFormatter.dateStyle = .none
@@ -114,7 +114,7 @@ extension Date {
     ///
     /// - Parameter date: date to compate self to.
     /// - Returns: number of years between self and given date.
-    internal func yearsSince(_ date: Date) -> Int {
+    public func yearsSince(_ date: Date) -> Int {
         return Calendar.current.dateComponents([.year], from: date, to: self).year ?? 0
     }
 
@@ -122,7 +122,7 @@ extension Date {
     ///
     ///     Date().isToday -> true
     ///
-    internal var isToday: Bool {
+    public var isToday: Bool {
         return Calendar.current.isDateInToday(self)
     }
 
@@ -130,7 +130,7 @@ extension Date {
     ///
     ///     Date().dayInterval(for: 31-01-2019 15:34:13) -> (start: 31-01-2019 00:00:00, end: 31-01-2019 23:59:59)
     ///
-    internal func dayInterval(for date: Date) -> (start: Date, end: Date) {
+    public func dayInterval(for date: Date) -> (start: Date, end: Date) {
         let start = Calendar.current.startOfDay(for: date)
         guard let end: Date = {
             let components = DateComponents(day: 1, second: -1)
@@ -145,22 +145,22 @@ extension Date {
 
 extension TimeInterval {
     /// TimeInterval for one second.
-    internal static var second: TimeInterval = {
+    public static var second: TimeInterval = {
         return 1
     }()
 
     /// TimeInterval for one minute (in seconds).
-    internal static var minute: TimeInterval = {
+    public static var minute: TimeInterval = {
         return 60 * .second
     }()
 
     /// TimeInterval for one hour (in seconds).
-    internal static var hour: TimeInterval = {
+    public static var hour: TimeInterval = {
         return 60 * .minute
     }()
 
     /// TimeInterval for one day (in seconds).
-    internal static var day: TimeInterval = {
+    public static var day: TimeInterval = {
         return 24 * .hour
     }()
 }

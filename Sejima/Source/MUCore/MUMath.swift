@@ -6,7 +6,15 @@
 //  Copyright © 2019 Loïc GRIFFIE. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public protocol MUFloatingPoint: FloatingPoint {
+    static var epsilon: Self { get }
+
+    static func hypotenuse(_ lhs: Self, _ rhs: Self) -> Self
+
+    init(_ double: Double)
+}
 
 extension FloatingPoint {
     /// Convert current degrees to radians
@@ -19,3 +27,37 @@ extension FloatingPoint {
         return self * Self(180) / .pi
     }
 }
+
+extension CGFloat: MUFloatingPoint {
+    public static let epsilon: CGFloat = 8.85418782e-12
+
+    public static func hypotenuse(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+        return hypot(lhs, rhs)
+    }
+}
+
+extension Double: MUFloatingPoint {
+    public static let epsilon: Double = 8.85418782e-12
+
+    public static func hypotenuse(_ lhs: Double, _ rhs: Double) -> Double {
+        return hypot(lhs, rhs)
+    }
+}
+
+extension Float: MUFloatingPoint {
+    public static let epsilon: Float = 8.85418782e-12
+
+    public static func hypotenuse(_ lhs: Float, _ rhs: Float) -> Float {
+        return hypot(lhs, rhs)
+    }
+}
+
+#if !os(Windows) && (arch(i386) || arch(x86_64))
+extension Float80: MUFloatingPoint {
+    public static let epsilon: Float80 = 8.85418782e-12
+
+    public static func hypotenuse(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+        return hypot(lhs, rhs)
+    }
+}
+#endif

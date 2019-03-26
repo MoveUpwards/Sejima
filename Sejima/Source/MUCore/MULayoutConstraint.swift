@@ -44,7 +44,7 @@ extension NSLayoutConstraint {
      - parameter constraint:     The constraint to change.
      - returns:                  The new constraint if possible.
      */
-    internal static func change(multiplier: CGFloat, for constraint: NSLayoutConstraint) -> NSLayoutConstraint {
+    public static func change(multiplier: CGFloat, for constraint: NSLayoutConstraint) -> NSLayoutConstraint {
         guard let constraintItem = constraint.firstItem else {
             return constraint
         }
