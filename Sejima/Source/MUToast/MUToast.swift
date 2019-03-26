@@ -230,24 +230,6 @@ open class MUToast: MUNibView {
 
     // MARK: - Private functions
 
-    private func areaFrame(of vc: UIViewController) -> CGRect {
-        var areaFrame: CGRect
-        if #available(iOS 11.0, *) {
-            areaFrame = vc.view.safeAreaLayoutGuide.layoutFrame
-        } else {
-            areaFrame = vc.view.frame
-            if !vc.prefersStatusBarHidden {
-                areaFrame.origin.y += 20.0
-                areaFrame.size.height -= 20.0
-            }
-            if let navBarHeight = vc.navigationController?.navigationBar.bounds.height {
-                areaFrame.origin.y += navBarHeight
-                areaFrame.size.height -= navBarHeight
-            }
-        }
-        return areaFrame
-    }
-
     private func updateImageView() {
         imageLeading.constant = icon == nil ? 0.0 : iconLeftPadding
         imageWidth.constant = icon == nil ? 0.0 : iconWidth
@@ -268,7 +250,7 @@ open class MUToast: MUNibView {
     }
 
     private func add(in vc: UIViewController) {
-        let safeArea = areaFrame(of: vc)
+        let safeArea = vc.areaFrame
         let size = expectedSize(in: safeArea.width)
         let origin: CGFloat
 

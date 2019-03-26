@@ -44,4 +44,21 @@ extension UIColor {
                        blue: b + (to.b - b) * f,
                        alpha: a + (to.a - a) * f)
     }
+
+    /**
+     Create a UIColor from hexadecimal value
+
+     - Parameters:
+     - hex: The hexadecimal value.
+
+     ```
+     let darkGrey = UIColor(hex: 0x757575)
+     ```
+     */
+    convenience public init(hex: Int, alpha: Int = 0xff) {
+        self.init(red: CGFloat((hex >> 16) & 0xff) / 255.0,
+                  green: CGFloat((hex >> 8) & 0xff) / 255.0,
+                  blue: CGFloat(hex & 0xff) / 255.0,
+                  alpha: CGFloat(alpha & 0xff) / 255.0)
+    }
 }
