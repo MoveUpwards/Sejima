@@ -24,5 +24,6 @@
         <page name='MUOverlay'/>
         <page name='MUTabBar'/>
         <page name='MUBarGraph'/>
+        <page name='MUDatePicker'/>
     </pages>
 </playground>
