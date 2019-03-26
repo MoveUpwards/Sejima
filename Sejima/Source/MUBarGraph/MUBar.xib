@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUBar" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="bar" destination="d4G-bC-nS9" id="1dc-06-Rwi"/>
+                <outlet property="barHeight" destination="2Qb-83-1oM" id="Q9v-1E-bTO"/>
+                <outlet property="barWidth" destination="jUa-Rj-Cho" id="9VR-Pl-yo6"/>
+                <outlet property="indicator" destination="L4Z-Yu-2GP" id="PRE-sx-toS"/>
+                <outlet property="indicatorBottomSpacing" destination="w6X-Bv-vvk" id="6jS-CM-i5J"/>
+                <outlet property="indicatorWidthConstraint" destination="ZcB-Ry-0TH" id="JWp-mo-2VP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="68" height="304"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxY-bH-hD2">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="304"/>
+                    <connections>
+                        <action selector="didTap:" destination="-1" eventType="touchUpInside" id="SxO-rk-kms"/>
+                    </connections>
+                </button>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4Z-Yu-2GP" customClass="MUIndicator" customModule="Sejima">
+                    <rect key="frame" x="0.0" y="-36" width="68" height="36"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="L4Z-Yu-2GP" secondAttribute="height" multiplier="76:40" id="FgA-JH-ZsK"/>
+                    </constraints>
+                </view>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4G-bC-nS9">
+                    <rect key="frame" x="0.0" y="0.0" width="68" height="304"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="d4G-bC-nS9" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="2Qb-83-1oM"/>
+                <constraint firstItem="OxY-bH-hD2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AtE-vk-nVJ"/>
+                <constraint firstAttribute="bottom" secondItem="OxY-bH-hD2" secondAttribute="bottom" id="C9B-a8-s3A"/>
+                <constraint firstAttribute="bottom" secondItem="d4G-bC-nS9" secondAttribute="bottom" id="Jci-aL-bc6"/>
+                <constraint firstItem="L4Z-Yu-2GP" firstAttribute="centerX" secondItem="d4G-bC-nS9" secondAttribute="centerX" id="Mh1-Yn-edV"/>
+                <constraint firstItem="OxY-bH-hD2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="PYO-PQ-ITg"/>
+                <constraint firstItem="L4Z-Yu-2GP" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="ZcB-Ry-0TH"/>
+                <constraint firstItem="d4G-bC-nS9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="jUa-Rj-Cho"/>
+                <constraint firstAttribute="trailing" secondItem="OxY-bH-hD2" secondAttribute="trailing" id="msx-bB-03q"/>
+                <constraint firstItem="d4G-bC-nS9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pEg-z5-zop"/>
+                <constraint firstItem="d4G-bC-nS9" firstAttribute="top" secondItem="L4Z-Yu-2GP" secondAttribute="bottom" id="w6X-Bv-vvk"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
