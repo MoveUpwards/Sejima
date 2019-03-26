@@ -28,6 +28,7 @@ open class MUMeasurePicker: MUNibView {
     @IBOutlet private var separatorViews: [UIView]!
     @IBOutlet private var separatorHeightConstraints: [NSLayoutConstraint]!
 
+    /// The object that acts as the delegate of the measure picker.
     @IBOutlet public weak var delegate: MUMeasurePickerDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Public UIAppearence variables

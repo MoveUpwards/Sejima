@@ -1,6 +1,103 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 13,
+      "symbol": "MUKeyboard",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 14,
+      "symbol": "MUKeyboard.useKeyboard(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 16,
+      "symbol": "MUKeyboard.keyboardWillShow(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 17,
+      "symbol": "MUKeyboard.keyboardWillHide(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 19,
+      "symbol": "MUKeyboard.keyboardDidShow(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 20,
+      "symbol": "MUKeyboard.keyboardDidHide(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 26,
+      "symbol": "UIViewController.useKeyboard(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 52,
+      "symbol": "UIViewController.keyboardWillShow(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 65,
+      "symbol": "UIViewController.keyboardWillHide(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 74,
+      "symbol": "UIViewController.keyboardDidShow(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "line": 75,
+      "symbol": "UIViewController.keyboardDidHide(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
+      "line": 13,
+      "symbol": "UIViewController.animateBottomSafeArea(_:duration:options:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
+      "line": 25,
+      "symbol": "UIViewController.areaFrame",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUMeasurePicker/MUMeasurePicker.swift",
+      "line": 31,
+      "symbol": "MUMeasurePicker.delegate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/damien/Projects/MoveUpwards/Sejima"
 }

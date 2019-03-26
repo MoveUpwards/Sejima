@@ -10,6 +10,14 @@ import UIKit.UIViewController
 
 extension UIViewController {
     @available(iOS 11.0, *)
+    /**
+     Animate the bottom inset of the safe area.
+
+     - parameter height:     The height to add on the safe area bottom
+     - parameter duration:   The animation's duration
+     - parameter options:    The animation's UIView.AnimationOptions
+     - parameter completion: The optional completion block
+     */
     open func animateBottomSafeArea(_ height: CGFloat,
                                     duration: TimeInterval = 0.25,
                                     options: UIView.AnimationOptions = .curveEaseInOut,
@@ -17,11 +25,12 @@ extension UIViewController {
         UIView.animate(withDuration: duration, delay: 0.0, options: options, animations: { [weak self] in
             self?.additionalSafeAreaInsets.bottom = height
             self?.view.layoutIfNeeded()
-            }, completion: { completed in
-                completion?(completed)
+        }, completion: { completed in
+            completion?(completed)
         })
     }
 
+    /// Return the safeAreaFrame for iOS 9.0+
     internal var areaFrame: CGRect {
         var areaFrame: CGRect
         if #available(iOS 11.0, *) {
