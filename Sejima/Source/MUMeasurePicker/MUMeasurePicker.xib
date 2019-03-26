@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUMeasurePicker" customModule="MUComponent" customModuleProvider="target">
+            <connections>
+                <outlet property="centerConstraint" destination="U5x-zL-QeM" id="j8r-SX-2CZ"/>
+                <outlet property="unitPicker" destination="Ymy-Qc-rmu" id="0Bu-rN-yth"/>
+                <outlet property="valuePicker" destination="j4m-jf-0mZ" id="k59-Kg-2iC"/>
+                <outletCollection property="horizontalConstraints" destination="pTP-LF-VDe" collectionClass="NSMutableArray" id="pse-cS-did"/>
+                <outletCollection property="horizontalConstraints" destination="yAG-tv-sdM" collectionClass="NSMutableArray" id="hqu-Zp-3Kt"/>
+                <outletCollection property="separatorViews" destination="BTM-Yi-Y4l" collectionClass="NSMutableArray" id="WeG-Ym-YhC"/>
+                <outletCollection property="separatorViews" destination="z1u-jn-Tk1" collectionClass="NSMutableArray" id="FEG-EX-q8N"/>
+                <outletCollection property="separatorViews" destination="MaK-SG-SH4" collectionClass="NSMutableArray" id="iJt-mT-uSw"/>
+                <outletCollection property="separatorViews" destination="P7i-yZ-BgG" collectionClass="NSMutableArray" id="oW5-RE-2pC"/>
+                <outletCollection property="separatorHeightConstraints" destination="X9f-VC-jMJ" collectionClass="NSMutableArray" id="X7K-lA-1Tt"/>
+                <outletCollection property="separatorHeightConstraints" destination="Ydy-hO-wnT" collectionClass="NSMutableArray" id="GHd-pz-5wt"/>
+                <outletCollection property="separatorHeightConstraints" destination="Tap-1y-CGI" collectionClass="NSMutableArray" id="6b1-Yx-2zq"/>
+                <outletCollection property="separatorHeightConstraints" destination="hT8-Br-ESe" collectionClass="NSMutableArray" id="Dq6-Me-l7y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="178"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <pickerView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4m-jf-0mZ">
+                    <rect key="frame" x="8" y="0.0" width="175.5" height="178"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="n2B-p8-Ikt"/>
+                        <outlet property="delegate" destination="-1" id="Omt-8s-hgk"/>
+                    </connections>
+                </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BTM-Yi-Y4l">
+                    <rect key="frame" x="8" y="74.5" width="175.5" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="X9f-VC-jMJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1u-jn-Tk1">
+                    <rect key="frame" x="8" y="101.5" width="175.5" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Ydy-hO-wnT"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymy-Qc-rmu">
+                    <rect key="frame" x="191.5" y="0.0" width="175.5" height="178"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="zUR-Bw-zlF"/>
+                        <outlet property="delegate" destination="-1" id="HAB-PA-toM"/>
+                    </connections>
+                </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaK-SG-SH4">
+                    <rect key="frame" x="191.5" y="74.5" width="175.5" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Tap-1y-CGI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P7i-yZ-BgG">
+                    <rect key="frame" x="191.5" y="101.5" width="175.5" height="2"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="hT8-Br-ESe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BTM-Yi-Y4l" firstAttribute="centerY" secondItem="j4m-jf-0mZ" secondAttribute="centerY" multiplier="85:100" id="21S-ui-5kq"/>
+                <constraint firstItem="z1u-jn-Tk1" firstAttribute="width" secondItem="j4m-jf-0mZ" secondAttribute="width" id="3UU-16-PCj"/>
+                <constraint firstItem="BTM-Yi-Y4l" firstAttribute="centerX" secondItem="j4m-jf-0mZ" secondAttribute="centerX" id="75f-Zv-db0"/>
+                <constraint firstItem="P7i-yZ-BgG" firstAttribute="width" secondItem="Ymy-Qc-rmu" secondAttribute="width" id="8JM-Xi-9ud"/>
+                <constraint firstAttribute="bottom" secondItem="j4m-jf-0mZ" secondAttribute="bottom" id="Dsi-RU-j3c"/>
+                <constraint firstItem="BTM-Yi-Y4l" firstAttribute="width" secondItem="j4m-jf-0mZ" secondAttribute="width" id="Gl4-Qh-UWe"/>
+                <constraint firstItem="MaK-SG-SH4" firstAttribute="centerY" secondItem="Ymy-Qc-rmu" secondAttribute="centerY" multiplier="85:100" id="M7z-8F-NPb"/>
+                <constraint firstItem="MaK-SG-SH4" firstAttribute="width" secondItem="Ymy-Qc-rmu" secondAttribute="width" id="Mjv-x8-t1J"/>
+                <constraint firstItem="P7i-yZ-BgG" firstAttribute="centerX" secondItem="Ymy-Qc-rmu" secondAttribute="centerX" id="R4s-Lq-BCP"/>
+                <constraint firstItem="Ymy-Qc-rmu" firstAttribute="width" secondItem="j4m-jf-0mZ" secondAttribute="width" id="SDU-oS-FCG"/>
+                <constraint firstItem="Ymy-Qc-rmu" firstAttribute="leading" secondItem="j4m-jf-0mZ" secondAttribute="trailing" constant="8" id="U5x-zL-QeM"/>
+                <constraint firstItem="Ymy-Qc-rmu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eae-3q-j1H"/>
+                <constraint firstItem="z1u-jn-Tk1" firstAttribute="centerY" secondItem="j4m-jf-0mZ" secondAttribute="centerY" multiplier="115:100" id="fm8-E7-lhU"/>
+                <constraint firstItem="z1u-jn-Tk1" firstAttribute="centerX" secondItem="j4m-jf-0mZ" secondAttribute="centerX" id="ig7-xG-XAi"/>
+                <constraint firstItem="MaK-SG-SH4" firstAttribute="centerX" secondItem="Ymy-Qc-rmu" secondAttribute="centerX" id="oJ7-us-ddk"/>
+                <constraint firstItem="j4m-jf-0mZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="pTP-LF-VDe"/>
+                <constraint firstItem="j4m-jf-0mZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pk7-bg-lsM"/>
+                <constraint firstAttribute="bottom" secondItem="Ymy-Qc-rmu" secondAttribute="bottom" id="sga-7U-M3D"/>
+                <constraint firstItem="P7i-yZ-BgG" firstAttribute="centerY" secondItem="Ymy-Qc-rmu" secondAttribute="centerY" multiplier="115:100" id="xpJ-ZG-buw"/>
+                <constraint firstAttribute="trailing" secondItem="Ymy-Qc-rmu" secondAttribute="trailing" constant="8" id="yAG-tv-sdM"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
