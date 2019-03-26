@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Class that define a card (title, description and image) with screen animation.
+/// Class that define a picker with custom option objects.
 @IBDesignable
 open class MUOptionPicker: MUNibView {
     @IBOutlet private var stackView: UIStackView!
