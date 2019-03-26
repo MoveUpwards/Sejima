@@ -11,9 +11,9 @@ import UIKit
 /// Delegate protocol for MUMeasurePicker objects.
 @objc public protocol MUMeasurePickerDelegate: class {
     /// Will trigger each time the value change.
-    func didUpdateValue(picker: MUMeasurePicker, value: Int)
+    func didUpdate(measurePicker: MUMeasurePicker, value: Int)
     /// Will trigger each time the unit change.
-    func didUpdateUnit(picker: MUMeasurePicker, unit: String)
+    func didUpdate(measurePicker: MUMeasurePicker, unit: String)
 }
 
 /// Class that define two picker for value and unit.
@@ -175,9 +175,9 @@ extension MUMeasurePicker: UIPickerViewDelegate {
     /// Called by the picker view when the user selects a row in a component.
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == valuePicker {
-            delegate?.didUpdateValue(picker: self, value: minValue + row)
+            delegate?.didUpdate(measurePicker: self, value: minValue + row)
         } else {
-            delegate?.didUpdateUnit(picker: self, unit: units[row])
+            delegate?.didUpdate(measurePicker: self, unit: units[row])
         }
     }
 }
