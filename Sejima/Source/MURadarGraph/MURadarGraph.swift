@@ -26,7 +26,7 @@ open class MURadarGraph: MUNibView {
     // MARK: - MURadarGraphBackground
 
     /// Define the style for each background line from center to outside
-    open var backgroundLines: [MURadarGraphBackgroundLine] = [] {
+    @objc open dynamic var backgroundLines: [MURadarGraphBackgroundLine] = [] {
         didSet {
             background.backgroundLines = backgroundLines
         }
