@@ -13,10 +13,11 @@ extension UIViewController {
     /**
      Animate the bottom inset of the safe area.
 
-     - parameter height:     The height to add on the safe area bottom
-     - parameter duration:   The animation's duration
-     - parameter options:    The animation's UIView.AnimationOptions
-     - parameter completion: The optional completion block
+    - Parameters:
+        - height: The height to add on the safe area bottom.
+        - duration: The animation's duration.
+        - options: The animation's UIView.AnimationOptions.
+        - completion: The optional completion block
      */
     open func animateBottomSafeArea(_ height: CGFloat,
                                     duration: TimeInterval = 0.25,
