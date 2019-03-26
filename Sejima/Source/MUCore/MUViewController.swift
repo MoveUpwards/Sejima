@@ -9,7 +9,6 @@
 import UIKit.UIViewController
 
 extension UIViewController {
-    @available(iOS 11.0, *)
     /**
      Animate the bottom inset of the safe area.
 
@@ -19,6 +18,7 @@ extension UIViewController {
         - options: The animation's UIView.AnimationOptions.
         - completion: The optional completion block
      */
+    @available(iOS 11.0, *)
     open func animateBottomSafeArea(_ height: CGFloat,
                                     duration: TimeInterval = 0.25,
                                     options: UIView.AnimationOptions = .curveEaseInOut,
