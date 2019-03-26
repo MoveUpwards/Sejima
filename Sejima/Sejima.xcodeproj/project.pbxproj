@@ -29,6 +29,7 @@
 		6D2E5C0B224A444B0051C63B /* MUMeasurePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E5C0A224A444B0051C63B /* MUMeasurePickerTests.swift */; };
 		6D2E5C14224A61D40051C63B /* MUDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E5C12224A61D30051C63B /* MUDatePicker.swift */; };
 		6D2E5C15224A61D40051C63B /* MUDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D2E5C13224A61D30051C63B /* MUDatePicker.xib */; };
+		6D2E5C17224A67330051C63B /* MUDatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2E5C16224A67330051C63B /* MUDatePickerTests.swift */; };
 		6D3E541D2237B0D600729290 /* MUStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E541C2237B0D600729290 /* MUStatTests.swift */; };
 		6D4F2F97222597AE00A0799B /* MUHorizontalPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */; };
 		6D4F2F99222597B700A0799B /* MUHorizontalPager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */; };
@@ -191,6 +192,7 @@
 		6D2E5C0A224A444B0051C63B /* MUMeasurePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUMeasurePickerTests.swift; sourceTree = "<group>"; };
 		6D2E5C12224A61D30051C63B /* MUDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUDatePicker.swift; sourceTree = "<group>"; };
 		6D2E5C13224A61D30051C63B /* MUDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUDatePicker.xib; sourceTree = "<group>"; };
+		6D2E5C16224A67330051C63B /* MUDatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUDatePickerTests.swift; sourceTree = "<group>"; };
 		6D3E541C2237B0D600729290 /* MUStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUStatTests.swift; sourceTree = "<group>"; };
 		6D4F2F96222597AE00A0799B /* MUHorizontalPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHorizontalPager.swift; sourceTree = "<group>"; };
 		6D4F2F98222597B700A0799B /* MUHorizontalPager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUHorizontalPager.xib; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 		F3B811EF22253D380004B830 /* SejimaTests */ = {
 			isa = PBXGroup;
 			children = (
+				6D2E5C16224A67330051C63B /* MUDatePickerTests.swift */,
 				6D2E5C0A224A444B0051C63B /* MUMeasurePickerTests.swift */,
 				6D0B547F224A2A6A00DC4B42 /* MUBarGraphTests.swift */,
 				F353420A2248DF6900F878CB /* MUDateSliderTests.swift */,
@@ -1108,6 +1111,7 @@
 				6DFA2BB522380164004F5605 /* MURangeTests.swift in Sources */,
 				F317FFA32238041B001DBDDD /* MUCollectionButtonTests.swift in Sources */,
 				6D2E5C0B224A444B0051C63B /* MUMeasurePickerTests.swift in Sources */,
+				6D2E5C17224A67330051C63B /* MUDatePickerTests.swift in Sources */,
 				F353420B2248DF6900F878CB /* MUDateSliderTests.swift in Sources */,
 				6D1E771C223BF5880030A2C4 /* MURadioButtonGroupTests.swift in Sources */,
 				6DD518BC222EC90900A1611F /* MUToastTests.swift in Sources */,
