@@ -1,6 +1,6 @@
 //
 //  MUMeasurePicker.swift
-//  MUComponent
+//  Sejima
 //
 //  Created by Damien Noël Dubuisson on 17/01/2019.
 //  Copyright © 2019 Loïc GRIFFIE. All rights reserved.
@@ -8,14 +8,19 @@
 
 import UIKit
 
-public protocol MUMeasurePickerDelegate: class {
+/// Delegate protocol for MUMeasurePicker objects.
+@objc public protocol MUMeasurePickerDelegate: class {
+    /// Will trigger each time the value change.
     func didUpdateValue(picker: MUMeasurePicker, value: Int)
+    /// Will trigger each time the unit change.
     func didUpdateUnit(picker: MUMeasurePicker, unit: String)
 }
 
+/// Class that define two picker for value and unit.
+@IBDesignable
 open class MUMeasurePicker: MUNibView {
-    @IBOutlet private weak var valuePicker: UIPickerView!
-    @IBOutlet private weak var unitPicker: UIPickerView!
+    @IBOutlet private var valuePicker: UIPickerView!
+    @IBOutlet private var unitPicker: UIPickerView!
 
     @IBOutlet private var horizontalConstraints: [NSLayoutConstraint]!
     @IBOutlet private var centerConstraint: NSLayoutConstraint!
@@ -23,74 +28,65 @@ open class MUMeasurePicker: MUNibView {
     @IBOutlet private var separatorViews: [UIView]!
     @IBOutlet private var separatorHeightConstraints: [NSLayoutConstraint]!
 
-    open weak var delegate: MUMeasurePickerDelegate?
-
-    public struct Data {
-        public let min: Int
-        public let max: Int
-        public let units: [String]
-
-        public init(min: Int, max: Int, units: [String]) {
-            self.min = min
-            self.max = max
-            self.units = units
-        }
-    }
+    @IBOutlet public weak var delegate: MUMeasurePickerDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Public UIAppearence variables
 
-    /// Define the inset of the background and chart
+    /// Define the text's color.
     @IBInspectable open dynamic var textColor: UIColor = .black {
         didSet {
-            setNeedsLayout()
+            separatorViews.forEach { $0.backgroundColor = textColor }
+            valuePicker.reloadAllComponents()
+            unitPicker.reloadAllComponents()
         }
     }
 
-    /// Define the inset of the background and chart
-    @objc open dynamic var textFont: UIFont = .systemFont(ofSize: 16, weight: .regular) {
+    /// Define the text's font.
+    @objc open dynamic var textFont: UIFont = .systemFont(ofSize: 16.0, weight: .regular) {
         didSet {
-            setNeedsLayout()
+            valuePicker.reloadAllComponents()
+            unitPicker.reloadAllComponents()
         }
     }
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var separatorHeight: CGFloat = 2 {
+    /// Define the separator's height.
+    @IBInspectable open dynamic var separatorHeight: CGFloat = 2.0 {
         didSet {
-            setNeedsLayout()
+            separatorHeightConstraints.forEach { $0.constant = separatorHeight }
         }
     }
 
-    /// Define the inset of the background and chart
+    /// Define the picker's horizontal padding.
     @IBInspectable open dynamic var contentHorizontalPadding: CGFloat = 8.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            horizontalConstraints.forEach { $0.constant = contentHorizontalPadding }
         }
     }
 
-    /// Define the inset of the background and chart
+    /// Define the padding between the two pickers.
     @IBInspectable open dynamic var centerSpacing: CGFloat = 8.0 {
         didSet {
-            setNeedsUpdateConstraints()
+            centerConstraint.constant = centerSpacing
         }
     }
 
     // MARK: - Value Picker data
 
-    /// Define the inset of the background and chart
-    @IBInspectable open dynamic var minValue: Int = 1 {
+    /// Define the minimum value.
+    @IBInspectable open dynamic var minValue: Int = 0 {
         didSet {
             valuePicker.reloadAllComponents()
         }
     }
 
-    /// Define the inset of the background and chart
+    /// Define the maximum value.
     @IBInspectable open dynamic var maxValue: Int = 100 {
         didSet {
             valuePicker.reloadAllComponents()
         }
     }
 
-    /// Define the inset of the background and chart
+    /// Define the current value.
     @IBInspectable open dynamic var currentValue: Int {
         get {
             return minValue + valuePicker.selectedRow(inComponent: 0)
@@ -103,14 +99,14 @@ open class MUMeasurePicker: MUNibView {
 
     // MARK: - Unit Picker data
 
-    /// Define the inset of the background and chart
+    /// Define the list of available units.
     open var units: [String] = [] {
         didSet {
             unitPicker.reloadAllComponents()
         }
     }
 
-    /// Define the inset of the background and chart
+    /// Define the current unit index.
     @IBInspectable open dynamic var currentUnitIndex: Int {
         get {
             return unitPicker.selectedRow(inComponent: 0)
@@ -120,28 +116,13 @@ open class MUMeasurePicker: MUNibView {
         }
     }
 
-    // MARK: - Data
+    // MARK: - MUMeasureData
 
-    open func set(data: Data) {
+    /// Set values and units from MUMeasureData.
+    open func set(data: MUMeasureData) {
         minValue = data.min
         maxValue = data.max
         units = data.units
-    }
-
-    // MARK: - Life cycle functions
-
-    override open func layoutSubviews() {
-        super.layoutSubviews()
-
-        separatorViews.forEach { $0.backgroundColor = textColor }
-        separatorHeightConstraints.forEach { $0.constant = separatorHeight }
-    }
-
-    open override func updateConstraints() {
-        super.updateConstraints()
-
-        horizontalConstraints.forEach { $0.constant = contentHorizontalPadding }
-        centerConstraint.constant = centerSpacing
     }
 
     // MARK: - Private functions
@@ -156,10 +137,12 @@ open class MUMeasurePicker: MUNibView {
 }
 
 extension MUMeasurePicker: UIPickerViewDataSource {
+    /// Called by the picker view when it needs the number of components.
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 
+    /// Called by the picker view when it needs the number of rows for a specified component.
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == valuePicker {
             return maxValue - minValue + 1 // To include last value
@@ -172,6 +155,7 @@ extension MUMeasurePicker: UIPickerViewDataSource {
 }
 
 extension MUMeasurePicker: UIPickerViewDelegate {
+    /// Called by the picker view when it needs the view to use for a given row in a given component.
     public func pickerView(_ pickerView: UIPickerView,
                            viewForRow row: Int,
                            forComponent component: Int,
@@ -187,6 +171,7 @@ extension MUMeasurePicker: UIPickerViewDelegate {
         return label
     }
 
+    /// Called by the picker view when the user selects a row in a component.
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == valuePicker {
             delegate?.didUpdateValue(picker: self, value: minValue + row)
