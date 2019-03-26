@@ -84,7 +84,13 @@ You can open the sketch template file provided with the source code to have a lo
 
 - **MUToast:** A toast message component.
 
-- **MURadarGraph:** A sprider graph to visualize multiple charts.
+- **MURadarGraph:** A spider graph to visualize multiple charts.
+
+- **MUCircularProgress:** A circular progress with customizable options.
+  
+- **MUCard:** A card with Title and Subtitle and content view.
+  
+- **MUCollectionButton:** A group of UIButton with customizable options.
 
 ## Example
 
