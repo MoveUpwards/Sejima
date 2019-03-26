@@ -79,23 +79,9 @@
     },
     {
       "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
-      "line": 13,
+      "line": 21,
       "symbol": "UIViewController.animateBottomSafeArea(_:duration:options:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
-      "line": 25,
-      "symbol": "UIViewController.areaFrame",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUMeasurePicker/MUMeasurePicker.swift",
-      "line": 31,
-      "symbol": "MUMeasurePicker.delegate",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
