@@ -17,7 +17,7 @@ open class MUIndicator: MUNibView {
 
     // MARK: - Public IBInspectable and UIAppearence variables
 
-    /// Specifies the indicator's color
+    /// Specifies the indicator's color.
     @IBInspectable open dynamic var color: UIColor = .white {
         didSet {
             topBackground.backgroundColor = color
