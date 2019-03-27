@@ -83,7 +83,7 @@ open class MUBarGraph: MUNibView {
     }
 
     /// Specifies the title's font.
-    @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 6, weight: .regular) {
+    @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular) {
         didSet {
             updateBarsAndTitles()
             updateValues()
