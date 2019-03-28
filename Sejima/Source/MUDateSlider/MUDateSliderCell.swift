@@ -165,9 +165,15 @@ final public class MUDateSliderCell: UICollectionViewCell {
 
     /// Set the current selected date
     internal func set(date: Date) {
-        monthLabel.text = date.string(withFormat: "MMMM")
-        dayLabel.text = date.string(withFormat: "EEEE").uppercased()
-        numberLabel.text = date.string(withFormat: "d")
+        let df = DateFormatter()
+        df.dateFormat = "MMMM"
+        monthLabel.text = df.string(from: date)
+
+        df.dateFormat = "EEEE"
+        dayLabel.text = df.string(from: date).uppercased()
+
+        df.dateFormat = "d"
+        numberLabel.text = df.string(from: date)
 
         updateUI()
     }
