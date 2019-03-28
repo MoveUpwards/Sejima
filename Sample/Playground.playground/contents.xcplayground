@@ -25,5 +25,6 @@
         <page name='MUTabBar'/>
         <page name='MUBarGraph'/>
         <page name='MUDatePicker'/>
+        <page name='MUButton'/>
     </pages>
 </playground>

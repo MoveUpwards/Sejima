@@ -17,7 +17,7 @@ import UIKit
 /// Class that regroup multiple UIButton with customizable options.
 @IBDesignable
 open class MUCollectionButton: MUNibView {
-    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private var activityIndicator: MUActivityIndicatorProtocol!
     @IBOutlet private var stackView: UIStackView!
 
     @IBOutlet private var leading: NSLayoutConstraint!
@@ -121,6 +121,32 @@ open class MUCollectionButton: MUNibView {
         }
     }
 
+    /// Show or hide the progress indicator.
+    @IBInspectable open dynamic var isLoading: Bool = false {
+        didSet {
+            isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
+            stackView.isHidden = isLoading
+        }
+    }
+
+    // MARK: - Public functions
+
+    open func set(_ progress: MUActivityIndicatorProtocol) {
+        guard let progressView = progress as? UIView else {
+            return
+        }
+
+        (self.activityIndicator as? UIView)?.removeFromSuperview()
+        progress.color = indicatorColor
+        self.activityIndicator = progress
+
+        addSubview(progressView)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        progressView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        progressView.frame.size = CGSize(width: 20, height: 20)
+    }
+
     /// Define the button state at a given index
     public func set(enabled: Bool, at index: Int) {
         guard let button = stackView.arrangedSubviews
@@ -130,14 +156,6 @@ open class MUCollectionButton: MUNibView {
         }
 
         button.isEnabled = enabled
-    }
-
-    /// Show or hide the progress indicator.
-    @IBInspectable open dynamic var isLoading: Bool = false {
-        didSet {
-            isLoading ? activityIndicator.startAnimating() : activityIndicator.stopAnimating()
-            stackView.isHidden = isLoading
-        }
     }
 
     // MARK: - Private functions

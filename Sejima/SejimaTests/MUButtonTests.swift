@@ -82,6 +82,14 @@ class MUButtonTests: XCTestCase {
         XCTAssertEqual(button.isLoading, true)
     }
 
+    func testCustomIndicator() {
+        let collection = MUCollectionButton()
+        XCTAssertNotNil(collection)
+
+        let indicator = UIActivityIndicatorView(style: .gray)
+        collection.set(indicator)
+    }
+
     func testTitleAlignmentInt() {
         let button = MUButton()
         XCTAssertNotNil(button)
