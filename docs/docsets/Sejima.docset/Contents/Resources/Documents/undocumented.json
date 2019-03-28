@@ -78,9 +78,352 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
-      "line": 21,
-      "symbol": "UIViewController.animateBottomSafeArea(_:duration:options:completion:)",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 11,
+      "symbol": "MUFloatingPoint",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 12,
+      "symbol": "MUFloatingPoint.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 14,
+      "symbol": "MUFloatingPoint.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 16,
+      "symbol": "MUFloatingPoint.init(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 32,
+      "symbol": "CGFloat.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 34,
+      "symbol": "CGFloat.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 40,
+      "symbol": "Double.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 42,
+      "symbol": "Double.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 48,
+      "symbol": "Float.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 50,
+      "symbol": "Float.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix+JacobiSVD.swift",
+      "line": 12,
+      "symbol": "MUMatrix.jacobiSVD(n:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix+JacobiSVD.swift",
+      "line": 17,
+      "symbol": "MUMatrix.jacobiSVD(_:n:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 11,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 12,
+      "symbol": "MUMatrix.datas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 13,
+      "symbol": "MUMatrix.rowsCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 14,
+      "symbol": "MUMatrix.columnsCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 22,
+      "symbol": "MUMatrix.init(rows:columns:repeatedValue:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 28,
+      "symbol": "MUMatrix.subscript(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.subscript",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 54,
+      "symbol": "MUMatrix.row(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 59,
+      "symbol": "MUMatrix.column(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 64,
+      "symbol": "MUMatrix.rows()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 68,
+      "symbol": "MUMatrix.columns()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 78,
+      "symbol": "MUMatrix.transpose()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 86,
+      "symbol": "MUMatrix.resize(row:column:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 110,
+      "symbol": "MUMatrix.matrixAXPY(row:column:aMatrix:yMatrix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 144,
+      "symbol": "MUMatrix.singleValueBackSubstitution(row:column:wMatrix:vMatrix:bMatrix:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 206,
+      "symbol": "MUMatrix.fillRow(_:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 211,
+      "symbol": "MUMatrix.fillColumn(_:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 219,
+      "symbol": "MUMatrix.insertRow(_:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 227,
+      "symbol": "MUMatrix.insertColumn(_:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 236,
+      "symbol": "MUMatrix.rotate(firstRow:secondRow:cosine:sine:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 245,
+      "symbol": "MUMatrix.swapValue(first:second:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 12,
+      "symbol": "MUQuad",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 13,
+      "symbol": "MUQuad.topLeft",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 14,
+      "symbol": "MUQuad.topRight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 15,
+      "symbol": "MUQuad.bottomLeft",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 16,
+      "symbol": "MUQuad.bottomRight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 18,
+      "symbol": "MUQuad.init(topLeft:topRight:bottomLeft:bottomRight:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 25,
+      "symbol": "MUQuad.init(rect:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 32,
+      "symbol": "MUQuad.boundingBox",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 41,
+      "symbol": "MUQuad.point(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 57,
+      "symbol": "MUQuad.+(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 64,
+      "symbol": "MUQuad.-(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 71,
+      "symbol": "MUQuad.*(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUQuad.swift",
+      "line": 78,
+      "symbol": "MUQuad./(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUTransform3D.swift",
+      "line": 13,
+      "symbol": "CATransform3D.init(toFit:from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUTransform3D.swift",
+      "line": 53,
+      "symbol": "CATransform3D.init(perspectiveFrom:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
