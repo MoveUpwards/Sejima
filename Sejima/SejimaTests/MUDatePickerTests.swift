@@ -28,8 +28,8 @@ class MUDatePickerTests: XCTestCase {
         XCTAssertNotNil(datePicker)
 
         let now = Date()
-        let lastYear = Date(year: -1)
-        let lastMonth = Date(month: -1)
+        let lastYear = Date(timeIntervalSinceNow: -36000)
+        let lastMonth = Date(timeIntervalSinceNow: 36000)
 
         datePicker.textColor = .white
         datePicker.backgroundColor = .black

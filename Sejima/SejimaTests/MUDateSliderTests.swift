@@ -11,6 +11,9 @@ import XCTest
 
 class MUDateSliderTests: XCTestCase {
 
+    let minDate = Date(timeIntervalSinceNow: -3600 * 240)
+    let maxDate = Date(timeIntervalSinceNow: 3600 * 240)
+
     func testDefaultValues() {
         let datePicker = MUDateSlider()
         XCTAssertNotNil(datePicker)
@@ -54,6 +57,12 @@ class MUDateSliderTests: XCTestCase {
         datePicker.selectedBorderColor = .green
         datePicker.unselectedBackgroundColor = .blue
         datePicker.selectedBackgroundColor = .blue
+
+        datePicker.minimumDate = minDate
+        datePicker.maximumDate = maxDate
+
+        XCTAssertEqual(datePicker.minimumDate, minDate)
+        XCTAssertEqual(datePicker.maximumDate, maxDate)
 
         datePicker.select(index: 5)
 

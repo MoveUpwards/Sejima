@@ -180,15 +180,15 @@ public class MUDateSlider: MUNibView {
         }
     }
 
-    /// Define the minimum slider date. Default is today date minus 10 days.
-    @objc open dynamic var minimumDate = Date(timeIntervalSinceNow: TimeInterval.day * -10) {
+    /// Define the minimum slider date. Default is current date.
+    @objc open dynamic var minimumDate = Date() {
         didSet {
             fillDates(fromDate: minimumDate, toDate: maximumDate)
         }
     }
 
-    /// Define the maximum slider date. Default is today date plus 10 days.
-    @objc open dynamic var maximumDate = Date(timeIntervalSinceNow: TimeInterval.day * 10) {
+    /// Define the maximum slider date. Default is current date.
+    @objc open dynamic var maximumDate = Date() {
         didSet {
             fillDates(fromDate: minimumDate, toDate: maximumDate)
         }
@@ -200,7 +200,7 @@ public class MUDateSlider: MUNibView {
     public func today() {
         var todayIndex: Int?
 
-        for (index, date) in dates.enumerated() where date.isToday {
+        for (index, date) in dates.enumerated() where Calendar.current.isDateInToday(date) {
             todayIndex = index
             break
         }

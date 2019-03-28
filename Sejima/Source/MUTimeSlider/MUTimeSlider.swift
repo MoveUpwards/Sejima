@@ -164,7 +164,7 @@ open class MUTimeSlider: MUNibView {
     private func updateTimeLabel() {
         let formatter = DateComponentsFormatter()
 
-        if currentTime >= .hour {
+        if currentTime >= 3600 {
             formatter.allowedUnits = [.hour, .minute, .second]
         } else {
             formatter.allowedUnits = [.minute, .second]
