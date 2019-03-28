@@ -18,7 +18,7 @@ import UIKit
 @IBDesignable
 open class MUButton: MUNibView {
     @IBOutlet private var button: UIButton!
-    @IBOutlet private var progress: UIActivityIndicatorView!
+    @IBOutlet private var progress: MUActivityIndicatorProtocol!
 
     /// Keep the current background alpha value to put it back if needed.
     private var buttonBackgroundColorAlpha: CGFloat = 1.0
@@ -175,6 +175,24 @@ open class MUButton: MUNibView {
         }
     }
 
+    // MARK: - Public functions
+
+    open func set(_ progress: MUActivityIndicatorProtocol) {
+        guard let progressView = progress as? UIView else {
+            return
+        }
+
+        (self.progress as? UIView)?.removeFromSuperview()
+        progress.color = progressColor
+        self.progress = progress
+
+        addSubview(progressView)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
+        progressView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        progressView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        progressView.frame.size = CGSize(width: 20, height: 20)
+    }
+
     // MARK: - Private IBAction functions
 
     @IBAction private func didTap(_ sender: Any?) {
@@ -214,7 +232,6 @@ open class MUButton: MUNibView {
     override open func xibSetup() {
         super.xibSetup()
 
-        progress.hidesWhenStopped = true
         button.layer.masksToBounds = true
     }
 

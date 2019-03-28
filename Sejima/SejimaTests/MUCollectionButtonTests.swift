@@ -15,6 +15,7 @@ class MUCollectionButtonTests: XCTestCase {
         let collection = MUCollectionButton()
         XCTAssertNotNil(collection)
 
+        XCTAssertEqual(collection.isLoading, false)
         XCTAssertEqual(collection.indicatorColor, .white)
         XCTAssertEqual(collection.borderWidth, 0.0)
         XCTAssertEqual(collection.borderColor, .clear)
@@ -32,6 +33,7 @@ class MUCollectionButtonTests: XCTestCase {
         let collection = MUCollectionButton()
         XCTAssertNotNil(collection)
 
+        collection.isLoading = true
         collection.indicatorColor = .orange
         collection.borderWidth = 10.0
         collection.borderColor = .orange
@@ -45,6 +47,7 @@ class MUCollectionButtonTests: XCTestCase {
 
         collection.layoutSubviews()
 
+        XCTAssertEqual(collection.isLoading, true)
         XCTAssertEqual(collection.indicatorColor, .orange)
         XCTAssertEqual(collection.borderWidth, 10.0)
         XCTAssertEqual(collection.borderColor, .orange)
@@ -80,5 +83,27 @@ class MUCollectionButtonTests: XCTestCase {
 
         let last = items.last
         XCTAssertEqual(last?.text, "4")
+    }
+
+    func testEnable() {
+        let collection = MUCollectionButton()
+        XCTAssertNotNil(collection)
+
+        var items = [MUCollectionItem]()
+        for i in 0 ..< 5 {
+            items.append(MUCollectionItem(text: "\(i)"))
+        }
+        collection.items = items
+        XCTAssertEqual(collection.items.count, 5)
+
+        collection.set(enabled: false, at: 2)
+    }
+
+    func testCustomIndicator() {
+        let collection = MUCollectionButton()
+        XCTAssertNotNil(collection)
+
+        let indicator = UIActivityIndicatorView(style: .gray)
+        collection.set(indicator)
     }
 }
