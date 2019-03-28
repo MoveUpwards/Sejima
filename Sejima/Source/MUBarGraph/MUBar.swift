@@ -18,8 +18,6 @@ internal class MUBar: MUNibView {
     @IBOutlet private var indicatorWidthConstraint: NSLayoutConstraint!
     @IBOutlet private var indicatorBottomSpacing: NSLayoutConstraint!
 
-    private var indicatorValue: CGFloat = 0.0
-
     /// Define the bar's proportional width.
     internal var proportionalWidth: CGFloat = 1.0 {
         didSet {
@@ -30,7 +28,6 @@ internal class MUBar: MUNibView {
     /// Define the value for the bar's height.
     internal var value: CGFloat = 0.0 {
         didSet {
-            indicatorValue = value
             barHeight = NSLayoutConstraint.change(multiplier: value, for: barHeight)
             updateIndicatorValue()
         }
@@ -68,6 +65,7 @@ internal class MUBar: MUNibView {
     internal var indicatorFormat: String = "%.f" {
         didSet {
             indicator.format = indicatorFormat
+            updateIndicatorValue()
         }
     }
 
@@ -129,6 +127,6 @@ internal class MUBar: MUNibView {
     }
 
     private func updateIndicatorValue() {
-        indicator.set(value: Double(indicatorValue * indicatorMultiplier))
+        indicator.set(value: Double(value * indicatorMultiplier))
     }
 }
