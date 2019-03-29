@@ -1,86 +1,114 @@
 {
   "warnings": [
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 13,
-      "symbol": "MUKeyboard",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 11,
+      "symbol": "MUFloatingPoint",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 12,
+      "symbol": "MUFloatingPoint.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
       "line": 14,
-      "symbol": "MUKeyboard.useKeyboard(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "symbol": "MUFloatingPoint.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
       "line": 16,
-      "symbol": "MUKeyboard.keyboardWillShow(_:)",
+      "symbol": "MUFloatingPoint.init(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 17,
-      "symbol": "MUKeyboard.keyboardWillHide(_:)",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 32,
+      "symbol": "CGFloat.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 34,
+      "symbol": "CGFloat.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 40,
+      "symbol": "Double.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 42,
+      "symbol": "Double.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 48,
+      "symbol": "Float.epsilon",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMath.swift",
+      "line": 50,
+      "symbol": "Float.hypotenuse(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": null,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
+      "line": 11,
+      "symbol": "MUMatrix",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUTransform3D.swift",
+      "line": 13,
+      "symbol": "CATransform3D.init(toFit:from:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 19,
-      "symbol": "MUKeyboard.keyboardDidShow(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 20,
-      "symbol": "MUKeyboard.keyboardDidHide(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 26,
-      "symbol": "UIViewController.useKeyboard(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 52,
-      "symbol": "UIViewController.keyboardWillShow(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 65,
-      "symbol": "UIViewController.keyboardWillHide(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 74,
-      "symbol": "UIViewController.keyboardDidShow(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUKeyboard.swift",
-      "line": 75,
-      "symbol": "UIViewController.keyboardDidHide(_:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUViewController.swift",
-      "line": 21,
-      "symbol": "UIViewController.animateBottomSafeArea(_:duration:options:completion:)",
+      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUTransform3D.swift",
+      "line": 53,
+      "symbol": "CATransform3D.init(perspectiveFrom:to:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
