@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// MUMatrix struct of floating point elements
 public struct MUMatrix<T: MUFloatingPoint & CustomStringConvertible> {
     /// 2D array of matrix datas.
     public private(set) var datas: [[T]]

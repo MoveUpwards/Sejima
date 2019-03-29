@@ -71,34 +71,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
-      "line": null,
-      "symbol": "MUMatrix",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
-      "line": null,
-      "symbol": "MUMatrix",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
-      "line": null,
-      "symbol": "MUMatrix",
-      "symbol_kind": "source.lang.swift.decl.extension",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUMatrix.swift",
-      "line": 11,
-      "symbol": "MUMatrix",
-      "symbol_kind": "source.lang.swift.decl.struct",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/damien/Projects/MoveUpwards/Sejima/Sejima/Source/MUCore/MUTransform3D.swift",
       "line": 13,
       "symbol": "CATransform3D.init(toFit:from:)",
