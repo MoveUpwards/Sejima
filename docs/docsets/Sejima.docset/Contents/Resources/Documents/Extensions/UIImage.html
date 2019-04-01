@@ -229,7 +229,22 @@
             <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CATransform3D.html">CATransform3D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Float80.html">Float80</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/FloatingPoint.html">FloatingPoint</a>
@@ -271,6 +286,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MUDateSliderDelegate.html">MUDateSliderDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MUFloatingPoint.html">MUFloatingPoint</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MUHorizontalPagerDelegate.html">MUHorizontalPagerDelegate</a>
@@ -329,6 +347,9 @@
                 <a class="nav-group-task-link" href="../Structs/MUCollectionItem.html">MUCollectionItem</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MUMatrix.html">MUMatrix</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MUMeasureData.html">MUMeasureData</a>
               </li>
               <li class="nav-group-task">
@@ -336,6 +357,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MUProportionalItem.html">MUProportionalItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MUQuad.html">MUQuad</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MURadarGraphData.html">MURadarGraphData</a>
@@ -378,6 +402,47 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:So7UIImageC6SejimaE5color11borderColor0D5Width12cornerRadius4sizeABSgSo7UIColorCSg_AL12CoreGraphics7CGFloatVAOSo6CGSizeVtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(color:borderColor:borderWidth:cornerRadius:size:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So7UIImageC6SejimaE5color11borderColor0D5Width12cornerRadius4sizeABSgSo7UIColorCSg_AL12CoreGraphics7CGFloatVAOSo6CGSizeVtcfc">init(color:borderColor:borderWidth:cornerRadius:size:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a UIImage with a border and a corner radius</p>
+
+<ul>
+<li>color:        The background color.</li>
+<li>borderColor:  The border color.</li>
+<li>borderWidth:  The border width.</li>
+<li>cornerRadius: The border width.</li>
+<li>size:         The size of the output image.</li>
+</ul>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">image</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="n">red</span><span class="p">,</span> <span class="nv">borderColor</span><span class="p">:</span> <span class="o">.</span><span class="n">blue</span><span class="p">,</span> <span class="nv">borderWidth</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="n">bounds</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">convenience</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                         <span class="nv">borderColor</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+                         <span class="nv">borderWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                         <span class="nv">cornerRadius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                         <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="kt">CGSize</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:So7UIImageC6SejimaE9histogram3bar4sizeABSgSay12CoreGraphics7CGFloatVG_So7UIColorCSo6CGSizeVtcfc"></a>
                     <a name="//apple_ref/swift/Method/init(histogram:bar:size:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:So7UIImageC6SejimaE9histogram3bar4sizeABSgSay12CoreGraphics7CGFloatVG_So7UIColorCSo6CGSizeVtcfc">init(histogram:bar:size:)</a>
@@ -410,7 +475,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-26)</p>
+      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -8,21 +8,26 @@
 
 import UIKit.UIResponder
 
-@objc
+/// Keyboard protocol.
 @available(iOS 11.0, *)
-public protocol MUKeyboard: class {
+@objc public protocol MUKeyboard: class {
+    /// Register or not the keyboard's notifications.
     func useKeyboard(_ isUsed: Bool)
 
+    /// Called immediately prior to the display of the keyboard.
     func keyboardWillShow(_ notif: NSNotification)
+    /// Called immediately prior to the dismissal of the keyboard.
     func keyboardWillHide(_ notif: NSNotification)
 
+    /// Called immediately after the display of the keyboard.
     func keyboardDidShow(_ notif: NSNotification)
+    /// Called immediately after the dismissal of the keyboard.
     func keyboardDidHide(_ notif: NSNotification)
 }
 
 @available(iOS 11.0, *)
 extension UIViewController: MUKeyboard {
-
+    /// Register or not the keyboard's notifications.
     open func useKeyboard(_ isUsed: Bool) {
         if isUsed {
             NotificationCenter.default.addObserver(self,
@@ -49,6 +54,7 @@ extension UIViewController: MUKeyboard {
         }
     }
 
+    /// Called immediately prior to the display of the keyboard.
     open func keyboardWillShow(_ notif: NSNotification) {
         guard let duration = notif.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
             let curve = notif.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt,
@@ -62,6 +68,7 @@ extension UIViewController: MUKeyboard {
                               options: UIView.AnimationOptions(rawValue: curve))
     }
 
+    /// Called immediately prior to the dismissal of the keyboard.
     open func keyboardWillHide(_ notif: NSNotification) {
         guard let duration = notif.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double,
             let curve = notif.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else {
@@ -71,6 +78,8 @@ extension UIViewController: MUKeyboard {
         animateBottomSafeArea(0.0, duration: duration, options: UIView.AnimationOptions(rawValue: curve))
     }
 
+    /// Called immediately after the display of the keyboard.
     open func keyboardDidShow(_ notif: NSNotification) { }
+    /// Called immediately after the dismissal of the keyboard.
     open func keyboardDidHide(_ notif: NSNotification) { }
 }

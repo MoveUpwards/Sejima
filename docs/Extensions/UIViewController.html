@@ -229,7 +229,22 @@
             <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CATransform3D.html">CATransform3D</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/CGFloat.html">CGFloat</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Float.html">Float</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/Float80.html">Float80</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Extensions/FloatingPoint.html">FloatingPoint</a>
@@ -271,6 +286,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MUDateSliderDelegate.html">MUDateSliderDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/MUFloatingPoint.html">MUFloatingPoint</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/MUHorizontalPagerDelegate.html">MUHorizontalPagerDelegate</a>
@@ -329,6 +347,9 @@
                 <a class="nav-group-task-link" href="../Structs/MUCollectionItem.html">MUCollectionItem</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MUMatrix.html">MUMatrix</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MUMeasureData.html">MUMeasureData</a>
               </li>
               <li class="nav-group-task">
@@ -336,6 +357,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MUProportionalItem.html">MUProportionalItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MUQuad.html">MUQuad</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/MURadarGraphData.html">MURadarGraphData</a>
@@ -388,7 +412,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Register or not the keyboard&rsquo;s notifications.</p>
 
                       </div>
                       <div class="declaration">
@@ -415,7 +439,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called immediately prior to the display of the keyboard.</p>
 
                       </div>
                       <div class="declaration">
@@ -442,7 +466,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called immediately prior to the dismissal of the keyboard.</p>
 
                       </div>
                       <div class="declaration">
@@ -469,7 +493,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called immediately after the display of the keyboard.</p>
 
                       </div>
                       <div class="declaration">
@@ -496,7 +520,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called immediately after the dismissal of the keyboard.</p>
 
                       </div>
                       <div class="declaration">
@@ -527,19 +551,75 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Animate the bottom inset of the safe area.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">animateBottomSafeArea</span><span class="p">(</span><span class="n">_</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span>
+                          <pre class="highlight swift"><code><span class="kd">@available(iOS 11.0, *)</span>
+<span class="kd">open</span> <span class="kd">func</span> <span class="nf">animateBottomSafeArea</span><span class="p">(</span><span class="n">_</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span>
                                 <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span>
                                 <span class="nv">options</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">.</span><span class="kt">AnimationOptions</span> <span class="o">=</span> <span class="o">.</span><span class="n">curveEaseInOut</span><span class="p">,</span>
                                 <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height to add on the safe area bottom.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The animation&rsquo;s duration.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>options</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The animation&rsquo;s UIView.AnimationOptions.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional completion block</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -579,7 +659,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-26)</p>
+      <p>&copy; 2019 <a class="link" href="https://moveupwards.dev" target="_blank" rel="external">MoveUpwards</a>. All rights reserved. (Last updated: 2019-03-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
