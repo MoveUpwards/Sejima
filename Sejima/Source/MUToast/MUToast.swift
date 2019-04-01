@@ -52,7 +52,7 @@ open class MUToast: MUNibView {
     }
 
     /// The title’s font.
-    @objc open dynamic var titleFont: UIFont {
+    open var titleFont: UIFont {
         get {
             return header.titleFont
         }
@@ -82,7 +82,7 @@ open class MUToast: MUNibView {
     }
 
     /// The detail’s font.
-    @objc open dynamic var detailFont: UIFont {
+    open var detailFont: UIFont {
         get {
             return header.detailFont
         }
@@ -173,7 +173,7 @@ open class MUToast: MUNibView {
     }
 
     /// The indicator’s width.
-    @IBInspectable open dynamic var indicatorWidth: CGFloat = 5.0 {
+    @IBInspectable open dynamic var indicatorWidth: CGFloat = 0.0 {
         didSet {
            markerWidth.constant = indicatorWidth
         }
