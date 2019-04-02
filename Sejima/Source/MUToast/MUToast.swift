@@ -210,7 +210,7 @@ open class MUToast: MUNibView {
     @IBInspectable open var horizontalPadding: CGFloat = 16.0
 
     /// The toast’s vertical padding.
-    @IBInspectable open var verticalPadding: CGFloat = 0.0
+    @IBInspectable open var verticalPadding: CGFloat = 16.0
 
     // MARK: - Life cycle
 

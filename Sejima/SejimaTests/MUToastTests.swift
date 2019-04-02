@@ -24,13 +24,16 @@ class MUToastTests: XCTestCase {
         XCTAssertEqual(toast.detailFont, .systemFont(ofSize: 14.0, weight: .semibold))
         XCTAssertEqual(toast.detailColor, .black)
         XCTAssertEqual(toast.textAlignment, .left)
-        XCTAssertEqual(toast.spacing, 8.0)
+        XCTAssertEqual(toast.spacing, 0.0)
         XCTAssertEqual(toast.headerHorizontalPadding, 16.0)
         XCTAssertEqual(toast.headerVerticalPadding, 16.0)
 
         XCTAssertNil(toast.icon)
         XCTAssertEqual(toast.iconLeftPadding, 16.0)
-        XCTAssertEqual(toast.iconWidth, 64.0)
+        XCTAssertEqual(toast.iconWidth, 36.0)
+
+        XCTAssertEqual(toast.indicatorWidth, 0.0)
+        XCTAssertEqual(toast.indicatorColor, .clear)
 
         XCTAssertEqual(toast.animationDuration, 0.3)
         XCTAssertEqual(toast.displayDuration, 3.0)
@@ -61,6 +64,9 @@ class MUToastTests: XCTestCase {
         toast.iconLeftPadding = 10.0
         toast.iconWidth = 50.0
 
+        toast.indicatorWidth = 10.0
+        toast.indicatorColor = .red
+
         toast.animationDuration = 0.5
         toast.displayDuration = 4.0
         toast.displayPosition = .bottom
@@ -84,6 +90,9 @@ class MUToastTests: XCTestCase {
         XCTAssertNotNil(toast.icon)
         XCTAssertEqual(toast.iconLeftPadding, 10.0)
         XCTAssertEqual(toast.iconWidth, 50.0)
+
+        XCTAssertEqual(toast.indicatorWidth, 10.0)
+        XCTAssertEqual(toast.indicatorColor, .red)
 
         XCTAssertEqual(toast.animationDuration, 0.5)
         XCTAssertEqual(toast.displayDuration, 4.0)
