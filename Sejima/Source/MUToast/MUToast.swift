@@ -11,8 +11,12 @@ import UIKit
 /// Class that define a card (title, description and image) with screen animation.
 @IBDesignable
 open class MUToast: MUNibView {
+    @IBOutlet private var markerView: UIView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var header: MUHeader!
+
+    // Image inset constraint
+    @IBOutlet private var markerWidth: NSLayoutConstraint!
 
     // Image inset constraint
     @IBOutlet private var imageLeading: NSLayoutConstraint!
@@ -48,7 +52,7 @@ open class MUToast: MUNibView {
     }
 
     /// The title’s font.
-    @objc open dynamic var titleFont: UIFont {
+    open var titleFont: UIFont {
         get {
             return header.titleFont
         }
@@ -78,7 +82,7 @@ open class MUToast: MUNibView {
     }
 
     /// The detail’s font.
-    @objc open dynamic var detailFont: UIFont {
+    open var detailFont: UIFont {
         get {
             return header.detailFont
         }
@@ -165,6 +169,20 @@ open class MUToast: MUNibView {
     @IBInspectable open dynamic var iconWidth: CGFloat = 64.0 {
         didSet {
             updateImageView()
+        }
+    }
+
+    /// The indicator’s width.
+    @IBInspectable open dynamic var indicatorWidth: CGFloat = 0.0 {
+        didSet {
+           markerWidth.constant = indicatorWidth
+        }
+    }
+
+    /// The indicator’s color.
+    @IBInspectable open dynamic var indicatorColor: UIColor = .clear {
+        didSet {
+            markerView.backgroundColor = indicatorColor
         }
     }
 
