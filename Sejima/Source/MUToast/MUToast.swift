@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Class that define a card (title, description and image) with screen animation.
+/// Class that define a card (title, description, indicator and image) with screen animation.
 @IBDesignable
 open class MUToast: MUNibView {
     @IBOutlet private var markerView: UIView!
@@ -121,8 +121,8 @@ open class MUToast: MUNibView {
         }
     }
 
-    /// The text’s vertical spacing.
-    @IBInspectable open dynamic var spacing: CGFloat {
+    /// The Title and Detail text vertical spacing.
+    @IBInspectable open var spacing: CGFloat {
         get {
             return header.spacing
         }
@@ -132,7 +132,7 @@ open class MUToast: MUNibView {
     }
 
     /// The header’s horizontal padding.
-    @IBInspectable open dynamic var headerHorizontalPadding: CGFloat = 16.0 {
+    @IBInspectable open var headerHorizontalPadding: CGFloat = 16.0 {
         didSet {
             labelsLeading.constant = headerHorizontalPadding
             labelsTrailing.constant = headerHorizontalPadding
@@ -140,7 +140,7 @@ open class MUToast: MUNibView {
     }
 
     /// The header’s vertical padding.
-    @IBInspectable open dynamic var headerVerticalPadding: CGFloat = 16.0 {
+    @IBInspectable open var headerVerticalPadding: CGFloat = 16.0 {
         didSet {
             labelsTop.constant = headerVerticalPadding
             labelsBottom.constant = headerVerticalPadding
@@ -159,18 +159,20 @@ open class MUToast: MUNibView {
     }
 
     /// The icon’s left padding.
-    @IBInspectable open dynamic var iconLeftPadding: CGFloat = 16.0 {
+    @IBInspectable open var iconLeftPadding: CGFloat = 16.0 {
         didSet {
             updateImageView()
         }
     }
 
     /// The icon’s width.
-    @IBInspectable open dynamic var iconWidth: CGFloat = 64.0 {
+    @IBInspectable open var iconWidth: CGFloat = 36.0 {
         didSet {
             updateImageView()
         }
     }
+
+    // MARK: - Indicator
 
     /// The indicator’s width.
     @IBInspectable open dynamic var indicatorWidth: CGFloat = 0.0 {
@@ -202,11 +204,13 @@ open class MUToast: MUNibView {
     /// The toast's priority. Higher will be on top of lower toasts.
     open var displayPriority: MUToastPriority = .info
 
+    // MARK: - Toast layout
+
     /// The toast’s horizontal padding.
-    @IBInspectable open dynamic var horizontalPadding: CGFloat = 16.0
+    @IBInspectable open var horizontalPadding: CGFloat = 16.0
 
     /// The toast’s vertical padding.
-    @IBInspectable open dynamic var verticalPadding: CGFloat = 16.0
+    @IBInspectable open var verticalPadding: CGFloat = 0.0
 
     // MARK: - Life cycle
 
@@ -244,6 +248,20 @@ open class MUToast: MUNibView {
 
     @IBAction private func didTap(_ sender: UITapGestureRecognizer) {
         onTapBlock?()
+    }
+
+    // MARK: - Private variables
+
+    private var hideTransform: CGAffineTransform {
+        switch displayPosition {
+        case .top:
+            return CGAffineTransform(translationX: 0.0, y: -(frame.origin.y + frame.height))
+        case .bottom:
+            guard let superviewFrame = superview?.frame else {
+                return .identity
+            }
+            return CGAffineTransform(translationX: 0.0, y: superviewFrame.height - frame.origin.y)
+        }
     }
 
     // MARK: - Private functions
@@ -321,18 +339,6 @@ open class MUToast: MUNibView {
             }
         }
         return returnView
-    }
-
-    private var hideTransform: CGAffineTransform {
-        switch displayPosition {
-        case .top:
-            return CGAffineTransform(translationX: 0.0, y: -(frame.origin.y + frame.height))
-        case .bottom:
-            guard let superviewFrame = superview?.frame else {
-                return .identity
-            }
-            return CGAffineTransform(translationX: 0.0, y: superviewFrame.height - frame.origin.y)
-        }
     }
 
     private func showingAnimation(completion: ((Bool) -> Void)? = nil) {

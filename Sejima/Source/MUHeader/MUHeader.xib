@@ -23,7 +23,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbN-jY-mSm">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
