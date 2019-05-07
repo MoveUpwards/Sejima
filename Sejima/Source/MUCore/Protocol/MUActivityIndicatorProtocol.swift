@@ -17,8 +17,8 @@ import UIKit.UIColor
     /// Stop indicator animation.
     func stopAnimating()
 
-    /// Progress indicator tint color.
     // implicit unwrap to be objc compliant (see UIActivityIndicatorView)
+    /// Progress indicator tint color.
     var color: UIColor! { get set } //swiftlint:disable:this implicitly_unwrapped_optional
 
     /// Hide indicator progress when not animating.

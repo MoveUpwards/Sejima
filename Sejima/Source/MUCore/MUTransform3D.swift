@@ -10,6 +10,7 @@ import UIKit
 
 extension CATransform3D {
     // See: https://github.com/joshrl/FreeTransform/blob/master/FreeTransform/UIView%2BQuadrilateral.m
+    /// Create CATransform3D to fit quad inside a given bounds
     public init(toFit quad: MUQuad, from bounds: CGRect) {
         let x1a = quad.topLeft.x
         let y1a = quad.topLeft.y
@@ -50,6 +51,7 @@ extension CATransform3D {
     }
 
     // See: https://github.com/agens-no/AGGeometryKit/blob/master/AGGeometryKit/Categories/UIImage%2BAGKQuad.m
+    /// Create CATransform3D to fit quad inside a given quad
     public init(perspectiveFrom quad: MUQuad, to destinationQuad: MUQuad) {
         var matrixA: MUMatrix<CGFloat>
         var matrixB: MUMatrix<CGFloat>

@@ -177,6 +177,7 @@ open class MUButton: MUNibView {
 
     // MARK: - Public functions
 
+    /// Set a custom button progress view
     open func set(_ progress: MUActivityIndicatorProtocol) {
         guard let progressView = progress as? UIView else {
             return

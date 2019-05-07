@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MUAvatar Class Reference</title>
+    <title>MUActivityIndicatorProtocol Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Class/MUAvatar" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Protocol/MUActivityIndicatorProtocol" class="dashAnchor"></a>
 
-    <a title="MUAvatar Class Reference"></a>
+    <a title="MUActivityIndicatorProtocol Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Sejima Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MUAvatar Class Reference
+      MUActivityIndicatorProtocol Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -381,15 +381,15 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>MUAvatar</h1>
+            <h1>MUActivityIndicatorProtocol</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">@IBDesignable</span>
-<span class="kd">open</span> <span class="kd">class</span> <span class="kt">MUAvatar</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MUNibView.html">MUNibView</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MUActivityIndicatorProtocol</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Class that act like UIButton with more customizable options.</p>
+            <p>Activity indicator protocol.</p>
 
           </div>
         </section>
@@ -401,9 +401,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)delegate"></a>
-                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)delegate">delegate</a>
+                    <a name="/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(im)startAnimating"></a>
+                    <a name="//apple_ref/swift/Method/startAnimating()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(im)startAnimating">startAnimating()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -411,15 +411,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The object that acts as the delegate of the avatar.</p>
+                        <p>Start indicator animation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
-<span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/MUAvatarDelegate.html">MUAvatarDelegate</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startAnimating</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -429,9 +428,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)borderWidth"></a>
-                    <a name="//apple_ref/swift/Property/borderWidth" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)borderWidth">borderWidth</a>
+                    <a name="/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(im)stopAnimating"></a>
+                    <a name="//apple_ref/swift/Method/stopAnimating()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(im)stopAnimating">stopAnimating()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -439,15 +438,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The avatar’s border width.</p>
+                        <p>Stop indicator animation.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">borderWidth</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stopAnimating</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -457,9 +455,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)borderColor"></a>
-                    <a name="//apple_ref/swift/Property/borderColor" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)borderColor">borderColor</a>
+                    <a name="/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)color"></a>
+                    <a name="//apple_ref/swift/Property/color" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)color">color</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -467,15 +465,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The avatar’s border color.</p>
+                        <p>Progress indicator tint color.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">borderColor</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -485,9 +482,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:6Sejima8MUAvatarC5styleAA13MUCornerStyleOvp"></a>
-                    <a name="//apple_ref/swift/Property/style" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima8MUAvatarC5styleAA13MUCornerStyleOvp">style</a>
+                    <a name="/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)hidesWhenStopped"></a>
+                    <a name="//apple_ref/swift/Property/hidesWhenStopped" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)hidesWhenStopped">hidesWhenStopped</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -495,14 +492,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The avatar&rsquo;s style.</p>
+                        <p>Hide indicator progress when not animating.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">style</span><span class="p">:</span> <span class="kt"><a href="../Enums/MUCornerStyle.html">MUCornerStyle</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">hidesWhenStopped</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -512,9 +509,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)styleInt"></a>
-                    <a name="//apple_ref/swift/Property/styleInt" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)styleInt">styleInt</a>
+                    <a name="/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)isAnimating"></a>
+                    <a name="//apple_ref/swift/Property/isAnimating" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@Sejima@objc(pl)MUActivityIndicatorProtocol(py)isAnimating">isAnimating</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -522,191 +519,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Optional: The IBInspectable version of the avatar&rsquo;s style.</p>
+                        <p>Get current progress animation state.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">styleInt</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)radius"></a>
-                    <a name="//apple_ref/swift/Property/radius" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)radius">radius</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The avatar&rsquo;s corner radius.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">radius</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)avatarImage"></a>
-                    <a name="//apple_ref/swift/Property/avatarImage" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)avatarImage">avatarImage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The avatar’s image.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">avatarImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)placeholderImage"></a>
-                    <a name="//apple_ref/swift/Property/placeholderImage" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)placeholderImage">placeholderImage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The avatar’s placeholder image shown if no image defined.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@IBInspectable</span>
-<span class="kd">open</span> <span class="kd">dynamic</span> <span class="k">var</span> <span class="nv">placeholderImage</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Life%20cycle%20functions"></a>
-                <a name="//apple_ref/swift/Section/Life cycle functions" class="dashAnchor"></a>
-                <a href="#/Life%20cycle%20functions">
-                  <h3 class="section-name">Life cycle functions</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:6Sejima8MUAvatarC8xibSetupyyF"></a>
-                    <a name="//apple_ref/swift/Method/xibSetup()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:6Sejima8MUAvatarC8xibSetupyyF">xibSetup()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Default setup to load the view from a xib file.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="kd">func</span> <span class="nf">xibSetup</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(im)layoutSubviews"></a>
-                    <a name="//apple_ref/swift/Method/layoutSubviews()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(im)layoutSubviews">layoutSubviews()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Lays out subviews.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="kd">func</span> <span class="nf">layoutSubviews</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@Sejima@objc(cs)MUAvatar(py)intrinsicContentSize"></a>
-                    <a name="//apple_ref/swift/Property/intrinsicContentSize" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@Sejima@objc(cs)MUAvatar(py)intrinsicContentSize">intrinsicContentSize</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The natural size for the receiving view, considering only properties of the view itself.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">open</span> <span class="k">var</span> <span class="nv">intrinsicContentSize</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isAnimating</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
