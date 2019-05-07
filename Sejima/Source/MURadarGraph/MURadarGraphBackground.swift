@@ -21,8 +21,6 @@ final internal class MURadarGraphBackground: UIImageView {
 
     private var maxSize = CGFloat(0.0)
     private var angle = 2.0 * CGFloat.pi
-    private let titleBottomOffset = CGFloat(8.0) // Magic numbers
-    private let titleTopOffset = CGFloat(-20.0) // Magic numbers
 
     /// Define the spoke line thickness
     internal var spokeLineThickness: CGFloat = 1.0 {
@@ -62,6 +60,20 @@ final internal class MURadarGraphBackground: UIImageView {
 
     /// Define the spokes title color
     internal var spokeTitleColor: UIColor = .white {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Define the spokes title horizontal offset
+    internal var spokeTitleHorizontalOffset: CGFloat = 8 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Define the spokes title vertical offset
+    internal var spokeTitleVerticalOffset: CGFloat = 8 {
         didSet {
             setNeedsLayout()
         }
@@ -196,8 +208,11 @@ final internal class MURadarGraphBackground: UIImageView {
             let size = title.constrainedSize(font: spokeTitleFont)
 
             point.x += point.x / maxSize * size.width * 0.5
+            if point.x > 0.1 || point.x < -0.1 {
+                point.x += point.x > 0.0 ? -spokeTitleHorizontalOffset : spokeTitleHorizontalOffset
+            }
             point.x -= size.width * 0.5
-            point.y += point.y > 0.0 ? titleBottomOffset : titleTopOffset
+            point.y += point.y > 0.0 ? spokeTitleVerticalOffset : -(spokeTitleVerticalOffset + spokeTitleFont.pointSize)
 
             context.setFillColor(spokeLineColor.cgColor)
             title.draw(with: CGRect(origin: point, size: size),

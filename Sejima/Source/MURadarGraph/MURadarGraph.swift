@@ -82,6 +82,20 @@ open class MURadarGraph: MUNibView {
         }
     }
 
+    /// Define the spokes title horizontal offset
+    @objc open dynamic var spokeTitleHorizontalOffset: CGFloat = 8 {
+        didSet {
+            background.spokeTitleHorizontalOffset = spokeTitleHorizontalOffset
+        }
+    }
+
+    /// Define the spokes title vertical offset
+    @objc open dynamic var spokeTitleVerticalOffset: CGFloat = 8 {
+        didSet {
+            background.spokeTitleVerticalOffset = spokeTitleVerticalOffset
+        }
+    }
+
     /// Define the appearance of the bkg
     open var backgroundStyle: MURadarGraphStyle = .circular {
         didSet {
