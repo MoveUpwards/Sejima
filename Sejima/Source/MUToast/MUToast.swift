@@ -195,7 +195,7 @@ open class MUToast: MUNibView {
     @IBInspectable open dynamic var animationDuration: Double = 0.3
 
     /// The total duration of the display, measured in seconds.
-    /// If you specify a negative value or 0, the toast will hide as soon as the animation end.
+    /// If you specify a negative value or 0, the toast will not hide automatically once animation end.
     @IBInspectable open dynamic var displayDuration: Double = 3.0
 
     /// The position where the toast will be visible.
@@ -229,7 +229,7 @@ open class MUToast: MUNibView {
         add(in: vc)
 
         showingAnimation(completion: { [weak self] _ in
-            guard let displayDuration = self?.displayDuration else {
+            guard let displayDuration = self?.displayDuration, displayDuration > 0 else {
                 return
             }
 
