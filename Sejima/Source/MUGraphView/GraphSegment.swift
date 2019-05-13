@@ -14,7 +14,9 @@ internal final class GraphSegment: UIView {
 
     // MARK: - Properties
 
+    /// All values for this segments.
     private(set) var dataPoints = [double3]()
+    /// All colors for each points.
     private var lineColors: [UIColor] = [.red, .green, .blue]
 
     private let startPoint: double3
