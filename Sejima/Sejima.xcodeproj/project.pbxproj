@@ -43,6 +43,7 @@
 		6D5037EE22897BEC0017AEC9 /* GraphSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5037EB22897BEB0017AEC9 /* GraphSegment.swift */; };
 		6D5037EF22897BEC0017AEC9 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5037EC22897BEB0017AEC9 /* GraphView.swift */; };
 		6D5037F022897BEC0017AEC9 /* CGContext+GraphLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D5037ED22897BEC0017AEC9 /* CGContext+GraphLines.swift */; };
+		6D5037F722899CF70017AEC9 /* MUGraphView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D5037F622899CF70017AEC9 /* MUGraphView.xib */; };
 		6D704EC62225722700EB4A3F /* MUPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC52225722700EB4A3F /* MUPageControl.swift */; };
 		6D704EC82225781A00EB4A3F /* MUWeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */; };
 		6D8BC0D62237EE53006AFE7E /* MUToastPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC0D52237EE53006AFE7E /* MUToastPosition.swift */; };
@@ -214,6 +215,7 @@
 		6D5037EB22897BEB0017AEC9 /* GraphSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegment.swift; sourceTree = "<group>"; };
 		6D5037EC22897BEB0017AEC9 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		6D5037ED22897BEC0017AEC9 /* CGContext+GraphLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+GraphLines.swift"; sourceTree = "<group>"; };
+		6D5037F622899CF70017AEC9 /* MUGraphView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MUGraphView.xib; sourceTree = "<group>"; };
 		6D704EC52225722700EB4A3F /* MUPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUPageControl.swift; sourceTree = "<group>"; };
 		6D704EC72225781A00EB4A3F /* MUWeakProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUWeakProxy.swift; sourceTree = "<group>"; };
 		6D8BC0D52237EE53006AFE7E /* MUToastPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastPosition.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				6D5037E7228975C50017AEC9 /* MUGraphView.swift */,
+				6D5037F622899CF70017AEC9 /* MUGraphView.xib */,
 				6D5037EC22897BEB0017AEC9 /* GraphView.swift */,
 				6D5037EB22897BEB0017AEC9 /* GraphSegment.swift */,
 				6D5037ED22897BEC0017AEC9 /* CGContext+GraphLines.swift */,
@@ -957,6 +960,7 @@
 				6DD518B9222EC39F00A1611F /* MUToast.xib in Resources */,
 				F3B8122A22253F040004B830 /* MUHeader.xib in Resources */,
 				6DDD7E4822365C340033F5F9 /* MUPinCode.xib in Resources */,
+				6D5037F722899CF70017AEC9 /* MUGraphView.xib in Resources */,
 				F3C2DD33222D9A4000C08300 /* MUAvatar.xib in Resources */,
 				F317FF8C2236CD3A001DBDDD /* MUStat.xib in Resources */,
 				6D0B547C2249246100DC4B42 /* MUBarGraph.xib in Resources */,

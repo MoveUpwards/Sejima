@@ -10,26 +10,31 @@
 import UIKit
 import simd
 
+/// Apple's GraphView
 internal final class GraphView: UIView {
 
     // MARK: Properties
 
     private var segments = [GraphSegment]()
-
     private var currentSegment: GraphSegment? {
         return segments.last
     }
 
+    /// The current colors to inject in the add function.
+    internal var lineColors: [UIColor] = [.red, .green, .blue]
+    /// The current value's ranges.
     internal var valueRanges = [-4.0...4.0, -4.0...4.0, -4.0...4.0]
 
     // MARK: Initialization
 
+    /// Initializes and returns a newly allocated view object with the specified frame rectangle.
     override internal init(frame: CGRect) {
         super.init(frame: frame)
 
         commonInit()
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required internal init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
@@ -37,11 +42,12 @@ internal final class GraphView: UIView {
     }
 
     private func commonInit() {
-        backgroundColor = .black
+        backgroundColor = .clear
     }
 
     // MARK: UIView overrides
 
+    /// Draws the receiver’s image within the passed-in rectangle.
     override internal func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
 
@@ -57,10 +63,11 @@ internal final class GraphView: UIView {
 
     // MARK: Update methods
 
+    /// Add new values to the graph.
     internal func add(_ values: double3) {
         // Move all the segments horizontally.
         for segment in segments {
-            segment.center.x += 1
+            segment.center.x += 1.0
         }
 
         // Add a new segment there are no segments or if the current segment is full.
@@ -72,24 +79,23 @@ internal final class GraphView: UIView {
         }
 
         // Add the values to the current segment.
-        currentSegment?.add(values)
+        currentSegment?.add(values, colors: lineColors)
     }
 
     // MARK: Private convenience methods
 
     private func addSegment() {
-        let segmentWidth = CGFloat(GraphSegment.capacity)
-
         // Determine the start point for the next segment.
-        let startPoint: double3 = currentSegment?.dataPoints.last ?? [0, 0, 0]
+        let startPoint: double3 = currentSegment?.dataPoints.last ?? [0.0, 0.0, 0.0]
 
         // Create and store a new segment.
         let segment = GraphSegment(startPoint: startPoint, valueRanges: valueRanges)
+        let segmentWidth = CGFloat(segment.capacity)
         segments.append(segment)
 
         // Add the segment to the view.
         segment.backgroundColor = backgroundColor
-        segment.frame = CGRect(x: -segmentWidth, y: 0, width: segmentWidth, height: bounds.size.height)
+        segment.frame = CGRect(x: -segmentWidth, y: 0.0, width: segmentWidth, height: bounds.size.height)
         addSubview(segment)
     }
 

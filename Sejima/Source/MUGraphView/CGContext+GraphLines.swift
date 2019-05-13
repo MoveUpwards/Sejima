@@ -9,11 +9,12 @@
 import UIKit
 
 extension CGContext {
+    /// Draw the horizontal lines.
     internal func drawGraphLines(in size: CGSize) {
         // Configure context settings.
         saveGState()
         setShouldAntialias(false)
-        translateBy(x: 0, y: size.height / 2.0)
+        translateBy(x: 0.0, y: size.height / 2.0)
 
         // Add lines to the context.
         let gridLineSpacing = size.height / 8.0
@@ -22,7 +23,7 @@ extension CGContext {
             guard index != 0 else { continue }
 
             let position = floor(gridLineSpacing * CGFloat(index))
-            move(to: CGPoint(x: 0, y: position))
+            move(to: CGPoint(x: 0.0, y: position))
             addLine(to: CGPoint(x: size.width, y: position))
         }
 
@@ -31,8 +32,8 @@ extension CGContext {
         strokePath()
 
         // Add and stroke the center line.
-        move(to: CGPoint(x: 0, y: 0))
-        addLine(to: CGPoint(x: size.width, y: 0))
+        move(to: .zero)
+        addLine(to: CGPoint(x: size.width, y: 0.0))
 
         setStrokeColor(UIColor.lightGray.cgColor)
         strokePath()

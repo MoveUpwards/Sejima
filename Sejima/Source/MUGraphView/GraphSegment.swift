@@ -9,49 +9,52 @@
 import UIKit
 import simd
 
+/// Apple's GraphSegment
 internal final class GraphSegment: UIView {
 
-    // MARK: Properties
-
-    static let capacity = 32
+    // MARK: - Properties
 
     private(set) var dataPoints = [double3]()
+    private var lineColors: [UIColor] = [.red, .green, .blue]
 
     private let startPoint: double3
-
     private let valueRanges: [ClosedRange<Double>]
 
-    static let lineColors: [UIColor] = [.red, .green, .blue]
-
-    internal var gridLinePositions = [CGFloat]()
-
+    /// Maximum capacity of the segment.
+    internal var capacity = 32
+    /// If the maximum capacity is reached.
     internal var isFull: Bool {
-        return dataPoints.count >= GraphSegment.capacity
+        return dataPoints.count >= capacity
     }
 
-    // MARK: Initialization
+    // MARK: - Initialization
 
+    /// Init with starting values and the ranges.
     internal init(startPoint: double3, valueRanges: [ClosedRange<Double>]) {
         self.startPoint = startPoint
         self.valueRanges = valueRanges
 
-        super.init(frame: CGRect.zero)
+        super.init(frame: .zero)
     }
 
+    /// Returns an object initialized from data in a given unarchiver.
     required internal init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    internal func add(_ values: double3) {
-        guard dataPoints.count < GraphSegment.capacity else { return }
+    /// Add new values to the graph.
+    internal func add(_ values: double3, colors: [UIColor]) {
+        guard !isFull else { return }
 
         dataPoints.append(values)
+        lineColors = colors
         setNeedsDisplay()
     }
 
-    // MARK: UIView
+    // MARK: - UIView
 
-    override internal func draw(_ rect: CGRect) {
+    /// Draws the receiver’s image within the passed-in rectangle.
+    override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
         // Fill the background.
@@ -65,10 +68,10 @@ internal final class GraphSegment: UIView {
 
         // Plot lines for the 3 sets of values.
         context.setShouldAntialias(false)
-        context.translateBy(x: 0, y: bounds.size.height / 2.0)
+        context.translateBy(x: 0.0, y: bounds.size.height / 2.0)
 
         for lineIndex in 0..<3 {
-            context.setStrokeColor(GraphSegment.lineColors[lineIndex].cgColor)
+            context.setStrokeColor(lineColors[lineIndex].cgColor)
 
             // Move to the start point for the current line.
             let value = startPoint[lineIndex]

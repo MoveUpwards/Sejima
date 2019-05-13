@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QGf-ja-4rW">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Graph ViewVC-->
+        <scene sceneID="zMI-9Q-KJ4">
+            <objects>
+                <viewController id="QGf-ja-4rW" customClass="GraphViewVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VWx-ow-VJk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FY-zk-aVO">
+                                <rect key="frame" x="0.0" y="64" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NJk-Ml-esc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gyro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qM-N8-Rsq">
+                                <rect key="frame" x="0.0" y="253" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hTT-QZ-ODO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magneto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JRx-R2-YUV">
+                                <rect key="frame" x="0.0" y="442" width="414" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vka-jS-7hD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vl0-32-sAw" customClass="MUGraphView" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="95" width="414" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="2Yi-HB-CVo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4J-m6-FLW" customClass="MUGraphView" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="284" width="414" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="buY-Bg-5Hs"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQp-PQ-oI3" customClass="MUGraphView" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="714" width="414" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.034920876080000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="qUV-AN-7Jm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="xColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="yColor">
+                                        <color key="value" red="0.71535209759999996" green="0.94279751710000004" blue="0.62772902399999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="zColor">
+                                        <color key="value" red="0.71535209759999996" green="0.94279751710000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IQp-PQ-oI3" firstAttribute="trailing" secondItem="4Tn-Km-wDT" secondAttribute="trailing" id="0jj-MM-lLA"/>
+                            <constraint firstItem="9qM-N8-Rsq" firstAttribute="top" secondItem="Vl0-32-sAw" secondAttribute="bottom" constant="30" id="8hG-6d-oaq"/>
+                            <constraint firstItem="JRx-R2-YUV" firstAttribute="top" secondItem="d4J-m6-FLW" secondAttribute="bottom" constant="30" id="Al8-h0-5tj"/>
+                            <constraint firstItem="IQp-PQ-oI3" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="Ara-CY-l1o"/>
+                            <constraint firstItem="d4J-m6-FLW" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="BoB-Qv-BH8"/>
+                            <constraint firstItem="8FY-zk-aVO" firstAttribute="top" secondItem="4Tn-Km-wDT" secondAttribute="top" constant="20" id="G7h-7Y-lVy"/>
+                            <constraint firstItem="9qM-N8-Rsq" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="S4y-A7-QUJ"/>
+                            <constraint firstItem="4Tn-Km-wDT" firstAttribute="trailing" secondItem="JRx-R2-YUV" secondAttribute="trailing" id="SpF-c3-5pK"/>
+                            <constraint firstItem="JRx-R2-YUV" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="Uv3-Ek-kEn"/>
+                            <constraint firstItem="d4J-m6-FLW" firstAttribute="trailing" secondItem="4Tn-Km-wDT" secondAttribute="trailing" id="dDh-xs-mH8"/>
+                            <constraint firstItem="Vl0-32-sAw" firstAttribute="top" secondItem="8FY-zk-aVO" secondAttribute="bottom" constant="10" id="fkB-qd-4Uj"/>
+                            <constraint firstItem="4Tn-Km-wDT" firstAttribute="bottom" secondItem="IQp-PQ-oI3" secondAttribute="bottom" constant="20" id="jdF-7f-BiT"/>
+                            <constraint firstItem="Vl0-32-sAw" firstAttribute="trailing" secondItem="4Tn-Km-wDT" secondAttribute="trailing" id="k9S-ln-qno"/>
+                            <constraint firstItem="d4J-m6-FLW" firstAttribute="top" secondItem="9qM-N8-Rsq" secondAttribute="bottom" constant="10" id="nDX-Li-2pi"/>
+                            <constraint firstItem="Vl0-32-sAw" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="rB3-Aa-zng"/>
+                            <constraint firstItem="4Tn-Km-wDT" firstAttribute="trailing" secondItem="8FY-zk-aVO" secondAttribute="trailing" id="rpn-gX-Ogr"/>
+                            <constraint firstItem="4Tn-Km-wDT" firstAttribute="trailing" secondItem="9qM-N8-Rsq" secondAttribute="trailing" id="whN-1s-jfS"/>
+                            <constraint firstItem="8FY-zk-aVO" firstAttribute="leading" secondItem="4Tn-Km-wDT" secondAttribute="leading" id="xC4-1A-SKK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Tn-Km-wDT"/>
+                    </view>
+                    <connections>
+                        <outlet property="accGraphView" destination="Vl0-32-sAw" id="v9j-nt-Evg"/>
+                        <outlet property="gyroGraphView" destination="d4J-m6-FLW" id="mRB-Jd-pzf"/>
+                        <outlet property="magnetoGraphView" destination="IQp-PQ-oI3" id="nqC-Fx-js4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsr-Jo-anV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+</document>
