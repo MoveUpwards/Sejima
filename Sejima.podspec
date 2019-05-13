@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/MoveUpwards/Sejima.git'
   s.authors = { 'Damien NOËL DUBUISSON' => 'damien@slide-r.com', 'Loïc GRIFFIÉ' => 'loic@slide-r.com' }
   s.source = { :git => 'https://github.com/MoveUpwards/Sejima.git', :tag => s.version }
-  s.swift_version   = '4.2'
+  s.swift_version   = '5.0'
 
   s.ios.deployment_target = '9.1'
 

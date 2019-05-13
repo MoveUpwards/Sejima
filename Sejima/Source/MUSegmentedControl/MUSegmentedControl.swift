@@ -264,7 +264,7 @@ open class MUSegmentedControl: UIControl {
 
     private func nearestIndex(to point: CGPoint) -> Int {
         let distances = normalSegmentsView.subviews.map { abs(point.x - $0.center.x) }
-        return distances.index(of: distances.min() ?? 0) ?? 0
+        return distances.firstIndex(of: distances.min() ?? 0) ?? 0
     }
 
     private func moveIndicatorView(to index: Int, animated: Bool = true) {

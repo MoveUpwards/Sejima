@@ -113,6 +113,9 @@ open class MULabelCounter: MUNibView {
                 counter = MULabelCounterEaseOut()
             case .easeInOut:
                 counter = MULabelCounterEaseInOut()
+            @unknown default:
+                print("TODO: handle new animation type")
+                counter = MULabelCounterLinear()
             }
         }
     }
