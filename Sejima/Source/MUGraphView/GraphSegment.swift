@@ -65,9 +65,6 @@ internal final class GraphSegment: UIView {
             context.fill(rect)
         }
 
-        // Draw static lines.
-        context.drawGraphLines(in: bounds.size)
-
         // Plot lines for the 3 sets of values.
         context.setShouldAntialias(false)
         context.translateBy(x: 0.0, y: bounds.size.height / 2.0)

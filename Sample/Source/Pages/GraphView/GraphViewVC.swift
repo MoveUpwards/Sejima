@@ -30,6 +30,9 @@ class GraphViewVC: UIViewController {
         magnetoGraphView.yRange = -2.0...2.0
         magnetoGraphView.zRange = -2.0...2.0
 
+        magnetoGraphView.mainAxisColor = .green
+        magnetoGraphView.othersAxisColor = .white
+
         //
         startUpdates()
     }

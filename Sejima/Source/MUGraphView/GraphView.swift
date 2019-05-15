@@ -45,22 +45,6 @@ internal final class GraphView: UIView {
         backgroundColor = .clear
     }
 
-    // MARK: UIView overrides
-
-    /// Draws the receiver’s image within the passed-in rectangle.
-    override internal func draw(_ rect: CGRect) {
-        let context = UIGraphicsGetCurrentContext()
-
-        // Fill the background.
-        if let backgroundColor = backgroundColor {
-            context?.setFillColor(backgroundColor.cgColor)
-            context?.fill(bounds)
-        }
-
-        // Draw the static lines.
-        context?.drawGraphLines(in: bounds.size)
-    }
-
     // MARK: Update methods
 
     /// Add new values to the graph.
