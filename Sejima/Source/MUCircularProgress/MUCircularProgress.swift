@@ -26,6 +26,18 @@ open class MUCircularProgress: MUNibView {
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
 
+    // MARK: - Style
+
+    /// Define the progress style
+    open var progressType: MUCircularProgressType = .determinate
+
+    /// Define the progress style (using Int value)
+    @IBInspectable open dynamic var progressTypeInt: Int = 0 {
+        didSet {
+            progressType = MUCircularProgressType(rawValue: progressTypeInt) ?? .determinate
+        }
+    }
+
     // MARK: - Icon
 
     /// An image displayed.
@@ -186,6 +198,12 @@ open class MUCircularProgress: MUNibView {
     @IBInspectable open dynamic var progressValue: CGFloat = 0.0 {
         didSet {
             progressValue = min(progressValue, 1.0)
+            switch progressType {
+            case .indeterminate:
+                startAnimating()
+            default:
+                stopAnimating()
+            }
         }
     }
 
@@ -193,6 +211,9 @@ open class MUCircularProgress: MUNibView {
 
     /// Specifies the animation duration for the progress line to go from current progress value up to target value.
     @objc open dynamic var animationDuration: TimeInterval = 0.3
+
+    /// Specifies the animation duration for the indeterminate rotation of the progress line.
+    @objc open dynamic var rotateDuration: TimeInterval = 1.0
 
     // MARK: - Private variables
 
@@ -225,6 +246,14 @@ open class MUCircularProgress: MUNibView {
     }
 
     // MARK: - Private method
+
+    public func startAnimating() {
+        rotateAnimation()
+    }
+
+    public func stopAnimating() {
+        resetAnimation()
+    }
 
     private func setupDisplayLink() {
         displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(observeAnimation))
@@ -292,6 +321,24 @@ open class MUCircularProgress: MUNibView {
         }
 
         progressObserver?(value)
+    }
+
+    // MARK: - Rotate animation
+
+    private func rotateAnimation() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation")
+        animation.duration = rotateDuration
+        animation.repeatCount = MAXFLOAT
+        animation.byValue = Double.pi * 2
+        pathLayer.strokeEnd = progressValue
+        pathLayer.add(animation, forKey: "rotation")
+    }
+
+    private func resetAnimation() {
+        if let transform = pathLayer.presentation()?.transform {
+            pathLayer.transform = transform
+            pathLayer.removeAnimation(forKey: "rotation")
+        }
     }
 
     // MARK: - Life cycle functions
