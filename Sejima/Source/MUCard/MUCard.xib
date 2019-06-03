@@ -27,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-bV-TGc" customClass="MUHeader" customModule="Sejima">
+                <view contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="268" placeholderIntrinsicHeight="8" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-bV-TGc" customClass="MUHeader" customModule="Sejima">
                     <rect key="frame" x="16" y="12" width="268" height="8"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
