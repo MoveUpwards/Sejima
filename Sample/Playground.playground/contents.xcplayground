@@ -26,5 +26,6 @@
         <page name='MUBarGraph'/>
         <page name='MUDatePicker'/>
         <page name='MUButton'/>
+        <page name='RedditToast'/>
     </pages>
 </playground>
