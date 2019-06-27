@@ -22,6 +22,7 @@ open class MUHeader: MUNibView {
     @IBInspectable open var title: String = "" {
         didSet {
             titleLabel.text = title
+            labelsSpacing.constant = detail.isEmpty ? 0 : spacing
         }
     }
 
@@ -45,6 +46,7 @@ open class MUHeader: MUNibView {
     @IBInspectable open var detail: String = "" {
         didSet {
             detailLabel.text = detail
+            labelsSpacing.constant = detail.isEmpty ? 0 : spacing
         }
     }
 
@@ -97,7 +99,7 @@ open class MUHeader: MUNibView {
     /// Return the height the header will have if constraint with this width.
     open func expectedHeight(for width: CGFloat) -> CGFloat {
         let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-        return titleLabel.sizeThatFits(size).height + spacing + detailLabel.sizeThatFits(size).height
+        return titleLabel.sizeThatFits(size).height + labelsSpacing.constant + detailLabel.sizeThatFits(size).height
     }
 
     /// Return the size with a force sizeToFit (for unit tests only)
@@ -105,6 +107,6 @@ open class MUHeader: MUNibView {
         titleLabel.sizeToFit()
         detailLabel.sizeToFit()
         return CGSize(width: max(titleLabel.bounds.width, detailLabel.bounds.width),
-                      height: titleLabel.bounds.height + spacing + detailLabel.bounds.height)
+                      height: titleLabel.bounds.height + labelsSpacing.constant + detailLabel.bounds.height)
     }
 }
