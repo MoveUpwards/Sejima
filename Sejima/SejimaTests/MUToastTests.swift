@@ -41,6 +41,9 @@ class MUToastTests: XCTestCase {
         XCTAssertEqual(toast.displayPriority, .info)
         XCTAssertEqual(toast.horizontalPadding, 16.0)
         XCTAssertEqual(toast.verticalPadding, 16.0)
+
+        XCTAssertEqual(toast.buttonSpacing, 16.0)
+        XCTAssertEqual(toast.buttonHeight, 0.0)
     }
 
     func testCustomValues() {
@@ -74,6 +77,9 @@ class MUToastTests: XCTestCase {
         toast.horizontalPadding = 20.0
         toast.verticalPadding = 20.0
 
+        toast.buttonSpacing = 16.0
+        toast.buttonHeight = 30.0
+
         XCTAssertEqual(toast.cornerRadius, 4.0)
 
         XCTAssertEqual(toast.title, "Title")
@@ -100,6 +106,9 @@ class MUToastTests: XCTestCase {
         XCTAssertEqual(toast.displayPriority, .alert)
         XCTAssertEqual(toast.horizontalPadding, 20.0)
         XCTAssertEqual(toast.verticalPadding, 20.0)
+
+        XCTAssertEqual(toast.buttonSpacing, 16.0)
+        XCTAssertEqual(toast.buttonHeight, 30.0)
     }
 
     func testShow() {
