@@ -10,10 +10,16 @@ import UIKit
 
 /// Class that define a card (title, description, indicator and image) with screen animation.
 @IBDesignable
-open class MUToast: MUNibView {
+open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
     @IBOutlet private var markerView: UIView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var header: MUHeader!
+    @IBOutlet private var buttons: UIStackView!
+
+    // Buttons inset constraint
+    @IBOutlet private var buttonsHeight: NSLayoutConstraint!
+    @IBOutlet private var buttonsTop: NSLayoutConstraint!
+    @IBOutlet private var buttonsBottom: NSLayoutConstraint!
 
     // Image inset constraint
     @IBOutlet private var markerWidth: NSLayoutConstraint!
@@ -24,11 +30,11 @@ open class MUToast: MUNibView {
 
     // Labels inset constraints
     @IBOutlet private var labelsTop: NSLayoutConstraint!
-    @IBOutlet private var labelsBottom: NSLayoutConstraint!
     @IBOutlet private var labelsLeading: NSLayoutConstraint!
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
 
     private var onTapBlock: (() -> Void)?
+    private var onButtonTapBlock = [((button: MUButton, index: Int) -> Void)?]()
 
     // MARK: - Background
 
@@ -143,14 +149,14 @@ open class MUToast: MUNibView {
     @IBInspectable open var headerVerticalPadding: CGFloat = 16.0 {
         didSet {
             labelsTop.constant = headerVerticalPadding
-            labelsBottom.constant = headerVerticalPadding
+            buttonsBottom.constant = headerVerticalPadding
         }
     }
 
     // MARK: - ImageView
 
     /// Returns the image of the toast.
-    @IBInspectable open dynamic var icon: UIImage? = nil {
+    @IBInspectable open var icon: UIImage? = nil {
         didSet {
             imageView.image = icon
 
@@ -212,6 +218,23 @@ open class MUToast: MUNibView {
     /// The toast’s vertical padding.
     @IBInspectable open var verticalPadding: CGFloat = 16.0
 
+    // MARK: - Buttons layout
+
+    /// The buttons horizontal spacing spacing.
+    @IBInspectable open var buttonSpacing: CGFloat = 16.0 {
+        didSet {
+            buttons.spacing = buttonSpacing
+            buttonsTop.constant = buttonHeight > 0 ? buttonSpacing : 0
+        }
+    }
+
+    /// The buttons height.
+    @IBInspectable open dynamic var buttonHeight: CGFloat = 0.0 {
+        didSet {
+            buttonsHeight.constant = buttonHeight
+        }
+    }
+
     // MARK: - Life cycle
 
     /// Default setup to load the view from a xib file.
@@ -244,6 +267,16 @@ open class MUToast: MUNibView {
         hidingAnimation(completion)
     }
 
+    // MARK: - Public functions
+
+    public func add(view: UIView, tapBlock: ((_ button: MUButton, _ index: Int) -> Void)? = nil) {
+        buttons.addArrangedSubview(view)
+
+        guard let button = view as? MUButton, tapBlock != nil else { return }
+        button.delegate = self
+        onButtonTapBlock.append(tapBlock)
+    }
+
     // MARK: - Private IBAction functions
 
     @IBAction private func didTap(_ sender: UITapGestureRecognizer) {
@@ -274,12 +307,20 @@ open class MUToast: MUNibView {
     private func expectedSize(in width: CGFloat) -> CGSize {
         var size = CGSize(width: width - 2.0 * horizontalPadding, height: 0.0)
 
-        let headerWidth = size.width - iconLeftPadding - iconWidth - 2.0 * headerHorizontalPadding
+        var headerWidth = size.width - 2.0 * headerHorizontalPadding
+        if icon != nil {
+            headerWidth -= iconLeftPadding + iconWidth * 2
+        }
 
         var headerHeight = header.expectedHeight(for: headerWidth)
-        if headerHeight < iconWidth {
+        if headerHeight < iconWidth, icon != nil {
             headerHeight = iconWidth
         }
+
+        if buttonHeight > 0 {
+            headerHeight += buttonHeight + headerVerticalPadding
+        }
+
         size.height = headerHeight + 2.0 * headerVerticalPadding
 
         return size
@@ -370,3 +411,10 @@ open class MUToast: MUNibView {
         })
     }
 }
+
+extension MUToast: MUButtonDelegate {
+    public func didTap(button: MUButton) {
+        guard let idx = buttons.arrangedSubviews.firstIndex(of: button) else { return }
+        onButtonTapBlock[idx]?(button, idx)
+    }
+} // swiftlint:disable:this file_length
