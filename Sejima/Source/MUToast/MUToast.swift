@@ -34,7 +34,7 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
     @IBOutlet private var labelsTrailing: NSLayoutConstraint!
 
     private var onTapBlock: (() -> Void)?
-    private var onButtonTapBlock = [((button: MUButton, index: Int) -> Void)?]()
+    private var onButtonTapBlock = [((Any) -> Void)?]()
 
     // MARK: - Background
 
@@ -269,12 +269,12 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
 
     // MARK: - Public functions
 
-    public func add(view: UIView, tapBlock: ((_ button: MUButton, _ index: Int) -> Void)? = nil) {
+    public func add(view: UIView, tapBlock: ((Any) -> Void)? = nil) {
         buttons.addArrangedSubview(view)
+        onButtonTapBlock.append(tapBlock)
 
         guard let button = view as? MUButton, tapBlock != nil else { return }
         button.delegate = self
-        onButtonTapBlock.append(tapBlock)
     }
 
     // MARK: - Private IBAction functions
@@ -415,6 +415,6 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
 extension MUToast: MUButtonDelegate {
     public func didTap(button: MUButton) {
         guard let idx = buttons.arrangedSubviews.firstIndex(of: button) else { return }
-        onButtonTapBlock[idx]?(button, idx)
+        onButtonTapBlock[idx]?(button)
     }
 } // swiftlint:disable:this file_length

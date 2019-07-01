@@ -22,7 +22,7 @@ vc.view.backgroundColor = .lightGray
 vc.view.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
 
 let toast = MUToast()
-toast.icon = #imageLiteral(resourceName: "reddit")
+//toast.icon = #imageLiteral(resourceName: "reddit")
 toast.buttonHeight = 30.0
 toast.spacing = 8
 toast.buttonSpacing = 16
@@ -49,11 +49,13 @@ okay.titleFont = .boldSystemFont(ofSize: 14)
 okay.buttonBackgroundColor = .red
 okay.borderColor = .red
 
-toast.add(view: cancel) { (button, index) in
-    print("Button at index \(index) did tap")
+toast.add(view: UIView())
+toast.add(view: cancel) { view in
+    print("Button did tap cancel")
 }
-toast.add(view: okay) { (button, index) in
-    print("Button at index \(index) did tap")
+toast.add(view: okay) { view in
+    print("Button did tap ok")
+    toast.hide()
 }
 
 PlaygroundPage.current.liveView = vc
