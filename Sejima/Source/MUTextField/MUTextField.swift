@@ -70,6 +70,15 @@ open class MUTextField: MUNibView {
         }
     }
 
+    /// The textfield text content type. Only available from iOS 10
+    @objc open dynamic var textContentType: UITextContentType? = nil {
+        didSet {
+            if #available(iOS 10.0, *) {
+                textField.textContentType = textContentType
+            }
+        }
+    }
+
     /// The appearance style of the keyboard that is associated with the text object.
     @objc open dynamic var keyboardAppearance: UIKeyboardAppearance = .default {
         didSet {
