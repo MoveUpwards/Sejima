@@ -20,8 +20,8 @@ public struct MUStatData {
     public let unit: String
     /// Defines the detail
     public let detail: String
-    /// Defines the show / hide separator
-    public let showSeparator: Bool
+    /// Defines the show / hide vertical separator
+    public let showVerticalSeparator: Bool
 
     /// Init a stat data with default values
     public init(image: UIImage? = nil,
@@ -29,12 +29,12 @@ public struct MUStatData {
                 value: Double,
                 unit: String,
                 detail: String,
-                showSeparator: Bool = true) {
+                showVerticalSeparator: Bool = true) {
         self.image = image
         self.format = format
         self.value = value
         self.unit = unit
         self.detail = detail
-        self.showSeparator = showSeparator
+        self.showVerticalSeparator = showVerticalSeparator
     }
 }

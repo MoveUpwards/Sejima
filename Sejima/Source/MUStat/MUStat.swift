@@ -19,7 +19,7 @@ import UIKit
 
  A view with customizable options as:
  * A separator on the most left.
- * An image on the right of the separator or on the most left if no separator.
+ * An image on the right of the verticalSeparator or on the most left if no verticalSeparator.
  * A block of labels with:
    * A value label and an unit label.
    * A description label.
@@ -29,48 +29,77 @@ open class MUStat: MUNibView {
     @IBOutlet private var valueLabel: UILabel!
     @IBOutlet private var unitLabel: UILabel!
     @IBOutlet private var detailLabel: UILabel!
-    @IBOutlet private var separator: UIView!
+    @IBOutlet private var verticalSeparator: UIView!
+    @IBOutlet private var horizontalSeparator: UIView!
     @IBOutlet private var imageView: UIImageView!
 
-    @IBOutlet private var separatorLeadingConstraint: NSLayoutConstraint! // inactive if no separator
-    @IBOutlet private var separatorWidthConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var verticalSeparatorLeadingConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var verticalSeparatorWidthConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var horizontalSeparatorWidthConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var horizontalSeparatorHeightConstraint: NSLayoutConstraint! // inactive if no separator
+    @IBOutlet private var horizontalSeparatorLeadingConstraint: NSLayoutConstraint! // inactive if no image
+    @IBOutlet private var horizontalSeparatorTrailingConstraint: NSLayoutConstraint! // inactive if no image
+    @IBOutlet private var horizontalSeparatorTopConstraint: NSLayoutConstraint! // inactive if no image
+    @IBOutlet private var horizontalSeparatorBottomConstraint: NSLayoutConstraint! // inactive if no image
     @IBOutlet private var imageLeadingConstraint: NSLayoutConstraint! // inactive if no image
     @IBOutlet private var imageHeightConstraint: NSLayoutConstraint! // inactive if no image
 
     @IBOutlet private var labelsTopConstraint: NSLayoutConstraint!
     @IBOutlet private var labelsBottomConstraint: NSLayoutConstraint!
 
-    /// The object that acts as the delegate of the avatar.
+    /// The object that acts as the delegate of the stat.
     @IBOutlet public weak var delegate: MUStatDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
 
     // MARK: - Separator
 
-    /// Show / hide separator.
-    @IBInspectable open dynamic var showSeparator: Bool = true {
+    /// Show / hide vertical separator.
+    @IBInspectable open dynamic var showVerticalSeparator: Bool = true {
         didSet {
-            separator.isHidden = !showSeparator
-            separatorLeadingConstraint.isActive = showSeparator
+            verticalSeparator.isHidden = !showVerticalSeparator
+            verticalSeparatorLeadingConstraint.isActive = showVerticalSeparator
         }
     }
 
-    /// Specifies the separator color.
-    @IBInspectable open dynamic var separatorColor: UIColor = .white {
+    /// Specifies thevertical  separator color.
+    @IBInspectable open dynamic var verticalSeparatorColor: UIColor = .clear {
         didSet {
-            separator.backgroundColor = separatorColor
+            verticalSeparator.backgroundColor = verticalSeparatorColor
         }
     }
 
-    /// Specifies the separator color.
-    @IBInspectable open dynamic var separatorWidth: CGFloat = 1.0 {
+    /// Specifies thevertical  separator color.
+    @IBInspectable open dynamic var horizontalSeparatorColor: UIColor = .clear {
         didSet {
-            separatorWidthConstraint.constant = separatorWidth
+            horizontalSeparator.backgroundColor = horizontalSeparatorColor
         }
     }
 
-    /// Specifies the left space if separator is shown.
-    @IBInspectable open dynamic var separatorLeftPadding: CGFloat = 0.0 {
+    /// Specifies the vertical separator color.
+    @IBInspectable open dynamic var verticalSeparatorWidth: CGFloat = 1.0 {
         didSet {
-            separatorLeadingConstraint.constant = separatorLeftPadding
+            verticalSeparatorWidthConstraint.constant = verticalSeparatorWidth
+        }
+    }
+
+    /// Specifies the vertical separator color.
+    @IBInspectable open dynamic var horizontalSeparatorWidth: CGFloat = 0.0 {
+        didSet {
+            horizontalSeparatorWidthConstraint.constant = horizontalSeparatorWidth
+        }
+    }
+
+    /// Specifies the vertical separator color.
+    @IBInspectable open dynamic var horizontalSeparatorHeight: CGFloat = 0.0 {
+        didSet {
+            horizontalSeparatorHeightConstraint.constant = horizontalSeparatorHeight
+            horizontalSeparatorBottomConstraint.constant = horizontalSeparatorHeight == 0 ? 0 : textVerticalPadding
+        }
+    }
+
+    /// Specifies the left space if vertical separator is shown.
+    @IBInspectable open dynamic var verticalSeparatorLeftPadding: CGFloat = 0.0 {
+        didSet {
+            verticalSeparatorLeadingConstraint.constant = verticalSeparatorLeftPadding
         }
     }
 
@@ -119,6 +148,31 @@ open class MUStat: MUNibView {
     @IBInspectable open dynamic var valueColor: UIColor = .black {
         didSet {
             valueLabel.textColor = valueColor
+        }
+    }
+
+    /// The text’s horizontal alignment.
+    @objc open dynamic var textAlignment: NSTextAlignment = .left {
+        didSet {
+            valueLabel.textAlignment = textAlignment
+            unitLabel.textAlignment = textAlignment
+            detailLabel.textAlignment = textAlignment
+
+            horizontalSeparatorLeadingConstraint.isActive = textAlignment == .left
+            horizontalSeparatorTrailingConstraint.isActive = textAlignment == .right
+
+            valueLabel.setContentHuggingPriority(UILayoutPriority(rawValue: textAlignment == .right ? 249 : 251),
+                                                 for: .horizontal)
+        }
+    }
+
+    /// Optional: The IBInspectable version of the text’s horizontal alignment.
+    @IBInspectable open var textAlignmentInt: Int {
+        get {
+            return textAlignment.rawValue
+        }
+        set {
+            textAlignment = NSTextAlignment(rawValue: newValue) ?? .left
         }
     }
 
@@ -185,6 +239,14 @@ open class MUStat: MUNibView {
         }
     }
 
+    /// Define the top and bottom padding of the labels.
+    @IBInspectable open dynamic var textVerticalPadding: CGFloat = 0.0 {
+        didSet {
+            horizontalSeparatorTopConstraint.constant = textVerticalPadding
+            horizontalSeparatorBottomConstraint.constant = horizontalSeparatorHeight == 0 ? 0 : textVerticalPadding
+        }
+    }
+
     // MARK: - Private functions
 
     private func setTextValue() {
@@ -205,7 +267,7 @@ open class MUStat: MUNibView {
         value = data.value
         unit = data.unit
         detail = data.detail
-        showSeparator = data.showSeparator
+        showVerticalSeparator = data.showVerticalSeparator
         icon = data.image
 
         setTextValue()

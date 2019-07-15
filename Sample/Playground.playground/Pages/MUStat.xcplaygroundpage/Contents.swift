@@ -25,8 +25,8 @@ let delegate = MyDelegate()
 
 let emptyStat = MUStat()
 emptyStat.backgroundColor = .lightGray
-emptyStat.showSeparator = false
-emptyStat.separatorWidth = 16
+emptyStat.showVerticalSeparator = false
+emptyStat.verticalSeparatorWidth = 16
 emptyStat.verticalPadding = 2.0
 
 view.addSubview(emptyStat)
@@ -51,7 +51,12 @@ textStat.format = "%.1f"
 textStat.value = 4.2
 textStat.unit = "km/h"
 textStat.detail = "average speed"
-textStat.showSeparator = false
+textStat.showVerticalSeparator = false
+textStat.horizontalSeparatorColor = .orange
+textStat.horizontalSeparatorHeight = 3
+textStat.textVerticalPadding = 50
+textStat.horizontalSeparatorWidth = 30
+textStat.textAlignment = .right
 textStat.delegate = delegate
 
 view.addSubview(textStat)
@@ -77,11 +82,11 @@ separatorStat.format = "%.1f"
 separatorStat.value = 4.2
 separatorStat.unit = "km/h"
 separatorStat.detail = "average speed"
-separatorStat.separatorLeftPadding = 8
-separatorStat.showSeparator = true
-separatorStat.separatorColor = .green
-separatorStat.separatorWidth = 5
-
+separatorStat.verticalSeparatorLeftPadding = 8
+separatorStat.showVerticalSeparator = true
+separatorStat.verticalSeparatorColor = .green
+separatorStat.verticalSeparatorWidth = 5
+separatorStat.horizontalSeparatorHeight = 0
 view.addSubview(separatorStat)
 separatorStat.centerXAnchor
     .constraint(equalTo: view.centerXAnchor)
@@ -105,7 +110,11 @@ iconStat.format = "%.1f"
 iconStat.value = 4.2
 iconStat.unit = "km/h"
 iconStat.detail = "average speed"
-iconStat.showSeparator = false
+iconStat.showVerticalSeparator = false
+iconStat.horizontalSeparatorHeight = 2
+iconStat.horizontalSeparatorColor = .green
+iconStat.horizontalSeparatorHeight = 5
+iconStat.horizontalSeparatorWidth = 50
 iconStat.icon = UIImage(named: "icon")
 
 view.addSubview(iconStat)
@@ -131,10 +140,11 @@ fullStat.format = "%.1f"
 fullStat.value = 4.2
 fullStat.unit = "km/h"
 fullStat.detail = "average speed"
-fullStat.showSeparator = true
-fullStat.separatorColor = .green
-fullStat.separatorWidth = 5
-fullStat.separatorLeftPadding = 0
+fullStat.showVerticalSeparator = true
+fullStat.verticalSeparatorColor = .green
+fullStat.verticalSeparatorWidth = 5
+fullStat.verticalSeparatorLeftPadding = 0
+fullStat.horizontalSeparatorHeight = 0
 fullStat.iconLeftPadding = 0
 fullStat.icon = UIImage(named: "icon")
 
@@ -161,10 +171,11 @@ multilineStat.format = "%.1f"
 multilineStat.value = 4.2
 multilineStat.unit = "km/h"
 multilineStat.detail = "average speed"
-multilineStat.showSeparator = true
-multilineStat.separatorColor = .green
-multilineStat.separatorWidth = 5
-multilineStat.separatorLeftPadding = 8
+multilineStat.showVerticalSeparator = true
+multilineStat.verticalSeparatorColor = .green
+multilineStat.verticalSeparatorWidth = 5
+multilineStat.verticalSeparatorLeftPadding = 8
+multilineStat.horizontalSeparatorHeight = 0
 multilineStat.iconLeftPadding = 8
 multilineStat.icon = UIImage(named: "icon")
 multilineStat.iconWidth = 60.0

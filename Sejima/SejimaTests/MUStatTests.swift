@@ -15,10 +15,10 @@ class MUStatTests: XCTestCase {
         let stat = MUStat()
         XCTAssertNotNil(stat)
 
-        XCTAssertEqual(stat.showSeparator, true)
-        XCTAssertEqual(stat.separatorColor, .white)
-        XCTAssertEqual(stat.separatorWidth, 1.0)
-        XCTAssertEqual(stat.separatorLeftPadding, 0.0)
+        XCTAssertEqual(stat.showVerticalSeparator, true)
+        XCTAssertEqual(stat.verticalSeparatorColor, .clear)
+        XCTAssertEqual(stat.verticalSeparatorWidth, 1.0)
+        XCTAssertEqual(stat.verticalSeparatorLeftPadding, 0.0)
         XCTAssertEqual(stat.icon, nil)
         XCTAssertEqual(stat.iconWidth, 50.0)
         XCTAssertEqual(stat.iconLeftPadding, 0.0)
@@ -41,10 +41,10 @@ class MUStatTests: XCTestCase {
 
         let myImage = UIImage()
 
-        stat.showSeparator = false
-        stat.separatorColor = .green
-        stat.separatorWidth = 0.0
-        stat.separatorLeftPadding = 8.0
+        stat.showVerticalSeparator = false
+        stat.verticalSeparatorColor = .green
+        stat.verticalSeparatorWidth = 0.0
+        stat.verticalSeparatorLeftPadding = 8.0
         stat.icon = myImage
         stat.iconWidth = 64.0
         stat.iconLeftPadding = 8.0
@@ -60,10 +60,10 @@ class MUStatTests: XCTestCase {
         stat.unitColor = .green
         stat.verticalPadding = 0.0
 
-        XCTAssertEqual(stat.showSeparator, false)
-        XCTAssertEqual(stat.separatorColor, .green)
-        XCTAssertEqual(stat.separatorWidth, 0.0)
-        XCTAssertEqual(stat.separatorLeftPadding, 8.0)
+        XCTAssertEqual(stat.showVerticalSeparator, false)
+        XCTAssertEqual(stat.verticalSeparatorColor, .green)
+        XCTAssertEqual(stat.verticalSeparatorWidth, 0.0)
+        XCTAssertEqual(stat.verticalSeparatorLeftPadding, 8.0)
         XCTAssertEqual(stat.icon, myImage)
         XCTAssertEqual(stat.iconWidth, 64.0)
         XCTAssertEqual(stat.iconLeftPadding, 8.0)
@@ -103,10 +103,10 @@ class MUStatTests: XCTestCase {
                               value: 1.234,
                               unit: "unit",
                               detail: "my custom detail",
-                              showSeparator: false)
+                              showVerticalSeparator: false)
         stat.set(data: data)
 
-        XCTAssertEqual(stat.showSeparator, false)
+        XCTAssertEqual(stat.showVerticalSeparator, false)
         XCTAssertEqual(stat.icon, myImage)
         XCTAssertEqual(stat.value, 1.234)
         XCTAssertEqual(stat.format, "%f")
