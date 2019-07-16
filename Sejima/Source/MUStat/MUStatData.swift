@@ -35,7 +35,7 @@ public struct MUStatData {
     }
 
     /// Return the given value in String for the defined format
-    public static func value(for input: Double, format: String) -> String {
+    public static func value(for input: Double, format: String = "") -> String {
         // check if counting with ints - cast to int
         if nil != format.range(of: "%(.*)d", options: .regularExpression, range: nil)
             || nil != format.range(of: "%(.*)i") {
