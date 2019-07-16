@@ -131,9 +131,9 @@ open class MUStat: MUNibView {
     // MARK: - Value label
 
     /// Defines the value text.
-    @IBInspectable open dynamic var value: Double = 0.0 {
+    @IBInspectable open dynamic var value: String = "" {
         didSet {
-            setTextValue()
+            valueLabel.text = value
         }
     }
 
@@ -173,13 +173,6 @@ open class MUStat: MUNibView {
         }
         set {
             textAlignment = NSTextAlignment(rawValue: newValue) ?? .left
-        }
-    }
-
-    /// Specifies the value label format.
-    @IBInspectable open dynamic var format: String = "%.f" {
-        didSet {
-            setTextValue()
         }
     }
 
@@ -247,30 +240,15 @@ open class MUStat: MUNibView {
         }
     }
 
-    // MARK: - Private functions
-
-    private func setTextValue() {
-        // check if counting with ints - cast to int
-        if nil != format.range(of: "%(.*)d", options: .regularExpression, range: nil)
-            || nil != format.range(of: "%(.*)i") {
-            valueLabel.text = String(format: format, Int(value))
-        } else {
-            valueLabel.text = String(format: format, value)
-        }
-    }
-
     // MARK: - Public functions
 
     /// Specifies the stat's data
     public func set(data: MUStatData) {
-        format = data.format
         value = data.value
         unit = data.unit
         detail = data.detail
         showVerticalSeparator = data.showVerticalSeparator
         icon = data.image
-
-        setTextValue()
     }
 
     // MARK: - Private IBAction functions

@@ -12,10 +12,8 @@ import UIKit
 public struct MUStatData {
     /// Defines the icon
     public let image: UIImage?
-    /// Defines the format
-    public let format: String
     /// Defines the value
-    public let value: Double
+    public let value: String
     /// Defines the unit
     public let unit: String
     /// Defines the detail
@@ -25,16 +23,25 @@ public struct MUStatData {
 
     /// Init a stat data with default values
     public init(image: UIImage? = nil,
-                format: String = "%.f",
-                value: Double,
+                value: String,
                 unit: String,
                 detail: String,
                 showVerticalSeparator: Bool = true) {
         self.image = image
-        self.format = format
         self.value = value
         self.unit = unit
         self.detail = detail
         self.showVerticalSeparator = showVerticalSeparator
+    }
+
+    /// Return the given value in String for the defined format
+    public static func value(for input: Double, format: String) -> String {
+        // check if counting with ints - cast to int
+        if nil != format.range(of: "%(.*)d", options: .regularExpression, range: nil)
+            || nil != format.range(of: "%(.*)i") {
+            return String(format: format, Int(input))
+        } else {
+            return String(format: format, input)
+        }
     }
 }

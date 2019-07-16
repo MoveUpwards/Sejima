@@ -22,10 +22,9 @@ class MUStatTests: XCTestCase {
         XCTAssertEqual(stat.icon, nil)
         XCTAssertEqual(stat.iconWidth, 50.0)
         XCTAssertEqual(stat.iconLeftPadding, 0.0)
-        XCTAssertEqual(stat.value, 0.0)
+        XCTAssertEqual(stat.value, "")
         XCTAssertEqual(stat.valueFont, .systemFont(ofSize: 12.0, weight: .regular))
         XCTAssertEqual(stat.valueColor, .black)
-        XCTAssertEqual(stat.format, "%.f")
         XCTAssertEqual(stat.detail, "")
         XCTAssertEqual(stat.detailFont, .systemFont(ofSize: 12.0, weight: .regular))
         XCTAssertEqual(stat.detailColor, .black)
@@ -48,10 +47,9 @@ class MUStatTests: XCTestCase {
         stat.icon = myImage
         stat.iconWidth = 64.0
         stat.iconLeftPadding = 8.0
-        stat.value = 1.23
+        stat.value = MUStatData.value(for: 1.23, format: "%.2f")
         stat.valueFont = .systemFont(ofSize: 18.0, weight: .bold)
         stat.valueColor = .white
-        stat.format = "%.2f"
         stat.detail = "My detail"
         stat.detailFont = .systemFont(ofSize: 10.0, weight: .light)
         stat.detailColor = .lightGray
@@ -67,10 +65,9 @@ class MUStatTests: XCTestCase {
         XCTAssertEqual(stat.icon, myImage)
         XCTAssertEqual(stat.iconWidth, 64.0)
         XCTAssertEqual(stat.iconLeftPadding, 8.0)
-        XCTAssertEqual(stat.value, 1.23)
+        XCTAssertEqual(stat.value, "1.23")
         XCTAssertEqual(stat.valueFont, .systemFont(ofSize: 18.0, weight: .bold))
         XCTAssertEqual(stat.valueColor, .white)
-        XCTAssertEqual(stat.format, "%.2f")
         XCTAssertEqual(stat.detail, "My detail")
         XCTAssertEqual(stat.detailFont, .systemFont(ofSize: 10.0, weight: .light))
         XCTAssertEqual(stat.detailColor, .lightGray)
@@ -80,18 +77,6 @@ class MUStatTests: XCTestCase {
         XCTAssertEqual(stat.verticalPadding, 0.0)
     }
 
-    func testFormat() {
-        let stat = MUStat()
-        XCTAssertNotNil(stat)
-
-        stat.value = 1.23
-        stat.format = "%.1f"
-
-        stat.format = "%d"
-
-        stat.format = "Plain text"
-    }
-
     func testSetData() {
         let stat = MUStat()
         XCTAssertNotNil(stat)
@@ -99,8 +84,7 @@ class MUStatTests: XCTestCase {
         let myImage = UIImage()
 
         let data = MUStatData(image: myImage,
-                              format: "%f",
-                              value: 1.234,
+                              value: MUStatData.value(for: 1.234, format: "%.fm"),
                               unit: "unit",
                               detail: "my custom detail",
                               showVerticalSeparator: false)
@@ -108,8 +92,7 @@ class MUStatTests: XCTestCase {
 
         XCTAssertEqual(stat.showVerticalSeparator, false)
         XCTAssertEqual(stat.icon, myImage)
-        XCTAssertEqual(stat.value, 1.234)
-        XCTAssertEqual(stat.format, "%f")
+        XCTAssertEqual(stat.value, "1m")
         XCTAssertEqual(stat.detail, "my custom detail")
         XCTAssertEqual(stat.unit, "unit")
     }
