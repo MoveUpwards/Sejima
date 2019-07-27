@@ -211,14 +211,14 @@ public class MUDateSlider: MUNibView {
     }
 
     /// Select item date at given index.
-    public func select(index: Int) {
+    public func select(index: Int, animated: Bool = true) {
         guard index >= 0 && index < dates.count else {
             return
         }
 
         selectedIndex = index
         dayCollectionView.selectItem(at: IndexPath(row: index, section: 0),
-                                     animated: true,
+                                     animated: animated,
                                      scrollPosition: .centeredHorizontally)
         delegate?.didSelect(picker: self, date: dates[index])
     }
