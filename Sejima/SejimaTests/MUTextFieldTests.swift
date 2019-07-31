@@ -27,7 +27,8 @@ class MUTextFieldTests: XCTestCase {
         XCTAssertEqual(textField.keyboardType, .default)
         XCTAssertEqual(textField.keyboardAppearance, .default)
         XCTAssertEqual(textField.keyboardReturnKeyType, .default)
-        XCTAssertEqual(textField.keyboardAutocorrectionType, .default)
+        XCTAssertEqual(textField.autocorrectionType, .default)
+        XCTAssertEqual(textField.autocapitalizationType, .none)
         XCTAssertEqual(textField.isEditable, true)
         XCTAssertEqual(textField.underlineHeight, 0.0)
         XCTAssertEqual(textField.underlineColor, .clear)
@@ -54,7 +55,8 @@ class MUTextFieldTests: XCTestCase {
         textField.keyboardType = .emailAddress
         textField.keyboardAppearance = .dark
         textField.keyboardReturnKeyType = .done
-        textField.keyboardAutocorrectionType = .yes
+        textField.autocorrectionType = .yes
+        textField.autocapitalizationType = .sentences
         textField.isEditable = false
         textField.underlineHeight = 1.0
         textField.underlineColor = .lightGray
@@ -77,7 +79,8 @@ class MUTextFieldTests: XCTestCase {
         XCTAssertEqual(textField.keyboardType, .emailAddress)
         XCTAssertEqual(textField.keyboardAppearance, .dark)
         XCTAssertEqual(textField.keyboardReturnKeyType, .done)
-        XCTAssertEqual(textField.keyboardAutocorrectionType, .yes)
+        XCTAssertEqual(textField.autocorrectionType, .yes)
+        XCTAssertEqual(textField.autocapitalizationType, .sentences)
         XCTAssertEqual(textField.isEditable, false)
         XCTAssertEqual(textField.underlineHeight, 1.0)
         XCTAssertEqual(textField.underlineColor, .lightGray)
