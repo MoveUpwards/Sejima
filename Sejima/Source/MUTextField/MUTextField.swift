@@ -101,9 +101,16 @@ open class MUTextField: MUNibView {
     }
 
     /// The autocorrection style for the text object.
-    @objc open dynamic var keyboardAutocorrectionType: UITextAutocorrectionType = .default {
+    @objc open dynamic var autocorrectionType: UITextAutocorrectionType = .default {
         didSet {
-            textField.autocorrectionType = keyboardAutocorrectionType
+            textField.autocorrectionType = autocorrectionType
+        }
+    }
+
+    /// The autocorrection style for the text object.
+    @objc open dynamic var autocapitalizationType: UITextAutocapitalizationType = .none {
+        didSet {
+            textField.autocapitalizationType = autocapitalizationType
         }
     }
 
