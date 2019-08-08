@@ -32,6 +32,19 @@ open class MUButton: MUNibView {
     // MARK: - Title
 
     /// The current title that is displayed by the button.
+    @IBInspectable open var image: UIImage? = nil {
+        didSet {
+            button.setImage(image, for: .normal)
+        }
+    }
+
+    open var imageEdgeInsets: UIEdgeInsets = .zero {
+        didSet {
+            button.imageEdgeInsets = imageEdgeInsets
+        }
+    }
+
+    /// The current title that is displayed by the button.
     @IBInspectable open var title: String = "" {
         didSet {
             button.setTitle(title, for: .normal)
