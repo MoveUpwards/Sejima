@@ -140,11 +140,7 @@ open class MUPinCode: MUNibView {
     /// Reset all pin cell caracters to default
     open func reset() {
         textField.text = ""
-        stackView.subviews.forEach { view in
-            if let view = view as? MUPinCodeCell {
-                view.set(text: emptyCharacter)
-            }
-        }
+        stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(text: emptyCharacter) })
     }
 
     /// Fill pin code with a given code
@@ -178,7 +174,7 @@ open class MUPinCode: MUNibView {
             cell.layer.cornerRadius = cellCornerRadius
             cell.set(font: cellFont)
                 .set(emptyCharacter: emptyCharacter)
-                .set(text: emptyCharacter)
+                .empty()
             stackView.addArrangedSubview(cell)
         }
     }
