@@ -106,7 +106,18 @@ open class MUPinCode: MUNibView {
     /// Describes the MUPinCode's cell's empty text while it shows
     @IBInspectable open dynamic var emptyCharacter: String = "•" {
         didSet {
-            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(text: emptyCharacter) })
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(emptyCharacter: emptyCharacter) })
+        }
+    }
+
+    /// Describes the MUPinCode's cell's empty text while it shows
+    @IBInspectable open dynamic var secureCharacter: String? = nil {
+        didSet {
+            if #available(iOS 10.0, *) {
+                stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(secureCharacter: secureCharacter) })
+            } else {
+                print("Unavailable on iOS 9 and earlier")
+            }
         }
     }
 
@@ -166,7 +177,8 @@ open class MUPinCode: MUNibView {
             cell.backgroundColor = cellColor
             cell.layer.cornerRadius = cellCornerRadius
             cell.set(font: cellFont)
-            cell.set(text: emptyCharacter)
+                .set(emptyCharacter: emptyCharacter)
+                .set(text: emptyCharacter)
             stackView.addArrangedSubview(cell)
         }
     }
@@ -236,7 +248,11 @@ extension MUPinCode: UITextFieldDelegate {
         }
 
         let cell = stackView.subviews[index] as? MUPinCodeCell
-        cell?.set(text: addOneChar ? string.uppercased() : emptyCharacter)
+        if addOneChar {
+            cell?.set(text: string.uppercased())
+        } else {
+            cell?.empty()
+        }
 
         delegate?.didUpdate(pinCode: self, with: addOneChar ? text + string : String(text.dropLast()))
 
