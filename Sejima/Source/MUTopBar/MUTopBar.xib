@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="center" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXO-fL-qgS">
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXO-fL-qgS">
                     <rect key="frame" x="0.0" y="22" width="0.0" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="iXO-fL-qgS" secondAttribute="height" multiplier="1:1" id="c6L-it-uYu"/>
@@ -45,6 +45,7 @@
             <constraints>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ELY-32-E1u"/>
                 <constraint firstItem="XAu-P9-fcf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b6Y-PO-jFJ"/>
+                <constraint firstItem="iXO-fL-qgS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="c7i-8E-OGo"/>
                 <constraint firstAttribute="trailing" secondItem="Cx0-AC-MuU" secondAttribute="trailing" id="dPu-f6-6K8"/>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="e8s-Sm-mac"/>
                 <constraint firstAttribute="bottom" secondItem="XAu-P9-fcf" secondAttribute="bottom" id="gRN-qs-IHB"/>
