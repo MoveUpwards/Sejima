@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKt-ht-zOp">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HistogramsVC-->
+        <scene sceneID="tKO-t7-3kV">
+            <objects>
+                <viewController id="gKt-ht-zOp" customClass="HistogramsVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ixV-c1-JJH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-af-9hx" customClass="MUHistogram" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ugB-Cf-8uG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-m7-yS5" customClass="MUBarGraph" customModule="Sejima">
+                                <rect key="frame" x="20" y="304" width="374" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="j3p-Kf-43Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rG1-m7-yS5" firstAttribute="leading" secondItem="r7C-r3-LQm" secondAttribute="leading" constant="20" id="L1y-qN-hyo"/>
+                            <constraint firstItem="aHo-af-9hx" firstAttribute="leading" secondItem="r7C-r3-LQm" secondAttribute="leading" id="LRN-bO-Ck8"/>
+                            <constraint firstItem="r7C-r3-LQm" firstAttribute="trailing" secondItem="rG1-m7-yS5" secondAttribute="trailing" constant="20" id="Zhh-G2-An3"/>
+                            <constraint firstItem="aHo-af-9hx" firstAttribute="top" secondItem="r7C-r3-LQm" secondAttribute="top" constant="20" id="cDa-Ik-uv2"/>
+                            <constraint firstItem="rG1-m7-yS5" firstAttribute="top" secondItem="aHo-af-9hx" secondAttribute="bottom" constant="40" id="w1u-JO-C1L"/>
+                            <constraint firstItem="r7C-r3-LQm" firstAttribute="trailing" secondItem="aHo-af-9hx" secondAttribute="trailing" id="zOo-gY-PKO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r7C-r3-LQm"/>
+                    </view>
+                    <connections>
+                        <outlet property="barGraph1" destination="rG1-m7-yS5" id="yDl-0o-uSV"/>
+                        <outlet property="histo1" destination="aHo-af-9hx" id="1Ct-gM-53b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EF6-gO-PoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="82"/>
+        </scene>
+    </scenes>
+</document>

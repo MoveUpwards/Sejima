@@ -17,7 +17,7 @@ class WalkthroughVC: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +44,12 @@ class WalkthroughVC: UIViewController {
         button.titleHighlightedColor = .white
         button.borderColor = UIColor(hex: 0xFA7921)
         button.borderWidth = 0.0
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        navigationController?.isNavigationBarHidden = false
     }
 
     override func viewDidLayoutSubviews() {

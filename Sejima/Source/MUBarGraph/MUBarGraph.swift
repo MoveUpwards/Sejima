@@ -228,8 +228,9 @@ open class MUBarGraph: MUNibView {
         bar.proportionalWidth = barWidth
         bar.value = data.value
         bar.color = data.color
-        bar.radius = 4.0
+        bar.radius = 4.0 // TODO: Expose it
         bar.showIndicator = data.showIndicator
+        bar.indicatorRadius = 4.0 // TODO: Expose it
         bar.indicatorMultiplier = indicatorMultiplier
         bar.indicatorFormat = indicatorFormat
         bar.indicatorWidth = indicatorWidth

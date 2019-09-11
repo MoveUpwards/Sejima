@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3D5EC22327EF5200B2D2D7 /* HistogramsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3D5EC12327EF5200B2D2D7 /* HistogramsVC.swift */; };
+		6D3D5EC42327EF6100B2D2D7 /* Histograms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3D5EC32327EF6100B2D2D7 /* Histograms.storyboard */; };
 		6D4F2F9C222598E700A0799B /* WalkthroughVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2F9B222598E700A0799B /* WalkthroughVC.swift */; };
 		6D4F2F9E222598EF00A0799B /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D4F2F9D222598EF00A0799B /* Walkthrough.storyboard */; };
 		6D5037F3228981AD0017AEC9 /* GraphView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D5037F2228981AD0017AEC9 /* GraphView.storyboard */; };
@@ -52,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6D3D5EC12327EF5200B2D2D7 /* HistogramsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistogramsVC.swift; sourceTree = "<group>"; };
+		6D3D5EC32327EF6100B2D2D7 /* Histograms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Histograms.storyboard; sourceTree = "<group>"; };
 		6D4F2F9B222598E700A0799B /* WalkthroughVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughVC.swift; sourceTree = "<group>"; };
 		6D4F2F9D222598EF00A0799B /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		6D5037F2228981AD0017AEC9 /* GraphView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GraphView.storyboard; sourceTree = "<group>"; };
@@ -95,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3D5EC02327EF3200B2D2D7 /* Histograms */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D5EC12327EF5200B2D2D7 /* HistogramsVC.swift */,
+				6D3D5EC32327EF6100B2D2D7 /* Histograms.storyboard */,
+			);
+			path = Histograms;
+			sourceTree = "<group>";
+		};
 		6D4F2F9A222598B700A0799B /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +164,7 @@
 		6D566122221EE83900014498 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				6D3D5EC02327EF3200B2D2D7 /* Histograms */,
 				6DDD7E3A222ECA1A0033F5F9 /* Toasts */,
 				6D4F2F9A222598B700A0799B /* Walkthrough */,
 				6D5037F1228981920017AEC9 /* GraphView */,
@@ -297,6 +311,7 @@
 			files = (
 				6D4F2F9E222598EF00A0799B /* Walkthrough.storyboard in Resources */,
 				6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */,
+				6D3D5EC42327EF6100B2D2D7 /* Histograms.storyboard in Resources */,
 				6DDD7E3E222ECA500033F5F9 /* Toasts.storyboard in Resources */,
 				6D5660FC221EC6B400014498 /* Assets.xcassets in Resources */,
 				6D5037F3228981AD0017AEC9 /* GraphView.storyboard in Resources */,
@@ -327,6 +342,7 @@
 				6D5660F7221EC6B200014498 /* MainVC.swift in Sources */,
 				6D5660F5221EC6B200014498 /* AppDelegate.swift in Sources */,
 				6D4F2F9C222598E700A0799B /* WalkthroughVC.swift in Sources */,
+				6D3D5EC22327EF5200B2D2D7 /* HistogramsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,13 +33,6 @@ internal class MUBar: MUNibView {
         }
     }
 
-    /// Define the corner radius.
-    internal var radius: CGFloat = 0.0 {
-        didSet {
-            indicator.cornerRadius = radius
-        }
-    }
-
     /// Define the bar's color.
     internal var color: UIColor = .clear {
         didSet {
@@ -47,10 +40,37 @@ internal class MUBar: MUNibView {
         }
     }
 
+    /// Define the bar's corner radius.
+    internal var radius: CGFloat = 0.0 {
+        didSet {
+            // As we are on a MUBarGraph, bottom have to not round
+            if #available(iOS 11.0, *) {
+                bar.layer.cornerRadius = radius
+                bar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            } else {
+                // Fallback on earlier versions
+                let path = UIBezierPath(roundedRect: bar.bounds,
+                                        byRoundingCorners: [.topLeft, .topRight], // TODO: Fix that only topLeft is working
+                                        cornerRadii: CGSize(width: radius, height: radius))
+                let maskLayer = CAShapeLayer()
+                maskLayer.frame = bar.bounds
+                maskLayer.path = path.cgPath
+                bar.layer.mask = maskLayer
+            }
+        }
+    }
+
     /// Show / hide the MUIndicator.
     internal var showIndicator: Bool = false {
         didSet {
             indicator.isHidden = !showIndicator
+        }
+    }
+
+    /// Define the indicator's corner radius.
+    internal var indicatorRadius: CGFloat = 0.0 {
+        didSet {
+            indicator.cornerRadius = indicatorRadius
         }
     }
 
