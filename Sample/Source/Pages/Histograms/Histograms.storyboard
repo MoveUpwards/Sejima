@@ -18,35 +18,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-af-9hx" customClass="MUHistogram" customModule="Sejima">
-                                <rect key="frame" x="0.0" y="64" width="414" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3w-1C-Z6X">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-Po-wFw">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-af-9hx" customClass="MUHistogram" customModule="Sejima">
+                                                <rect key="frame" x="0.0" y="20" width="414" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="ugB-Cf-8uG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-m7-yS5" customClass="MUBarGraph" customModule="Sejima">
+                                                <rect key="frame" x="20" y="240" width="374" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="j3p-Kf-43Y"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scE-ai-aOf" customClass="MUBarChart" customModule="Sejima">
+                                                <rect key="frame" x="20" y="460" width="374" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="vME-rA-emm"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfE-21-UJs" customClass="MUBarChart" customModule="Sejima">
+                                                <rect key="frame" x="20" y="680" width="374" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="GFl-j0-yOl"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="CfE-21-UJs" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="AhR-SA-QCi"/>
+                                            <constraint firstAttribute="trailing" secondItem="rG1-m7-yS5" secondAttribute="trailing" constant="20" id="CIx-iN-4Bu"/>
+                                            <constraint firstAttribute="trailing" secondItem="aHo-af-9hx" secondAttribute="trailing" id="KhL-79-3N2"/>
+                                            <constraint firstItem="scE-ai-aOf" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="L2L-4P-g8I"/>
+                                            <constraint firstItem="CfE-21-UJs" firstAttribute="top" secondItem="scE-ai-aOf" secondAttribute="bottom" constant="20" id="NNK-J7-ULf"/>
+                                            <constraint firstItem="aHo-af-9hx" firstAttribute="top" secondItem="EZu-Po-wFw" secondAttribute="top" constant="20" id="Ubl-Gn-gYr"/>
+                                            <constraint firstItem="rG1-m7-yS5" firstAttribute="top" secondItem="aHo-af-9hx" secondAttribute="bottom" constant="20" id="YZk-mb-7Ds"/>
+                                            <constraint firstAttribute="trailing" secondItem="scE-ai-aOf" secondAttribute="trailing" constant="20" id="aV5-Ya-OWi"/>
+                                            <constraint firstAttribute="trailing" secondItem="CfE-21-UJs" secondAttribute="trailing" constant="20" id="av8-dO-tdN"/>
+                                            <constraint firstAttribute="bottom" secondItem="CfE-21-UJs" secondAttribute="bottom" constant="20" id="gI9-ob-eF6"/>
+                                            <constraint firstItem="rG1-m7-yS5" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="jhn-8f-WmI"/>
+                                            <constraint firstItem="aHo-af-9hx" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" id="sox-Jx-MYp"/>
+                                            <constraint firstItem="scE-ai-aOf" firstAttribute="top" secondItem="rG1-m7-yS5" secondAttribute="bottom" constant="20" id="tb7-cr-rea"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="ugB-Cf-8uG"/>
+                                    <constraint firstAttribute="trailing" secondItem="EZu-Po-wFw" secondAttribute="trailing" id="Pdo-qx-Oet"/>
+                                    <constraint firstAttribute="bottom" secondItem="EZu-Po-wFw" secondAttribute="bottom" id="SxQ-UK-wTF"/>
+                                    <constraint firstItem="EZu-Po-wFw" firstAttribute="top" secondItem="n3w-1C-Z6X" secondAttribute="top" id="Zh1-he-VzT"/>
+                                    <constraint firstItem="EZu-Po-wFw" firstAttribute="leading" secondItem="n3w-1C-Z6X" secondAttribute="leading" id="e12-5l-Ohp"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-m7-yS5" customClass="MUBarGraph" customModule="Sejima">
-                                <rect key="frame" x="20" y="304" width="374" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="j3p-Kf-43Y"/>
-                                </constraints>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rG1-m7-yS5" firstAttribute="leading" secondItem="r7C-r3-LQm" secondAttribute="leading" constant="20" id="L1y-qN-hyo"/>
-                            <constraint firstItem="aHo-af-9hx" firstAttribute="leading" secondItem="r7C-r3-LQm" secondAttribute="leading" id="LRN-bO-Ck8"/>
-                            <constraint firstItem="r7C-r3-LQm" firstAttribute="trailing" secondItem="rG1-m7-yS5" secondAttribute="trailing" constant="20" id="Zhh-G2-An3"/>
-                            <constraint firstItem="aHo-af-9hx" firstAttribute="top" secondItem="r7C-r3-LQm" secondAttribute="top" constant="20" id="cDa-Ik-uv2"/>
-                            <constraint firstItem="rG1-m7-yS5" firstAttribute="top" secondItem="aHo-af-9hx" secondAttribute="bottom" constant="40" id="w1u-JO-C1L"/>
-                            <constraint firstItem="r7C-r3-LQm" firstAttribute="trailing" secondItem="aHo-af-9hx" secondAttribute="trailing" id="zOo-gY-PKO"/>
+                            <constraint firstItem="r7C-r3-LQm" firstAttribute="bottom" secondItem="n3w-1C-Z6X" secondAttribute="bottom" id="2Vn-7D-e7L"/>
+                            <constraint firstItem="n3w-1C-Z6X" firstAttribute="top" secondItem="r7C-r3-LQm" secondAttribute="top" id="81I-l5-dh8"/>
+                            <constraint firstItem="r7C-r3-LQm" firstAttribute="trailing" secondItem="n3w-1C-Z6X" secondAttribute="trailing" id="8gX-Uo-LQ5"/>
+                            <constraint firstItem="n3w-1C-Z6X" firstAttribute="leading" secondItem="r7C-r3-LQm" secondAttribute="leading" id="IPM-ja-hqH"/>
+                            <constraint firstItem="EZu-Po-wFw" firstAttribute="height" secondItem="ixV-c1-JJH" secondAttribute="height" priority="250" id="cXT-I8-l79"/>
+                            <constraint firstItem="EZu-Po-wFw" firstAttribute="width" secondItem="ixV-c1-JJH" secondAttribute="width" id="z4u-e7-SYD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="r7C-r3-LQm"/>
                     </view>
                     <connections>
+                        <outlet property="barChart1" destination="scE-ai-aOf" id="apy-Cw-iS6"/>
                         <outlet property="barGraph1" destination="rG1-m7-yS5" id="yDl-0o-uSV"/>
                         <outlet property="histo1" destination="aHo-af-9hx" id="1Ct-gM-53b"/>
+                        <outlet property="horizontalBarChar1" destination="CfE-21-UJs" id="NtU-vH-2mr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF6-gO-PoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
