@@ -62,7 +62,7 @@ final class HistogramsVC: UIViewController {
 
         let maxValue = datas.max() ?? 0.0
         datas.enumerated().forEach { offset, value in
-            barGraphData.append(MUBarGraphData(title: "\(String(format: "%02d", offset+1))",
+            barGraphData.append(MUBarGraphData(title: String(format: "%02d", offset+1),
                                                value: value / maxDataValue,
                                                color: value == maxValue ? .lima : .denim,
                                                showIndicator: true))
@@ -80,7 +80,7 @@ final class HistogramsVC: UIViewController {
 
         barChart1.values = values
         datas.enumerated().forEach { offset, value in
-            let value = MUBarChartData(title: "\(String(format: "%02d", offset+1))",
+            let value = MUBarChartData(title: String(format: "%02d", offset+1),
                                        value: MUBarChartValue(value: value, color: value == maxValue ? .lima : .denim))
 //            let value = MUBarChartData(title: "\(String(format: "%02d", offset+1))",
 //                                       values: [MUBarChartValue(value: value, color: .denim), MUBarChartValue(value: 2.0, color: .lima)])
@@ -113,12 +113,29 @@ final class HistogramsVC: UIViewController {
         horizontalBarChart2.leftLabelsInset = 4.0
         horizontalBarChart2.bottomLabelsInset = 4.0
         horizontalBarChart2.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        horizontalBarChart2.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
         horizontalBarChart2.orientation = .horizontal
-        horizontalBarChart2.maxDataValue = 12000
-        horizontalBarChart2.barWidth = 0.6
+        horizontalBarChart2.maxDataValue = 2000
+        horizontalBarChart2.barWidth = 0.8
+        horizontalBarChart2.showTotalValue = true
 
-//        horizontalBarChart2.values = ["0", "500", "1000", "1500", "2000"]
-//        let datas3 = [CGFloat(1518), 9935, 9179, 9128, 8889, 8504, 8406, 8278, 8070, 3207, 1696, 827]
+        horizontalBarChart2.values = ["0", "500", "1000", "1500", "2000"]
+        let datas3 = [CGFloat(1518), 1516, 1180, 1038, 1011, 819, 648, 586, 380, 356, 293, 95]
+        datas3.enumerated().forEach { offset, value in
+            let blueValue = CGFloat.random(in: value*0.5 ... value*0.8) // Between 50% and 80%
+            let redValue = CGFloat.random(in: value*0.05 ... value*0.15) // Between 5% and 15%
+
+            horizontalBarChart2.datas.append(
+                MUBarChartData(title: String(format: "%02d", offset+1),
+                               values: [MUBarChartValue(value: blueValue, color: .denim),
+                                        MUBarChartValue(value: value - blueValue - redValue, color: .outrageousOrange),
+                                        MUBarChartValue(value: redValue, color: .venetianRed)])
+            )
+
+//            horizontalBarChart2.datas
+        }
+
+        horizontalBarChart2.compute()
 
         // MARK: - MUBarChart 2
 
@@ -193,5 +210,13 @@ extension UIColor {
 
     class var blackPearl: UIColor {
         return UIColor(hex: 0x00171F)
+    }
+
+    class var outrageousOrange: UIColor {
+        return UIColor(hex: 0xF3522B)
+    }
+
+    class var venetianRed: UIColor {
+        return UIColor(hex: 0xB60910)
     }
 }

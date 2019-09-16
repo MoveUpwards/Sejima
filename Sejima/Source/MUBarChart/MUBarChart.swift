@@ -124,7 +124,7 @@ open class MUBarChart: MUNibView {
         let valuesLabels = orientation == .vertical ? bottomLabelsStackView : leftLabelsStackView
         valuesLabels?.distribution = .fillEqually
 
-        (orientation == .vertical ? datas : datas.reversed()).map({ $0.title }).forEach { valueString in
+        datas.map({ $0.title }).forEach { valueString in
             // Create a label to show the valueString
             let label = UILabel()
             label.text = valueString
@@ -164,7 +164,7 @@ open class MUBarChart: MUNibView {
                                   origin: .left,
                                   position: .right,
                                   value: data.totalValue,
-                                  xOffset: 5.0)
+                                  xOffset: -5.0)
                 }
             }
 
