@@ -43,20 +43,8 @@ internal class MUBar: MUNibView {
     /// Define the bar's corner radius.
     internal var radius: CGFloat = 0.0 {
         didSet {
-            // As we are on a MUBarGraph, bottom have to not round
-            if #available(iOS 11.0, *) {
-                bar.layer.cornerRadius = radius
-                bar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            } else {
-                // Fallback on earlier versions
-                let path = UIBezierPath(roundedRect: bar.bounds,
-                                        byRoundingCorners: [.topLeft, .topRight], // TODO: Fix that only topLeft is working
-                                        cornerRadii: CGSize(width: radius, height: radius))
-                let maskLayer = CAShapeLayer()
-                maskLayer.frame = bar.bounds
-                maskLayer.path = path.cgPath
-                bar.layer.mask = maskLayer
-            }
+            // As we only have vertical bar, we only round the 2 top corners.
+            bar.roundCorners([.topLeft, .topRight], value: radius)
         }
     }
 

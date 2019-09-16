@@ -58,6 +58,7 @@
 		6DAF5F4D232BD54300E8DE89 /* MUView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F4C232BD54300E8DE89 /* MUView+Autolayout.swift */; };
 		6DAF5F4F232BD63D00E8DE89 /* MUAutolayoutPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F4E232BD63D00E8DE89 /* MUAutolayoutPosition.swift */; };
 		6DAF5F51232BD83600E8DE89 /* MUView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */; };
+		6DAF5F53232FB56C00E8DE89 /* MUView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */; };
 		6DD518B9222EC39F00A1611F /* MUToast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD518B7222EC39F00A1611F /* MUToast.xib */; };
 		6DD518BA222EC39F00A1611F /* MUToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518B8222EC39F00A1611F /* MUToast.swift */; };
 		6DD518BC222EC90900A1611F /* MUToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518BB222EC90900A1611F /* MUToastTests.swift */; };
@@ -239,6 +240,7 @@
 		6DAF5F4C232BD54300E8DE89 /* MUView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MUView+Autolayout.swift"; sourceTree = "<group>"; };
 		6DAF5F4E232BD63D00E8DE89 /* MUAutolayoutPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAutolayoutPosition.swift; sourceTree = "<group>"; };
 		6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MUView+LayoutConstraint.swift"; sourceTree = "<group>"; };
+		6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MUView+Layer.swift"; sourceTree = "<group>"; };
 		6DD518B7222EC39F00A1611F /* MUToast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUToast.xib; sourceTree = "<group>"; };
 		6DD518B8222EC39F00A1611F /* MUToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUToast.swift; sourceTree = "<group>"; };
 		6DD518BB222EC90900A1611F /* MUToastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastTests.swift; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				6DAF5F4C232BD54300E8DE89 /* MUView+Autolayout.swift */,
 				6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */,
 				6DAF5F4A232BD50F00E8DE89 /* MUView+Gradient.swift */,
+				6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1189,6 +1192,7 @@
 				6DDD7E4622365C340033F5F9 /* MUPinCodeCharacterSet.swift in Sources */,
 				6DAF5F4B232BD50F00E8DE89 /* MUView+Gradient.swift in Sources */,
 				F35A3DA6223035A9009341D2 /* MUProportionalView.swift in Sources */,
+				6DAF5F53232FB56C00E8DE89 /* MUView+Layer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

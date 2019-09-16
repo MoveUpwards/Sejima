@@ -75,8 +75,12 @@ final class HistogramsVC: UIViewController {
         barChart1.leftLabelsInset = 4.0
         barChart1.bottomLabelsInset = 4.0
         barChart1.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        barChart1.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
         barChart1.maxDataValue = maxDataValue
         barChart1.barWidth = 0.4
+        barChart1.showTotalValue = true
+        barChart1.valueFormat = "%.1f"
+        barChart1.barRadius = 4.0
 
         barChart1.values = values
         datas.enumerated().forEach { offset, value in
@@ -94,9 +98,13 @@ final class HistogramsVC: UIViewController {
         horizontalBarChar1.leftLabelsInset = 4.0
         horizontalBarChar1.bottomLabelsInset = 4.0
         horizontalBarChar1.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        horizontalBarChar1.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
         horizontalBarChar1.orientation = .horizontal
         horizontalBarChar1.maxDataValue = 12000
         horizontalBarChar1.barWidth = 0.6
+        horizontalBarChar1.showTotalValue = true
+        horizontalBarChar1.barRadius = 4.0
+        horizontalBarChar1.roundCorners([.topLeft, .topRight], value: 5.0)
 
         horizontalBarChar1.values = ["0", "3000", "6000", "9000", "12000"]
         let datas2 = [CGFloat(9947), 9935, 9179, 9128, 8889, 8504, 8406, 8278, 8070, 3207, 1696, 827]
@@ -116,8 +124,9 @@ final class HistogramsVC: UIViewController {
         horizontalBarChart2.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
         horizontalBarChart2.orientation = .horizontal
         horizontalBarChart2.maxDataValue = 2000
-        horizontalBarChart2.barWidth = 0.8
+        horizontalBarChart2.barWidth = 0.7
         horizontalBarChart2.showTotalValue = true
+        horizontalBarChart2.barRadius = 4.0
 
         horizontalBarChart2.values = ["0", "500", "1000", "1500", "2000"]
         let datas3 = [CGFloat(1518), 1516, 1180, 1038, 1011, 819, 648, 586, 380, 356, 293, 95]
@@ -150,6 +159,7 @@ final class HistogramsVC: UIViewController {
         barChart2.maxDataValue = 1200
         barChart2.barWidth = 0.6
         barChart2.showTotalValue = true
+        barChart2.barRadius = 2.0
 
         let stackedValues = [[CGFloat(486), 333, 293],
                              [518, 313, 203],
