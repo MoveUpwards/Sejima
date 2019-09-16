@@ -15,26 +15,13 @@ extension UIView {
                                      height: CGFloat? = 1.0,
                                      width: CGFloat? = 1.0) {
         addSubview(view)
-
-        switch origin {
-        case .topLeft:
-            applyAutolayout(on: view, top: 0.0, height: height, leading: 0.0, width: width)
-        case .top:
-            applyAutolayout(on: view, top: 0.0, height: height, centerX: 0.0, width: width)
-        case .topRight:
-            applyAutolayout(on: view, top: 0.0, height: height, trailing: 0.0, width: width)
-        case .left:
-            applyAutolayout(on: view, centerY: 0.0, height: height, leading: 0.0, width: width)
-        case .center:
-            applyAutolayout(on: view, centerY: 0.0, height: height, centerX: 0.0, width: width)
-        case .right:
-            applyAutolayout(on: view, centerY: 0.0, height: height, trailing: 0.0, width: width)
-        case .bottomLeft:
-            applyAutolayout(on: view, bottom: 0.0, height: height, leading: 0.0, width: width)
-        case .bottom:
-            applyAutolayout(on: view, bottom: 0.0, height: height, centerX: 0.0, width: width)
-        case .bottomRight:
-            applyAutolayout(on: view, bottom: 0.0, height: height, trailing: 0.0, width: width)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        constraint(origin, to: view)
+        if let width = width {
+            view.widthAnchor.addConstraint(to: widthAnchor, multiplier: width)
+        }
+        if let height = height {
+            view.heightAnchor.addConstraint(to: heightAnchor, multiplier: height)
         }
     }
 

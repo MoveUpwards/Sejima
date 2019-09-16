@@ -14,6 +14,8 @@ final class HistogramsVC: UIViewController {
     @IBOutlet private var barGraph1: MUBarGraph!
     @IBOutlet private var barChart1: MUBarChart!
     @IBOutlet private var horizontalBarChar1: MUBarChart!
+    @IBOutlet private var horizontalBarChart2: MUBarChart!
+    @IBOutlet private var barChart2: MUBarChart!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +98,7 @@ final class HistogramsVC: UIViewController {
         horizontalBarChar1.maxDataValue = 12000
         horizontalBarChar1.barWidth = 0.6
 
-        horizontalBarChar1.values = ["0", "3000", "6000", "9000", "12000"] // ["0", "500", "1000", "1500", "2000"]
+        horizontalBarChar1.values = ["0", "3000", "6000", "9000", "12000"]
         let datas2 = [CGFloat(9947), 9935, 9179, 9128, 8889, 8504, 8406, 8278, 8070, 3207, 1696, 827]
         datas2.enumerated().forEach { offset, value in
             horizontalBarChar1.datas.append(MUBarChartData(title: "\(String(format: "%02d", offset+1))", value: MUBarChartValue(value: value, color: .denim)))
@@ -104,6 +106,78 @@ final class HistogramsVC: UIViewController {
 //                values: [MUBarChartValue(value: value, color: .denim), MUBarChartValue(value: 200.0, color: .lima)]))
         }
         horizontalBarChar1.compute()
+
+        // MARK: - Horizontal MUBarChart 2
+
+        horizontalBarChart2.backgroundColor = .clear
+        horizontalBarChart2.leftLabelsInset = 4.0
+        horizontalBarChart2.bottomLabelsInset = 4.0
+        horizontalBarChart2.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        horizontalBarChart2.orientation = .horizontal
+        horizontalBarChart2.maxDataValue = 12000
+        horizontalBarChart2.barWidth = 0.6
+
+//        horizontalBarChart2.values = ["0", "500", "1000", "1500", "2000"]
+//        let datas3 = [CGFloat(1518), 9935, 9179, 9128, 8889, 8504, 8406, 8278, 8070, 3207, 1696, 827]
+
+        // MARK: - MUBarChart 2
+
+        barChart2.backgroundColor = .white
+        barChart2.leftLabelsInset = 4.0
+        barChart2.bottomLabelsInset = 4.0
+        barChart2.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .bold)
+        barChart2.labelColor = .black
+        barChart2.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        barChart2.valueColor = .black
+        barChart2.orientation = .vertical
+        barChart2.maxDataValue = 1200
+        barChart2.barWidth = 0.6
+        barChart2.showTotalValue = true
+
+        let stackedValues = [[CGFloat(486), 333, 293],
+                             [518, 313, 203],
+                             [521, 277, 137],
+                             [472, 260, 129],
+                             [388, 249, 197],
+                             [572, 205, 39],
+                             [339, 241, 202],
+                             [369, 245, 160],
+                             [509, 175, 44],
+                             [300, 157, 183],
+                             [205, 146, 181],
+                             [111, 85, 50],
+                             [58, 69, 90]]
+        var stackedData = [MUBarChartData]()
+        stackedValues.enumerated().forEach { offset, arrayValues in
+            let c = UnicodeScalar(65 + offset) // A and so on...
+            var str = ""
+            if let c = c {
+                str = String(UnicodeScalar(c))
+            }
+
+            var b = [MUBarChartValue]()
+            arrayValues.enumerated().forEach { index, floatValue in
+                let color: UIColor
+                switch index {
+                case 1:
+                    color = .orange
+                case 2:
+                    color = .red
+                default:
+                    color = .yellow
+                }
+                b.append(MUBarChartValue(value: floatValue, color: color))
+            }
+
+            let a = MUBarChartData(title: String(repeating: str, count: 3),
+                                   values: b,
+                                   showValue: true)
+
+            stackedData.append(a)
+        }
+        barChart2.values = ["0", "200", "400", "600", "800", "1000", "1200"]
+        barChart2.datas = stackedData
+        barChart2.compute()
     }
 }
 

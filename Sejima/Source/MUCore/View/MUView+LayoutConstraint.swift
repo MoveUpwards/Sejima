@@ -17,12 +17,13 @@ extension UIView {
     public func constraint(_ origin: MUAutolayoutPosition,
                            to view: UIView,
                            position: MUAutolayoutPosition? = nil,
-                           offset: CGFloat = 0.0) {
+                           xOffset: CGFloat = 0.0,
+                           yOffset: CGFloat = 0.0) {
         let (selfXAnchor, selfYAnchor) = anchors(for: origin)
         let (viewXAnchor, viewYAnchor) = view.anchors(for: position ?? origin)
 
-        selfXAnchor.addConstraint(to: viewXAnchor, constant: offset)
-        selfYAnchor.addConstraint(to: viewYAnchor, constant: offset)
+        selfXAnchor.addConstraint(to: viewXAnchor, constant: xOffset)
+        selfYAnchor.addConstraint(to: viewYAnchor, constant: yOffset)
     }
 
     private func anchors(for origin: MUAutolayoutPosition) -> (NSLayoutXAxisAnchor, NSLayoutYAxisAnchor) {

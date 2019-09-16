@@ -48,26 +48,26 @@ open class MUBarChart: MUNibView {
         }
     }
 
+    // *** All this variables won't change the bar chart until compute() function ***
+
     // MARK: - Labels
 
-    /// Specifies the label's font.
-    @objc open dynamic var labelFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular) {
-        didSet {
-//            updateBarsAndTitles()
-//            updateValues()
-        }
-    }
+    /// Specifies the title label's font.
+    open var labelFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular)
 
-    /// Specifies the label's color.
-    @IBInspectable open dynamic var labelColor: UIColor = .white {
-        didSet {
-//            barTitles.arrangedSubviews.compactMap({ $0 as? UILabel }).forEach({ $0.textColor = titleColor })
-//            barValues.arrangedSubviews.compactMap({ $0 as? UILabel }).forEach({ $0.textColor = titleColor })
-        }
-    }
+    /// Specifies the title label's color.
+    open var labelColor: UIColor = .white
+
+    /// Specifies the value label's font.
+    open var valueFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular)
+
+    /// Specifies the value label's color.
+    open var valueColor: UIColor = .white
+
+    /// Specifies the indicator's value format.
+    open var valueFormat: String = "%.f"
 
     // MARK: - Configuration
-    // All this variables won't change the bar chart until compute() function
 
     /// Specifies the chart's type.
     open var type = MUBarChartType.stacked
@@ -146,26 +146,57 @@ open class MUBarChart: MUNibView {
 
             data.values.forEach { value in
                 lastBarView = addBar(to: bkgView, stackTo: lastBarView, with: value)
+
+                if data.showValue {
+                    addValueLabel(to: lastBarView, origin: .center, value: value.value)
+                }
             }
 
-            let dataBar = UIView()
-            dataBar.backgroundColor = data.values.first?.color
-
-//            var lastView = dataBar
-//
-//            data.values.enumerated().filter({ $0.offset != 0 }).forEach { _, newData in
-//                let newBar = UIView()
-//                dataBar.backgroundColor = newData.color
-//            }
-
-//            let origin = orientation == .vertical ? NSLayoutConstraint.Attribute.bottom : .leading
-//            bkgView.addSubview(dataBar)
-//            bkgView.translatesAutoresizingMaskIntoConstraints = false
-//            bkgView.addConstraint(item: bkgView, attribute: origin, toItem: dataBar)
-//            dataBar.addConstraint(item: dataBar, attribute: .width, multiplier: width)
-//            dataBar.addConstraint(item: dataBar, attribute: .height, multiplier: height)
+            if showTotalValue {
+                if orientation == .vertical {
+                    addValueLabel(to: lastBarView,
+                                  origin: .bottom,
+                                  position: .top,
+                                  value: data.totalValue,
+                                  yOffset: 5.0)
+                } else {
+                    addValueLabel(to: lastBarView,
+                                  origin: .left,
+                                  position: .right,
+                                  value: data.totalValue,
+                                  xOffset: 5.0)
+                }
+            }
 
             datasStackView.addArrangedSubview(bkgView)
+        }
+    }
+
+    private func addValueLabel(to parentView: UIView?,
+                               origin: MUAutolayoutPosition,
+                               position: MUAutolayoutPosition? = nil,
+                               value: CGFloat,
+                               xOffset: CGFloat = 0.0,
+                               yOffset: CGFloat = 0.0) {
+        let label = UILabel()
+        label.font = valueFont
+        label.textColor = valueColor
+
+        // check if counting with ints - cast to int
+        if nil != valueFormat.range(of: "%(.*)d", options: .regularExpression, range: nil)
+            || nil != valueFormat.range(of: "%(.*)i") {
+            label.text = String(format: valueFormat, Int(value))
+        } else {
+            label.text = String(format: valueFormat, value)
+        }
+
+        if let position = position {
+            parentView?.addSubview(label)
+            label.translatesAutoresizingMaskIntoConstraints = false
+
+            parentView?.constraint(position, to: label, position: origin, xOffset: xOffset, yOffset: yOffset)
+        } else {
+            parentView?.addAutolayoutSubview(label, origin: origin, height: nil, width: nil)
         }
     }
 
