@@ -16,6 +16,7 @@ final class HistogramsVC: UIViewController {
     @IBOutlet private var horizontalBarChar1: MUBarChart!
     @IBOutlet private var horizontalBarChart2: MUBarChart!
     @IBOutlet private var barChart2: MUBarChart!
+    @IBOutlet private var sideBySideBarChart: MUBarChart!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,9 +207,48 @@ final class HistogramsVC: UIViewController {
 
             stackedData.append(a)
         }
-        barChart2.values = ["0", "200", "400", "600", "800", "1000", "1200"]
+        barChart2.values = [" ", "", "", "", "", "", ""] // ["0", "200", "400", "600", "800", "1000", "1200"]
         barChart2.datas = stackedData
+        barChart2.bkgLineColor = UIColor.black.withAlphaComponent(0.4)
         barChart2.compute()
+
+        // MARK: - Side by Side chart
+
+        sideBySideBarChart.backgroundColor = .clear
+        sideBySideBarChart.type = .sideBySide
+        sideBySideBarChart.leftLabelsInset = 4.0
+        sideBySideBarChart.bottomLabelsInset = 4.0
+        sideBySideBarChart.labelFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        sideBySideBarChart.valueFont = UIFont.systemFont(ofSize: 8.0, weight: .semibold)
+        sideBySideBarChart.orientation = .vertical
+        sideBySideBarChart.maxDataValue = 60.0
+        sideBySideBarChart.barWidth = 0.8
+        sideBySideBarChart.showTotalValue = true
+        sideBySideBarChart.barRadius = 3.0
+
+        let sideBySideValues = [[CGFloat(51), 42],
+                                [46, 29],
+                                [45, 46],
+                                [45, 30],
+                                [35, 33],
+                                [29, 18],
+                                [28, 19],
+                                [28, 20],
+                                [28, 24],
+                                [7, 7],
+                                [5, 10],
+                                [4, 3]]
+
+        sideBySideValues.enumerated().forEach { offset, arrayValues in
+            let d = MUBarChartData(title: String(format: "%02d", offset+1),
+                                   values: [MUBarChartValue(value: arrayValues[0], color: .lima),
+                                            MUBarChartValue(value: arrayValues[1], color: .venetianRed)])
+
+            sideBySideBarChart.datas.append(d)
+        }
+
+        sideBySideBarChart.values = ["0", "15", "30", "45", "60"]
+        sideBySideBarChart.compute()
     }
 }
 

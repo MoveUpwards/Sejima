@@ -11,12 +11,13 @@ import UIKit.UIView
 extension UIView {
     /// Add a view to the origin point with width and height multiplier from the parent view
     public func addAutolayoutSubview(_ view: UIView,
-                                     origin: MUAutolayoutPosition = .topLeft,
+                                     origin: MUAutolayoutPosition,
+                                     position: MUAutolayoutPosition? = nil,
                                      height: CGFloat? = 1.0,
                                      width: CGFloat? = 1.0) {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
-        constraint(origin, to: view)
+        constraint(origin, to: view, position: position)
         if let width = width {
             view.widthAnchor.addConstraint(to: widthAnchor, multiplier: width)
         }

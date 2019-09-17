@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-Po-wFw">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1540"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1760"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHo-af-9hx" customClass="MUHistogram" customModule="Sejima">
                                                 <rect key="frame" x="0.0" y="20" width="414" height="200"/>
@@ -66,13 +66,22 @@
                                                     <constraint firstAttribute="height" constant="400" id="Ma4-RF-6ra"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdP-pr-NSi" customClass="MUBarChart" customModule="Sejima">
+                                                <rect key="frame" x="20" y="1540" width="374" height="200"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="nVl-Uh-T7l"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fdP-pr-NSi" secondAttribute="bottom" constant="20" id="9EQ-ZG-nqm"/>
                                             <constraint firstItem="CfE-21-UJs" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="AhR-SA-QCi"/>
                                             <constraint firstAttribute="trailing" secondItem="rG1-m7-yS5" secondAttribute="trailing" constant="20" id="CIx-iN-4Bu"/>
                                             <constraint firstAttribute="trailing" secondItem="aHo-af-9hx" secondAttribute="trailing" id="KhL-79-3N2"/>
                                             <constraint firstItem="scE-ai-aOf" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="L2L-4P-g8I"/>
+                                            <constraint firstItem="fdP-pr-NSi" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="M3W-uH-vbq"/>
                                             <constraint firstItem="CfE-21-UJs" firstAttribute="top" secondItem="scE-ai-aOf" secondAttribute="bottom" constant="20" id="NNK-J7-ULf"/>
                                             <constraint firstItem="YTn-02-Zz7" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="Qio-mz-jmr"/>
                                             <constraint firstAttribute="trailing" secondItem="YTn-02-Zz7" secondAttribute="trailing" constant="20" id="Rhw-ot-Q02"/>
@@ -81,9 +90,10 @@
                                             <constraint firstItem="GM4-7l-OWK" firstAttribute="top" secondItem="YTn-02-Zz7" secondAttribute="bottom" constant="20" id="Yci-cB-xge"/>
                                             <constraint firstAttribute="trailing" secondItem="scE-ai-aOf" secondAttribute="trailing" constant="20" id="aV5-Ya-OWi"/>
                                             <constraint firstAttribute="trailing" secondItem="CfE-21-UJs" secondAttribute="trailing" constant="20" id="av8-dO-tdN"/>
+                                            <constraint firstAttribute="trailing" secondItem="fdP-pr-NSi" secondAttribute="trailing" constant="20" id="gfr-Ug-oAr"/>
                                             <constraint firstItem="rG1-m7-yS5" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="20" id="jhn-8f-WmI"/>
                                             <constraint firstItem="GM4-7l-OWK" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" constant="10" id="k1R-2I-Zoh"/>
-                                            <constraint firstAttribute="bottom" secondItem="GM4-7l-OWK" secondAttribute="bottom" constant="20" id="pdB-DD-HYZ"/>
+                                            <constraint firstItem="fdP-pr-NSi" firstAttribute="top" secondItem="GM4-7l-OWK" secondAttribute="bottom" constant="20" id="mTD-hQ-BYZ"/>
                                             <constraint firstItem="YTn-02-Zz7" firstAttribute="top" secondItem="CfE-21-UJs" secondAttribute="bottom" constant="20" id="pwU-3y-LiQ"/>
                                             <constraint firstAttribute="trailing" secondItem="GM4-7l-OWK" secondAttribute="trailing" constant="10" id="qgW-CB-6Ep"/>
                                             <constraint firstItem="aHo-af-9hx" firstAttribute="leading" secondItem="EZu-Po-wFw" secondAttribute="leading" id="sox-Jx-MYp"/>
@@ -117,6 +127,7 @@
                         <outlet property="histo1" destination="aHo-af-9hx" id="1Ct-gM-53b"/>
                         <outlet property="horizontalBarChar1" destination="CfE-21-UJs" id="NtU-vH-2mr"/>
                         <outlet property="horizontalBarChart2" destination="YTn-02-Zz7" id="UG3-yw-uuS"/>
+                        <outlet property="sideBySideBarChart" destination="fdP-pr-NSi" id="fxL-IK-wZW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EF6-gO-PoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
