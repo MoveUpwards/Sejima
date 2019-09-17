@@ -59,6 +59,8 @@
 		6DAF5F4F232BD63D00E8DE89 /* MUAutolayoutPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F4E232BD63D00E8DE89 /* MUAutolayoutPosition.swift */; };
 		6DAF5F51232BD83600E8DE89 /* MUView+LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */; };
 		6DAF5F53232FB56C00E8DE89 /* MUView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */; };
+		6DAF5F772330DC2300E8DE89 /* MUView+Dash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F762330DC2300E8DE89 /* MUView+Dash.swift */; };
+		6DAF5F7A2330DC4400E8DE89 /* MUDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F792330DC4400E8DE89 /* MUDashedView.swift */; };
 		6DD518B9222EC39F00A1611F /* MUToast.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD518B7222EC39F00A1611F /* MUToast.xib */; };
 		6DD518BA222EC39F00A1611F /* MUToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518B8222EC39F00A1611F /* MUToast.swift */; };
 		6DD518BC222EC90900A1611F /* MUToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518BB222EC90900A1611F /* MUToastTests.swift */; };
@@ -241,6 +243,8 @@
 		6DAF5F4E232BD63D00E8DE89 /* MUAutolayoutPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUAutolayoutPosition.swift; sourceTree = "<group>"; };
 		6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MUView+LayoutConstraint.swift"; sourceTree = "<group>"; };
 		6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MUView+Layer.swift"; sourceTree = "<group>"; };
+		6DAF5F762330DC2300E8DE89 /* MUView+Dash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MUView+Dash.swift"; sourceTree = "<group>"; };
+		6DAF5F792330DC4400E8DE89 /* MUDashedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUDashedView.swift; sourceTree = "<group>"; };
 		6DD518B7222EC39F00A1611F /* MUToast.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUToast.xib; sourceTree = "<group>"; };
 		6DD518B8222EC39F00A1611F /* MUToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUToast.swift; sourceTree = "<group>"; };
 		6DD518BB222EC90900A1611F /* MUToastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastTests.swift; sourceTree = "<group>"; };
@@ -512,8 +516,17 @@
 				6DAF5F50232BD83600E8DE89 /* MUView+LayoutConstraint.swift */,
 				6DAF5F4A232BD50F00E8DE89 /* MUView+Gradient.swift */,
 				6DAF5F52232FB56C00E8DE89 /* MUView+Layer.swift */,
+				6DAF5F762330DC2300E8DE89 /* MUView+Dash.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6DAF5F782330DC2E00E8DE89 /* MUDashedView */ = {
+			isa = PBXGroup;
+			children = (
+				6DAF5F792330DC4400E8DE89 /* MUDashedView.swift */,
+			);
+			path = MUDashedView;
 			sourceTree = "<group>";
 		};
 		6DD518B6222EC36A00A1611F /* MUToast */ = {
@@ -865,6 +878,7 @@
 				6DDD7E4F22365C630033F5F9 /* MUHistogram */,
 				6D0B54742249246000DC4B42 /* MUBarGraph */,
 				6D3D5EC52329454E00B2D2D7 /* MUBarChart */,
+				6DAF5F782330DC2E00E8DE89 /* MUDashedView */,
 				6DDD7E4B22365C630033F5F9 /* MUProportionalBar */,
 				F317FFA4223A5702001DBDDD /* MUProgress */,
 				F34BD13E223B902600793EDE /* MUTimeSlider */,
@@ -1110,6 +1124,7 @@
 				6D1E7722223C08FF0030A2C4 /* MUOption.swift in Sources */,
 				6D3D5EF3232A7EE700B2D2D7 /* MUQuad+UIView.swift in Sources */,
 				6D4F2FAE2228396100A0799B /* MUNavigationBar.swift in Sources */,
+				6DAF5F772330DC2300E8DE89 /* MUView+Dash.swift in Sources */,
 				F317FF8D2236CD3A001DBDDD /* MUStat.swift in Sources */,
 				6DDD7E4722365C340033F5F9 /* MUPinCodeCell.swift in Sources */,
 				F35341FF224644F400F878CB /* MUTabBar.swift in Sources */,
@@ -1170,6 +1185,7 @@
 				6D0B547E224930C100DC4B42 /* MUBarGraphData.swift in Sources */,
 				6D8BC0D82237EE8C006AFE7E /* MUToastPriority.swift in Sources */,
 				F35A3DE3223159A6009341D2 /* MURadarGraphChart.swift in Sources */,
+				6DAF5F7A2330DC4400E8DE89 /* MUDashedView.swift in Sources */,
 				F35341F622463DE400F878CB /* MUOverlay.swift in Sources */,
 				F3B8122C22253F040004B830 /* MUButton.swift in Sources */,
 				6D3D5ECF232A305200B2D2D7 /* MUBarChartData.swift in Sources */,
