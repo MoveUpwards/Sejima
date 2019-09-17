@@ -11,6 +11,7 @@ import UIKit
 open class MUBarChart: MUNibView {
     @IBOutlet private var leftLabelsStackView: UIStackView!
     @IBOutlet private var leftSpacingView: UIView!
+    @IBOutlet private var leftSeparatorLineView: UIView!
 
     @IBOutlet private var bottomLabelsStackView: UIStackView!
     @IBOutlet private var bottomSpacingView: UIView!
@@ -20,7 +21,9 @@ open class MUBarChart: MUNibView {
     @IBOutlet private var datasStackView: UIStackView!
 
     @IBOutlet private var leftSpacingWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftSeparatorWidthConstraint: NSLayoutConstraint!
     @IBOutlet private var bottomSpacingHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var bottomSeparatorHeightConstraint: NSLayoutConstraint!
 
     // MARK: - Insets
 
@@ -38,13 +41,59 @@ open class MUBarChart: MUNibView {
         }
     }
 
+    // MARK: - Main lines
+
+    /// Define the left separator line's color.
+    @IBInspectable open dynamic var leftLineColor: UIColor = .white {
+        didSet {
+            leftSeparatorLineView.backgroundColor = leftLineColor
+        }
+    }
+
+    /// Define the left separator line's width.
+    @IBInspectable open dynamic var leftSeparatorWidth: CGFloat = 1.0 {
+        didSet {
+            leftSeparatorWidthConstraint.constant = leftSeparatorWidth
+        }
+    }
+
+    /// Define the bottom separator line's color.
+    @IBInspectable open dynamic var bottomLineColor: UIColor = .white {
+        didSet {
+            bottomSeparatorLineView.backgroundColor = bottomLineColor
+        }
+    }
+
+    /// Define the bottom separator line's width.
+    @IBInspectable open dynamic var bottomSeparatorHeight: CGFloat = 1.0 {
+        didSet {
+            bottomSeparatorHeightConstraint.constant = bottomSeparatorHeight
+        }
+    }
+
     // MARK: - Background lines
 
-    /// Specifies the indicator's lines color.
-    @IBInspectable open dynamic var linesColor: UIColor = .white {
+    @IBInspectable open dynamic var bkgLineColor: UIColor = UIColor.white.withAlphaComponent(0.5) {
         didSet {
-            bottomSeparatorLineView.backgroundColor = linesColor
-            // TODO: Apply to lines / dashed lines
+            addBackgroundLines()
+        }
+    }
+
+    @IBInspectable open dynamic var bkgLineWidth: CGFloat = 0.5 {
+        didSet {
+            addBackgroundLines()
+        }
+    }
+
+    @IBInspectable open dynamic var bkgLineDashWidth: Float = 1.0 {
+        didSet {
+            addBackgroundLines()
+        }
+    }
+
+    @IBInspectable open dynamic var bkgLineGapWidth: Float = 0.0 {
+        didSet {
+            addBackgroundLines()
         }
     }
 
@@ -53,19 +102,19 @@ open class MUBarChart: MUNibView {
     // MARK: - Labels
 
     /// Specifies the title label's font.
-    open var labelFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular)
+    open var labelFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
 
     /// Specifies the title label's color.
-    open var labelColor: UIColor = .white
+    open var labelColor = UIColor.white
 
     /// Specifies the value label's font.
-    open var valueFont: UIFont = .systemFont(ofSize: 6.0, weight: .regular)
+    open var valueFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
 
     /// Specifies the value label's color.
-    open var valueColor: UIColor = .white
+    open var valueColor = UIColor.white
 
     /// Specifies the indicator's value format.
-    open var valueFormat: String = "%.f"
+    open var valueFormat = "%.f"
 
     // MARK: - Configuration
 
@@ -76,7 +125,7 @@ open class MUBarChart: MUNibView {
     open var orientation = NSLayoutConstraint.Axis.vertical
 
     /// Specifies to show the total value label of each bar.
-    open var showTotalValue: Bool = false
+    open var showTotalValue = false
 
     /// Specifies the chart's values to highlight the bars.
     open var values = [String]()
@@ -88,29 +137,63 @@ open class MUBarChart: MUNibView {
     open var maxDataValue = CGFloat(0.0)
 
     /// Define the bar's width (or thickness).
-    open var barWidth: CGFloat = 1.0
+    open var barWidth = CGFloat(1.0)
 
     /// Define the bar's radius.
-    open var barRadius: CGFloat = 0.0
+    open var barRadius = CGFloat(0.0)
 
     // MARK: - Generation
 
     /// Generate the view to be autolayout and resize
     open func compute() {
-        clean()
         fillValuesLabels()
         fillDatasLabels()
         fillDatas()
+        addBackgroundLines()
     }
 
-    private func clean() {
-        leftLabelsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        bottomLabelsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        datasStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    private func addBackgroundLines() {
+        subviews.filter({ return $0 is MUDashedView }).forEach({ $0.removeFromSuperview() })
+
+        let valuesLabels = orientation == .vertical ? leftLabelsStackView : bottomLabelsStackView
+        let firstValue = values.first ?? ""
+
+        valuesLabels?.arrangedSubviews.forEach { subview in
+            guard let label = subview as? UILabel else {
+                return
+            }
+
+            guard values.count < 2 || firstValue != label.text else { // 1 or 2 values won't fill top and bottom
+                return
+            }
+
+            let separator = MUDashedView()
+            separator.dashWidth = bkgLineDashWidth
+            separator.gapWidth = bkgLineGapWidth
+            separator.dashColor = bkgLineColor
+
+            addSubview(separator)
+            sendSubviewToBack(separator)
+            separator.translatesAutoresizingMaskIntoConstraints = false
+
+            if orientation == .vertical {
+                separator.heightAnchor.constraint(equalToConstant: bkgLineWidth).isActive = true
+                separator.constraint(.left, to: leftSpacingView, position: .right)
+                separator.constraint(.centerY, to: label)
+                separator.constraint(.right, to: self)
+            } else {
+                separator.orientation = .vertical
+                separator.widthAnchor.constraint(equalToConstant: bkgLineWidth).isActive = true
+                separator.constraint(.bottom, to: bottomSeparatorLineView, position: .top)
+                separator.constraint(.centerX, to: label)
+                separator.constraint(.top, to: self)
+            }
+        }
     }
 
     private func fillValuesLabels() {
         let valuesLabels = orientation == .vertical ? leftLabelsStackView : bottomLabelsStackView
+        valuesLabels?.arrangedSubviews.forEach { $0.removeFromSuperview() }
         valuesLabels?.distribution = .equalSpacing
 
         (orientation == .vertical ? values.reversed() : values).forEach { valueString in
@@ -125,6 +208,7 @@ open class MUBarChart: MUNibView {
 
     private func fillDatasLabels() {
         let valuesLabels = orientation == .vertical ? bottomLabelsStackView : leftLabelsStackView
+        valuesLabels?.arrangedSubviews.forEach { $0.removeFromSuperview() }
         valuesLabels?.distribution = .fillEqually
 
         datas.map({ $0.title }).forEach { valueString in
@@ -139,6 +223,7 @@ open class MUBarChart: MUNibView {
     }
 
     private func fillDatas() {
+        datasStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         datasStackView.axis = orientation == .vertical ? .horizontal : .vertical
         datasStackView.distribution = .fillEqually
 
@@ -172,8 +257,8 @@ open class MUBarChart: MUNibView {
 
             addValueLabel(to: bkgView,
                           stackTo: radiusView,
-                          origin: orientation == .vertical ? .top : .right,
-                          position: orientation == .vertical ? .bottom : .left,
+                          origin: orientation == .vertical ? .topCenter : .rightCenter,
+                          position: orientation == .vertical ? .bottomCenter : .leftCenter,
                           value: data.totalValue,
                           xOffset: orientation == .vertical ? 0.0 : -5.0,
                           yOffset: orientation == .vertical ? 5.0 : 0.0)
@@ -227,9 +312,9 @@ open class MUBarChart: MUNibView {
             width = 0.0
         }
 
-        let origin = orientation == .vertical ? MUAutolayoutPosition.bottom : .left
+        let origin = orientation == .vertical ? MUAutolayoutPosition.bottomCenter : .leftCenter
         if let stackView = stackView {
-            let position = orientation == .vertical ? MUAutolayoutPosition.top : .right
+            let position = orientation == .vertical ? MUAutolayoutPosition.topCenter : .rightCenter
             mainView.addSubview(barView)
             barView.translatesAutoresizingMaskIntoConstraints = false
 

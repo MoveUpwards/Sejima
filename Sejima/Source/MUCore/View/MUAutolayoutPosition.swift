@@ -8,11 +8,15 @@
 
 //swiftlint:disable comma
 
-/// 9 positions to set autolayout constraints
+/// All possible position for autolayout
 public enum MUAutolayoutPosition {
-    case topLeft,       top,        topRight
-    case left,          center,     right
-    case bottomLeft,    bottom,     bottomRight
+    // 9 positions to set 2 autolayout constraints in on time
+    case topLeft,       topCenter,      topRight
+    case leftCenter,    center,         rightCenter
+    case bottomLeft,    bottomCenter,   bottomRight
+
+    // 6 positions to set only 1 autolayout constraint
+    case top, left, right, bottom, centerX, centerY
 }
 
 //swiftlint:enable comma

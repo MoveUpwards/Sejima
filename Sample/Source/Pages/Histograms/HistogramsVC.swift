@@ -21,6 +21,10 @@ final class HistogramsVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .blackPearl
 
+        MUBarChart.appearance().leftSeparatorWidth = 0.0
+        MUBarChart.appearance().bkgLineDashWidth = 5.0
+        MUBarChart.appearance().bkgLineGapWidth = 5.0
+
         // MARK: - MUHistogram
 
         histo1.backgroundColor = .darkGray
