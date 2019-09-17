@@ -225,12 +225,14 @@ open class MUBarChart: MUNibView {
         }
     }
 
+    private var radiusCorners: UIRectCorner {
+        return orientation == .vertical ? [.topLeft, .topRight] : [.topRight, .bottomRight]
+    }
+
     private func fillDatas() {
         datasStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         datasStackView.axis = orientation == .vertical ? .horizontal : .vertical
         datasStackView.distribution = .fillEqually
-
-        let radiusCorners: UIRectCorner = orientation == .vertical ? [.topLeft, .topRight] : [.topRight, .bottomRight]
 
         datas.forEach { data in
             let bkgView = UIView()
@@ -247,40 +249,7 @@ open class MUBarChart: MUNibView {
                 radiusView.clipsToBounds = true
             }
 
-            var lastBarView: UIView?
-            let valuesCount = CGFloat(data.values.count)
-            data.values.forEach { value in
-                switch type {
-                case .stacked:
-                    let (width, height) = barSizeMultiplier(for: value.value, maxValue: data.totalValue)
-                    lastBarView = addStackedBar(to: radiusView,
-                                         color: value.color,
-                                         stackTo: lastBarView,
-                                         width: width,
-                                         height: height)
-
-                    if data.showValue {
-                        addValueLabel(to: bkgView, stackTo: lastBarView, origin: .center, value: value.value)
-                    }
-                case .sideBySide:
-                    let (width, height) = barSizeMultiplier(for: value.value,
-                                                            maxValue: maxValue,
-                                                            barWidth: 1.0 / valuesCount)
-                    lastBarView = addSideBySideBar(to: radiusView,
-                                                   color: value.color,
-                                                   stackTo: lastBarView,
-                                                   width: width,
-                                                   height: height)
-
-                    if barRadius > 0.0 {
-                        lastBarView?.roundCorners(radiusCorners, value: barRadius)
-                    }
-
-                    if data.showValue || showTotalValue, let lastBarView = lastBarView {
-                        addTotalValueLabel(to: bkgView, stackTo: lastBarView, value: value.value)
-                    }
-                }
-            }
+            addBars(for: data, in: radiusView, bkgView: bkgView)
 
             datasStackView.addArrangedSubview(bkgView)
 
@@ -331,22 +300,63 @@ open class MUBarChart: MUNibView {
                                    maxValue: CGFloat = 0.0,
                                    barWidth: CGFloat = 1.0) -> (CGFloat, CGFloat) {
         let value = maxValue != 0.0 ? dataValue / maxValue : 0.0 // To avoid division by zero
-        let height: CGFloat
-        let width: CGFloat
 
         switch orientation {
         case .vertical:
-            height = value
-            width = barWidth
+            return (value, barWidth)
         case .horizontal:
-            height = barWidth
-            width = value
+            return (barWidth, value)
         @unknown default:
-            height = 0.0
-            width = 0.0
+            return (0.0, 0.0)
         }
+    }
 
-        return (width, height)
+    private func addBars(for data: MUBarChartData, in radiusView: UIView, bkgView: UIView) {
+        let valuesCount = CGFloat(data.values.count)
+        var lastBarView: UIView?
+
+        data.values.forEach { value in
+            switch type {
+            case .stacked:
+                let (width, height) = barSizeMultiplier(for: value.value, maxValue: data.totalValue)
+                lastBarView = addStackedBar(to: radiusView,
+                                            color: value.color,
+                                            stackTo: lastBarView,
+                                            width: width,
+                                            height: height)
+
+                if data.showValue {
+                    addValueLabel(to: bkgView, stackTo: lastBarView, origin: .center, value: value.value)
+                }
+            case .sideBySide:
+                let maxValue = data.values.map({ $0.value }).max() ?? 0.0
+                let (width, height) = barSizeMultiplier(for: value.value,
+                                                        maxValue: maxValue,
+                                                        barWidth: 1.0 / valuesCount)
+                lastBarView = addSideBySideBar(to: radiusView,
+                                               color: value.color,
+                                               stackTo: lastBarView,
+                                               width: width,
+                                               height: height)
+
+                if barRadius > 0.0 {
+                    lastBarView?.roundCorners(radiusCorners, value: barRadius)
+                }
+
+                if data.showValue || showTotalValue, let lastBarView = lastBarView {
+                    addTotalValueLabel(to: bkgView, stackTo: lastBarView, value: value.value)
+                }
+            }
+        }
+    }
+
+    private var origin: MUAutolayoutPosition {
+        switch type {
+        case .stacked:
+            return orientation == .vertical ? .bottomCenter : .leftCenter
+        case .sideBySide:
+            return orientation == .vertical ? .bottomLeft : .topLeft
+        }
     }
 
     private func addStackedBar(to mainView: UIView,
@@ -357,7 +367,6 @@ open class MUBarChart: MUNibView {
         let barView = UIView()
         barView.backgroundColor = color
 
-        let origin = orientation == .vertical ? MUAutolayoutPosition.bottomCenter : .leftCenter
         if let stackView = stackView {
             let position = orientation == .vertical ? MUAutolayoutPosition.topCenter : .rightCenter
             mainView.addSubview(barView)
@@ -366,7 +375,6 @@ open class MUBarChart: MUNibView {
             stackView.constraint(position, to: barView, position: origin)
             barView.widthAnchor.addConstraint(to: mainView.widthAnchor, multiplier: width)
             barView.heightAnchor.addConstraint(to: mainView.heightAnchor, multiplier: height)
-//            mainView.addAutolayoutSubview(barView, origin: origin, position: position, height: height, width: width)
         } else { // We add it to the mainView directly (first view)
             mainView.addAutolayoutSubview(barView, origin: origin, height: height, width: width)
         }
@@ -382,7 +390,6 @@ open class MUBarChart: MUNibView {
         let barView = UIView()
         barView.backgroundColor = color
 
-        let origin = orientation == .vertical ? MUAutolayoutPosition.bottomLeft : .topLeft
         if let stackView = stackView {
             let position = orientation == .vertical ? MUAutolayoutPosition.bottomRight : .bottomLeft
             mainView.addSubview(barView)

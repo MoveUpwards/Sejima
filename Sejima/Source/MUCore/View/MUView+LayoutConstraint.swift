@@ -30,52 +30,39 @@ extension UIView {
         }
     }
 
+    //swiftlint:disable:next cyclomatic_complexity
     private func anchors(for origin: MUAutolayoutPosition) -> (NSLayoutXAxisAnchor?, NSLayoutYAxisAnchor?) {
-        var xAnchor: NSLayoutXAxisAnchor?
-        var yAnchor: NSLayoutYAxisAnchor?
-
         switch origin {
         case .topLeft:
-            xAnchor = leftAnchor
-            yAnchor = topAnchor
+            return (leftAnchor, topAnchor)
         case .topCenter:
-            xAnchor = centerXAnchor
-            yAnchor = topAnchor
+            return (centerXAnchor, topAnchor)
         case .topRight:
-            xAnchor = rightAnchor
-            yAnchor = topAnchor
+            return (rightAnchor, topAnchor)
         case .leftCenter:
-            xAnchor = leftAnchor
-            yAnchor = centerYAnchor
+            return (leftAnchor, centerYAnchor)
         case .center:
-            xAnchor = centerXAnchor
-            yAnchor = centerYAnchor
+            return (centerXAnchor, centerYAnchor)
         case .rightCenter:
-            xAnchor = rightAnchor
-            yAnchor = centerYAnchor
+            return (rightAnchor, centerYAnchor)
         case .bottomLeft:
-            xAnchor = leftAnchor
-            yAnchor = bottomAnchor
+            return (leftAnchor, bottomAnchor)
         case .bottomCenter:
-            xAnchor = centerXAnchor
-            yAnchor = bottomAnchor
+            return (centerXAnchor, bottomAnchor)
         case .bottomRight:
-            xAnchor = rightAnchor
-            yAnchor = bottomAnchor
+            return (rightAnchor, bottomAnchor)
         case .top:
-            yAnchor = topAnchor
+            return (nil, topAnchor)
         case .left:
-            xAnchor = leftAnchor
+            return (leftAnchor, nil)
         case .right:
-            xAnchor = rightAnchor
+            return (rightAnchor, nil)
         case .bottom:
-            yAnchor = bottomAnchor
+            return (nil, bottomAnchor)
         case .centerX:
-            xAnchor = centerXAnchor
+            return (centerXAnchor, nil)
         case .centerY:
-            yAnchor = centerYAnchor
+            return (nil, centerYAnchor)
         }
-
-        return (xAnchor, yAnchor)
     }
 }
