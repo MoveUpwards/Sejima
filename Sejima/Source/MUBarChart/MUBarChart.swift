@@ -158,15 +158,11 @@ open class MUBarChart: MUNibView {
     private func addBackgroundLines() {
         subviews.filter({ return $0 is MUDashedView }).forEach({ $0.removeFromSuperview() })
 
-        let valuesLabels = orientation == .vertical ? leftLabelsStackView : bottomLabelsStackView
-        let firstValue = values.first ?? ""
-
-        valuesLabels?.arrangedSubviews.forEach { subview in
+        (orientation == .vertical ? leftLabelsStackView : bottomLabelsStackView)?.arrangedSubviews.forEach { subview in
             guard let label = subview as? UILabel else {
                 return
             }
-
-            guard values.count < 2 || firstValue != label.text else { // 1 or 2 values won't fill top and bottom
+            guard values.count < 2 || values.first != label.text else { // 1 or 2 values won't fill top and bottom
                 return
             }
 
@@ -200,7 +196,6 @@ open class MUBarChart: MUNibView {
         valuesLabels?.distribution = .equalSpacing
 
         (orientation == .vertical ? values.reversed() : values).forEach { valueString in
-            // Create a label to show the valueString
             let label = UILabel()
             label.text = valueString
             label.font = labelFont
@@ -215,7 +210,6 @@ open class MUBarChart: MUNibView {
         valuesLabels?.distribution = .fillEqually
 
         datas.map({ $0.title }).forEach { valueString in
-            // Create a label to show the valueString
             let label = UILabel()
             label.text = valueString
             label.font = labelFont
@@ -250,7 +244,6 @@ open class MUBarChart: MUNibView {
             }
 
             addBars(for: data, in: radiusView, bkgView: bkgView)
-
             datasStackView.addArrangedSubview(bkgView)
 
             guard showTotalValue, type == .stacked else {
@@ -310,11 +303,11 @@ open class MUBarChart: MUNibView {
             return (0.0, 0.0)
         }
     }
+}
 
+extension MUBarChart {
     private func addBars(for data: MUBarChartData, in radiusView: UIView, bkgView: UIView) {
-        let valuesCount = CGFloat(data.values.count)
         var lastBarView: UIView?
-
         data.values.forEach { value in
             switch type {
             case .stacked:
@@ -332,7 +325,7 @@ open class MUBarChart: MUNibView {
                 let maxValue = data.values.map({ $0.value }).max() ?? 0.0
                 let (width, height) = barSizeMultiplier(for: value.value,
                                                         maxValue: maxValue,
-                                                        barWidth: 1.0 / valuesCount)
+                                                        barWidth: 1.0 / CGFloat(data.values.count))
                 lastBarView = addSideBySideBar(to: radiusView,
                                                color: value.color,
                                                stackTo: lastBarView,
