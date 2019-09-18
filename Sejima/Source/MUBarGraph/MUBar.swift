@@ -33,13 +33,6 @@ internal class MUBar: MUNibView {
         }
     }
 
-    /// Define the corner radius.
-    internal var radius: CGFloat = 0.0 {
-        didSet {
-            indicator.cornerRadius = radius
-        }
-    }
-
     /// Define the bar's color.
     internal var color: UIColor = .clear {
         didSet {
@@ -47,10 +40,25 @@ internal class MUBar: MUNibView {
         }
     }
 
+    /// Define the bar's corner radius.
+    internal var radius: CGFloat = 0.0 {
+        didSet {
+            // As we only have vertical bar, we only round the 2 top corners.
+            bar.roundCorners([.topLeft, .topRight], value: radius)
+        }
+    }
+
     /// Show / hide the MUIndicator.
     internal var showIndicator: Bool = false {
         didSet {
             indicator.isHidden = !showIndicator
+        }
+    }
+
+    /// Define the indicator's corner radius.
+    internal var indicatorRadius: CGFloat = 0.0 {
+        didSet {
+            indicator.cornerRadius = indicatorRadius
         }
     }
 

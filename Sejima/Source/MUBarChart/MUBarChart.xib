@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUBarChart" customModule="Sejima" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLabelsStackView" destination="FJV-Mk-BaB" id="pX3-aq-CyZ"/>
+                <outlet property="bottomSeparatorHeightConstraint" destination="Uqv-bj-eHH" id="zpS-pN-sGa"/>
+                <outlet property="bottomSeparatorLineView" destination="Rab-8m-B4K" id="NJL-fG-Zw4"/>
+                <outlet property="bottomSpacingHeightConstraint" destination="T1j-xC-lBH" id="vhw-cT-lWw"/>
+                <outlet property="bottomSpacingView" destination="hVN-6k-BfX" id="Tl3-GD-ptW"/>
+                <outlet property="datasStackView" destination="gfp-E9-Sn0" id="YaO-Ay-gwf"/>
+                <outlet property="leftLabelsStackView" destination="oip-3l-jkx" id="muE-Vn-72G"/>
+                <outlet property="leftSeparatorLineView" destination="Xcc-b4-PBW" id="VfR-2B-16B"/>
+                <outlet property="leftSeparatorWidthConstraint" destination="hX8-ix-uD9" id="RNt-Fn-CiC"/>
+                <outlet property="leftSpacingView" destination="exZ-TN-Nwl" id="Llv-Xn-SQT"/>
+                <outlet property="leftSpacingWidthConstraint" destination="dXg-Bu-g4M" id="4gI-M8-1jB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="oip-3l-jkx">
+                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="299"/>
+                    <constraints>
+                        <constraint firstAttribute="width" priority="250" id="dUj-Rl-wm4"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-TN-Nwl">
+                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="299"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" id="dXg-Bu-g4M"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcc-b4-PBW">
+                    <rect key="frame" x="0.0" y="0.0" width="1" height="299"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="hX8-ix-uD9"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rab-8m-B4K">
+                    <rect key="frame" x="0.0" y="299" width="414" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Uqv-bj-eHH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-6k-BfX">
+                    <rect key="frame" x="0.0" y="300" width="414" height="0.0"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="T1j-xC-lBH"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJV-Mk-BaB">
+                    <rect key="frame" x="0.0" y="300" width="414" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="250" id="HC6-WK-b5h"/>
+                    </constraints>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-E9-Sn0">
+                    <rect key="frame" x="1" y="0.0" width="413" height="299"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hVN-6k-BfX" secondAttribute="trailing" id="0vh-i4-Snp"/>
+                <constraint firstItem="Rab-8m-B4K" firstAttribute="top" secondItem="oip-3l-jkx" secondAttribute="bottom" id="23B-Cg-fbr"/>
+                <constraint firstItem="Xcc-b4-PBW" firstAttribute="bottom" secondItem="oip-3l-jkx" secondAttribute="bottom" id="2Xj-uj-g6r"/>
+                <constraint firstAttribute="bottom" secondItem="FJV-Mk-BaB" secondAttribute="bottom" id="8tK-JY-DqH"/>
+                <constraint firstItem="oip-3l-jkx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="935-Ig-KKz"/>
+                <constraint firstAttribute="trailing" secondItem="FJV-Mk-BaB" secondAttribute="trailing" id="9Mf-hR-6Hx"/>
+                <constraint firstAttribute="trailing" secondItem="gfp-E9-Sn0" secondAttribute="trailing" id="B3z-uv-PPC"/>
+                <constraint firstItem="Rab-8m-B4K" firstAttribute="top" secondItem="exZ-TN-Nwl" secondAttribute="bottom" id="CPx-zU-e16"/>
+                <constraint firstItem="exZ-TN-Nwl" firstAttribute="leading" secondItem="oip-3l-jkx" secondAttribute="trailing" id="DHM-Zt-lcm"/>
+                <constraint firstItem="gfp-E9-Sn0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EZP-cT-pPY"/>
+                <constraint firstItem="Rab-8m-B4K" firstAttribute="leading" secondItem="exZ-TN-Nwl" secondAttribute="trailing" id="FEo-V1-qAy"/>
+                <constraint firstItem="hVN-6k-BfX" firstAttribute="leading" secondItem="exZ-TN-Nwl" secondAttribute="trailing" id="KQd-1s-xdQ"/>
+                <constraint firstItem="oip-3l-jkx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pqc-yK-TUe"/>
+                <constraint firstItem="Rab-8m-B4K" firstAttribute="top" secondItem="gfp-E9-Sn0" secondAttribute="bottom" id="TR1-L4-Ge0"/>
+                <constraint firstItem="hVN-6k-BfX" firstAttribute="top" secondItem="Rab-8m-B4K" secondAttribute="bottom" id="Wqj-4t-0qj"/>
+                <constraint firstItem="FJV-Mk-BaB" firstAttribute="top" secondItem="hVN-6k-BfX" secondAttribute="bottom" id="fUy-u0-LAX"/>
+                <constraint firstItem="Xcc-b4-PBW" firstAttribute="leading" secondItem="exZ-TN-Nwl" secondAttribute="trailing" id="gtJ-xQ-TGq"/>
+                <constraint firstItem="exZ-TN-Nwl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hPs-f5-Ukh"/>
+                <constraint firstItem="FJV-Mk-BaB" firstAttribute="leading" secondItem="exZ-TN-Nwl" secondAttribute="trailing" id="jdk-0o-9TM"/>
+                <constraint firstItem="gfp-E9-Sn0" firstAttribute="leading" secondItem="Xcc-b4-PBW" secondAttribute="trailing" id="kmC-mb-vHX"/>
+                <constraint firstItem="Xcc-b4-PBW" firstAttribute="top" secondItem="oip-3l-jkx" secondAttribute="top" id="lwp-Gn-eQ5"/>
+                <constraint firstAttribute="trailing" secondItem="Rab-8m-B4K" secondAttribute="trailing" id="tqI-c2-EOf"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

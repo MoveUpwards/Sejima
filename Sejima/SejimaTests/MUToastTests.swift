@@ -46,6 +46,7 @@ class MUToastTests: XCTestCase {
         XCTAssertEqual(toast.buttonHeight, 0.0)
     }
 
+    //swiftlint:disable:next function_body_length
     func testCustomValues() {
         let toast = MUToast()
         XCTAssertNotNil(toast)

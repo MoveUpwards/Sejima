@@ -91,7 +91,7 @@ class MUStringTests: XCTestCase {
     }
 
     func testSize() {
-        // TODO: String.boundingRect return height not null for null string
+        // String.boundingRect return height not null for null string
 //        checkSize(for: "", font: .systemFont(ofSize: 17.0, weight: .regular))
         checkSize(for: "Short text", font: .systemFont(ofSize: 17.0, weight: .regular))
         checkSize(for: "THIS IS AN UPPERCASE", font: .systemFont(ofSize: 17.0, weight: .regular))

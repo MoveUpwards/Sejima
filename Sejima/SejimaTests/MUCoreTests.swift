@@ -12,7 +12,7 @@ import XCTest
 class MUCoreTests: XCTestCase {
 
     func testMUNibView() {
-        // TODO: Testing MUNibView with class without xib file will crash as
+        // Testing MUNibView with class without xib file will crash as
         // UINib instantiate function doesn't throw execption and crash instead
 
 //        let fakeOne = FakeView()
@@ -37,7 +37,7 @@ class MUCoreTests: XCTestCase {
         XCTAssertTrue(proxy?.responds(to: #selector(FakeProxy.printMe)) ?? false)
 
         fakeProxy = nil
-        // TODO: Garbage collector has not release fakeProxy, see how to force it.
+        // Garbage collector has not release fakeProxy, see how to force it.
 //        XCTAssertNil(proxy?.forwardingTarget(for: #selector(FakeProxy.printMe)))
 //        XCTAssertFalse(proxy?.responds(to: #selector(FakeProxy.printMe)) ?? true)
 
