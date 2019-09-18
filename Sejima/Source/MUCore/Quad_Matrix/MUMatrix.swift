@@ -289,6 +289,6 @@ extension MUMatrix: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: [T]...) {
         datas = elements
         rowsCount = elements.count
-        columnsCount = elements[0].count
+        columnsCount = rowsCount > 0 ? elements[0].count : 0
     }
 }
