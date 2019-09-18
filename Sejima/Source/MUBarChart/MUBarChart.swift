@@ -296,9 +296,9 @@ open class MUBarChart: MUNibView {
 
         switch orientation {
         case .vertical:
-            return (value, barWidth)
-        case .horizontal:
             return (barWidth, value)
+        case .horizontal:
+            return (value, barWidth)
         @unknown default:
             return (0.0, 0.0)
         }

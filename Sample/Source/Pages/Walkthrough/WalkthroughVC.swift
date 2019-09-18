@@ -55,10 +55,9 @@ class WalkthroughVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        view.addGradient([
-            UIColor(hex: 0x094256).cgColor,
-            UIColor(hex: 0x00171F).cgColor
-        ])
+        view.addGradient(with: [UIColor(hex: 0x094256), UIColor(hex: 0x00171F)],
+                         startPoint: .zero,
+                         endPoint: CGPoint(x: 1.0, y: 1.0))
 
         button.cornerRadius = button.bounds.height * 0.5
     }
