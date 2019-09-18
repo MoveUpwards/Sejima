@@ -10,10 +10,10 @@ import UIKit.UIView
 
 extension UIView {
     /// Add gradient colors in sublayer at index 0.
-    public func addGradient(_ name: String = "GradientLayer", with colors: [CGColor]) {
+    public func addGradient(_ name: String = "GradientLayer", with colors: [UIColor]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
-        gradientLayer.colors = colors
+        gradientLayer.colors = colors.map({ $0.cgColor })
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradientLayer.name = name
