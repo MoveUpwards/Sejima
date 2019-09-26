@@ -8,7 +8,6 @@
  */
 
 import UIKit
-import simd
 
 /// Apple's GraphView
 internal final class GraphView: UIView {
@@ -48,7 +47,7 @@ internal final class GraphView: UIView {
     // MARK: Update methods
 
     /// Add new values to the graph.
-    internal func add(_ values: double3) {
+    internal func add(_ values: SIMD3<Double>) {
         // Move all the segments horizontally.
         for segment in segments {
             segment.center.x += 1.0
@@ -70,7 +69,7 @@ internal final class GraphView: UIView {
 
     private func addSegment() {
         // Determine the start point for the next segment.
-        let startPoint: double3 = currentSegment?.dataPoints.last ?? [0.0, 0.0, 0.0]
+        let startPoint: SIMD3<Double> = currentSegment?.dataPoints.last ?? [0.0, 0.0, 0.0]
 
         // Create and store a new segment.
         let segment = GraphSegment(startPoint: startPoint, valueRanges: valueRanges)
