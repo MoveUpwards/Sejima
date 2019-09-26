@@ -7,7 +7,6 @@
  */
 
 import UIKit
-import simd
 
 /// Apple's GraphSegment
 internal final class GraphSegment: UIView {
@@ -15,11 +14,11 @@ internal final class GraphSegment: UIView {
     // MARK: - Properties
 
     /// All values for this segments.
-    private(set) var dataPoints = [double3]()
+    private(set) var dataPoints = [SIMD3<Double>]()
     /// All colors for each points.
     private var lineColors: [UIColor] = [.red, .green, .blue]
 
-    private let startPoint: double3
+    private let startPoint: SIMD3<Double>
     private let valueRanges: [ClosedRange<Double>]
 
     /// Maximum capacity of the segment.
@@ -32,7 +31,7 @@ internal final class GraphSegment: UIView {
     // MARK: - Initialization
 
     /// Init with starting values and the ranges.
-    internal init(startPoint: double3, valueRanges: [ClosedRange<Double>]) {
+    internal init(startPoint: SIMD3<Double>, valueRanges: [ClosedRange<Double>]) {
         self.startPoint = startPoint
         self.valueRanges = valueRanges
 
@@ -45,7 +44,7 @@ internal final class GraphSegment: UIView {
     }
 
     /// Add new values to the graph.
-    internal func add(_ values: double3, colors: [UIColor]) {
+    internal func add(_ values: SIMD3<Double>, colors: [UIColor]) {
         guard !isFull else { return }
 
         dataPoints.append(values)
