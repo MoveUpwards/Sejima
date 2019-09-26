@@ -102,19 +102,19 @@ open class MUBarChart: MUNibView {
     // MARK: - Labels
 
     /// Specifies the title label's font.
-    open var labelFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
+    @objc open dynamic var labelFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
 
     /// Specifies the title label's color.
-    open var labelColor = UIColor.white
+    @objc open dynamic var labelColor = UIColor.white
 
     /// Specifies the value label's font.
-    open var valueFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
+    @objc open dynamic var valueFont = UIFont.systemFont(ofSize: 6.0, weight: .regular)
 
     /// Specifies the value label's color.
-    open var valueColor = UIColor.white
+    @objc open dynamic var valueColor = UIColor.white
 
     /// Specifies the indicator's value format.
-    open var valueFormat = "%.f"
+    @objc open dynamic var valueFormat = "%.f"
 
     // MARK: - Configuration
 
