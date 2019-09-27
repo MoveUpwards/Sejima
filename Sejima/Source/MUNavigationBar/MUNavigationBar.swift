@@ -41,7 +41,7 @@ open class MUNavigationBar: MUNibView {
     }
 
     /// Specifies the let button's proportional width. Default is 70:375
-    internal var leftButtonWidthMultiplier: CGFloat = 70 / 375 {
+    @IBInspectable open dynamic var leftButtonWidthMultiplier: CGFloat = 70 / 375 {
         didSet {
             leftButtonWidthConstraint = NSLayoutConstraint.change(multiplier: leftButtonWidthMultiplier,
                                                                   for: leftButtonWidthConstraint)
