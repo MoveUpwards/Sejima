@@ -46,6 +46,7 @@ open class MUNavigationBar: MUNibView {
     @IBInspectable open dynamic var leftButtonImage: UIImage? = nil {
         didSet {
             leftButton.setImage(leftButtonImage, for: .normal)
+            leftSeparatorView.isHidden = !(leftButton.image(for: .normal) != nil)
         }
     }
 
@@ -63,6 +64,7 @@ open class MUNavigationBar: MUNibView {
     @IBInspectable open dynamic var rightButtonImage: UIImage? = nil {
         didSet {
             rightButton.setImage(rightButtonImage, for: .normal)
+            rightSeparatorView.isHidden = !(rightButton.image(for: .normal) != nil)
         }
     }
 
@@ -280,6 +282,8 @@ open class MUNavigationBar: MUNibView {
     override open func xibSetup() {
         super.xibSetup()
         mainButton.delegate = self
+        leftSeparatorView.isHidden = true
+        rightSeparatorView.isHidden = true
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
