@@ -13,6 +13,8 @@ import UIKit
     /// Will trigger on cancel / back button tap.
     func leftDidTap(navigationBar: MUNavigationBar)
     /// Will trigger on main / validate button tap.
+    func mainDidTap(navigationBar: MUNavigationBar)
+    /// Will trigger on more option button tap.
     func rightDidTap(navigationBar: MUNavigationBar)
 }
 
@@ -22,11 +24,18 @@ open class MUNavigationBar: MUNibView {
     @IBOutlet private var leftButton: UIButton!
     @IBOutlet private var leftButtonWidthConstraint: NSLayoutConstraint!
 
-    @IBOutlet private var separatorView: UIView!
-    @IBOutlet private var rightButton: MUButton!
+    @IBOutlet private var leftSeparatorView: UIView!
+    @IBOutlet private var leftSeparatorWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private var leftSeparatorHeightConstraint: NSLayoutConstraint!
 
-    @IBOutlet private var separatorWidthConstraint: NSLayoutConstraint!
-    @IBOutlet private var separatorHeightConstraint: NSLayoutConstraint!
+    @IBOutlet private var mainButton: MUButton!
+
+    @IBOutlet private var rightSeparatorView: UIView!
+    @IBOutlet private var rightSeparatorWidthConstraint: NSLayoutConstraint!
+    @IBOutlet private var rightSeparatorHeightConstraint: NSLayoutConstraint!
+
+    @IBOutlet private var rightButton: UIButton!
+    @IBOutlet private var rightButtonWidthConstraint: NSLayoutConstraint!
 
     /// The object that acts as the delegate of the navigation bar.
     @IBOutlet public weak var delegate: MUNavigationBarDelegate? // swiftlint:disable:this private_outlet strong_iboutlet line_length
@@ -48,194 +57,210 @@ open class MUNavigationBar: MUNibView {
         }
     }
 
+    // MARK: - Right button
+
+    /// A UIImage for the left button.
+    @IBInspectable open dynamic var rightButtonImage: UIImage? = nil {
+        didSet {
+            rightButton.setImage(rightButtonImage, for: .normal)
+        }
+    }
+
+    /// Specifies the let button's proportional width. Default is 70:375
+    @IBInspectable open dynamic var rightButtonWidthMultiplier: CGFloat = 70 / 375 {
+        didSet {
+            rightButtonWidthConstraint = NSLayoutConstraint.change(multiplier: rightButtonWidthMultiplier,
+                                                                   for: rightButtonWidthConstraint)
+        }
+    }
+
     // MARK: - Separator
 
     /// The separator’s color.
     @IBInspectable open dynamic var separatorColor: UIColor = .white {
         didSet {
-            separatorView.backgroundColor = separatorColor
+            leftSeparatorView.backgroundColor = separatorColor
+            rightSeparatorView.backgroundColor = separatorColor
         }
     }
 
     /// The separator’s width.
     @IBInspectable open dynamic var separatorWidth: CGFloat = 1.0 {
         didSet {
-            separatorWidthConstraint.constant = separatorWidth
+            leftSeparatorWidthConstraint.constant = separatorWidth
+            rightSeparatorWidthConstraint.constant = separatorWidth
         }
     }
 
     /// The separator’s height multiplier (should be between 0.0 and 1.0).
     @IBInspectable open dynamic var separatorHeightMultiplier: CGFloat = 0.3 {
         didSet {
-            separatorHeightConstraint = NSLayoutConstraint.change(multiplier: separatorHeightMultiplier,
-                                                                  for: separatorHeightConstraint)
+            leftSeparatorHeightConstraint = NSLayoutConstraint.change(multiplier: separatorHeightMultiplier,
+                                                                      for: leftSeparatorHeightConstraint)
+            rightSeparatorHeightConstraint = NSLayoutConstraint.change(multiplier: separatorHeightMultiplier,
+                                                                       for: rightSeparatorHeightConstraint)
         }
     }
 
     // MARK: - Main button
 
-    /// The main button.
-    public var mainButton: MUButton {
-        return rightButton
-    }
-
     /// The current title that is displayed by the main button.
     @IBInspectable open var mainButtonTitle: String {
         get {
-            return rightButton.title
+            return mainButton.title
         }
         set {
-            rightButton.title = newValue
+            mainButton.title = newValue
         }
     }
 
     /// The main button’s font.
     @objc public dynamic var mainButtonTitleFont: UIFont {
         get {
-            return rightButton.titleFont
+            return mainButton.titleFont
         }
         set {
-            rightButton.titleFont = newValue
+            mainButton.titleFont = newValue
         }
     }
 
     /// The main button’s horizontal alignment.
     @objc public dynamic var mainButtonTitleAlignment: UIControl.ContentHorizontalAlignment {
         get {
-            return rightButton.titleAlignment
+            return mainButton.titleAlignment
         }
         set {
-            rightButton.titleAlignment = newValue
+            mainButton.titleAlignment = newValue
         }
     }
 
     /// Optional: The IBInspectable version of the main button’s horizontal alignment.
     @IBInspectable open var mainButtonTitleAlignmentInt: Int {
         get {
-            return rightButton.titleAlignmentInt
+            return mainButton.titleAlignmentInt
         }
         set {
-            rightButton.titleAlignmentInt = newValue
+            mainButton.titleAlignmentInt = newValue
         }
     }
 
     /// The main button’s title color.
     @IBInspectable open dynamic var mainButtonTitleColor: UIColor {
         get {
-            return rightButton.titleColor
+            return mainButton.titleColor
         }
         set {
-            rightButton.titleColor = newValue
+            mainButton.titleColor = newValue
         }
     }
 
     /// The main button’s highlighted title color.
     @IBInspectable open dynamic var mainButtonTitleHighlightedColor: UIColor {
         get {
-            return rightButton.titleHighlightedColor
+            return mainButton.titleHighlightedColor
         }
         set {
-            rightButton.titleHighlightedColor = newValue
+            mainButton.titleHighlightedColor = newValue
         }
     }
 
     /// The activity indicator’s color of the main button.
     @IBInspectable open dynamic var mainButtonProgressColor: UIColor {
         get {
-            return rightButton.progressColor
+            return mainButton.progressColor
         }
         set {
-            rightButton.progressColor = newValue
+            mainButton.progressColor = newValue
         }
     }
 
     /// Show or hide the progress indicator of the main button.
     @IBInspectable open dynamic var mainButtonIsLoading: Bool {
         get {
-            return rightButton.isLoading
+            return mainButton.isLoading
         }
         set {
-            rightButton.isLoading = newValue
+            mainButton.isLoading = newValue
         }
     }
 
     /// The main button’s state. (Won’t work with application’s state and reserved state).
     @objc public dynamic var mainButtonState: UIControl.State {
         get {
-            return rightButton.state
+            return mainButton.state
         }
         set {
-            rightButton.state = newValue
+            mainButton.state = newValue
         }
     }
 
     /// The main button’s alpha value for disabled state.
     @IBInspectable open dynamic var mainButtonDisabledAlphaValue: CGFloat {
         get {
-            return rightButton.disabledAlphaValue
+            return mainButton.disabledAlphaValue
         }
         set {
-            rightButton.disabledAlphaValue = newValue
+            mainButton.disabledAlphaValue = newValue
         }
     }
 
     /// The main button’s background color.
     @IBInspectable open dynamic var mainButtonBackgroundColor: UIColor {
         get {
-            return rightButton.buttonBackgroundColor
+            return mainButton.buttonBackgroundColor
         }
         set {
-            rightButton.buttonBackgroundColor = newValue
+            mainButton.buttonBackgroundColor = newValue
         }
     }
 
     /// The main button’s border color.
     @IBInspectable open dynamic var mainButtonBorderColor: UIColor {
         get {
-            return rightButton.borderColor
+            return mainButton.borderColor
         }
         set {
-            rightButton.borderColor = newValue
+            mainButton.borderColor = newValue
         }
     }
 
     /// The main button’s border width.
     @IBInspectable open dynamic var mainButtonBorderWidth: CGFloat {
         get {
-            return rightButton.borderWidth
+            return mainButton.borderWidth
         }
         set {
-            rightButton.borderWidth = newValue
+            mainButton.borderWidth = newValue
         }
     }
 
     /// The main button’s corner radius.
     @IBInspectable open dynamic var mainButtonCornerRadius: CGFloat {
         get {
-            return rightButton.cornerRadius
+            return mainButton.cornerRadius
         }
         set {
-            rightButton.cornerRadius = newValue
+            mainButton.cornerRadius = newValue
         }
     }
 
     /// The main button’s vertical padding.
     @IBInspectable open dynamic var mainButtonVerticalPadding: CGFloat {
         get {
-            return rightButton.verticalPadding
+            return mainButton.verticalPadding
         }
         set {
-            rightButton.verticalPadding = newValue
+            mainButton.verticalPadding = newValue
         }
     }
 
     /// The main button’s horizontal padding.
     @IBInspectable open dynamic var mainButtonHorizontalPadding: CGFloat {
         get {
-            return rightButton.horizontalPadding
+            return mainButton.horizontalPadding
         }
         set {
-            rightButton.horizontalPadding = newValue
+            mainButton.horizontalPadding = newValue
         }
     }
 
@@ -245,12 +270,16 @@ open class MUNavigationBar: MUNibView {
         delegate?.leftDidTap(navigationBar: self)
     }
 
+    @IBAction private func rightButtonDidTap(_ sender: Any?) {
+        delegate?.rightDidTap(navigationBar: self)
+    }
+
     // MARK: - Life cycle functions
 
     /// Default setup to load the view from a xib file.
     override open func xibSetup() {
         super.xibSetup()
-        rightButton.delegate = self
+        mainButton.delegate = self
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
@@ -262,6 +291,6 @@ open class MUNavigationBar: MUNibView {
 extension MUNavigationBar: MUButtonDelegate {
     /// Will trigger each time the main button is tapped.
     public func didTap(button: MUButton) {
-        delegate?.rightDidTap(navigationBar: self)
+        delegate?.mainDidTap(navigationBar: self)
     }
 }

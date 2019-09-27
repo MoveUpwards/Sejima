@@ -16,12 +16,11 @@ class MUNavigationBarTests: XCTestCase {
         XCTAssertNotNil(navBar)
 
         XCTAssertEqual(navBar.leftButtonImage, nil)
+        XCTAssertEqual(navBar.rightButtonImage, nil)
+
         XCTAssertEqual(navBar.separatorColor, .white)
         XCTAssertEqual(navBar.separatorWidth, 1.0)
         XCTAssertEqual(navBar.separatorHeightMultiplier, 0.3)
-
-        XCTAssertNotNil(navBar.mainButton)
-        // Do not duplicate MUButton unit tests
     }
 
     func testCustomValues() {
@@ -29,6 +28,7 @@ class MUNavigationBarTests: XCTestCase {
         XCTAssertNotNil(navBar)
 
         navBar.leftButtonImage = UIImage(named: "left_button")
+        navBar.rightButtonImage = UIImage(named: "right_button")
         navBar.separatorColor = .black
         navBar.separatorWidth = 2.0
         navBar.separatorHeightMultiplier = 1.0
@@ -36,6 +36,7 @@ class MUNavigationBarTests: XCTestCase {
         navBar.layoutSubviews()
 
         XCTAssertEqual(navBar.leftButtonImage, nil)
+        XCTAssertEqual(navBar.rightButtonImage, nil)
         XCTAssertEqual(navBar.separatorColor, .black)
         XCTAssertEqual(navBar.separatorWidth, 2.0)
         XCTAssertEqual(navBar.separatorHeightMultiplier, 1.0)
