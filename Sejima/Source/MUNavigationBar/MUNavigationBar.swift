@@ -20,6 +20,8 @@ import UIKit
 @IBDesignable
 open class MUNavigationBar: MUNibView {
     @IBOutlet private var leftButton: UIButton!
+    @IBOutlet private var leftButtonWidthConstraint: NSLayoutConstraint!
+
     @IBOutlet private var separatorView: UIView!
     @IBOutlet private var rightButton: MUButton!
 
@@ -35,6 +37,14 @@ open class MUNavigationBar: MUNibView {
     @IBInspectable open dynamic var leftButtonImage: UIImage? = nil {
         didSet {
             leftButton.setImage(leftButtonImage, for: .normal)
+        }
+    }
+
+    /// Specifies the let button's proportional width. Default is 70:375
+    internal var leftButtonWidthMultiplier: CGFloat = 70 / 375 {
+        didSet {
+            leftButtonWidthConstraint = NSLayoutConstraint.change(multiplier: leftButtonWidthMultiplier,
+                                                                  for: leftButtonWidthConstraint)
         }
     }
 
