@@ -103,9 +103,15 @@ open class MUSegmentedControl: UIControl {
     }
 
     /// The index number identifying the selected segment (that is, the last segment touched).
-    public private(set) var selectedSegmentIndex: Int = 0 {
+    /// - Important:
+    /// Delegate is not triggered.
+    ///
+    /// See: `set(index: Int, animated: Bool = false)`
+    ///
+    public var selectedSegmentIndex: Int = 0 {
         didSet {
-            delegate?.didSelect(segmentedControl: self, at: selectedSegmentIndex)
+            moveIndicatorView(to: selectedSegmentIndex)
+            setNeedsLayout()
         }
     }
 
@@ -140,6 +146,7 @@ open class MUSegmentedControl: UIControl {
     // MARK: - Public methods
 
     /// Define the current segment index, animated or not.
+    /// If a delegate is defined, you will be triggered
     public func set(index: Int, animated: Bool = false) {
         guard normalSegmentsView.subviews.indices.contains(index) else {
             return
@@ -147,6 +154,7 @@ open class MUSegmentedControl: UIControl {
 
         selectedSegmentIndex = index
         moveIndicatorView(to: index, animated: animated)
+        delegate?.didSelect(segmentedControl: self, at: selectedSegmentIndex)
         setNeedsLayout()
     }
 
