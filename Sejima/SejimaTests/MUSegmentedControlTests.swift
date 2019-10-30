@@ -74,7 +74,7 @@ class MUSegmentedControlTests: XCTestCase {
         XCTAssertEqual(segmented.selectedSegmentIndex, 2)
     }
 
-    func testCustomSegments() {
+    func testCustomSegmentsWithTexts() {
         let segmented = MUSegmentedControl()
         XCTAssertNotNil(segmented)
 
@@ -105,6 +105,20 @@ class MUSegmentedControlTests: XCTestCase {
         segmented.layoutSubviews()
 
         XCTAssertEqual(segmented.numberOfSegments, 3)
+    }
+
+    func testCustomSegmentsWithImages() {
+        let segmented = MUSegmentedControl()
+        XCTAssertNotNil(segmented)
+
+        segmented.segments = [MUSegmentItem(image: UIImage(),
+                                            imageColor: .orange,
+                                            selectedImage: UIImage(),
+                                            selectedImageColor: .red,
+                                            selectedColor: .blue)]
+        segmented.layoutSubviews()
+
+        XCTAssertEqual(segmented.numberOfSegments, 1)
     }
 
     func testIndexes() {
