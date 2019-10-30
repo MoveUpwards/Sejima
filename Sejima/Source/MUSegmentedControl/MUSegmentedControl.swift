@@ -129,14 +129,21 @@ open class MUSegmentedControl: UIControl {
                 let titleColor = segment.titleColor ?? self.titleColor
                 let selectedTitleColor = segment.selectedTitleColor ?? self.selectedTitleColor
 
-                normalSegmentsView.addSubview(label(with: segment.title,
-                                                    selectedColor: .clear,
-                                                    font: font,
-                                                    textColor: titleColor))
-                selectedSegmentsView.addSubview(label(with: segment.title,
-                                                      selectedColor: selectedColor,
-                                                      font: font,
-                                                      textColor: selectedTitleColor))
+                if segment.image != nil {
+                    normalSegmentsView.addSubview(image(with: segment.image,
+                                                        tintColor: segment.imageColor))
+                    selectedSegmentsView.addSubview(image(with: segment.selectedImage ?? segment.image,
+                                                          tintColor: segment.selectedImageColor ?? segment.imageColor))
+                } else if let title = segment.title {
+                    normalSegmentsView.addSubview(label(with: title,
+                                                        selectedColor: .clear,
+                                                        font: font,
+                                                        textColor: titleColor))
+                    selectedSegmentsView.addSubview(label(with: title,
+                                                          selectedColor: selectedColor,
+                                                          font: font,
+                                                          textColor: selectedTitleColor))
+                }
             }
 
             setNeedsLayout()
@@ -237,6 +244,17 @@ open class MUSegmentedControl: UIControl {
         addGestureRecognizer(panGesture)
 
         setNeedsLayout()
+    }
+
+    private func image(with image: UIImage?, tintColor: UIColor? = nil) -> UIImageView {
+        let iv = UIImageView(image: image?.withRenderingMode(.alwaysTemplate))
+        iv.contentMode = .scaleAspectFit
+
+        if let color = tintColor {
+            iv.tintColor = color
+        }
+
+        return iv
     }
 
     private func label(with title: String,
