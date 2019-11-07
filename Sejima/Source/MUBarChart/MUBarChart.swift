@@ -122,7 +122,7 @@ open class MUBarChart: MUNibView {
     open var type = MUBarChartType.stacked
 
     /// Specifies the chart's orientation.
-    open var orientation = NSLayoutConstraint.Axis.vertical
+    @objc open dynamic var orientation = NSLayoutConstraint.Axis.vertical
 
     /// Specifies to show the total value label of each bar.
     open var showTotalValue = false
@@ -140,10 +140,10 @@ open class MUBarChart: MUNibView {
     open var maxDataValue = CGFloat(0.0)
 
     /// Define the bar's width (or thickness).
-    open var barWidth = CGFloat(1.0)
+    @objc open dynamic var barWidth = CGFloat(1.0)
 
     /// Define the bar's radius.
-    open var barRadius = CGFloat(0.0)
+    @objc open dynamic var barRadius = CGFloat(0.0)
 
     // MARK: - Generation
 
