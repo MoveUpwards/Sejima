@@ -21,9 +21,7 @@ final public class MUWeakProxy: NSObject {
     /// Returns a Boolean value that indicates whether the receiver implements or inherits
     /// a method that can respond to a specified message.
     override public func responds(to aSelector: Selector) -> Bool {
-        guard let target = target else {
-            return super.responds(to: aSelector)
-        }
+        guard let target = target else { return false }
         return target.responds(to: aSelector)
     }
 
