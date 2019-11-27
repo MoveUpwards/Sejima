@@ -155,7 +155,7 @@ open class MUTime: MUNibView {
     // MARK: - Private functions
 
     private func setupDisplayLink() {
-        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(observeAnimation))
+        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(MUWeakProxy.onScreenUpdate))
         displayLink?.add(to: .current, forMode: .common)
     }
 
@@ -268,5 +268,11 @@ open class MUTime: MUNibView {
     /// Deinit the time progress.
     deinit {
         removeDisplayLink()
+    }
+}
+
+extension MUTime: Weakable{
+    public func updateIfNeeded() {
+        observeAnimation()
     }
 }

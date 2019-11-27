@@ -272,7 +272,7 @@ open class MUPageControl: UIControl {
     }
 
     private func setupDisplayLink() {
-        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(animate))
+        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(MUWeakProxy.onScreenUpdate))
         displayLink?.add(to: .current, forMode: .common)
     }
 
@@ -350,5 +350,11 @@ open class MUPageControl: UIControl {
     deinit {
         displayLink?.remove(from: .current, forMode: .common)
         displayLink?.invalidate()
+    }
+}
+
+extension MUPageControl: Weakable{
+    public func updateIfNeeded() {
+        animate()
     }
 }
