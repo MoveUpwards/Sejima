@@ -29,13 +29,6 @@ class MUCoreTests: XCTestCase {
         }
         XCTAssertNotNil(proxy)
 
-        guard let forwardingTarget = proxy?.forwardingTarget(for: #selector(FakeProxy.printMe)) as? FakeProxy else {
-            return
-        }
-
-        XCTAssertEqual(fakeProxy, forwardingTarget)
-        XCTAssertTrue(proxy?.responds(to: #selector(FakeProxy.printMe)) ?? false)
-
         fakeProxy = nil
         // Garbage collector has not release fakeProxy, see how to force it.
 //        XCTAssertNil(proxy?.forwardingTarget(for: #selector(FakeProxy.printMe)))
@@ -43,16 +36,15 @@ class MUCoreTests: XCTestCase {
 
         proxy = nil
         XCTAssertNil(proxy)
-
-        XCTAssertNil(proxy?.responds(to: #selector(FakeProxy.printMe)))
     }
 }
 
 internal class FakeView: MUNibView {
 }
 
-internal class FakeProxy: NSObject {
+internal class FakeProxy: Weakable {
+    func updateIfNeeded() { }
+
     @objc
-    internal func printMe() {
-    }
+    internal func printMe() { }
 }
