@@ -8,25 +8,20 @@
 
 import Foundation
 
+public protocol Weakable: class {
+    func updateIfNeeded()
+}
+
 /// A class that create a weak target to avoid retain cycles.
-final public class MUWeakProxy: NSObject {
-    private weak var target: NSObjectProtocol?
+final public class MUWeakProxy {
+    private weak var target: Weakable?
 
     /// Initialize a new object with the target to retain weakly.
-    public init(_ target: NSObjectProtocol) {
+    public init(_ target: Weakable) {
         self.target = target
-        super.init()
     }
 
-    /// Returns a Boolean value that indicates whether the receiver implements or inherits
-    /// a method that can respond to a specified message.
-    override public func responds(to aSelector: Selector) -> Bool {
-        guard let target = target else { return false }
-        return target.responds(to: aSelector)
-    }
-
-    /// Returns the object to which unrecognized messages should first be directed.
-    override public func forwardingTarget(for aSelector: Selector) -> Any? {
-        return target
+    @objc func onScreenUpdate() {
+        target?.updateIfNeeded()
     }
 }
