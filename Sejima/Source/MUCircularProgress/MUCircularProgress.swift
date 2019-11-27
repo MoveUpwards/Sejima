@@ -256,7 +256,7 @@ open class MUCircularProgress: MUNibView {
     }
 
     private func setupDisplayLink() {
-        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(observeAnimation))
+        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(MUWeakProxy.onScreenUpdate))
         displayLink?.add(to: .current, forMode: .common)
     }
 
@@ -369,5 +369,11 @@ open class MUCircularProgress: MUNibView {
     /// Deinit the circular progress.
     deinit {
        removeDisplayLink()
+    }
+}
+
+extension MUCircularProgress: Weakable{
+    public func updateIfNeeded() {
+        observeAnimation()
     }
 }

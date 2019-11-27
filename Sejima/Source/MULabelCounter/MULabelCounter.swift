@@ -180,12 +180,12 @@ open class MULabelCounter: MUNibView {
     // MARK: - Private functions
 
     private func configureTimer() {
-        displayLink = CADisplayLink(target: self, selector: #selector(updateValue(_:)))
+        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(MUWeakProxy.onScreenUpdate))
         displayLink?.add(to: .current, forMode: .common)
     }
 
     @objc
-    private func updateValue(_ timer: Timer) {
+    private func updateValue() {
         let now = Date.timeIntervalSinceReferenceDate
         progress += now - lastUpdate
         lastUpdate = now
@@ -224,5 +224,11 @@ open class MULabelCounter: MUNibView {
     deinit {
         displayLink?.remove(from: .current, forMode: .common)
         displayLink?.invalidate()
+    }
+}
+
+extension MULabelCounter: Weakable{
+    public func updateIfNeeded() {
+        updateValue()
     }
 }
