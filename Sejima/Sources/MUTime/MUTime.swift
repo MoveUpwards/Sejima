@@ -271,7 +271,7 @@ open class MUTime: MUNibView {
     }
 }
 
-extension MUTime: Weakable{
+extension MUTime: Weakable {
     public func updateIfNeeded() {
         observeAnimation()
     }
