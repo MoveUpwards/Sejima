@@ -10,6 +10,9 @@ import UIKit
 
 /// Delegate protocol for MUNavigationBar.
 @objc public protocol MUCollectionPickerDelegate: class {
+    /// Asks the delegate for the size of the specified item’s cell. Default size is 50 x 50
+    func size(_ picker: MUCollectionPicker, at indexPath: IndexPath) -> CGSize
+    
     /// Will trigger when an item is selected.
     func didSelect(item: String, at index: Int)
 }
@@ -153,6 +156,6 @@ extension MUCollectionPicker: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width / CGFloat(itemCount), height: collectionView.bounds.height)
+        return delegate?.size(self, at: indexPath) ?? CGSize(width: 50, height: 50)
     }
 }
