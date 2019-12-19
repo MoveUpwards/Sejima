@@ -107,6 +107,7 @@ public class MUCollectionPickerCell: UICollectionViewCell {
         super.init(frame: frame)
 
         indicator.isHidden = true
+        indicator.layer.masksToBounds = true
 
         addSubview(label)
         label.isUserInteractionEnabled = false
