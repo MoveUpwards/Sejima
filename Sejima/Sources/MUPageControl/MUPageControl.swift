@@ -353,7 +353,7 @@ open class MUPageControl: UIControl {
     }
 }
 
-extension MUPageControl: Weakable{
+extension MUPageControl: Weakable {
     public func updateIfNeeded() {
         animate()
     }

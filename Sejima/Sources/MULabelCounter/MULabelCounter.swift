@@ -34,7 +34,7 @@ final private class MULabelCounterEaseInOut: MUCounter {
     public func update(_ value: Double, rate: Float) -> Double {
         let newt: Double = 2 * value
         if newt < 1 {
-            return Double(0.5 * powf (Float(newt), rate))
+            return Double(0.5 * powf(Float(newt), rate))
         } else {
             return Double(0.5 * (2.0 - powf(Float(2.0 - newt), rate)))
         }
@@ -227,7 +227,7 @@ open class MULabelCounter: MUNibView {
     }
 }
 
-extension MULabelCounter: Weakable{
+extension MULabelCounter: Weakable {
     public func updateIfNeeded() {
         updateValue()
     }
