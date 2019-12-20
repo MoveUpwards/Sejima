@@ -11,17 +11,10 @@ import UIKit
 /// Delegate protocol for MUNavigationBar.
 @objc public protocol MUCollectionPickerDelegate: class {
     /// Asks the delegate for the size of the specified item’s cell. Default size is 50 x 50
-    @objc
-    optional func size(_ picker: MUCollectionPicker, at indexPath: IndexPath) -> CGSize
+    func size(_ picker: MUCollectionPicker, at indexPath: IndexPath) -> CGSize
 
     /// Will trigger when an item is selected.
     func didSelect(item: String, at index: Int)
-}
-
-extension MUCollectionPickerDelegate {
-    func size(_ picker: MUCollectionPicker, at indexPath: IndexPath) -> CGSize {
-        return .init(width: 50, height: 50)
-    }
 }
 
 /// Class that provides a collection picker.

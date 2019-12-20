@@ -30,6 +30,10 @@ class CollectionPickerVC: UIViewController {
 }
 
 extension CollectionPickerVC: MUCollectionPickerDelegate {
+    func size(_ picker: MUCollectionPicker, at indexPath: IndexPath) -> CGSize {
+        return .init(width: 100, height: 50)
+    }
+    
     func didSelect(item: String, at index: Int) {
         print("item: \(item), index: \(index)")
     }
