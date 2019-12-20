@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPM-qX-KnI">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection PickerVC-->
+        <scene sceneID="ft1-OC-lXs">
+            <objects>
+                <viewController id="uPM-qX-KnI" customClass="CollectionPickerVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ya-dK-6EJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="doE-F5-kF9" customClass="MUCollectionPicker" customModule="Sejima">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8Uz-PU-8qI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="doE-F5-kF9" firstAttribute="centerY" secondItem="YF7-Ya-XNK" secondAttribute="centerY" id="Qs5-Em-dbz"/>
+                            <constraint firstItem="doE-F5-kF9" firstAttribute="leading" secondItem="YF7-Ya-XNK" secondAttribute="leading" id="nut-hG-VXP"/>
+                            <constraint firstItem="doE-F5-kF9" firstAttribute="trailing" secondItem="YF7-Ya-XNK" secondAttribute="trailing" id="vna-n5-PGY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YF7-Ya-XNK"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="doE-F5-kF9" id="KQE-mY-Ygw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP7-uj-k8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="140"/>
+        </scene>
+    </scenes>
+</document>

@@ -372,7 +372,7 @@ open class MUCircularProgress: MUNibView {
     }
 }
 
-extension MUCircularProgress: Weakable{
+extension MUCircularProgress: Weakable {
     public func updateIfNeeded() {
         observeAnimation()
     }
