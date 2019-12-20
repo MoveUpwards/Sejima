@@ -41,7 +41,7 @@ public class MUCollectionPickerCell: UICollectionViewCell {
     }
 
     /// Define the indicator's width
-    internal var indicatorRadius: CGFloat = 1.0 {
+    internal var indicatorRadius: CGFloat = 0.0 {
         didSet {
             indicator.layer.cornerRadius = indicatorWidth
         }
@@ -108,6 +108,7 @@ public class MUCollectionPickerCell: UICollectionViewCell {
 
         indicator.isHidden = true
         indicator.layer.masksToBounds = true
+        indicator.layer.cornerRadius = indicatorRadius
 
         addSubview(label)
         label.isUserInteractionEnabled = false
