@@ -43,7 +43,7 @@ public class MUCollectionPickerCell: UICollectionViewCell {
     /// Define the indicator's width
     internal var indicatorRadius: CGFloat = 0.0 {
         didSet {
-            indicator.layer.cornerRadius = indicatorWidth
+            indicator.layer.cornerRadius = indicatorRadius
         }
     }
 
