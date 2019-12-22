@@ -44,7 +44,11 @@ open class MUCollectionPicker: MUNibView {
     @IBInspectable open dynamic var indicatorRadius: CGFloat = 0.0
 
     /// Define the indicator's color
-    @IBInspectable open dynamic var indicatorColor: UIColor = .white
+    @IBInspectable open dynamic var indicatorColor: UIColor = .white {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     // MARK: - Item view
 
@@ -52,7 +56,11 @@ open class MUCollectionPicker: MUNibView {
     @objc open dynamic var itemFont: UIFont = .systemFont(ofSize: 17.0, weight: .regular)
 
     /// The item’s horizontal alignment.
-    @objc open dynamic var itemAlignment: NSTextAlignment = .center
+    @objc open dynamic var itemAlignment: NSTextAlignment = .center {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     /// Optional: The IBInspectable version of the item’s horizontal alignment.
     @IBInspectable open dynamic var itemAlignmentInt: Int {
@@ -65,10 +73,18 @@ open class MUCollectionPicker: MUNibView {
     }
 
     /// The item’s title color.
-    @IBInspectable open dynamic var itemSelectedColor: UIColor = .white
+    @IBInspectable open dynamic var itemSelectedColor: UIColor = .white {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     /// The item’s title color.
-    @IBInspectable open dynamic var itemUnselectedColor: UIColor = .black
+    @IBInspectable open dynamic var itemUnselectedColor: UIColor = .black {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
     // MARK: - Private variables
 
