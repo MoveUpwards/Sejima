@@ -72,6 +72,7 @@ open class MUSegmentedControl: UIControl {
     /// Define the selected color if there is no theme.
     @IBInspectable open dynamic var selectedColor: UIColor = .lightGray {
         didSet {
+            layer.borderColor = selectedColor.cgColor
             selectedSegmentsView.subviews .compactMap({ $0 as? UILabel }) .forEach { label in
                 label.backgroundColor = selectedColor
             }
