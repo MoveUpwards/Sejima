@@ -124,7 +124,7 @@ open class MUTextField: MUNibView {
     }
 
     /// The text displayed by the text field.
-    @IBInspectable open var text: String = "" {
+    @IBInspectable open var text: String? = nil {
         didSet {
             textField.text = text
         }
