@@ -67,6 +67,13 @@ open class MUCircularIndicator: MUNibView {
         }
     }
 
+    // progress text font
+    @objc open dynamic var percentFont: UIFont = .systemFont(ofSize: 13) {
+        didSet {
+            percentLabel.font = percentFont
+        }
+    }
+
     // The progress percentage label(center label) format
     @IBInspectable open var percentLabelFormat: String = "%.f%%" {
         didSet {
@@ -107,11 +114,10 @@ open class MUCircularIndicator: MUNibView {
         }
     }
 
-    // progress text (progress bottom label)
-    @objc open dynamic var font: UIFont = .systemFont(ofSize: 13) {
+    // title text font
+    @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 13) {
         didSet {
-            titleLabel.font = font
-            percentLabel.font = font
+            titleLabel.font = titleFont
         }
     }
 
