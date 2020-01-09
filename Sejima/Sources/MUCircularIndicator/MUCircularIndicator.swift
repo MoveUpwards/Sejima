@@ -25,35 +25,35 @@ open class MUCircularIndicator: MUNibView {
     // MARK: - Style
 
     /// Stroke draw direction
-    @IBInspectable open var clockwise: Bool = true {
+    @IBInspectable open dynamic var clockwise: Bool = true {
         didSet {
             layoutSubviews()
         }
     }
 
     /// Stroke background color
-    @IBInspectable open var backgroundShapeColor: UIColor = .gray {
+    @IBInspectable open dynamic var backgroundShapeColor: UIColor = .gray {
         didSet {
             updateShapes()
         }
     }
 
     /// Progress stroke color
-    @IBInspectable open var progressShapeColor: UIColor = .blue {
+    @IBInspectable open dynamic var progressShapeColor: UIColor = .blue {
         didSet {
             updateShapes()
         }
     }
 
     /// Line width
-    @IBInspectable open var lineWidth: CGFloat = 8.0 {
+    @IBInspectable open dynamic var lineWidth: CGFloat = 8.0 {
         didSet {
             updateShapes()
         }
     }
 
     /// Space value
-    @IBInspectable open var spaceDegree: CGFloat = 90.0 {
+    @IBInspectable open dynamic var spaceDegree: CGFloat = 90.0 {
         didSet {
             layoutSubviews()
             updateShapes()
@@ -61,7 +61,7 @@ open class MUCircularIndicator: MUNibView {
     }
 
     /// The progress shapes line width will be the `line width` minus the `inset`.
-    @IBInspectable open var inset: CGFloat = 0.0 {
+    @IBInspectable open dynamic var inset: CGFloat = 0.0 {
         didSet {
             updateShapes()
         }
@@ -75,13 +75,13 @@ open class MUCircularIndicator: MUNibView {
     }
 
     // The progress percentage label(center label) format
-    @IBInspectable open var percentLabelFormat: String = "%.f%%" {
+    @IBInspectable open dynamic var percentLabelFormat: String = "%.f%%" {
         didSet {
             percentLabel.text = String(format: percentLabelFormat, progress * 100)
         }
     }
 
-    @IBInspectable open var percentColor: UIColor = .white {
+    @IBInspectable open dynamic var percentColor: UIColor = .white {
         didSet {
             percentLabel.textColor = percentColor
         }
@@ -95,13 +95,13 @@ open class MUCircularIndicator: MUNibView {
     }
 
     /// progress text (progress bottom label)
-    @IBInspectable open var title: String = "" {
+    @IBInspectable open dynamic var title: String = "" {
         didSet {
             titleLabel.text = title
         }
     }
 
-    @IBInspectable open var titleColor: UIColor = .black {
+    @IBInspectable open dynamic var titleColor: UIColor = .black {
         didSet {
             titleLabel.textColor = titleColor
         }
@@ -136,7 +136,7 @@ open class MUCircularIndicator: MUNibView {
     }
 
     /// Returns the current progress.
-    @IBInspectable open private(set) var progress: CGFloat {
+    @IBInspectable open private(set) dynamic var progress: CGFloat {
         set {
             progressShape.strokeEnd = newValue
         }
