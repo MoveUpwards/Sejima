@@ -51,6 +51,8 @@
 		F35342002246457D00F878CB /* MUTabBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35341FD224644D400F878CB /* MUTabBarTests.swift */; };
 		F353420B2248DF6900F878CB /* MUDateSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F353420A2248DF6900F878CB /* MUDateSliderTests.swift */; };
 		F35A3E052231AA43009341D2 /* MUCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35A3E042231AA43009341D2 /* MUCardTests.swift */; };
+		F361890123C7683200F42169 /* MUCircularIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361890023C7683200F42169 /* MUCircularIndicator.swift */; };
+		F361890323C7696300F42169 /* MUCircularIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = F361890223C7696300F42169 /* MUCircularIndicator.xib */; };
 		F3A44D3022424AC000590460 /* MUTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A44D2F22424AC000590460 /* MUTimeTests.swift */; };
 		F3B811EC22253D380004B830 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3B811E222253D380004B830 /* Sejima.framework */; };
 		F3B8121722253DC00004B830 /* MUButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B8121522253DC00004B830 /* MUButtonTests.swift */; };
@@ -243,6 +245,8 @@
 		F35341FD224644D400F878CB /* MUTabBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUTabBarTests.swift; sourceTree = "<group>"; };
 		F353420A2248DF6900F878CB /* MUDateSliderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUDateSliderTests.swift; sourceTree = "<group>"; };
 		F35A3E042231AA43009341D2 /* MUCardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUCardTests.swift; sourceTree = "<group>"; };
+		F361890023C7683200F42169 /* MUCircularIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUCircularIndicator.swift; sourceTree = "<group>"; };
+		F361890223C7696300F42169 /* MUCircularIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MUCircularIndicator.xib; sourceTree = "<group>"; };
 		F3A44D2F22424AC000590460 /* MUTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUTimeTests.swift; sourceTree = "<group>"; };
 		F3B811E222253D380004B830 /* Sejima.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sejima.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3B811EB22253D380004B830 /* SejimaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SejimaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -446,6 +450,15 @@
 			path = MUCollectionPicker;
 			sourceTree = "<group>";
 		};
+		F361890423C7696800F42169 /* MUCircularIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				F361890023C7683200F42169 /* MUCircularIndicator.swift */,
+				F361890223C7696300F42169 /* MUCircularIndicator.xib */,
+			);
+			path = MUCircularIndicator;
+			sourceTree = "<group>";
+		};
 		F3B811D822253D380004B830 = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +574,7 @@
 				F3E93A5E239EB2FF00CD0C2B /* MUCollectionButton */,
 				F3E93A62239EB2FF00CD0C2B /* MUHistogram */,
 				F3E93A65239EB2FF00CD0C2B /* MUTime */,
+				F361890423C7696800F42169 /* MUCircularIndicator */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1112,6 +1126,7 @@
 				F3E93A7A239EB2FF00CD0C2B /* MUIndicator.xib in Resources */,
 				F3E93A9B239EB30000CD0C2B /* MUProportionalBar.xib in Resources */,
 				F3E93A8C239EB2FF00CD0C2B /* MURadioButton.xib in Resources */,
+				F361890323C7696300F42169 /* MUCircularIndicator.xib in Resources */,
 				F3E93ADF239EB30000CD0C2B /* MUStat.xib in Resources */,
 				F3E93AC3239EB30000CD0C2B /* MUSubRangeView.xib in Resources */,
 				F3E93ACB239EB30000CD0C2B /* MUHorizontalPager.xib in Resources */,
@@ -1211,6 +1226,7 @@
 				F3E93A68239EB2FF00CD0C2B /* MUBarChartData.swift in Sources */,
 				F3E93A6A239EB2FF00CD0C2B /* MUBarChartType.swift in Sources */,
 				F3E93A95239EB30000CD0C2B /* MUOptionPicker.swift in Sources */,
+				F361890123C7683200F42169 /* MUCircularIndicator.swift in Sources */,
 				F3E93A9A239EB30000CD0C2B /* MUProportionalItem.swift in Sources */,
 				F3E93A72239EB2FF00CD0C2B /* MUBarGraph.swift in Sources */,
 				F3E93A7F239EB2FF00CD0C2B /* MUHeader.swift in Sources */,
