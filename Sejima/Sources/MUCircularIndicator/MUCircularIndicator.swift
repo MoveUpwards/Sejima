@@ -77,7 +77,7 @@ open class MUCircularIndicator: MUNibView {
     // The progress percentage label(center label) format
     @IBInspectable open dynamic var percentLabelFormat: String = "%.f%%" {
         didSet {
-            percentLabel.text = String(format: percentLabelFormat, progress * 100)
+            percentLabel.text = String(format: percentLabelFormat, progressValue * 100)
         }
     }
 
@@ -135,13 +135,10 @@ open class MUCircularIndicator: MUNibView {
         }
     }
 
-    /// Returns the current progress.
-    @IBInspectable open private(set) dynamic var progress: CGFloat {
-        set {
-            progressShape.strokeEnd = newValue
-        }
-        get {
-            return progressShape.strokeEnd
+    /// Specifies the track value from 0.0 up to 1.0
+    @IBInspectable open dynamic var progressValue: CGFloat = 0.0 {
+        didSet {
+            progressValue = min(progressValue, 1.0)
         }
     }
 
@@ -150,9 +147,11 @@ open class MUCircularIndicator: MUNibView {
 
     // MARK: - Private variables
 
+    private var progressObserver: ((CGFloat) -> Void)?
     private let backgroundShape = CAShapeLayer()
     private let progressShape = CAShapeLayer()
-    private let progressAnimation = CABasicAnimation(keyPath: "strokeEnd")
+
+    private var displayLink: CADisplayLink?
 
     // MARK: - Life cycle functions
 
@@ -170,6 +169,37 @@ open class MUCircularIndicator: MUNibView {
         updateShapes()
     }
 
+    /// Deinit the circular progress.
+    deinit {
+       removeDisplayLink()
+    }
+
+    // MARK: - Public functions
+
+    /// Resets the progress back to 0.
+    public func reset() {
+        set(value: 0, animated: false)
+    }
+
+    /**
+     Sets the progress value with optional animation. Default is animated true.
+
+     Current progress value can be observed using the progress closure.
+     **/
+    public func set(value: CGFloat, animated: Bool? = true, progress: ((_ current: CGFloat) -> Void)? = nil) {
+        progressObserver = progress
+        progressShape.removeAllAnimations()
+        progressValue = value
+        percentLabel.text = String(format: percentLabelFormat, value * 100)
+        if animated ?? false {
+            progressAnimation(duration: completeDuration)
+        } else {
+            progressAnimation()
+        }
+    }
+
+    // MARK: - Setup functions
+
     private func setup() {
         backgroundShape.fillColor = nil
         backgroundShape.strokeColor = backgroundShapeColor.cgColor
@@ -177,37 +207,48 @@ open class MUCircularIndicator: MUNibView {
 
         progressShape.fillColor = nil
         progressShape.strokeStart = 0.0
-        progressShape.strokeEnd = 0.1
+        progressShape.strokeEnd = progressValue
         layer.addSublayer(progressShape)
 
         percentLabel.textAlignment = .center
-        percentLabel.text = String(format: percentLabelFormat, progress * 100)
+        percentLabel.text = String(format: percentLabelFormat, progressValue * 100)
 
         titleLabel.textAlignment = .center
         titleLabel.text = title
     }
 
+    // MARK: - Display Link
+
+    private func setupDisplayLink() {
+        displayLink = CADisplayLink(target: MUWeakProxy(self), selector: #selector(MUWeakProxy.onScreenUpdate))
+        displayLink?.add(to: .current, forMode: .common)
+    }
+
+    private func removeDisplayLink() {
+        displayLink?.remove(from: .current, forMode: .common)
+        displayLink?.invalidate()
+    }
+
     // MARK: - Progress Animation
 
-    public func setProgress(progress: CGFloat, animated: Bool = true) {
-        guard progress <= 1.0 else { return }
+    private func progressAnimation(duration: TimeInterval = 0) {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.duration = duration
+        animation.beginTime = 0
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        animation.fromValue = duration == 0 ? progressValue :  progressShape.presentation()?.value(forKey: "strokeEnd")
+        animation.toValue = min(1, max(0, progressValue))
+        progressShape.add(animation, forKey: "progress")
+    }
 
-        var start = progressShape.strokeEnd
-        if let presentationLayer = progressShape.presentation(),
-            let animations = progressShape.animationKeys(), !animations.isEmpty {
-            start = presentationLayer.strokeEnd
+    @objc
+    private func observeAnimation() {
+        guard let value = progressShape.presentation()?.value(forKey: "strokeEnd") as? CGFloat else {
+            return
         }
 
-        let duration = abs(Double(progress - start)) * completeDuration
-        percentLabel.text = String(format: percentLabelFormat, progress * 100)
-        progressShape.strokeEnd = progress
-
-        if animated {
-            progressAnimation.fromValue = start
-            progressAnimation.toValue = progress
-            progressAnimation.duration = duration
-            progressShape.add(progressAnimation, forKey: progressAnimation.keyPath)
-        }
+        progressObserver?(value)
     }
 
     // MARK: - Layout
@@ -269,5 +310,11 @@ open class MUCircularIndicator: MUNibView {
                                 startAngle: startAngle,
                                 endAngle: endAngle,
                                 clockwise: clockwise)
+    }
+}
+
+extension MUCircularIndicator: Weakable {
+    public func updateIfNeeded() {
+        observeAnimation()
     }
 }
