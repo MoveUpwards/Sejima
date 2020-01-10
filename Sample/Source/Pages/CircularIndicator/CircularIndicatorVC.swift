@@ -15,7 +15,6 @@ class CircularIndicatorVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        progress.setProgress(progress: 0.5, animated: false)
         progress.progressShapeColor = .blue
         progress.backgroundShapeColor = .yellow
         progress.titleColor = .red
@@ -29,5 +28,12 @@ class CircularIndicatorVC: UIViewController {
 
         progress.title = "Title"
         progress.percentLabelFormat = "%.2f%%"
+        progress.completeDuration = 0.25
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        progress.set(value: 0.5, animated: true)
     }
 }
