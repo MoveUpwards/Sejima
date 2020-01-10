@@ -178,12 +178,8 @@ open class MUTime: MUNibView {
     }
 
     private func progressFrame() -> CGRect {
-        let radius = min(progressPathLayer.frame.width, progressPathLayer.frame.height)
-        var circleFrame = CGRect(x: 0, y: 0, width: radius, height: radius)
-        circleFrame.origin.x = progressPathLayer.bounds.midX - circleFrame.midX
-        circleFrame.origin.y = progressPathLayer.bounds.midY - circleFrame.midY
-
-        return circleFrame
+        let radius = min(bounds.width, bounds.height)
+        return CGRect(x: 0, y: 0, width: radius, height: radius)
     }
 
     private func progressPath() -> UIBezierPath {
@@ -254,10 +250,7 @@ open class MUTime: MUNibView {
         super.layoutSubviews()
 
         timeBackground.layer.cornerRadius = timeBackground.bounds.width * 0.5
-        progressPathLayer.frame = CGRect(x: indicatorWidth * 0.5,
-                                         y: indicatorWidth * 0.5,
-                                         width: bounds.width - indicatorWidth,
-                                         height: bounds.height - indicatorWidth)
+        progressPathLayer.path = progressPath().cgPath
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
