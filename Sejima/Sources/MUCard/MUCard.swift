@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /**
  Class that provide a header and a content view

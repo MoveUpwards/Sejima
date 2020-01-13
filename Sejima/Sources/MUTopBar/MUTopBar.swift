@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUTopBar.
 @objc public protocol MUTopBarDelegate: class {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUNavigationBar.
 @objc public protocol MUNavigationBarDelegate: class {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// View that define an associated MUSubRange.
 final internal class MUSubRangeView: MUNibView {

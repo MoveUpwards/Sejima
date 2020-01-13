@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that act like a bar chart image generator with customizable options.
 @IBDesignable

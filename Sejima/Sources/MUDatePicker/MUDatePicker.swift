@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that act like UIDatePicker with more customizable options.
 @IBDesignable

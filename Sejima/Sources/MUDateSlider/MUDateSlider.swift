@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUDateSlider objects.
 @objc public protocol MUDateSliderDelegate: class {

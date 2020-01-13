@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that provide an indicator with a animated counter label with customizable options. See MULabelCounter.
 @IBDesignable

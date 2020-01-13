@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 open class MUBarChart: MUNibView {
     @IBOutlet private var leftLabelsStackView: UIStackView!
