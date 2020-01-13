@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that provide a horizontal progress with optionl value indicator with customizable options.
 @IBDesignable

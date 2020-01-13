@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUStat.
 @objc public protocol MUStatDelegate: class {

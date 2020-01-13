@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that provide a circular indicator to represent time with customizable options.
 @IBDesignable

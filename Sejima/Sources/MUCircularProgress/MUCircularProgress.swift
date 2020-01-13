@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that provide a circular progress indicator with customizable options.
 @IBDesignable

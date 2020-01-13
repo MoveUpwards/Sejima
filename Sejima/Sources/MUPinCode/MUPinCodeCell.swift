@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// A view that define a unique cell in the MUPinCode
 final internal class MUPinCodeCell: MUNibView {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUPinCode.
 @objc public protocol MUPinCodeDelegate: class {

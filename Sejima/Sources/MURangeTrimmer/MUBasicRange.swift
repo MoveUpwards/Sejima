@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Struct with just range and title
 public struct MUBasicRange {

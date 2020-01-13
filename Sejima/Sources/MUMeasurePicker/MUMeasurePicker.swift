@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUMeasurePicker objects.
 @objc public protocol MUMeasurePickerDelegate: class {

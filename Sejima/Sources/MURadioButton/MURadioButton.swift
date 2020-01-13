@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that act like an UISwitch and can be group.
 @IBDesignable

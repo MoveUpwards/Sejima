@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUPageControl.
 @objc public protocol MUPageControlDelegate: class {
