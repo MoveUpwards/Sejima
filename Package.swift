@@ -13,11 +13,13 @@ let package = Package(
             targets: ["Sejima"]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/MoveUpwards/Neumann.git", from: "1.0.0")
+    ],
     targets: [
         .target(
             name: "Sejima",
-            dependencies: [],
+            dependencies: ["Neumann"],
             path: "Sejima/Sources"
         ),
     ]

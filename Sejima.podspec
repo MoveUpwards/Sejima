@@ -14,4 +14,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'Sejima/Sources/**/*.{swift,xib}'
+
+  s.frameworks = 'Foundation'
+
+  s.dependency 'Neumann'
 end
