@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Neumann",
+        "repositoryURL": "https://github.com/MoveUpwards/Neumann.git",
+        "state": {
+          "branch": null,
+          "revision": "47e5f8976bb7b364096cc047a77917d3bfbb1960",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
