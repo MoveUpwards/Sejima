@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that provide radar graph with multiple charts data.
 @IBDesignable

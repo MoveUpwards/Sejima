@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUCollectionButton.
 @objc public protocol MUCollectionButtonDelegate: class {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that act like a proportional bar with an indicator on top.
 internal class MUBar: MUNibView {

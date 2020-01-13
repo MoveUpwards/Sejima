@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUTimeSlider.
 @objc public protocol MUTimeSliderDelegate: class {

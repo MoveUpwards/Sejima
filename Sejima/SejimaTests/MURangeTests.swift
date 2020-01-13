@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Neumann
 @testable import Sejima
 
 class MURangeTests: XCTestCase {

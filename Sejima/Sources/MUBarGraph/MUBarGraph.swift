@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that define a bar graph.
 @IBDesignable

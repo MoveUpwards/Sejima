@@ -8,6 +8,7 @@
 
 import UIKit.UIImageView
 import UIKit.UILabel
+import Neumann
 
 /// Class that act like an UISwitch and can be group.
 internal class MUOption: MUNibView, MURadioButtonProtocol {

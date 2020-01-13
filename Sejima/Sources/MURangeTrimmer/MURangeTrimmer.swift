@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MURangeTrimmer.
 @objc public protocol MURangeTrimmerDelegate: class {

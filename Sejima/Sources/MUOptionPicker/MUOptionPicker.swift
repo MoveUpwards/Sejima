@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that define a picker with custom option objects.
 @IBDesignable

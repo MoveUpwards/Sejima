@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUHorizontalPager.
 @objc public protocol MUHorizontalPagerDelegate: class {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUAvatar.
 @objc public protocol MUAvatarDelegate: class {

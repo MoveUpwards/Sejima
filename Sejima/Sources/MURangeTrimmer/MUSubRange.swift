@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Struct that define a sub range.
 internal struct MUSubRange {

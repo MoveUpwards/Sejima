@@ -10,6 +10,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that act like Apple's GraphView with more customizable options.
 public final class MUGraphView: MUNibView {

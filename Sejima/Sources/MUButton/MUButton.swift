@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUButton.
 @objc public protocol MUButtonDelegate: class {

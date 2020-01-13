@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that define a card (title, description, indicator and image) with screen animation.
 @IBDesignable

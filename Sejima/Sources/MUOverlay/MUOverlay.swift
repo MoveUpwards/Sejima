@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Class that generate overlay with customizable options.
 @IBDesignable

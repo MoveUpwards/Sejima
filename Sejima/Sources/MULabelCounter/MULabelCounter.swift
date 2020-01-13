@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 private protocol MUCounter: class {
     func update(_ value: Double, rate: Float) -> Double

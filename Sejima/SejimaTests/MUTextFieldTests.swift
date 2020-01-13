@@ -18,7 +18,7 @@ class MUTextFieldTests: XCTestCase {
         XCTAssertEqual(textField.title, "")
         XCTAssertEqual(textField.titleColor, .white)
         XCTAssertEqual(textField.titleFont, .systemFont(ofSize: UIFont.systemFontSize, weight: .medium))
-        XCTAssertEqual(textField.text, "")
+        XCTAssertEqual(textField.text, nil)
         XCTAssertEqual(textField.placeholder, "")
         XCTAssertEqual(textField.placeholderColor, .lightGray)
         XCTAssertEqual(textField.textAlignment, .left)
