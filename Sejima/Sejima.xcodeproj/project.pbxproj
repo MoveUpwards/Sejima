@@ -19,7 +19,6 @@
 		6D4F2FB122283F6700A0799B /* MUNavigationBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */; };
 		6DA4E73E223FBB7300424216 /* MUOptionPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA4E73D223FBB7300424216 /* MUOptionPickerTests.swift */; };
 		6DAF5F7F23321B2D00E8DE89 /* MUBarChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F7E23321B2D00E8DE89 /* MUBarChartTests.swift */; };
-		6DAF5F84233267ED00E8DE89 /* MUKeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAF5F83233267ED00E8DE89 /* MUKeyboardTests.swift */; };
 		6DD518BC222EC90900A1611F /* MUToastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD518BB222EC90900A1611F /* MUToastTests.swift */; };
 		6DFA2BA72237FCB8004F5605 /* MURadarGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFA2BA02237FCB8004F5605 /* MURadarGraphTests.swift */; };
 		6DFA2BA82237FCB8004F5605 /* MUSegmentedControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFA2BA12237FCB8004F5605 /* MUSegmentedControlTests.swift */; };
@@ -188,7 +187,6 @@
 		6D4F2FB022283F6700A0799B /* MUNavigationBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUNavigationBarTests.swift; sourceTree = "<group>"; };
 		6DA4E73D223FBB7300424216 /* MUOptionPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUOptionPickerTests.swift; sourceTree = "<group>"; };
 		6DAF5F7E23321B2D00E8DE89 /* MUBarChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUBarChartTests.swift; sourceTree = "<group>"; };
-		6DAF5F83233267ED00E8DE89 /* MUKeyboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUKeyboardTests.swift; sourceTree = "<group>"; };
 		6DD518BB222EC90900A1611F /* MUToastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUToastTests.swift; sourceTree = "<group>"; };
 		6DFA2BA02237FCB8004F5605 /* MURadarGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MURadarGraphTests.swift; sourceTree = "<group>"; };
 		6DFA2BA12237FCB8004F5605 /* MUSegmentedControlTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSegmentedControlTests.swift; sourceTree = "<group>"; };
@@ -471,7 +469,6 @@
 				F3A44D2F22424AC000590460 /* MUTimeTests.swift */,
 				F35341F82246404400F878CB /* MUOverlayTests.swift */,
 				F35341FD224644D400F878CB /* MUTabBarTests.swift */,
-				6DAF5F83233267ED00E8DE89 /* MUKeyboardTests.swift */,
 				F3B811F222253D380004B830 /* Info.plist */,
 			);
 			path = SejimaTests;
@@ -1254,7 +1251,6 @@
 				6D4F2FB122283F6700A0799B /* MUNavigationBarTests.swift in Sources */,
 				F3C2DD36222DA62F00C08300 /* MUAvatarTests.swift in Sources */,
 				6DFA2BAC2237FCB8004F5605 /* MUCircularProgressTests.swift in Sources */,
-				6DAF5F84233267ED00E8DE89 /* MUKeyboardTests.swift in Sources */,
 				F34BD15B223FDF7300793EDE /* MUNumberSliderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1411,7 +1407,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.Sejima;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -1439,7 +1435,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.surfin.Sejima;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
