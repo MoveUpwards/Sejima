@@ -7,7 +7,7 @@ target 'Sejima' do
   use_frameworks!
 
   # Pods for Sejima
-  pod 'Neumann', :path => '~/Projects/MoveUpwards/Neumann'
+  pod 'Neumann'#, :path => '~/Projects/MoveUpwards/Neumann'
 end
 
 target 'SejimaTests' do
@@ -16,7 +16,7 @@ target 'SejimaTests' do
   use_frameworks!
 
   # Pods for Sejima
-  pod 'Neumann', :path => '~/Projects/MoveUpwards/Neumann'
+  pod 'Neumann'#, :path => '~/Projects/MoveUpwards/Neumann'
 end
 
 target 'Sample' do
@@ -25,5 +25,5 @@ target 'Sample' do
   use_frameworks!
 
   # Pods for Sample
-  pod 'Neumann', :path => '~/Projects/MoveUpwards/Neumann'
+  pod 'Neumann'#, :path => '~/Projects/MoveUpwards/Neumann'
 end
