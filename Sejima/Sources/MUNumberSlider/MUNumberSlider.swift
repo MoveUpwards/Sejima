@@ -155,6 +155,7 @@ extension MUNumberSlider: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MUNumberSliderCell.identifer,
                                                       for: indexPath) as? MUNumberSliderCell
         cell?.label.text = "\(minValue + indexPath.row)"
+        cell?.label.font = font
         cell?.unselectedColor = unselectedColor
         cell?.set(heightMultiplier: heightMultiplier)
         if indexPath.row == currentIndex {
