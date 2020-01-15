@@ -144,6 +144,7 @@ extension MUSlider: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MUNumberSliderCell.identifer,
                                                       for: indexPath) as? MUNumberSliderCell
         cell?.label.text = values[indexPath.row]
+        cell?.label.font = font
         cell?.unselectedColor = unselectedColor
         cell?.set(heightMultiplier: heightMultiplier)
         if indexPath.row == currentIndex {
