@@ -38,6 +38,9 @@
 		F303EFBA23AA7440001D8F79 /* MUCollectionPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = F303EFB923AA7440001D8F79 /* MUCollectionPicker.xib */; };
 		F303EFBC23AA744C001D8F79 /* MUCollectionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F303EFBB23AA744C001D8F79 /* MUCollectionPicker.swift */; };
 		F303EFBE23AA7652001D8F79 /* MUCollectionPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F303EFBD23AA7652001D8F79 /* MUCollectionPickerCell.swift */; };
+		F30FFB3A23CF63C60014B602 /* MUSlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30FFB3723CF63C60014B602 /* MUSlider.xib */; };
+		F30FFB3B23CF63C60014B602 /* MUSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FFB3823CF63C60014B602 /* MUSlider.swift */; };
+		F30FFB3C23CF63C60014B602 /* MUSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FFB3923CF63C60014B602 /* MUSliderCell.swift */; };
 		F317FFA32238041B001DBDDD /* MUCollectionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F317FFA22238041B001DBDDD /* MUCollectionButtonTests.swift */; };
 		F33D660222345ADB0077D7CD /* MUIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D660122345ADA0077D7CD /* MUIndicatorTests.swift */; };
 		F33D6608223656B20077D7CD /* MULabelCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D6607223656B20077D7CD /* MULabelCounterTests.swift */; };
@@ -207,6 +210,9 @@
 		F303EFB923AA7440001D8F79 /* MUCollectionPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MUCollectionPicker.xib; sourceTree = "<group>"; };
 		F303EFBB23AA744C001D8F79 /* MUCollectionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUCollectionPicker.swift; sourceTree = "<group>"; };
 		F303EFBD23AA7652001D8F79 /* MUCollectionPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUCollectionPickerCell.swift; sourceTree = "<group>"; };
+		F30FFB3723CF63C60014B602 /* MUSlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUSlider.xib; sourceTree = "<group>"; };
+		F30FFB3823CF63C60014B602 /* MUSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSlider.swift; sourceTree = "<group>"; };
+		F30FFB3923CF63C60014B602 /* MUSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUSliderCell.swift; sourceTree = "<group>"; };
 		F317FFA22238041B001DBDDD /* MUCollectionButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUCollectionButtonTests.swift; sourceTree = "<group>"; };
 		F33D660122345ADA0077D7CD /* MUIndicatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUIndicatorTests.swift; sourceTree = "<group>"; };
 		F33D6607223656B20077D7CD /* MULabelCounterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULabelCounterTests.swift; sourceTree = "<group>"; };
@@ -393,6 +399,16 @@
 			path = MUCollectionPicker;
 			sourceTree = "<group>";
 		};
+		F30FFB3623CF63C60014B602 /* MUSlider */ = {
+			isa = PBXGroup;
+			children = (
+				F30FFB3823CF63C60014B602 /* MUSlider.swift */,
+				F30FFB3923CF63C60014B602 /* MUSliderCell.swift */,
+				F30FFB3723CF63C60014B602 /* MUSlider.xib */,
+			);
+			path = MUSlider;
+			sourceTree = "<group>";
+		};
 		F361890423C7696800F42169 /* MUCircularIndicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +532,7 @@
 				F3E93A62239EB2FF00CD0C2B /* MUHistogram */,
 				F3E93A65239EB2FF00CD0C2B /* MUTime */,
 				F361890423C7696800F42169 /* MUCircularIndicator */,
+				F30FFB3623CF63C60014B602 /* MUSlider */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -979,6 +996,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30FFB3A23CF63C60014B602 /* MUSlider.xib in Resources */,
 				F3E93AE8239EB30000CD0C2B /* MUTime.xib in Resources */,
 				F3E93A93239EB2FF00CD0C2B /* MUOption.xib in Resources */,
 				F3E93A6B239EB2FF00CD0C2B /* MUBarChart.xib in Resources */,
@@ -1152,6 +1170,7 @@
 				F3E93A71239EB2FF00CD0C2B /* MUBarGraphData.swift in Sources */,
 				F3E93ACF239EB30000CD0C2B /* MUPageControl.swift in Sources */,
 				F3E93AB7239EB30000CD0C2B /* MUTextField.swift in Sources */,
+				F30FFB3C23CF63C60014B602 /* MUSliderCell.swift in Sources */,
 				F3E93ABE239EB30000CD0C2B /* GraphSegment.swift in Sources */,
 				F3E93A76239EB2FF00CD0C2B /* MUOverlay.swift in Sources */,
 				F3E93A74239EB2FF00CD0C2B /* MUBar.swift in Sources */,
@@ -1200,6 +1219,7 @@
 				F3E93A96239EB30000CD0C2B /* MUOptionData.swift in Sources */,
 				F3E93AD7239EB30000CD0C2B /* MUPinCodeCell.swift in Sources */,
 				F3E93A86239EB2FF00CD0C2B /* MURadarGraphStyle.swift in Sources */,
+				F30FFB3B23CF63C60014B602 /* MUSlider.swift in Sources */,
 				F3E93ABD239EB30000CD0C2B /* GraphView.swift in Sources */,
 				F3E93A6D239EB2FF00CD0C2B /* MUNavigationBar.swift in Sources */,
 				F3E93A7B239EB2FF00CD0C2B /* MUIndicator.swift in Sources */,

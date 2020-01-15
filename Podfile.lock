@@ -1,16 +1,16 @@
 PODS:
-  - Neumann (1.0.0)
+  - Neumann (1.1.0)
 
 DEPENDENCIES:
-  - Neumann (from `~/Projects/MoveUpwards/Neumann`)
+  - Neumann
 
-EXTERNAL SOURCES:
-  Neumann:
-    :path: "~/Projects/MoveUpwards/Neumann"
+SPEC REPOS:
+  trunk:
+    - Neumann
 
 SPEC CHECKSUMS:
-  Neumann: fea4bac8db6b97f59f233f62acda14a924bef6cf
+  Neumann: d4d26d30aeb7e70630f6f39e28c3a2c291981063
 
-PODFILE CHECKSUM: eb968e2853520c5fd86cba155825af5fbf7cc74f
+PODFILE CHECKSUM: 7a7c85119aba2b16e808248b2d33b572ae6d8aff
 
 COCOAPODS: 1.8.4
