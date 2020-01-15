@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,8 @@
 		F30318D12225535B00171E00 /* Sejima.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; };
 		F30318D22225535B00171E00 /* Sejima.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30318D02225535B00171E00 /* Sejima.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F30318DA2225542F00171E00 /* SampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30318D92225542F00171E00 /* SampleUITests.swift */; };
+		F30FFB4023CF640A0014B602 /* SliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30FFB3E23CF64090014B602 /* SliderVC.swift */; };
+		F30FFB4123CF640A0014B602 /* Slider.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30FFB3F23CF64090014B602 /* Slider.storyboard */; };
 		F361890823C76F3800F42169 /* CircularIndicator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F361890623C76F3800F42169 /* CircularIndicator.storyboard */; };
 		F361890923C76F3800F42169 /* CircularIndicatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F361890723C76F3800F42169 /* CircularIndicatorVC.swift */; };
 		F3B75EEE23C8B5360023FEDA /* TimeIndicatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B75EEC23C8B5360023FEDA /* TimeIndicatorVC.swift */; };
@@ -82,6 +84,8 @@
 		F30318D72225542F00171E00 /* SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30318D92225542F00171E00 /* SampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUITests.swift; sourceTree = "<group>"; };
 		F30318DB2225542F00171E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30FFB3E23CF64090014B602 /* SliderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderVC.swift; sourceTree = "<group>"; };
+		F30FFB3F23CF64090014B602 /* Slider.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Slider.storyboard; sourceTree = "<group>"; };
 		F361890623C76F3800F42169 /* CircularIndicator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CircularIndicator.storyboard; sourceTree = "<group>"; };
 		F361890723C76F3800F42169 /* CircularIndicatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularIndicatorVC.swift; sourceTree = "<group>"; };
 		F3B75EEC23C8B5360023FEDA /* TimeIndicatorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeIndicatorVC.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		6D566122221EE83900014498 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F30FFB3D23CF64090014B602 /* Slider */,
 				F3B75EEB23C8B5360023FEDA /* TimeIndicator */,
 				F361890523C76F3800F42169 /* CircularIndicator */,
 				6D3D5EC02327EF3200B2D2D7 /* Histograms */,
@@ -214,6 +219,15 @@
 				F30318DB2225542F00171E00 /* Info.plist */,
 			);
 			path = SampleUITests;
+			sourceTree = "<group>";
+		};
+		F30FFB3D23CF64090014B602 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				F30FFB3E23CF64090014B602 /* SliderVC.swift */,
+				F30FFB3F23CF64090014B602 /* Slider.storyboard */,
+			);
+			path = Slider;
 			sourceTree = "<group>";
 		};
 		F361890523C76F3800F42169 /* CircularIndicator */ = {
@@ -359,6 +373,7 @@
 				6D4F2F9E222598EF00A0799B /* Walkthrough.storyboard in Resources */,
 				6D5660FF221EC6B400014498 /* LaunchScreen.storyboard in Resources */,
 				6D3D5EC42327EF6100B2D2D7 /* Histograms.storyboard in Resources */,
+				F30FFB4123CF640A0014B602 /* Slider.storyboard in Resources */,
 				6DDD7E3E222ECA500033F5F9 /* Toasts.storyboard in Resources */,
 				F3D8C45623AA841D0084F422 /* CollectionPicker.storyboard in Resources */,
 				F3B75EEF23C8B5360023FEDA /* TimeIndicator.storyboard in Resources */,
@@ -434,6 +449,7 @@
 				F3D8C45723AA841D0084F422 /* CollectionPickerVC.swift in Sources */,
 				6D5660F5221EC6B200014498 /* AppDelegate.swift in Sources */,
 				F3B75EEE23C8B5360023FEDA /* TimeIndicatorVC.swift in Sources */,
+				F30FFB4023CF640A0014B602 /* SliderVC.swift in Sources */,
 				6D4F2F9C222598E700A0799B /* WalkthroughVC.swift in Sources */,
 				6D3D5EC22327EF5200B2D2D7 /* HistogramsVC.swift in Sources */,
 			);

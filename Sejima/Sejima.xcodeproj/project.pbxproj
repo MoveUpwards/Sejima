@@ -402,9 +402,9 @@
 		F30FFB3623CF63C60014B602 /* MUSlider */ = {
 			isa = PBXGroup;
 			children = (
-				F30FFB3723CF63C60014B602 /* MUSlider.xib */,
 				F30FFB3823CF63C60014B602 /* MUSlider.swift */,
 				F30FFB3923CF63C60014B602 /* MUSliderCell.swift */,
+				F30FFB3723CF63C60014B602 /* MUSlider.xib */,
 			);
 			path = MUSlider;
 			sourceTree = "<group>";
