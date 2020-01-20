@@ -46,17 +46,11 @@
                 <constraint firstAttribute="trailing" secondItem="LFH-Rg-RYd" secondAttribute="trailing" id="9t4-ob-2s0"/>
                 <constraint firstItem="LFH-Rg-RYd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CDP-TR-y6n"/>
                 <constraint firstItem="LFH-Rg-RYd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Q2j-I2-odt"/>
-                <constraint firstItem="iJW-wR-fGS" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Sbh-HE-5Qb"/>
                 <constraint firstAttribute="bottom" secondItem="LFH-Rg-RYd" secondAttribute="bottom" id="sud-nZ-JvG"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="Sbh-HE-5Qb"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="139" y="155"/>
         </view>
     </objects>
