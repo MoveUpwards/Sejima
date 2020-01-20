@@ -23,7 +23,6 @@ class CircularIndicatorVC: UIViewController {
         progress.percentVerticalInset = -60
 
         progress.lineWidth = 10
-        progress.orientation = .bottom
         progress.lineCap = .round
 
         progress.title = "Title"
