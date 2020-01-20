@@ -11,10 +11,6 @@ import Neumann
 
 // MARK: - Orientation Enum
 
-public enum Orientation: Int {
-    case left, top, right, bottom
-}
-
 @IBDesignable
 open class MUCircularIndicator: MUNibView {
     @IBOutlet private var titleLabel: UILabel!
@@ -119,13 +115,6 @@ open class MUCircularIndicator: MUNibView {
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 13) {
         didSet {
             titleLabel.font = titleFont
-        }
-    }
-
-    // progress Orientation
-    open var orientation: Orientation = .bottom {
-        didSet {
-            updateShapes()
         }
     }
 
@@ -262,25 +251,6 @@ open class MUCircularIndicator: MUNibView {
         progressShape.strokeColor = progressShapeColor.cgColor
         progressShape.lineWidth = lineWidth - inset
         progressShape.lineCap = lineCap
-
-        switch orientation {
-        case .left:
-            titleLabel.isHidden = true
-            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi / 2, 0, 0, 1.0)
-            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi / 2, 0, 0, 1.0)
-        case .right:
-            titleLabel.isHidden = true
-            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi * 1.5, 0, 0, 1.0)
-            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi * 1.5, 0, 0, 1.0)
-        case .bottom:
-            titleLabel.isHidden = false
-            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi * 2, 0, 0, 1.0)
-            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi * 2, 0, 0, 1.0)
-        case .top:
-            titleLabel.isHidden = false
-            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 0, 1.0)
-            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 0, 1.0)
-        }
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
