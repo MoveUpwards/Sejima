@@ -11,6 +11,10 @@ import Neumann
 
 // MARK: - Orientation Enum
 
+public enum Orientation: Int {
+    case left, top, right, bottom
+}
+
 @IBDesignable
 open class MUCircularIndicator: MUNibView {
     @IBOutlet private var titleLabel: UILabel!
@@ -115,6 +119,13 @@ open class MUCircularIndicator: MUNibView {
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 13) {
         didSet {
             titleLabel.font = titleFont
+        }
+    }
+
+    // progress Orientation
+    open var orientation: Orientation = .bottom {
+        didSet {
+            updateShapes()
         }
     }
 
@@ -229,6 +240,7 @@ open class MUCircularIndicator: MUNibView {
         animation.isRemovedOnCompletion = false
         animation.fromValue = duration == 0 ? progressValue :  progressShape.presentation()?.value(forKey: "strokeEnd")
         animation.toValue = min(1, max(0, progressValue))
+        animation.delegate = self
         progressShape.add(animation, forKey: "progress")
     }
 
@@ -237,7 +249,6 @@ open class MUCircularIndicator: MUNibView {
         guard let value = progressShape.presentation()?.value(forKey: "strokeEnd") as? CGFloat else {
             return
         }
-
         progressObserver?(value)
     }
 
@@ -251,6 +262,25 @@ open class MUCircularIndicator: MUNibView {
         progressShape.strokeColor = progressShapeColor.cgColor
         progressShape.lineWidth = lineWidth - inset
         progressShape.lineCap = lineCap
+
+        switch orientation {
+        case .left:
+            titleLabel.isHidden = true
+            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi / 2, 0, 0, 1.0)
+            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi / 2, 0, 0, 1.0)
+        case .right:
+            titleLabel.isHidden = true
+            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi * 1.5, 0, 0, 1.0)
+            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi * 1.5, 0, 0, 1.0)
+        case .bottom:
+            titleLabel.isHidden = false
+            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi * 2, 0, 0, 1.0)
+            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi * 2, 0, 0, 1.0)
+        case .top:
+            titleLabel.isHidden = false
+            progressShape.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 0, 1.0)
+            backgroundShape.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 0, 1.0)
+        }
     }
 
     /// The natural size for the receiving view, considering only properties of the view itself.
@@ -281,6 +311,16 @@ open class MUCircularIndicator: MUNibView {
                                 startAngle: startAngle,
                                 endAngle: endAngle,
                                 clockwise: clockwise)
+    }
+}
+
+extension MUCircularIndicator: CAAnimationDelegate {
+    public func animationDidStart(_ anim: CAAnimation) {
+        layoutSubviews()
+    }
+
+    public func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        layoutSubviews()
     }
 }
 
