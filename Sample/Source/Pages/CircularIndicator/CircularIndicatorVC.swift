@@ -21,6 +21,7 @@ class CircularIndicatorVC: UIViewController {
         progress.titleVerticalInset = 20
         progress.percentColor = .black
         progress.percentVerticalInset = -60
+        progress.orientation = .top
 
         progress.lineWidth = 10
         progress.lineCap = .round
@@ -36,3 +37,27 @@ class CircularIndicatorVC: UIViewController {
         progress.set(value: 0.5, animated: true)
     }
 }
+
+extension UIView {
+    func asImage() -> UIImage? {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContext(frame.size)
+
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+
+            layer.render(in: context)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+
+            guard let renderedImage = image?.cgImage else { return nil }
+
+            return UIImage(cgImage: renderedImage)
+        }
+    }
+}
+
