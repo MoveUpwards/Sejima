@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPM-qX-KnI">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ButtonVC-->
+        <scene sceneID="ft1-OC-lXs">
+            <objects>
+                <viewController id="uPM-qX-KnI" customClass="ButtonVC" customModule="Sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Ya-dK-6EJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPP-lf-Nwb" customClass="MUButton" customModule="Sejima">
+                                <rect key="frame" x="16" y="138" width="343" height="250"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YF7-Ya-XNK" firstAttribute="trailing" secondItem="oPP-lf-Nwb" secondAttribute="trailing" constant="16" id="Vdb-Xj-jiY"/>
+                            <constraint firstItem="oPP-lf-Nwb" firstAttribute="centerY" secondItem="YF7-Ya-XNK" secondAttribute="centerY" id="c9k-pc-nxy"/>
+                            <constraint firstItem="oPP-lf-Nwb" firstAttribute="leading" secondItem="YF7-Ya-XNK" secondAttribute="leading" constant="16" id="qKB-ea-BBv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YF7-Ya-XNK"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="oPP-lf-Nwb" id="W2U-1v-3lK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP7-uj-k8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="139.880059970015"/>
+        </scene>
+    </scenes>
+</document>
