@@ -23,7 +23,7 @@ vc.view.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
 
 let toast = MUToast()
 //toast.icon = #imageLiteral(resourceName: "reddit")
-toast.buttonHeight = 30.0
+toast.buttonHeight = 40.0
 toast.spacing = 8
 toast.buttonSpacing = 16
 toast.displayPosition = .bottom
@@ -38,13 +38,13 @@ toast.show(in: vc, onTap: {
 })
 
 let cancel = MUButton()
-cancel.title = "CANCEL"
+cancel.title = "YES! THAT'S WORK"
 cancel.titleFont = .boldSystemFont(ofSize: 14)
 cancel.buttonBackgroundColor = .clear
 cancel.borderColor = .orange
 
 let okay = MUButton()
-okay.title = "OKAY"
+okay.title = "CONFIRMATION"
 okay.titleFont = .boldSystemFont(ofSize: 14)
 okay.buttonBackgroundColor = .red
 okay.borderColor = .red
