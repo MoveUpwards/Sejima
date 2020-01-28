@@ -44,6 +44,7 @@ button2.cornerRadius = cornerRadius * 2.0
 button2.borderWidth = borderWidth * 0.5
 button2.titleColor = UIColor(hex: 0xCD9C0B)
 button2.titleHighlightedColor = .white
+button2.horizontalPadding = 32.0
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
     button2.title = "TODAY"
