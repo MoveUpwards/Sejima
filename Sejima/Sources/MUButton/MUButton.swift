@@ -247,7 +247,7 @@ open class MUButton: MUNibView {
     override open func xibSetup() {
         super.xibSetup()
 
-//        button.layer.masksToBounds = true
+        button.layer.masksToBounds = true
         button.contentVerticalAlignment = .center
         button.titleLabel?.lineBreakMode = .byWordWrapping
         button.titleLabel?.numberOfLines = 0
