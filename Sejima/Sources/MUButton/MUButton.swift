@@ -262,7 +262,7 @@ open class MUButton: MUNibView {
     /// Return the height the header will have if constraint with this width.
     open func expectedHeight(for width: CGFloat) -> CGFloat {
         let size = title.boundingRect(
-            with: CGSize(width: width - (2.0 * (borderWidth + horizontalPadding)), height: .greatestFiniteMagnitude),
+            with: CGSize(width: width, height: .greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
             attributes: [.font: titleFont],
             context: nil).size
