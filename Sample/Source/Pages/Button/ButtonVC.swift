@@ -19,7 +19,7 @@ class ButtonVC: UIViewController {
         let borderWidth = CGFloat(5)
         
         button.buttonBackgroundColor = UIColor(hex: 0x00171F)
-        button.title = "Copyright © 2019"
+        button.title = "Copyright © 2019 Damien Noël Dubuisson. All rights reserved."
         button.borderColor = UIColor(hex: 0xCD9C0B)
         button.progressColor = UIColor(hex: 0xCD9C0B)
         button.titleFont = .systemFont(ofSize: 24, weight: .semibold)
@@ -28,6 +28,6 @@ class ButtonVC: UIViewController {
         button.titleColor = UIColor(hex: 0xCD9C0B)
         button.titleHighlightedColor = .white
         button.titleAlignment = .center
-        button.verticalPadding = 12.0
+        button.verticalPadding = 0.0
     }
 }

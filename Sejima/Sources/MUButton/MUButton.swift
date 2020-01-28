@@ -247,7 +247,7 @@ open class MUButton: MUNibView {
     override open func xibSetup() {
         super.xibSetup()
 
-        button.layer.masksToBounds = true
+//        button.layer.masksToBounds = true
         button.contentVerticalAlignment = .center
         button.titleLabel?.lineBreakMode = .byWordWrapping
         button.titleLabel?.numberOfLines = 0
@@ -256,7 +256,8 @@ open class MUButton: MUNibView {
 
     // The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return .init(width: bounds.width, height: expectedHeight(for: bounds.width))
+        return .init(width: bounds.width,
+                     height: expectedHeight(for: bounds.width - (borderWidth + horizontalPadding * 2.0)))
     }
 
     /// Return the height the header will have if constraint with this width.
@@ -267,6 +268,6 @@ open class MUButton: MUNibView {
             attributes: [.font: titleFont],
             context: nil).size
 
-        return (button.titleLabel?.sizeThatFits(size).height ?? 0.0) + (borderWidth + verticalPadding) * 2.0
+        return (button.titleLabel?.sizeThatFits(size).height ?? 0.0) + ((borderWidth + verticalPadding) * 2.0)
     }
 }
