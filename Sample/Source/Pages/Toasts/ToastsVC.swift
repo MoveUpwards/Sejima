@@ -40,6 +40,13 @@ extension ToastsVC: MUButtonDelegate {
     func didTap(button: MUButton) {
         counter += 1
 
+        let expectedWidth: CGFloat?
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            expectedWidth = UIScreen.main.bounds.width * 0.25
+        } else {
+            expectedWidth = nil
+        }
+
         switch button {
         case topInfoButton:
             let toast = MUToast()
@@ -51,6 +58,7 @@ extension ToastsVC: MUButtonDelegate {
             toast.cornerRadius = 10.0
             toast.spacing = 0.0
             toast.icon = #imageLiteral(resourceName: "walkthrough_sleep")
+            toast.expectedWidth = expectedWidth
             toast.show(in: self)
         case topWarningButton:
             let toast = MUToast()
@@ -63,11 +71,13 @@ extension ToastsVC: MUButtonDelegate {
             toast.cornerRadius = 0.0
             toast.spacing = 2.0
             toast.icon = #imageLiteral(resourceName: "walkthrough_sleep")
+            toast.expectedWidth = expectedWidth
             toast.show(in: self)
         case topAlertButton:
             let toast = redToast()
             toast.title = "LONG ALERT TITLE"
             toast.detail = "ID: \(counter) You have to read this now!"
+            toast.expectedWidth = expectedWidth
             toast.show(in: self, onTap: {
                 print("Tapped")
                 toast.hide(completion: { succeed in
@@ -87,13 +97,27 @@ extension ToastsVC: MUButtonDelegate {
             toast.cornerRadius = 10.0
             toast.spacing = 0.0
             toast.icon = #imageLiteral(resourceName: "walkthrough_sleep")
+            toast.expectedWidth = expectedWidth
             toast.show(in: self)
         case bottomWarningButton:
-            print("TODO")
+            let toast = MUToast()
+            toast.displayPosition = .bottom
+            toast.displayPriority = .warning
+            toast.title = "WARNING"
+            toast.detail = "ID: \(counter) Long description dgfe dfgdfjhgdf fg dfg ffdfg dfgfdg dfgdfgdfjgshl fd fkgdflkgd dfgj dfjg"
+            toast.titleColor = .black
+            toast.detailColor = .black
+            toast.backgroundColor = .orange
+            toast.cornerRadius = 0.0
+            toast.spacing = 2.0
+            toast.icon = #imageLiteral(resourceName: "walkthrough_sleep")
+            toast.expectedWidth = expectedWidth
+            toast.show(in: self)
         case bottomAlertButton:
             let toast = redToast()
             toast.displayPosition = .bottom
             toast.title = "Shutdown in 2 minutes"
+            toast.expectedWidth = expectedWidth
             toast.show(in: self)
         default:
             print("INVALID BUTTON")
