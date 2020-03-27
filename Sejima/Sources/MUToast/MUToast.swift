@@ -11,7 +11,7 @@ import Neumann
 
 /// Class that define a card (title, description, indicator and image) with screen animation.
 @IBDesignable
-open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
+open class MUToast: MUNibView {
     @IBOutlet private var markerView: UIView!
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var header: MUHeader!
@@ -214,10 +214,13 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
     // MARK: - Toast layout
 
     /// The toast’s horizontal padding.
-    @IBInspectable open var horizontalPadding: CGFloat = 16.0
+    @IBInspectable open dynamic var horizontalPadding: CGFloat = 16.0
 
     /// The toast’s vertical padding.
-    @IBInspectable open var verticalPadding: CGFloat = 16.0
+    @IBInspectable open dynamic var verticalPadding: CGFloat = 16.0
+
+    /// The toast’s expected width. If nil it will take the safeArea.width.
+    open dynamic var expectedWidth: CGFloat?
 
     // MARK: - Buttons layout
 
@@ -253,9 +256,7 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
         add(in: vc)
 
         showingAnimation(completion: { [weak self] _ in
-            guard let displayDuration = self?.displayDuration, displayDuration > 0 else {
-                return
-            }
+            guard let displayDuration = self?.displayDuration, displayDuration > 0 else { return }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + displayDuration, execute: {
                 self?.hidingAnimation(completion)
@@ -305,7 +306,8 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
         imageWidth.constant = icon == nil ? 0.0 : iconWidth
     }
 
-    private func expectedSize(in width: CGFloat) -> CGSize {
+    private func expectedSize() -> CGSize {
+        guard let width = expectedWidth else { return .zero }
         var size = CGSize(width: width - 2.0 * horizontalPadding, height: 0.0)
 
         var headerWidth = size.width - 2.0 * headerHorizontalPadding
@@ -329,7 +331,10 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
 
     private func add(in vc: UIViewController) {
         let safeArea = vc.areaFrame
-        let size = expectedSize(in: safeArea.width)
+        if expectedWidth == nil {
+            expectedWidth = safeArea.width
+        }
+        let size = expectedSize()
         let origin: CGFloat
 
         if displayPosition == .top {
@@ -340,36 +345,24 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
             transform = CGAffineTransform(translationX: 0.0, y: vc.view.frame.height - origin)
         }
 
+        let toastView: UIView?
         switch displayPriority {
         case .alert:
-            break // Default case on top of all views
+            toastView = nil // Default case on top of all views
         case .warning:
-            if let toastView = getLowestToast(in: vc.view, priorities: [.alert]) {
-                vc.view.insertAutolayoutSubview(self,
-                                                belowSubview: toastView,
-                                                top: origin,
-                                                height: nil,
-                                                leading: safeArea.origin.x + horizontalPadding,
-                                                width: size.width / vc.view.bounds.width)
-                return
-            }
+            toastView = getLowestToast(in: vc.view, priorities: [.alert])
         case .info:
-            if let toastView = getLowestToast(in: vc.view, priorities: [.alert, .warning]) {
-                vc.view.insertAutolayoutSubview(self,
-                                                belowSubview: toastView,
-                                                top: origin,
-                                                height: nil,
-                                                leading: safeArea.origin.x + horizontalPadding,
-                                                width: size.width / vc.view.bounds.width)
-                return
-            }
+            toastView = getLowestToast(in: vc.view, priorities: [.alert, .warning])
         }
 
-        vc.view.addAutolayoutSubview(self,
-                                     top: origin,
-                                     height: nil,
-                                     leading: safeArea.origin.x + horizontalPadding,
-                                     width: size.width / vc.view.bounds.width)
+        let leading = safeArea.origin.x + safeArea.size.width * 0.5 - size.width * 0.5
+        let width = size.width / vc.view.bounds.width
+        if let toastView = toastView {
+            vc.view.insertAutolayoutSubview(self, belowSubview: toastView,
+                                            top: origin, height: nil, leading: leading, width: width)
+        } else {
+            vc.view.addAutolayoutSubview(self, top: origin, height: nil, leading: leading, width: width)
+        }
     }
 
     private func getLowestToast(in vcView: UIView, priorities: [MUToastPriority]) -> UIView? {
@@ -401,9 +394,7 @@ open class MUToast: MUNibView { // swiftlint:disable:this type_body_length
                        delay: 0,
                        options: .curveEaseOut,
                        animations: { [weak self] in
-            guard let strongSelf = self else {
-                return
-            }
+            guard let strongSelf = self else { return }
             strongSelf.transform = strongSelf.hideTransform
         }, completion: { [weak self] completed in
             self?.onTapBlock = nil

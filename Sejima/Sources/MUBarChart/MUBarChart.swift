@@ -247,9 +247,7 @@ open class MUBarChart: MUNibView {
             addBars(for: data, in: radiusView, bkgView: bkgView)
             datasStackView.addArrangedSubview(bkgView)
 
-            guard showTotalValue, type == .stacked else {
-                return
-            }
+            guard showTotalValue, type == .stacked else { return }
 
             addTotalValueLabel(to: bkgView, stackTo: radiusView, value: data.totalValue)
         }
