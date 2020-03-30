@@ -249,24 +249,19 @@ open class MUButton: MUNibView {
 
         button.layer.masksToBounds = true
         button.contentVerticalAlignment = .center
-        button.titleLabel?.lineBreakMode = .byWordWrapping
-        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.lineBreakMode = .byTruncatingMiddle
+        button.titleLabel?.numberOfLines = 1
         button.titleLabel?.textAlignment = .center
     }
 
     // The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return .init(width: bounds.width,
-                     height: expectedHeight(for: bounds.width - (borderWidth + horizontalPadding * 2.0)))
+        return .zero
     }
 
     /// Return the height the header will have if constraint with this width.
     open func expectedHeight(for width: CGFloat) -> CGFloat {
-        let size = title.boundingRect(
-            with: CGSize(width: width, height: .greatestFiniteMagnitude),
-            options: .usesLineFragmentOrigin,
-            attributes: [.font: titleFont],
-            context: nil).size
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
 
         return (button.titleLabel?.sizeThatFits(size).height ?? 0.0) + ((borderWidth + verticalPadding) * 2.0)
     }
