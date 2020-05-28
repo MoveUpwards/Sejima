@@ -128,8 +128,10 @@ open class MUButton: MUNibView {
             case .highlighted:
                 button.isHighlighted = true
                 backgroundColor = borderColor
+                layer.borderColor = borderColor.cgColor
 
             default:
+                layer.borderColor = borderColor.cgColor
                 backgroundColor = buttonBackgroundColor
             }
         }
