@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.2
 
 import PackageDescription
 
@@ -6,6 +6,7 @@ let package = Package(
     name: "Sejima",
     platforms: [
         .iOS(.v10),
+        .macOS(.v10_13)
     ],
     products: [
         .library(
