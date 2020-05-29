@@ -6,6 +6,7 @@ let package = Package(
     name: "Sejima",
     platforms: [
         .iOS(.v10),
+        .macOS(.v10_13)
     ],
     products: [
         .library(
