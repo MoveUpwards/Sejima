@@ -5,8 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Sejima",
     platforms: [
-        .iOS(.v10),
-        .macOS(.v10_13)
+        .iOS(.v10)
     ],
     products: [
         .library(
