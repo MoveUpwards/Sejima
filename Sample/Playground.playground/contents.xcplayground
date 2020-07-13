@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios'>
     <pages>
-        <page name='MUCollectionPicker'/>
         <page name='MUHeader'/>
         <page name='MUTag'/>
         <page name='MUPinCode'/>
@@ -28,5 +27,6 @@
         <page name='MUDatePicker'/>
         <page name='MUButton'/>
         <page name='RedditToast'/>
+        <page name='MUTopBar'/>
     </pages>
 </playground>
