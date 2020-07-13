@@ -36,6 +36,13 @@ open class MUTopBar: MUNibView {
         }
     }
 
+    /// The current title number of lines.
+    @IBInspectable open var lineNumber: Int = 1 {
+        didSet {
+            titleLabel.titleLabel?.numberOfLines = lineNumber
+        }
+    }
+
     // MARK: - Public UIAppearence variables ONLY
 
     /// The button horizontal alignment.
