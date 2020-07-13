@@ -154,6 +154,12 @@ open class MUTopBar: MUNibView {
 
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return CGSize(width: 375, height: 44) // To act like a UINavigationBar with a default size
+        return .zero
+    }
+
+    /// Return the height the header will have if constraint with this width.
+    open func expectedHeight(for width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
+        return titleLabel.sizeThatFits(size).height
     }
 }
