@@ -1,3 +1,5 @@
+source 'https://cdn.cocoapods.org/'
+
 workspace 'Sejima.xcworkspace'
 platform :ios, '10.0'
 
