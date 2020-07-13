@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -11,27 +11,36 @@
             <connections>
                 <outlet property="leftButton" destination="iXO-fL-qgS" id="tDm-yC-lbH"/>
                 <outlet property="leftButtonLeading" destination="huf-Ql-hz0" id="1j4-jB-a1t"/>
+                <outlet property="leftButtonTopAlignment" destination="BCs-t1-8aU" id="Bvy-50-l8y"/>
                 <outlet property="leftButtonWidth" destination="qK3-ht-RCb" id="mdm-ac-Gjg"/>
-                <outlet property="titleLabel" destination="Cx0-AC-MuU" id="oZc-wh-Z0n"/>
+                <outlet property="titleLabel" destination="pK5-xQ-iRf" id="jwn-t2-pYc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXO-fL-qgS">
-                    <rect key="frame" x="0.0" y="22" width="0.0" height="0.0"/>
+                    <rect key="frame" x="0.0" y="333.5" width="0.0" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="iXO-fL-qgS" secondAttribute="height" multiplier="1:1" id="c6L-it-uYu"/>
                         <constraint firstAttribute="width" id="qK3-ht-RCb"/>
                     </constraints>
+                    <connections>
+                        <action selector="leftButtonDidTap:" destination="-1" eventType="touchUpInside" id="sbd-b3-ijB"/>
+                        <action selector="leftButtonDidTouchDown:" destination="-1" eventType="touchDown" id="ZL3-2J-rhD"/>
+                        <action selector="leftButtonDidTouchUpOutside:" destination="-1" eventType="touchUpOutside" id="DQJ-De-cUm"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-AC-MuU">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <state key="normal">
-                        <string key="title">Testing Content just to see how it works with very long content, Testing Content just to see how it works with very long content</string>
-                    </state>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK5-xQ-iRf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-AC-MuU">
+                    <rect key="frame" x="0.0" y="8" width="375" height="651"/>
                     <connections>
                         <action selector="leftButtonDidTap:" destination="-1" eventType="touchUpInside" id="k5t-Kf-nKY"/>
                         <action selector="leftButtonDidTouchDown:" destination="-1" eventType="touchDown" id="VLA-C0-5DL"/>
@@ -41,17 +50,21 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="pK5-xQ-iRf" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="5oS-CL-2Xq"/>
+                <constraint firstAttribute="bottom" secondItem="pK5-xQ-iRf" secondAttribute="bottom" id="6bj-bq-BQO"/>
                 <constraint firstItem="iXO-fL-qgS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BCs-t1-8aU"/>
-                <constraint firstItem="Cx0-AC-MuU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Br9-7o-yp8"/>
+                <constraint firstItem="iXO-fL-qgS" firstAttribute="top" secondItem="pK5-xQ-iRf" secondAttribute="top" priority="750" id="BLd-Ic-VVR"/>
+                <constraint firstItem="Cx0-AC-MuU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Br9-7o-yp8"/>
                 <constraint firstAttribute="trailing" secondItem="Cx0-AC-MuU" secondAttribute="trailing" id="dPu-f6-6K8"/>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="e8s-Sm-mac"/>
                 <constraint firstItem="iXO-fL-qgS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="huf-Ql-hz0"/>
-                <constraint firstAttribute="bottom" secondItem="Cx0-AC-MuU" secondAttribute="bottom" id="jXm-va-q98"/>
+                <constraint firstAttribute="bottom" secondItem="Cx0-AC-MuU" secondAttribute="bottom" constant="8" id="jXm-va-q98"/>
+                <constraint firstItem="pK5-xQ-iRf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ple-PF-KFZ"/>
+                <constraint firstAttribute="trailing" secondItem="pK5-xQ-iRf" secondAttribute="trailing" id="x0f-2v-qgo"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="138.40000000000001" y="-95.352323838080963"/>
+            <point key="canvasLocation" x="138.40000000000001" y="200.14992503748127"/>
         </view>
     </objects>
 </document>
