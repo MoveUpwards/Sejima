@@ -19,8 +19,9 @@ import Neumann
 @IBDesignable
 open class MUTopBar: MUNibView {
     @IBOutlet private var leftButton: UIButton!
-    @IBOutlet private var titleLabel: UIButton!
+    @IBOutlet private var titleLabel: UILabel!
 
+    @IBOutlet private var leftButtonTopAlignment: NSLayoutConstraint!
     @IBOutlet private var leftButtonLeading: NSLayoutConstraint!
     @IBOutlet private var leftButtonWidth: NSLayoutConstraint!
 
@@ -32,44 +33,30 @@ open class MUTopBar: MUNibView {
     /// The current title.
     @IBInspectable open var title: String = "" {
         didSet {
-            titleLabel.setTitle(title, for: .normal)
+            titleLabel.text = title
         }
     }
 
     /// The current title number of lines.
     @IBInspectable open var lineNumber: Int = 1 {
         didSet {
-            titleLabel.titleLabel?.numberOfLines = lineNumber
+            titleLabel.numberOfLines = lineNumber
         }
     }
 
     // MARK: - Public UIAppearence variables ONLY
 
-    /// The button horizontal alignment.
-    @objc open dynamic var buttonAlignment: UIControl.ContentHorizontalAlignment = .center {
-        didSet {
-            leftButton.contentHorizontalAlignment = buttonAlignment
-        }
-    }
-
     /// The title horizontal alignment.
-    @objc open dynamic var titleAlignment: UIControl.ContentHorizontalAlignment = .center {
+    @objc open dynamic var titleAlignment: NSTextAlignment = .center {
         didSet {
-            titleLabel.contentHorizontalAlignment = titleAlignment
-        }
-    }
-
-    /// The title horizontal alignment.
-    @objc open dynamic var titleVerticalAlignment: UIControl.ContentVerticalAlignment = .center {
-        didSet {
-            titleLabel.contentVerticalAlignment = titleVerticalAlignment
+            titleLabel.textAlignment = titleAlignment
         }
     }
 
     /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 24.0, weight: .bold) {
         didSet {
-            titleLabel.titleLabel?.font = titleFont
+            titleLabel.font = titleFont
         }
     }
 
@@ -93,7 +80,7 @@ open class MUTopBar: MUNibView {
     /// The title’s text color.
     @IBInspectable open dynamic var titleColor: UIColor = .white {
         didSet {
-            titleLabel.setTitleColor(titleColor, for: .normal)
+            titleLabel.textColor = titleColor
         }
     }
 
@@ -103,17 +90,7 @@ open class MUTopBar: MUNibView {
             return titleAlignment.rawValue
         }
         set {
-            titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: newValue) ?? .center
-        }
-    }
-
-    /// Optional: The IBInspectable version of the title’s horizontal alignment.
-    @IBInspectable open dynamic var titleVerticalAlignmentInt: Int {
-        get {
-            return titleVerticalAlignment.rawValue
-        }
-        set {
-            titleVerticalAlignment = UIControl.ContentVerticalAlignment(rawValue: newValue) ?? .center
+            titleAlignment = NSTextAlignment(rawValue: newValue) ?? .center
         }
     }
 
@@ -122,6 +99,14 @@ open class MUTopBar: MUNibView {
         didSet {
             leftButton.isHidden = !showButton
             updateImageWidth()
+        }
+    }
+
+    /// Define if the left button is centered or top title aligned.
+    @IBInspectable open dynamic var isLeftButtonCentered: Bool = true {
+        didSet {
+            leftButtonTopAlignment.isActive = isLeftButtonCentered
+            updateConstraints()
         }
     }
 
@@ -135,31 +120,20 @@ open class MUTopBar: MUNibView {
 
     @IBAction private func leftButtonDidTouchUpOutside(_ sender: Any) {
         leftButton.isHighlighted = false
-        titleLabel.isHighlighted = false
     }
 
     @IBAction private func leftButtonDidTouchDown(_ sender: Any) {
         leftButton.isHighlighted = true
-        titleLabel.isHighlighted = true
     }
 
     @IBAction private func leftButtonDidTap(_ sender: Any?) {
         leftButton.isHighlighted = false
-        titleLabel.isHighlighted = false
 
         delegate?.didTap(topBar: self)
     }
 
-    // MARK: - Life cycle functions
-
     /// The natural size for the receiving view, considering only properties of the view itself.
     override open var intrinsicContentSize: CGSize {
-        return .zero
-    }
-
-    /// Return the height the header will have if constraint with this width.
-    open func expectedHeight(for width: CGFloat) -> CGFloat {
-        let size = CGSize(width: width, height: .greatestFiniteMagnitude)
-        return titleLabel.sizeThatFits(size).height
+        return CGSize(width: 375, height: 44) // To act like a UINavigationBar with a default size
     }
 }
