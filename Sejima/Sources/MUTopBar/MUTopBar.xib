@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,15 +27,15 @@
                         <constraint firstAttribute="width" id="qK3-ht-RCb"/>
                     </constraints>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-AC-MuU">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-AC-MuU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-P9-fcf">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <state key="normal">
+                        <string key="title">Testing Content just to see how it works with very long content, Testing Content just to see how it works with very long content</string>
+                    </state>
                     <connections>
-                        <action selector="leftButtonDidTap:" destination="-1" eventType="touchUpInside" id="Aig-Nt-0rg"/>
-                        <action selector="leftButtonDidTouchDown:" destination="-1" eventType="touchDown" id="hYA-OX-G1A"/>
-                        <action selector="leftButtonDidTouchUpOutside:" destination="-1" eventType="touchUpOutside" id="Fda-cR-6SV"/>
+                        <action selector="leftButtonDidTap:" destination="-1" eventType="touchUpInside" id="k5t-Kf-nKY"/>
+                        <action selector="leftButtonDidTouchDown:" destination="-1" eventType="touchDown" id="VLA-C0-5DL"/>
+                        <action selector="leftButtonDidTouchUpOutside:" destination="-1" eventType="touchUpOutside" id="79K-sf-bcp"/>
                     </connections>
                 </button>
             </subviews>
@@ -43,14 +43,10 @@
             <constraints>
                 <constraint firstItem="iXO-fL-qgS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BCs-t1-8aU"/>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Br9-7o-yp8"/>
-                <constraint firstItem="XAu-P9-fcf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b6Y-PO-jFJ"/>
                 <constraint firstAttribute="trailing" secondItem="Cx0-AC-MuU" secondAttribute="trailing" id="dPu-f6-6K8"/>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="e8s-Sm-mac"/>
-                <constraint firstAttribute="bottom" secondItem="XAu-P9-fcf" secondAttribute="bottom" id="gRN-qs-IHB"/>
                 <constraint firstItem="iXO-fL-qgS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="huf-Ql-hz0"/>
                 <constraint firstAttribute="bottom" secondItem="Cx0-AC-MuU" secondAttribute="bottom" id="jXm-va-q98"/>
-                <constraint firstAttribute="trailing" secondItem="XAu-P9-fcf" secondAttribute="trailing" id="r0I-wt-msz"/>
-                <constraint firstItem="XAu-P9-fcf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tTp-MZ-R9v"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
