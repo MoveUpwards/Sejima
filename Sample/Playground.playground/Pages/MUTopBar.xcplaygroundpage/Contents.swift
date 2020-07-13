@@ -14,7 +14,8 @@ PlaygroundPage.current.liveView = view
 // ### TopBar with autolayout ###
 
 let topBar = MUTopBar()
-topBar.lineNumber = 1
+topBar.lineNumber = 0
+topBar.titleVerticalAlignment = .top
 topBar.buttonAlignment = .leading
 topBar.buttonLeftPadding = 24
 topBar.showButton = true

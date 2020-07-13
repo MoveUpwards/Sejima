@@ -59,6 +59,13 @@ open class MUTopBar: MUNibView {
         }
     }
 
+    /// The title horizontal alignment.
+    @objc open dynamic var titleVerticalAlignment: UIControl.ContentVerticalAlignment = .center {
+        didSet {
+            titleLabel.contentVerticalAlignment = titleVerticalAlignment
+        }
+    }
+
     /// The title’s font.
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 24.0, weight: .bold) {
         didSet {
@@ -97,6 +104,16 @@ open class MUTopBar: MUNibView {
         }
         set {
             titleAlignment = UIControl.ContentHorizontalAlignment(rawValue: newValue) ?? .center
+        }
+    }
+
+    /// Optional: The IBInspectable version of the title’s horizontal alignment.
+    @IBInspectable open dynamic var titleVerticalAlignmentInt: Int {
+        get {
+            return titleVerticalAlignment.rawValue
+        }
+        set {
+            titleVerticalAlignment = UIControl.ContentVerticalAlignment(rawValue: newValue) ?? .center
         }
     }
 

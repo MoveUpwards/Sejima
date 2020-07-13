@@ -28,7 +28,7 @@
                     </constraints>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cx0-AC-MuU">
-                    <rect key="frame" x="0.0" y="5" width="375" height="34"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAu-P9-fcf">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -41,15 +41,14 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="Cx0-AC-MuU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" id="Br9-7o-yp8"/>
-                <constraint firstItem="Cx0-AC-MuU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ELY-32-E1u"/>
+                <constraint firstItem="iXO-fL-qgS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BCs-t1-8aU"/>
+                <constraint firstItem="Cx0-AC-MuU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Br9-7o-yp8"/>
                 <constraint firstItem="XAu-P9-fcf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="b6Y-PO-jFJ"/>
-                <constraint firstItem="iXO-fL-qgS" firstAttribute="centerY" secondItem="Cx0-AC-MuU" secondAttribute="centerY" id="c7i-8E-OGo"/>
                 <constraint firstAttribute="trailing" secondItem="Cx0-AC-MuU" secondAttribute="trailing" id="dPu-f6-6K8"/>
                 <constraint firstItem="Cx0-AC-MuU" firstAttribute="leading" secondItem="iXO-fL-qgS" secondAttribute="trailing" id="e8s-Sm-mac"/>
                 <constraint firstAttribute="bottom" secondItem="XAu-P9-fcf" secondAttribute="bottom" id="gRN-qs-IHB"/>
                 <constraint firstItem="iXO-fL-qgS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="huf-Ql-hz0"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cx0-AC-MuU" secondAttribute="bottom" id="jXm-va-q98"/>
+                <constraint firstAttribute="bottom" secondItem="Cx0-AC-MuU" secondAttribute="bottom" id="jXm-va-q98"/>
                 <constraint firstAttribute="trailing" secondItem="XAu-P9-fcf" secondAttribute="trailing" id="r0I-wt-msz"/>
                 <constraint firstItem="XAu-P9-fcf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tTp-MZ-R9v"/>
             </constraints>
