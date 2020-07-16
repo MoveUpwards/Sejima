@@ -43,10 +43,10 @@ open class MUSegmentedControl: UIControl {
     /// Define the font if there is no theme
     @objc open dynamic var titleFont: UIFont = .systemFont(ofSize: 12.0) {
         didSet {
-            normalSegmentsView.subviews.compactMap({ $0 as? UILabel }).forEach { label in
+            itemLabels(for: normalSegmentsView).forEach { label in
                 label.font = titleFont
             }
-            selectedSegmentsView.subviews .compactMap({ $0 as? UILabel }) .forEach { label in
+            itemLabels(for: selectedSegmentsView).forEach { label in
                 label.font = titleFont
             }
         }
@@ -55,7 +55,7 @@ open class MUSegmentedControl: UIControl {
     /// Define the title color if there is no theme.
     @IBInspectable open dynamic var titleColor: UIColor = .black {
         didSet {
-            normalSegmentsView.subviews.compactMap({ $0 as? UILabel }).forEach { label in
+            itemLabels(for: normalSegmentsView).forEach { label in
                 label.textColor = titleColor
             }
         }
@@ -64,7 +64,7 @@ open class MUSegmentedControl: UIControl {
     /// Define the selected title color if there is no theme.
     @IBInspectable open dynamic var selectedTitleColor: UIColor = .white {
         didSet {
-            selectedSegmentsView.subviews .compactMap({ $0 as? UILabel }) .forEach { label in
+            itemLabels(for: selectedSegmentsView).forEach { label in
                 label.textColor = selectedTitleColor
             }
         }
@@ -74,8 +74,8 @@ open class MUSegmentedControl: UIControl {
     @IBInspectable open dynamic var selectedColor: UIColor = .lightGray {
         didSet {
             layer.borderColor = selectedColor.cgColor
-            selectedSegmentsView.subviews .compactMap({ $0 as? UILabel }) .forEach { label in
-                label.backgroundColor = selectedColor
+            itemIndicator(for: selectedSegmentsView).forEach { indicator in
+                indicator.backgroundColor = selectedColor
             }
         }
     }
@@ -234,7 +234,6 @@ open class MUSegmentedControl: UIControl {
             normalSegmentsView.subviews[index].frame = frame
 
             selectedSegmentsView.subviews[index].frame = frame
-//            selectedSegmentsView.subviews[index].backgroundColor = currentSelectedColor
         }
 
         invalidateIntrinsicContentSize()
@@ -345,6 +344,14 @@ open class MUSegmentedControl: UIControl {
     private func moveIndicator() {
         indicatorView.frame = normalSegmentsView.subviews[selectedSegmentIndex].frame
         layoutIfNeeded()
+    }
+
+    private func itemLabels(for view: UIView) -> [UILabel] {
+        view.subviews.flatMap({ $0.subviews }).compactMap({ $0 as? UILabel })
+    }
+
+    private func itemIndicator(for view: UIView) -> [UIView] {
+        view.subviews.flatMap({ $0.subviews }).compactMap({ $0 as UIView })
     }
 
     // MARK: - Action handlers
