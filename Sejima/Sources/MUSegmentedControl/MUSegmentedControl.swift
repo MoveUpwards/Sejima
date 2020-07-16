@@ -234,7 +234,6 @@ open class MUSegmentedControl: UIControl {
             normalSegmentsView.subviews[index].frame = frame
 
             selectedSegmentsView.subviews[index].frame = frame
-//            selectedSegmentsView.subviews[index].backgroundColor = currentSelectedColor
         }
 
         invalidateIntrinsicContentSize()
