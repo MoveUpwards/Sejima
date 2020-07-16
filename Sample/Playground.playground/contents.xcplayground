@@ -28,5 +28,6 @@
         <page name='MUButton'/>
         <page name='RedditToast'/>
         <page name='MUTopBar'/>
+        <page name='MUSegmentedControl'/>
     </pages>
 </playground>
