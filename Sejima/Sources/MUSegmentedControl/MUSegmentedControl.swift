@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Neumann
 
 /// Delegate protocol for MUSegmentControl.
 @objc public protocol MUSegmentControlDelegate: class {
@@ -84,6 +85,27 @@ open class MUSegmentedControl: UIControl {
         didSet {
             layer.masksToBounds = indicatorInset >= 0.0
             updateCornerRadius()
+            setNeedsLayout()
+        }
+    }
+
+    /// Define the indicator view height with a given percentage. Default value 1.0 (100%)
+    @IBInspectable open dynamic var indicatorHeight: CGFloat = 1.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Define the indicator view width with a given percentage. Default value 1.0 (100%)
+    @IBInspectable open dynamic var indicatorWidth: CGFloat = 1.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// Define the indicator view origin. Default is X: center / Y: center
+    open dynamic var indicatorOrigin: MUAutolayoutPosition = .center {
+        didSet {
             setNeedsLayout()
         }
     }
@@ -212,7 +234,7 @@ open class MUSegmentedControl: UIControl {
             normalSegmentsView.subviews[index].frame = frame
 
             selectedSegmentsView.subviews[index].frame = frame
-            selectedSegmentsView.subviews[index].backgroundColor = currentSelectedColor
+//            selectedSegmentsView.subviews[index].backgroundColor = currentSelectedColor
         }
 
         invalidateIntrinsicContentSize()
@@ -261,16 +283,27 @@ open class MUSegmentedControl: UIControl {
     private func label(with title: String,
                        selectedColor: UIColor,
                        font: UIFont,
-                       textColor: UIColor) -> UILabel {
+                       textColor: UIColor) -> UIView {
+        let container = UIView()
+        container.backgroundColor = .clear
+
+        let background = UIView()
+        background.backgroundColor = selectedColor
+
         let label = UILabel()
         label.text = title
-        label.backgroundColor = selectedColor
         label.font = font
         label.textColor = textColor
         label.lineBreakMode = .byTruncatingTail
         label.textAlignment = .center
 
-        return label
+        container.addAutolayoutSubview(background,
+                                       origin: indicatorOrigin,
+                                       height: indicatorHeight,
+                                       width: indicatorWidth)
+        container.addAutolayoutSubview(label)
+
+        return container
     }
 
     private func updateCornerRadius() {
