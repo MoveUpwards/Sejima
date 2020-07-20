@@ -42,6 +42,7 @@ open class MUToast: MUNibView {
     /// The toast’s corner radius.
     @IBInspectable open dynamic var cornerRadius: CGFloat = 0.0 {
         didSet {
+            markerView.roundCorners([.topLeft, .bottomLeft], value: cornerRadius)
             layer.cornerRadius = cornerRadius
         }
     }
@@ -195,6 +196,36 @@ open class MUToast: MUNibView {
         }
     }
 
+    // MARK: - Drop shadow
+
+    /// The drop shadow color. Default is clear
+    @IBInspectable open dynamic var shadowColor: UIColor = .clear {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The drop shadow offset. Default is .zero
+    @IBInspectable open dynamic var shadowOffset: CGSize = .zero {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The drop shadow opacity. Default is none
+    @IBInspectable open dynamic var shadowOpacity: Float = 0.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
+    /// The drop shadow radius. Default is none
+    @IBInspectable open dynamic var shadowRadius: CGFloat = 0.0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+
     // MARK: - Animation
 
     /// The total duration of the animations, measured in seconds.
@@ -244,8 +275,12 @@ open class MUToast: MUNibView {
     /// Default setup to load the view from a xib file.
     open override func xibSetup() {
         super.xibSetup()
+    }
 
-        layer.masksToBounds = true
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+
+        applyShadow()
     }
 
     // MARK: - Animation functions
@@ -286,6 +321,15 @@ open class MUToast: MUNibView {
     }
 
     // MARK: - Private variables
+
+    private func applyShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
+        layer.shadowOffset = shadowOffset
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowRadius = shadowRadius
+    }
 
     private var hideTransform: CGAffineTransform {
         switch displayPosition {
