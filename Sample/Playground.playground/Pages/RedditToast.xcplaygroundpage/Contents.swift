@@ -49,7 +49,7 @@ okay.titleFont = .boldSystemFont(ofSize: 14)
 okay.buttonBackgroundColor = .red
 okay.borderColor = .red
 
-toast.add(view: UIView())
+//toast.add(view: UIView())
 toast.add(view: cancel) { view in
     print("Button did tap cancel")
 }
