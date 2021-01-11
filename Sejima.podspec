@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Sejima'
-  s.version = '1.8.0'
+  s.version = '1.9.0'
   s.license = 'MIT'
   s.summary = 'Sejima is a framework that expose reusable components.'
   s.description  = <<-DESC
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/MoveUpwards/Sejima.git'
   s.authors = { 'Damien NOËL DUBUISSON' => 'damien@slide-r.com', 'Loïc GRIFFIÉ' => 'loic@slide-r.com' }
   s.source = { :git => 'https://github.com/MoveUpwards/Sejima.git', :tag => s.version }
-  s.swift_version               = '5.2'
+  s.swift_version               = '5.3'
   s.ios.deployment_target       = '10.0'
   s.source_files                = 'Sejima/Sources/**/*.{swift,xib}'
   s.frameworks                  = 'Foundation'
