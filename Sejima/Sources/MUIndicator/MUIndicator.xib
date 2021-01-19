@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUIndicator" customModule="MUComponent" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUIndicator" customModule="Sejima" customModuleProvider="target">
             <connections>
                 <outlet property="bottomBackground" destination="xaM-Ki-sma" id="sER-9Z-7rK"/>
                 <outlet property="label" destination="n7l-tq-PU2" id="enx-u8-Mjx"/>
@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSQ-Jd-2zJ">
                     <rect key="frame" x="0.0" y="0.0" width="76" height="32"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7l-tq-PU2" customClass="MULabelCounter" customModule="MUComponent" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7l-tq-PU2" customClass="MULabelCounter" customModule="Sejima" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="76" height="32"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
