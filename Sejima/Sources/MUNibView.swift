@@ -14,12 +14,12 @@ open class MUNibView: UIView {
 
     /// Return the nib name file to be used. Override it if you use a xib different that the class name.
     open var nibName: String? {
-        return type(of: self).description().components(separatedBy: ".").last
+        type(of: self).description().components(separatedBy: ".").last
     }
 
     /// Return the bundle that contains the associated xib. Override it if you use a xib different that the class name.
-    open var bundle: Bundle? {
-        return Bundle(for: type(of: self))
+    open var bundle: Bundle {
+        Bundle.module
     }
 
     /// Initializes and returns a newly allocated view object with the specified frame rectangle.
