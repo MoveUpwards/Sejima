@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MURadarGraph" customModule="MUComponent" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MURadarGraph" customModule="Sejima" customModuleProvider="target">
             <connections>
                 <outlet property="background" destination="Ob9-DS-1WO" id="U8L-6V-c47"/>
                 <outlet property="charts" destination="YKK-qf-TS8" id="BvJ-Tt-TtS"/>
@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-DS-1WO" customClass="MURadarGraphBackground" customModule="MUComponent" customModuleProvider="target">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-DS-1WO" customClass="MURadarGraphBackground" customModule="Sejima" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 </imageView>
                 <view tag="12" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKK-qf-TS8">
