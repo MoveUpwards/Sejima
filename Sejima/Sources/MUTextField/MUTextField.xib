@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTextField" customModule="Sejima" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTextField" customModule="Sejima">
             <connections>
                 <outlet property="label" destination="d7t-yc-k3i" id="FTu-t9-gdd"/>
                 <outlet property="textField" destination="CmB-r6-WIo" id="9ao-wx-11i"/>
