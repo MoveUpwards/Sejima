@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTopBar" customModule="Sejima" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUTopBar" customModule="Sejima">
             <connections>
                 <outlet property="leftButton" destination="iXO-fL-qgS" id="tDm-yC-lbH"/>
                 <outlet property="leftButtonLeading" destination="huf-Ql-hz0" id="1j4-jB-a1t"/>

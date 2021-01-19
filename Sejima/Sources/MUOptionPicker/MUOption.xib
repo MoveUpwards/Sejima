@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUOption" customModule="Sejima" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUOption" customModule="Sejima">
             <connections>
                 <outlet property="imageView" destination="lDq-ZN-2Xg" id="ltF-Ve-fjd"/>
                 <outlet property="label" destination="u0M-0Z-e1O" id="w6G-uq-qQg"/>
