@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUBarChart" customModule="Sejima" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUBarChart" customModule="Sejima">
             <connections>
                 <outlet property="bottomLabelsStackView" destination="FJV-Mk-BaB" id="pX3-aq-CyZ"/>
                 <outlet property="bottomSeparatorHeightConstraint" destination="Uqv-bj-eHH" id="zpS-pN-sGa"/>

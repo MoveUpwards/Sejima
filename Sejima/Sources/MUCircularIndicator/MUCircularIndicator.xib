@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUCircularIndicator" customModule="Sejima" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MUCircularIndicator" customModule="Sejima">
             <connections>
                 <outlet property="percentLabel" destination="68u-QM-6SB" id="1ix-s2-u1u"/>
                 <outlet property="percentLabelOriginY" destination="YhZ-jI-MrN" id="lGN-pX-ENZ"/>
