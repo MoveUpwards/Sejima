@@ -14,7 +14,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/MoveUpwards/Neumann.git", from: "1.0.0")
+        .package(url: "https://github.com/MoveUpwards/Neumann.git", from: "2.0.0")
     ],
     targets: [
         .target(
