@@ -17,7 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nz-yr-jas">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HB4-kE-sCy">
+                                <rect key="frame" x="0.0" y="798" width="414" height="98"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0K-CT-8ch">
+                                <rect key="frame" x="0.0" y="44" width="414" height="754"/>
+                                <connections>
+                                    <segue destination="HEZ-gm-3wt" kind="embed" id="Xz0-W7-g8D"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nz-yr-jas" userLabel="TabBar">
                                 <rect key="frame" x="0.0" y="798" width="414" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -27,25 +37,26 @@
                                     <segue destination="OGN-cC-1xB" kind="embed" id="Ige-5m-dJy"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0K-CT-8ch">
-                                <rect key="frame" x="0.0" y="44" width="414" height="754"/>
-                                <connections>
-                                    <segue destination="HEZ-gm-3wt" kind="embed" id="Xz0-W7-g8D"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xPp-eh-kjD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xPp-eh-kjD" firstAttribute="trailing" secondItem="5nz-yr-jas" secondAttribute="trailing" id="KGS-Ac-1Al"/>
+                            <constraint firstAttribute="trailing" secondItem="5nz-yr-jas" secondAttribute="trailing" id="KGS-Ac-1Al"/>
                             <constraint firstItem="d0K-CT-8ch" firstAttribute="top" secondItem="xPp-eh-kjD" secondAttribute="top" id="N4S-ay-ySf"/>
-                            <constraint firstItem="5nz-yr-jas" firstAttribute="leading" secondItem="xPp-eh-kjD" secondAttribute="leading" id="P5p-mP-2w4"/>
+                            <constraint firstItem="5nz-yr-jas" firstAttribute="leading" secondItem="WdW-sw-XPh" secondAttribute="leading" id="P5p-mP-2w4"/>
                             <constraint firstItem="xPp-eh-kjD" firstAttribute="bottom" secondItem="5nz-yr-jas" secondAttribute="bottom" id="Tps-6S-M7M"/>
-                            <constraint firstItem="d0K-CT-8ch" firstAttribute="leading" secondItem="xPp-eh-kjD" secondAttribute="leading" id="g7m-Ox-TSb"/>
-                            <constraint firstItem="xPp-eh-kjD" firstAttribute="trailing" secondItem="d0K-CT-8ch" secondAttribute="trailing" id="q5a-gr-rUh"/>
+                            <constraint firstItem="HB4-kE-sCy" firstAttribute="top" secondItem="5nz-yr-jas" secondAttribute="top" id="YfA-Md-xDX"/>
+                            <constraint firstItem="d0K-CT-8ch" firstAttribute="leading" secondItem="WdW-sw-XPh" secondAttribute="leading" id="g7m-Ox-TSb"/>
+                            <constraint firstAttribute="trailing" secondItem="HB4-kE-sCy" secondAttribute="trailing" id="lvQ-V0-OB5"/>
+                            <constraint firstAttribute="trailing" secondItem="d0K-CT-8ch" secondAttribute="trailing" id="q5a-gr-rUh"/>
+                            <constraint firstItem="HB4-kE-sCy" firstAttribute="leading" secondItem="WdW-sw-XPh" secondAttribute="leading" id="wd8-vH-goM"/>
+                            <constraint firstAttribute="bottom" secondItem="HB4-kE-sCy" secondAttribute="bottom" id="y2N-hW-Pan"/>
                             <constraint firstItem="5nz-yr-jas" firstAttribute="top" secondItem="d0K-CT-8ch" secondAttribute="bottom" id="z6u-lO-RYh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tabBarBackground" destination="HB4-kE-sCy" id="wwn-Av-91D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqS-1G-OJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,13 +65,7 @@
         <!--View Controller-->
         <scene sceneID="aC5-Er-08N">
             <objects>
-                <viewController id="HEZ-gm-3wt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nw5-9T-0Ts">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
+                <viewController id="HEZ-gm-3wt" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="067-Me-ar7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="536" y="104"/>

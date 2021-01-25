@@ -10,5 +10,6 @@ import UIKit
 
 public protocol TBTabItem: UIViewController {
     var item: UIView { get }
-    var selectedItem: UIView { get }
+    var isSelected: Bool { get set }
+    var tapAction: (() -> Void)? { get set }
 }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Sejima
+//import Combine
 
 class TBTabController: UIViewController {
     @IBOutlet private var hStack: UIStackView!
@@ -15,15 +15,32 @@ class TBTabController: UIViewController {
     private var items = [TBTabItem]()
     private var selectedItem: Int?
 
+//    @Published var contentView: UIView = UIView()
+    @objc dynamic var contentView: UIView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .clear
+        items.enumerated().forEach { index, vc in
+            if index == 0 { // Only if items is not empty
+                selectedItem = 0
+                vc.isSelected = true
+                contentView = vc.view
+            }
+            vc.tapAction = { [weak self] in
+                if let selectedIndex = self?.selectedItem {
+                    self?.items[selectedIndex].isSelected = false
+                }
+                self?.selectedItem = index
+                self?.items[index].isSelected = true
+                self?.contentView = vc.view
+            }
+            hStack.addArrangedSubview(vc.item)
+        }
     }
 
     func add(_ item: TBTabItem) {
         items.append(item)
-        hStack.addArrangedSubview(item.view)
-        if selectedItem == nil { selectedItem = 0 }
     }
 }
