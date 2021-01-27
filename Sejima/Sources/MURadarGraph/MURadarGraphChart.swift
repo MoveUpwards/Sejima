@@ -73,7 +73,7 @@ final internal class MURadarGraphChart: UIImageView {
         path.addLine(to: CGPoint(x: currentX, y: currentY))
 
         context.addPath(path)
-        context.setFillColor(data.color.cgColor)
+        context.setFillColor(data.color.withAlphaComponent(0.3).cgColor)
         context.fillPath()
 
         context.setStrokeColor(data.color.cgColor)

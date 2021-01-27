@@ -206,18 +206,28 @@ final internal class MURadarGraphBackground: UIImageView {
 
             let title = spokeTitles[index]
             let size = title.constrainedSize(font: spokeTitleFont)
+            let midX = size.width * 0.5
+            let midY = size.height * 0.5
 
-            point.x += point.x / maxSize * size.width * 0.5
-            if point.x > 0.1 || point.x < -0.1 {
-                point.x += point.x > 0.0 ? -spokeTitleHorizontalOffset : spokeTitleHorizontalOffset
+            let paragraph = NSMutableParagraphStyle()
+            if point.x > -0.1, point.x < 0.1 { // Middle point [top, bottom]
+                paragraph.alignment = .center
+                point.x -= midX
+                point.y -= point.y < 0 ? (size.height + spokeTitleVerticalOffset) : -spokeTitleVerticalOffset
+            } else if point.x < -0.1 { // Left point
+                paragraph.alignment = .right
+                point.x -= size.width + spokeTitleHorizontalOffset
+                point.y -= midY
+            } else { // Right point
+                paragraph.alignment = .left
+                point.x += spokeTitleHorizontalOffset
+                point.y -= midY
             }
-            point.x -= size.width * 0.5
-            point.y += point.y > 0.0 ? spokeTitleVerticalOffset : -(spokeTitleVerticalOffset + spokeTitleFont.pointSize)
 
             context.setFillColor(spokeLineColor.cgColor)
             title.draw(with: CGRect(origin: point, size: size),
                        options: .usesLineFragmentOrigin,
-                       attributes: [.font: spokeTitleFont, .foregroundColor: spokeTitleColor],
+                       attributes: [.font: spokeTitleFont, .foregroundColor: spokeTitleColor, .paragraphStyle: paragraph],
                        context: nil)
         }
     }
