@@ -83,6 +83,13 @@ open class MUPinCode: MUNibView {
         }
     }
 
+    /// Describes the MUPinCode's cell's text color appearance while it shows
+    @IBInspectable open dynamic var cellTextColor: UIColor = .black {
+        didSet {
+            stackView.arrangedSubviews.forEach({ ($0 as? MUPinCodeCell)?.set(textColor: cellTextColor) })
+        }
+    }
+
     /// Describes the MUPinCode's cell's corner radius appearance while it shows
     @IBInspectable open dynamic var cellCornerRadius: CGFloat = 10.0 {
         didSet {

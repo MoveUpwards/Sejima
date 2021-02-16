@@ -34,6 +34,13 @@ final internal class MUPinCodeCell: MUNibView {
 
     /// Set the font of the label
     @discardableResult
+    internal func set(textColor: UIColor) -> Self {
+        label.textColor = textColor
+        return self
+    }
+
+    /// Set the font of the label
+    @discardableResult
     internal func set(font: UIFont) -> Self {
         label.font = font
         return self
